@@ -1,25 +1,18 @@
 {
   "name": "morrowind",
-  "version": "1.0.0",
-  "description": "Morrowind Tools",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JPBetley/morrowind.git"
-  },
-  "keywords": [
-    "morrowind",
-    "express",
-    "vuejs",
-    "node"
-  ],
-  "author": "John Phillip Betley",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JPBetley/morrowind/issues"
-  },
-  "homepage": "https://github.com/JPBetley/morrowind#readme"
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "node-sass-middleware": "0.8.0",
+    "serve-favicon": "~2.3.0"
+  }
 }
