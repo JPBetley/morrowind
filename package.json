@@ -1,0 +1,25 @@
+{
+  "name": "morrowind",
+  "version": "1.0.0",
+  "description": "Morrowind Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JPBetley/morrowind.git"
+  },
+  "keywords": [
+    "morrowind",
+    "express",
+    "vuejs",
+    "node"
+  ],
+  "author": "John Phillip Betley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JPBetley/morrowind/issues"
+  },
+  "homepage": "https://github.com/JPBetley/morrowind#readme"
+}
