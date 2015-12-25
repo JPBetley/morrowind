@@ -1,5 +1,6 @@
 module.exports = {
-	apply: function(stats) {
+	apply: function(build) {
+		build.stats.strength += 10;
 	},
 	name: 'Argonian'
 }

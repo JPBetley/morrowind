@@ -9526,6 +9526,9 @@ module.exports = Vue;
 'use strict';
 
 var Vue = require('vue');
+
+Vue.config.debug = true;
+
 var races = [require('./races/default.js'), require('./races/argonian.js'), require('./races/breton.js'), require('./races/dark-elf.js'), require('./races/high-elf.js'), require('./races/imperial.js'), require('./races/khajiit.js'), require('./races/nord.js'), require('./races/orc.js'), require('./races/redguard.js'), require('./races/wood-elf.js')];
 
 new Vue({
@@ -9551,6 +9554,8 @@ new Vue({
 				}
 			};
 
+			this.selectedRace.apply(build);
+
 			return build;
 		},
 		selectedRace: function selectedRace() {
@@ -9563,7 +9568,9 @@ new Vue({
 'use strict';
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		build.stats.strength += 10;
+	},
 	name: 'Argonian'
 };
 

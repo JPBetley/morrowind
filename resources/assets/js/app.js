@@ -1,4 +1,7 @@
 var Vue = require('vue');
+
+Vue.config.debug = true
+
 var races = [
 	require('./races/default.js'),
 	require('./races/argonian.js'),
@@ -35,6 +38,8 @@ new Vue({
 					endurance: 0,
 				}
 			};
+
+			this.selectedRace.apply(build);
 
 			return build;
 		},
