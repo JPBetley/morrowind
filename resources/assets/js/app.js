@@ -13,7 +13,7 @@ new Vue({
 		favoredAttributes: [],
 		majorSkills: [],
 		minorSkills: [],
-		races: require('./races/all.js'),
+		races: require('./races/all'),
 	},
 
 	computed: {

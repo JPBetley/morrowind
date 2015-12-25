@@ -9529,8 +9529,6 @@ var Vue = require('vue');
 
 Vue.config.debug = true;
 
-var races = [require('./races/default.js'), require('./races/argonian.js'), require('./races/breton.js'), require('./races/dark-elf.js'), require('./races/high-elf.js'), require('./races/imperial.js'), require('./races/khajiit.js'), require('./races/nord.js'), require('./races/orc.js'), require('./races/redguard.js'), require('./races/wood-elf.js')];
-
 new Vue({
 	el: '#app',
 
@@ -9542,7 +9540,7 @@ new Vue({
 		favoredAttributes: [],
 		majorSkills: [],
 		minorSkills: [],
-		races: races
+		races: require('./races/all')
 	},
 
 	computed: {
@@ -9559,12 +9557,19 @@ new Vue({
 			return build;
 		},
 		selectedRace: function selectedRace() {
-			return races[this.raceIndex];
+			return this.races[this.raceIndex];
 		}
 	}
 });
 
-},{"./races/argonian.js":4,"./races/breton.js":5,"./races/dark-elf.js":6,"./races/default.js":7,"./races/high-elf.js":8,"./races/imperial.js":9,"./races/khajiit.js":10,"./races/nord.js":11,"./races/orc.js":12,"./races/redguard.js":13,"./races/wood-elf.js":14,"vue":2}],4:[function(require,module,exports){
+},{"./races/all":4,"vue":2}],4:[function(require,module,exports){
+'use strict';
+
+var races = [require('./default.js'), require('./argonian.js'), require('./breton.js'), require('./dark-elf.js'), require('./high-elf.js'), require('./imperial.js'), require('./khajiit.js'), require('./nord.js'), require('./orc.js'), require('./redguard.js'), require('./wood-elf.js')];
+
+module.exports = races;
+
+},{"./argonian.js":5,"./breton.js":6,"./dark-elf.js":7,"./default.js":8,"./high-elf.js":9,"./imperial.js":10,"./khajiit.js":11,"./nord.js":12,"./orc.js":13,"./redguard.js":14,"./wood-elf.js":15}],5:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9574,7 +9579,7 @@ module.exports = {
 	name: 'Argonian'
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9582,7 +9587,7 @@ module.exports = {
 	name: 'Breton'
 };
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9590,7 +9595,7 @@ module.exports = {
 	name: 'Dark Elf'
 };
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9598,7 +9603,7 @@ module.exports = {
 	name: ''
 };
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9606,7 +9611,7 @@ module.exports = {
 	name: 'High Elf'
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9614,7 +9619,7 @@ module.exports = {
 	name: 'Imperial'
 };
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9622,7 +9627,7 @@ module.exports = {
 	name: 'Khajiit'
 };
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9630,7 +9635,7 @@ module.exports = {
 	name: 'Nord'
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9638,7 +9643,7 @@ module.exports = {
 	name: 'Orc'
 };
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9646,7 +9651,7 @@ module.exports = {
 	name: 'Redguard'
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 module.exports = {

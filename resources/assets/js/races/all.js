@@ -1,15 +1,15 @@
 var races = [
-	require('./races/default.js'),
-	require('./races/argonian.js'),
-	require('./races/breton.js'),
-	require('./races/dark-elf.js'),
-	require('./races/high-elf.js'),
-	require('./races/imperial.js'),
-	require('./races/khajiit.js'),
-	require('./races/nord.js'),
-	require('./races/orc.js'),
-	require('./races/redguard.js'),
-	require('./races/wood-elf.js')
+	require('./default.js'),
+	require('./argonian.js'),
+	require('./breton.js'),
+	require('./dark-elf.js'),
+	require('./high-elf.js'),
+	require('./imperial.js'),
+	require('./khajiit.js'),
+	require('./nord.js'),
+	require('./orc.js'),
+	require('./redguard.js'),
+	require('./wood-elf.js')
 ];
 
 module.exports = races;
