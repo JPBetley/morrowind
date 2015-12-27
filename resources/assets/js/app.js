@@ -8,13 +8,14 @@ new Vue({
 	data: {
 		sex: null,
 		specialization: null,
-		favoredAttributes: [],
 		majorSkills: [],
 		minorSkills: [],
 		birthsignIndex: 0,
 		birthsigns: require('./birthsigns/all'),
 		raceIndex: 0,
 		races: require('./races/all'),
+		favoredAttributes: [],
+		specializations: require('./specializations/all'),
 	},
 
 	computed: {
@@ -31,7 +32,20 @@ new Vue({
 					personality: 0,
 					luck: 0,
 				},
-				abilities: []
+				abilities: [],
+				multipliers: {
+					health: 1,
+					magicka: 1,
+					stamina: 1,
+				},
+				resistances: {
+					fire: 0,
+					frost: 0,
+					poison: 0,
+					shock: 0,
+					magicka: 0,
+					disease: 0
+				}
 			};
 
 			this.race.apply(build);

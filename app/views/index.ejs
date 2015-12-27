@@ -72,10 +72,10 @@
                     </select>
                 </label>
                 <label>
-                    Race
-                    <select v-model="raceIndex">
-                        <option v-for="race in races" :value="$index">
-                            {{ race.name }}
+                    Specialization
+                    <select v-model="specialization" options="specializations">
+                        <option v-for="option in specializations" :value="option.value">
+                            {{ option.text }}
                         </option>
                     </select>
                 </label>

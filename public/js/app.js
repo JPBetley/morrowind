@@ -9535,13 +9535,14 @@ new Vue({
 	data: {
 		sex: null,
 		specialization: null,
-		favoredAttributes: [],
 		majorSkills: [],
 		minorSkills: [],
 		birthsignIndex: 0,
 		birthsigns: require('./birthsigns/all'),
 		raceIndex: 0,
-		races: require('./races/all')
+		races: require('./races/all'),
+		favoredAttributes: [],
+		specializations: require('./specializations/all')
 	},
 
 	computed: {
@@ -9558,7 +9559,20 @@ new Vue({
 					personality: 0,
 					luck: 0
 				},
-				abilities: []
+				abilities: [],
+				multipliers: {
+					health: 1,
+					magicka: 1,
+					stamina: 1
+				},
+				resistances: {
+					fire: 0,
+					frost: 0,
+					poison: 0,
+					shock: 0,
+					magicka: 0,
+					disease: 0
+				}
 			};
 
 			this.race.apply(build);
@@ -9575,7 +9589,7 @@ new Vue({
 	}
 });
 
-},{"./birthsigns/all":4,"./races/all":19,"vue":2}],4:[function(require,module,exports){
+},{"./birthsigns/all":4,"./races/all":19,"./specializations/all":31,"vue":2}],4:[function(require,module,exports){
 'use strict';
 
 module.exports = [require('./default'), require('./warrior'), require('./mage'), require('./thief'), require('./serpent'), require('./lady'), require('./steed'), require('./lord'), require('./apprentice'), require('./atronach'), require('./ritual'), require('./lover'), require('./shadow'), require('./tower')];
@@ -9584,7 +9598,11 @@ module.exports = [require('./default'), require('./warrior'), require('./mage'),
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.multipliers.magicka += 1.5;
+		build.resistances.magicka -= 50;
+		build.abilities.push('Elfborn - Fortify Maximum Magicka 1.5x INT, Weakness to Magicka 50%');
+	},
 	name: 'Apprentice'
 };
 
@@ -9593,7 +9611,7 @@ module.exports = {
 
 module.exports = {
 	apply: function apply(build) {
-		build.stats.intelligence += 2 * build.stats.intelligence;
+		build.multipliers.magicka += 2;
 		build.abilities.push('Wombburn - Spell Absorption 50%, Fortify Maximum Magicka 2.0x INT, Stunted Magicka');
 	},
 	name: 'Atronach'
@@ -9611,7 +9629,12 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.stats.personality += 25;
+		build.stats.endurance += 25;
+		build.abilities.push('Lady\'s Favor - Fortify Personality 25 pts');
+		build.abilities.push('Lady\'s Grace - Fortify Endurance 25 pts');
+	},
 	name: 'Lady'
 };
 
@@ -9619,7 +9642,11 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.resistances.fire -= 100;
+		build.abilities.push('Blood of the North - Restore Health 2 pts for 30 secs on Self');
+		build.abilities.push('Trollkin - Weakness to Fire 100%');
+	},
 	name: 'Lord'
 };
 
@@ -9627,7 +9654,11 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.stats.agility += 25;
+		build.abilities.push('Mooncalf - Fortify Agility 25 pts');
+		build.abilities.push('Lover\'s Kiss - Paralyze 60 secs on Target, Damage Fatigue 200 pts on Self');
+	},
 	name: 'Lover'
 };
 
@@ -9635,7 +9666,10 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.multipliers.magicka += 0.5;
+		build.abilities.push('Fay - Fortify Maximum Magicka 0.5x INT');
+	},
 	name: 'Mage'
 };
 
@@ -9643,7 +9677,11 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.abilties.push('Blessed Word - Turn Undead 100 pts for 30 secs on Target');
+		build.abilties.push('Blessed Touch - Turn Undead 100 pts for 30 secs on Touch');
+		build.abilties.push('Mara\'s Gift - Restore Health 100 pts on Self');
+	},
 	name: 'Ritual'
 };
 
@@ -9651,7 +9689,9 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.abilities.push('Star Curse - Poison 3 pts for 30 secs on Touch, Damage Health 1 pt for 30 secs on Self');
+	},
 	name: 'Serpent'
 };
 
@@ -9659,7 +9699,9 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.abilities.push('Moonshadow - Invisibility for 60 secs');
+	},
 	name: 'Shadow'
 };
 
@@ -9667,7 +9709,10 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.stats.speed += 25;
+		build.abilities.push('Charioteer - Fortify Speed 25 pts');
+	},
 	name: 'Steed'
 };
 
@@ -9675,7 +9720,9 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.abilities.push('Akaviri Danger-sense - Sanctuary 10 pts');
+	},
 	name: 'Thief'
 };
 
@@ -9683,7 +9730,10 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.abilities.push('Beggar\'s Nose - Detect Animal / Key / Enchantment for 60 secs in 200 ft');
+		build.abilities.push('Tower Key - Open 50 pts on Touch');
+	},
 	name: 'Tower'
 };
 
@@ -9691,7 +9741,9 @@ module.exports = {
 'use strict';
 
 module.exports = {
-	apply: function apply(build) {},
+	apply: function apply(build) {
+		build.abilties.push('Warwyrd - Fortify Attack 10 pts');
+	},
 	name: 'Warrior'
 };
 
@@ -10068,6 +10120,37 @@ module.exports = {
 		}
 	},
 	name: 'Wood Elf'
+};
+
+},{}],31:[function(require,module,exports){
+'use strict';
+
+module.exports = [{ text: require('./default').name, value: require('./default') }, { text: require('./combat').name, value: require('./combat') }, { text: require('./magic').name, value: require('./magic') }, { text: require('./stealth').name, value: require('./stealth') }];
+
+},{"./combat":32,"./default":33,"./magic":34,"./stealth":35}],32:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Combat'
+};
+
+},{}],33:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"dup":7}],34:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Magic'
+};
+
+},{}],35:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Stealth'
 };
 
 },{}]},{},[3]);
