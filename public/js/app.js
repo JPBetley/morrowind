@@ -9548,7 +9548,13 @@ new Vue({
 			var build = {
 				stats: {
 					strength: 0,
-					endurance: 0
+					intelligence: 0,
+					willpower: 0,
+					agility: 0,
+					speed: 0,
+					endurance: 0,
+					personality: 0,
+					luck: 0
 				}
 			};
 
@@ -9570,28 +9576,110 @@ var races = [require('./default.js'), require('./argonian.js'), require('./breto
 module.exports = races;
 
 },{"./argonian.js":5,"./breton.js":6,"./dark-elf.js":7,"./default.js":8,"./high-elf.js":9,"./imperial.js":10,"./khajiit.js":11,"./nord.js":12,"./orc.js":13,"./redguard.js":14,"./wood-elf.js":15}],5:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 50;
+	build.stats.speed += 50;
+	build.stats.endurance += 30;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 50;
+	build.stats.willpower += 40;
+	build.stats.agility += 40;
+	build.stats.speed += 40;
+	build.stats.endurance += 30;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
 
 module.exports = {
 	apply: function apply(build) {
-		build.stats.strength += 10;
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
 	},
 	name: 'Argonian'
 };
 
 },{}],6:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 50;
+	build.stats.willpower += 50;
+	build.stats.agility += 30;
+	build.stats.speed += 30;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 30;
+	build.stats.intelligence += 50;
+	build.stats.willpower += 50;
+	build.stats.agility += 30;
+	build.stats.speed += 40;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Breton'
 };
 
 },{}],7:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 40;
+	build.stats.speed += 50;
+	build.stats.endurance += 40;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 40;
+	build.stats.speed += 50;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Dark Elf'
 };
 
@@ -9604,58 +9692,254 @@ module.exports = {
 };
 
 },{}],9:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 30;
+	build.stats.intelligence += 50;
+	build.stats.willpower += 40;
+	build.stats.agility += 40;
+	build.stats.speed += 30;
+	build.stats.endurance += 40;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 30;
+	build.stats.intelligence += 50;
+	build.stats.willpower += 40;
+	build.stats.agility += 40;
+	build.stats.speed += 40;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'High Elf'
 };
 
 },{}],10:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 30;
+	build.stats.speed += 40;
+	build.stats.endurance += 40;
+	build.stats.personality += 50;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 40;
+	build.stats.agility += 30;
+	build.stats.speed += 30;
+	build.stats.endurance += 40;
+	build.stats.personality += 50;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Imperial'
 };
 
 },{}],11:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 50;
+	build.stats.speed += 40;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 50;
+	build.stats.willpower += 40;
+	build.stats.agility += 40;
+	build.stats.speed += 40;
+	build.stats.endurance += 30;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Khajiit'
 };
 
 },{}],12:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 50;
+	build.stats.intelligence += 30;
+	build.stats.willpower += 40;
+	build.stats.agility += 30;
+	build.stats.speed += 40;
+	build.stats.endurance += 50;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 50;
+	build.stats.intelligence += 30;
+	build.stats.willpower += 50;
+	build.stats.agility += 30;
+	build.stats.speed += 40;
+	build.stats.endurance += 40;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Nord'
 };
 
 },{}],13:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 45;
+	build.stats.intelligence += 30;
+	build.stats.willpower += 50;
+	build.stats.agility += 35;
+	build.stats.speed += 30;
+	build.stats.endurance += 50;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 45;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 45;
+	build.stats.agility += 35;
+	build.stats.speed += 30;
+	build.stats.endurance += 50;
+	build.stats.personality += 25;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Orc'
 };
 
 },{}],14:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 50;
+	build.stats.intelligence += 30;
+	build.stats.willpower += 30;
+	build.stats.agility += 40;
+	build.stats.speed += 40;
+	build.stats.endurance += 50;
+	build.stats.personality += 30;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 40;
+	build.stats.intelligence += 30;
+	build.stats.willpower += 30;
+	build.stats.agility += 40;
+	build.stats.speed += 40;
+	build.stats.endurance += 50;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Redguard'
 };
 
 },{}],15:[function(require,module,exports){
-'use strict';
+"use strict";
+
+function maleAttributes(build) {
+	build.stats.strength += 30;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 50;
+	build.stats.speed += 50;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.stats.strength += 30;
+	build.stats.intelligence += 40;
+	build.stats.willpower += 30;
+	build.stats.agility += 50;
+	build.stats.speed += 50;
+	build.stats.endurance += 30;
+	build.stats.personality += 40;
+	build.stats.luck += 40;
+}
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {
+		if (build.sex == "Male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+	},
 	name: 'Wood Elf'
 };
 
