@@ -9534,12 +9534,13 @@ new Vue({
 
 	data: {
 		sex: null,
-		raceIndex: 0,
-		birthsign: null,
 		specialization: null,
 		favoredAttributes: [],
 		majorSkills: [],
 		minorSkills: [],
+		birthsignIndex: 0,
+		birthsigns: require('./birthsigns/all'),
+		raceIndex: 0,
 		races: require('./races/all')
 	},
 
@@ -9556,27 +9557,152 @@ new Vue({
 					endurance: 0,
 					personality: 0,
 					luck: 0
-				}
+				},
+				abilities: []
 			};
 
-			this.selectedRace.apply(build);
+			this.race.apply(build);
+			this.birthsign.apply(build);
 
 			return build;
 		},
-		selectedRace: function selectedRace() {
+		race: function race() {
 			return this.races[this.raceIndex];
+		},
+		birthsign: function birthsign() {
+			return this.birthsigns[this.birthsignIndex];
 		}
 	}
 });
 
-},{"./races/all":4,"vue":2}],4:[function(require,module,exports){
+},{"./birthsigns/all":4,"./races/all":19,"vue":2}],4:[function(require,module,exports){
+'use strict';
+
+module.exports = [require('./default'), require('./warrior'), require('./mage'), require('./thief'), require('./serpent'), require('./lady'), require('./steed'), require('./lord'), require('./apprentice'), require('./atronach'), require('./ritual'), require('./lover'), require('./shadow'), require('./tower')];
+
+},{"./apprentice":5,"./atronach":6,"./default":7,"./lady":8,"./lord":9,"./lover":10,"./mage":11,"./ritual":12,"./serpent":13,"./shadow":14,"./steed":15,"./thief":16,"./tower":17,"./warrior":18}],5:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Apprentice'
+};
+
+},{}],6:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.stats.intelligence += 2 * build.stats.intelligence;
+		build.abilities.push('Wombburn - Spell Absorption 50%, Fortify Maximum Magicka 2.0x INT, Stunted Magicka');
+	},
+	name: 'Atronach'
+};
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: ''
+};
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Lady'
+};
+
+},{}],9:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Lord'
+};
+
+},{}],10:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Lover'
+};
+
+},{}],11:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Mage'
+};
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Ritual'
+};
+
+},{}],13:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Serpent'
+};
+
+},{}],14:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Shadow'
+};
+
+},{}],15:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Steed'
+};
+
+},{}],16:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Thief'
+};
+
+},{}],17:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Tower'
+};
+
+},{}],18:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: 'Warrior'
+};
+
+},{}],19:[function(require,module,exports){
 'use strict';
 
 var races = [require('./default.js'), require('./argonian.js'), require('./breton.js'), require('./dark-elf.js'), require('./high-elf.js'), require('./imperial.js'), require('./khajiit.js'), require('./nord.js'), require('./orc.js'), require('./redguard.js'), require('./wood-elf.js')];
 
 module.exports = races;
 
-},{"./argonian.js":5,"./breton.js":6,"./dark-elf.js":7,"./default.js":8,"./high-elf.js":9,"./imperial.js":10,"./khajiit.js":11,"./nord.js":12,"./orc.js":13,"./redguard.js":14,"./wood-elf.js":15}],5:[function(require,module,exports){
+},{"./argonian.js":20,"./breton.js":21,"./dark-elf.js":22,"./default.js":23,"./high-elf.js":24,"./imperial.js":25,"./khajiit.js":26,"./nord.js":27,"./orc.js":28,"./redguard.js":29,"./wood-elf.js":30}],20:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9612,7 +9738,7 @@ module.exports = {
 	name: 'Argonian'
 };
 
-},{}],6:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9648,7 +9774,7 @@ module.exports = {
 	name: 'Breton'
 };
 
-},{}],7:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9684,7 +9810,7 @@ module.exports = {
 	name: 'Dark Elf'
 };
 
-},{}],8:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9692,7 +9818,7 @@ module.exports = {
 	name: ''
 };
 
-},{}],9:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9728,7 +9854,7 @@ module.exports = {
 	name: 'High Elf'
 };
 
-},{}],10:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9764,7 +9890,7 @@ module.exports = {
 	name: 'Imperial'
 };
 
-},{}],11:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9800,7 +9926,7 @@ module.exports = {
 	name: 'Khajiit'
 };
 
-},{}],12:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9836,7 +9962,7 @@ module.exports = {
 	name: 'Nord'
 };
 
-},{}],13:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9872,7 +9998,7 @@ module.exports = {
 	name: 'Orc'
 };
 
-},{}],14:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9908,7 +10034,7 @@ module.exports = {
 	name: 'Redguard'
 };
 
-},{}],15:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {

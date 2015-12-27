@@ -7,12 +7,13 @@ new Vue({
 
 	data: {
 		sex: null,
-		raceIndex: 0,
-		birthsign: null,
 		specialization: null,
 		favoredAttributes: [],
 		majorSkills: [],
 		minorSkills: [],
+		birthsignIndex: 0,
+		birthsigns: require('./birthsigns/all'),
+		raceIndex: 0,
 		races: require('./races/all'),
 	},
 
@@ -29,15 +30,20 @@ new Vue({
 					endurance: 0,
 					personality: 0,
 					luck: 0,
-				}
+				},
+				abilities: []
 			};
 
-			this.selectedRace.apply(build);
+			this.race.apply(build);
+			this.birthsign.apply(build);
 
 			return build;
 		},
-		selectedRace: function () {
+		race: function () {
 			return this.races[this.raceIndex];
+		},
+		birthsign: function() {
+			return this.birthsigns[this.birthsignIndex];
 		}
 	}
 });
