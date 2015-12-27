@@ -9546,6 +9546,7 @@ new Vue({
 	computed: {
 		build: function build() {
 			var build = {
+				sex: this.sex,
 				stats: {
 					strength: 0,
 					intelligence: 0,

@@ -43,11 +43,25 @@
     <!-- Page Content -->
     <div id="app" class="container">
 
-        <select v-model="raceIndex">
-            <option v-for="race in races" :value="$index">
-                {{ race.name }}
-            </option>
-        </select>
+        <div class="character-planner">
+            <h1>Character Planner</h1>
+            <label>
+                Sex
+                <select v-model="sex">
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </label>
+            <label>
+                Race
+                <select v-model="raceIndex">
+                    <option v-for="race in races" :value="$index">
+                        {{ race.name }}
+                    </option>
+                </select>
+            </label>
+        </div>
 
         <h4>Strength: {{ build.stats.strength }}</h4>
         <h4>Intelligence: {{ build.stats.intelligence }}</h4>
