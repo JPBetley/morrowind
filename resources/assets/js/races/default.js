@@ -1,5 +1,5 @@
 module.exports = {
-	apply: function(stats) {
+	apply: function(build) {
 	},
 	name: ''
 }

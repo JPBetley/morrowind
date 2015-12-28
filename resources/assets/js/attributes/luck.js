@@ -1,6 +1,6 @@
 module.exports = {
 	apply: function(build) {
-		build.stats.willpower += 10;
+		build.attributes.luck += 10;
 	},
-	name: 'Willpower'
+	name: 'Luck'
 }

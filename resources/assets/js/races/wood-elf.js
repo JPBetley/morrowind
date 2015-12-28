@@ -1,24 +1,24 @@
 
 function maleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 50;
-	build.stats.speed += 50;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 50;
-	build.stats.speed += 50;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 module.exports = {

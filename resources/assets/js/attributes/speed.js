@@ -1,6 +1,6 @@
 module.exports = {
 	apply: function(build) {
-		build.stats.speed += 10;
+		build.attributes.speed += 10;
 	},
 	name: 'Speed'
 }

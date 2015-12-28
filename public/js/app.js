@@ -9536,7 +9536,11 @@ new Vue({
 		sex: null,
 		majorSkills: [],
 		minorSkills: [],
-		favoredAttributes: [],
+		favoredAttributes: {
+			first: require('./attributes/default'),
+			second: require('./attributes/default')
+		},
+		attributes: require('./attributes/all'),
 		birthsign: require('./birthsigns/default'),
 		birthsigns: require('./birthsigns/all'),
 		race: require('./races/default'),
@@ -9547,49 +9551,119 @@ new Vue({
 
 	computed: {
 		build: function build() {
-			var build = {
-				sex: this.sex,
-				stats: {
-					strength: 0,
-					intelligence: 0,
-					willpower: 0,
-					agility: 0,
-					speed: 0,
-					endurance: 0,
-					personality: 0,
-					luck: 0
-				},
-				abilities: [],
-				multipliers: {
-					health: 1,
-					magicka: 1,
-					stamina: 1
-				},
-				resistances: {
-					fire: 0,
-					frost: 0,
-					poison: 0,
-					shock: 0,
-					magicka: 0,
-					disease: 0
-				}
-			};
+			var build = require('./defaultBuild');
+			build.sex = this.sex;
 
 			this.race.apply(build);
 			this.birthsign.apply(build);
 			this.specialization.apply(build);
+			this.favoredAttributes.first.apply(build);
+			this.favoredAttributes.second.apply(build);
 
 			return build;
 		}
 	}
 });
 
-},{"./birthsigns/all":4,"./birthsigns/default":7,"./races/all":19,"./races/default":23,"./specializations/all":31,"./specializations/default":33,"vue":2}],4:[function(require,module,exports){
+},{"./attributes/all":5,"./attributes/default":6,"./birthsigns/all":14,"./birthsigns/default":17,"./defaultBuild":29,"./races/all":30,"./races/default":34,"./specializations/all":42,"./specializations/default":44,"vue":2}],4:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.agility += 10;
+	},
+	name: 'Agility'
+};
+
+},{}],5:[function(require,module,exports){
+'use strict';
+
+module.exports = [require('./default'), require('./strength'), require('./intelligence'), require('./willpower'), require('./agility'), require('./speed'), require('./endurance'), require('./personality'), require('./luck')];
+
+},{"./agility":4,"./default":6,"./endurance":7,"./intelligence":8,"./luck":9,"./personality":10,"./speed":11,"./strength":12,"./willpower":13}],6:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: ''
+};
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.endurance += 10;
+	},
+	name: 'Endurance'
+};
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.intelligence += 10;
+	},
+	name: 'Intelligence'
+};
+
+},{}],9:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.luck += 10;
+	},
+	name: 'Luck'
+};
+
+},{}],10:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.personality += 10;
+	},
+	name: 'Personality'
+};
+
+},{}],11:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.speed += 10;
+	},
+	name: 'Speed'
+};
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.strength += 10;
+	},
+	name: 'Strength'
+};
+
+},{}],13:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.willpower += 10;
+	},
+	name: 'Willpower'
+};
+
+},{}],14:[function(require,module,exports){
 'use strict';
 
 module.exports = [require('./default'), require('./warrior'), require('./mage'), require('./thief'), require('./serpent'), require('./lady'), require('./steed'), require('./lord'), require('./apprentice'), require('./atronach'), require('./ritual'), require('./lover'), require('./shadow'), require('./tower')];
 
-},{"./apprentice":5,"./atronach":6,"./default":7,"./lady":8,"./lord":9,"./lover":10,"./mage":11,"./ritual":12,"./serpent":13,"./shadow":14,"./steed":15,"./thief":16,"./tower":17,"./warrior":18}],5:[function(require,module,exports){
+},{"./apprentice":15,"./atronach":16,"./default":17,"./lady":18,"./lord":19,"./lover":20,"./mage":21,"./ritual":22,"./serpent":23,"./shadow":24,"./steed":25,"./thief":26,"./tower":27,"./warrior":28}],15:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9601,7 +9675,7 @@ module.exports = {
 	name: 'Apprentice'
 };
 
-},{}],6:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9612,28 +9686,22 @@ module.exports = {
 	name: 'Atronach'
 };
 
-},{}],7:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {},
-	name: ''
-};
-
-},{}],8:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
+arguments[4][6][0].apply(exports,arguments)
+},{"dup":6}],18:[function(require,module,exports){
 'use strict';
 
 module.exports = {
 	apply: function apply(build) {
-		build.stats.personality += 25;
-		build.stats.endurance += 25;
+		build.attributes.personality += 25;
+		build.attributes.endurance += 25;
 		build.abilities.push('Lady\'s Favor - Fortify Personality 25 pts');
 		build.abilities.push('Lady\'s Grace - Fortify Endurance 25 pts');
 	},
 	name: 'Lady'
 };
 
-},{}],9:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9645,19 +9713,19 @@ module.exports = {
 	name: 'Lord'
 };
 
-},{}],10:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 module.exports = {
 	apply: function apply(build) {
-		build.stats.agility += 25;
+		build.attributes.agility += 25;
 		build.abilities.push('Mooncalf - Fortify Agility 25 pts');
 		build.abilities.push('Lover\'s Kiss - Paralyze 60 secs on Target, Damage Fatigue 200 pts on Self');
 	},
 	name: 'Lover'
 };
 
-},{}],11:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9668,7 +9736,7 @@ module.exports = {
 	name: 'Mage'
 };
 
-},{}],12:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9680,7 +9748,7 @@ module.exports = {
 	name: 'Ritual'
 };
 
-},{}],13:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9690,7 +9758,7 @@ module.exports = {
 	name: 'Serpent'
 };
 
-},{}],14:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9700,18 +9768,18 @@ module.exports = {
 	name: 'Shadow'
 };
 
-},{}],15:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 module.exports = {
 	apply: function apply(build) {
-		build.stats.speed += 25;
+		build.attributes.speed += 25;
 		build.abilities.push('Charioteer - Fortify Speed 25 pts');
 	},
 	name: 'Steed'
 };
 
-},{}],16:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9721,7 +9789,7 @@ module.exports = {
 	name: 'Thief'
 };
 
-},{}],17:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9732,7 +9800,7 @@ module.exports = {
 	name: 'Tower'
 };
 
-},{}],18:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9742,36 +9810,66 @@ module.exports = {
 	name: 'Warrior'
 };
 
-},{}],19:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
+"use strict";
+
+module.exports = {
+	attributes: {
+		strength: 0,
+		intelligence: 0,
+		willpower: 0,
+		agility: 0,
+		speed: 0,
+		endurance: 0,
+		personality: 0,
+		luck: 0
+	},
+	abilities: [],
+	multipliers: {
+		health: 1,
+		magicka: 1,
+		stamina: 1
+	},
+	resistances: {
+		fire: 0,
+		frost: 0,
+		poison: 0,
+		shock: 0,
+		magicka: 0,
+		disease: 0
+	}
+};
+
+},{}],30:[function(require,module,exports){
 'use strict';
 
 var races = [require('./default.js'), require('./argonian.js'), require('./breton.js'), require('./dark-elf.js'), require('./high-elf.js'), require('./imperial.js'), require('./khajiit.js'), require('./nord.js'), require('./orc.js'), require('./redguard.js'), require('./wood-elf.js')];
 
 module.exports = races;
 
-},{"./argonian.js":20,"./breton.js":21,"./dark-elf.js":22,"./default.js":23,"./high-elf.js":24,"./imperial.js":25,"./khajiit.js":26,"./nord.js":27,"./orc.js":28,"./redguard.js":29,"./wood-elf.js":30}],20:[function(require,module,exports){
+},{"./argonian.js":31,"./breton.js":32,"./dark-elf.js":33,"./default.js":34,"./high-elf.js":35,"./imperial.js":36,"./khajiit.js":37,"./nord.js":38,"./orc.js":39,"./redguard.js":40,"./wood-elf.js":41}],31:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 50;
-	build.stats.speed += 50;
-	build.stats.endurance += 30;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 50;
-	build.stats.willpower += 40;
-	build.stats.agility += 40;
-	build.stats.speed += 40;
-	build.stats.endurance += 30;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -9785,29 +9883,29 @@ module.exports = {
 	name: 'Argonian'
 };
 
-},{}],21:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 50;
-	build.stats.willpower += 50;
-	build.stats.agility += 30;
-	build.stats.speed += 30;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 30;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 50;
-	build.stats.willpower += 50;
-	build.stats.agility += 30;
-	build.stats.speed += 40;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -9821,29 +9919,29 @@ module.exports = {
 	name: 'Breton'
 };
 
-},{}],22:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 40;
-	build.stats.speed += 50;
-	build.stats.endurance += 40;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 40;
-	build.stats.speed += 50;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -9857,37 +9955,37 @@ module.exports = {
 	name: 'Dark Elf'
 };
 
-},{}],23:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 'use strict';
 
 module.exports = {
-	apply: function apply(stats) {},
+	apply: function apply(build) {},
 	name: ''
 };
 
-},{}],24:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 50;
-	build.stats.willpower += 40;
-	build.stats.agility += 40;
-	build.stats.speed += 30;
-	build.stats.endurance += 40;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 50;
-	build.stats.willpower += 40;
-	build.stats.agility += 40;
-	build.stats.speed += 40;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -9901,29 +9999,29 @@ module.exports = {
 	name: 'High Elf'
 };
 
-},{}],25:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 30;
-	build.stats.speed += 40;
-	build.stats.endurance += 40;
-	build.stats.personality += 50;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 50;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 40;
-	build.stats.agility += 30;
-	build.stats.speed += 30;
-	build.stats.endurance += 40;
-	build.stats.personality += 50;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 30;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 50;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -9937,29 +10035,29 @@ module.exports = {
 	name: 'Imperial'
 };
 
-},{}],26:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 50;
-	build.stats.speed += 40;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 50;
-	build.stats.willpower += 40;
-	build.stats.agility += 40;
-	build.stats.speed += 40;
-	build.stats.endurance += 30;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -9973,29 +10071,29 @@ module.exports = {
 	name: 'Khajiit'
 };
 
-},{}],27:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 50;
-	build.stats.intelligence += 30;
-	build.stats.willpower += 40;
-	build.stats.agility += 30;
-	build.stats.speed += 40;
-	build.stats.endurance += 50;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 50;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 50;
-	build.stats.intelligence += 30;
-	build.stats.willpower += 50;
-	build.stats.agility += 30;
-	build.stats.speed += 40;
-	build.stats.endurance += 40;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 50;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -10009,29 +10107,29 @@ module.exports = {
 	name: 'Nord'
 };
 
-},{}],28:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 45;
-	build.stats.intelligence += 30;
-	build.stats.willpower += 50;
-	build.stats.agility += 35;
-	build.stats.speed += 30;
-	build.stats.endurance += 50;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 45;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 35;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 45;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 45;
-	build.stats.agility += 35;
-	build.stats.speed += 30;
-	build.stats.endurance += 50;
-	build.stats.personality += 25;
-	build.stats.luck += 40;
+	build.attributes.strength += 45;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 45;
+	build.attributes.agility += 35;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 25;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -10045,29 +10143,29 @@ module.exports = {
 	name: 'Orc'
 };
 
-},{}],29:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 50;
-	build.stats.intelligence += 30;
-	build.stats.willpower += 30;
-	build.stats.agility += 40;
-	build.stats.speed += 40;
-	build.stats.endurance += 50;
-	build.stats.personality += 30;
-	build.stats.luck += 40;
+	build.attributes.strength += 50;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 40;
-	build.stats.intelligence += 30;
-	build.stats.willpower += 30;
-	build.stats.agility += 40;
-	build.stats.speed += 40;
-	build.stats.endurance += 50;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -10081,29 +10179,29 @@ module.exports = {
 	name: 'Redguard'
 };
 
-},{}],30:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 50;
-	build.stats.speed += 50;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 function femaleAttributes(build) {
-	build.stats.strength += 30;
-	build.stats.intelligence += 40;
-	build.stats.willpower += 30;
-	build.stats.agility += 50;
-	build.stats.speed += 50;
-	build.stats.endurance += 30;
-	build.stats.personality += 40;
-	build.stats.luck += 40;
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
 }
 
 module.exports = {
@@ -10117,12 +10215,12 @@ module.exports = {
 	name: 'Wood Elf'
 };
 
-},{}],31:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 'use strict';
 
 module.exports = [require('./default'), require('./combat'), require('./magic'), require('./stealth')];
 
-},{"./combat":32,"./default":33,"./magic":34,"./stealth":35}],32:[function(require,module,exports){
+},{"./combat":43,"./default":44,"./magic":45,"./stealth":46}],43:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -10130,9 +10228,9 @@ module.exports = {
 	name: 'Combat'
 };
 
-},{}],33:[function(require,module,exports){
-arguments[4][7][0].apply(exports,arguments)
-},{"dup":7}],34:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
+arguments[4][6][0].apply(exports,arguments)
+},{"dup":6}],45:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -10140,7 +10238,7 @@ module.exports = {
 	name: 'Magic'
 };
 
-},{}],35:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 'use strict';
 
 module.exports = {
