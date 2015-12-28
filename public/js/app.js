@@ -9678,9 +9678,9 @@ module.exports = {
 
 module.exports = {
 	apply: function apply(build) {
-		build.abilties.push('Blessed Word - Turn Undead 100 pts for 30 secs on Target');
-		build.abilties.push('Blessed Touch - Turn Undead 100 pts for 30 secs on Touch');
-		build.abilties.push('Mara\'s Gift - Restore Health 100 pts on Self');
+		build.abilities.push('Blessed Word - Turn Undead 100 pts for 30 secs on Target');
+		build.abilities.push('Blessed Touch - Turn Undead 100 pts for 30 secs on Touch');
+		build.abilities.push('Mara\'s Gift - Restore Health 100 pts on Self');
 	},
 	name: 'Ritual'
 };
@@ -9742,7 +9742,7 @@ module.exports = {
 
 module.exports = {
 	apply: function apply(build) {
-		build.abilties.push('Warwyrd - Fortify Attack 10 pts');
+		build.abilities.push('Warwyrd - Fortify Attack 10 pts');
 	},
 	name: 'Warrior'
 };
