@@ -9536,10 +9536,7 @@ new Vue({
 		sex: null,
 		majorSkills: [],
 		minorSkills: [],
-		favoredAttributes: {
-			first: require('./attributes/default'),
-			second: require('./attributes/default')
-		},
+		favoredAttributes: [require('./attributes/default'), require('./attributes/default')],
 		attributes: require('./attributes/all'),
 		birthsign: require('./birthsigns/default'),
 		birthsigns: require('./birthsigns/all'),
@@ -9551,14 +9548,16 @@ new Vue({
 
 	computed: {
 		build: function build() {
-			var build = require('./defaultBuild');
+			var build = require('./defaultBuild')();
 			build.sex = this.sex;
 
 			this.race.apply(build);
 			this.birthsign.apply(build);
 			this.specialization.apply(build);
-			this.favoredAttributes.first.apply(build);
-			this.favoredAttributes.second.apply(build);
+			console.log(this.favoredAttributes);
+			this.favoredAttributes.forEach(function (attr) {
+				attr.apply(build);
+			});
 
 			return build;
 		}
@@ -9813,31 +9812,33 @@ module.exports = {
 },{}],29:[function(require,module,exports){
 "use strict";
 
-module.exports = {
-	attributes: {
-		strength: 0,
-		intelligence: 0,
-		willpower: 0,
-		agility: 0,
-		speed: 0,
-		endurance: 0,
-		personality: 0,
-		luck: 0
-	},
-	abilities: [],
-	multipliers: {
-		health: 1,
-		magicka: 1,
-		stamina: 1
-	},
-	resistances: {
-		fire: 0,
-		frost: 0,
-		poison: 0,
-		shock: 0,
-		magicka: 0,
-		disease: 0
-	}
+module.exports = function () {
+	return {
+		attributes: {
+			strength: 0,
+			intelligence: 0,
+			willpower: 0,
+			agility: 0,
+			speed: 0,
+			endurance: 0,
+			personality: 0,
+			luck: 0
+		},
+		abilities: [],
+		multipliers: {
+			health: 1,
+			magicka: 1,
+			stamina: 1
+		},
+		resistances: {
+			fire: 0,
+			frost: 0,
+			poison: 0,
+			shock: 0,
+			magicka: 0,
+			disease: 0
+		}
+	};
 };
 
 },{}],30:[function(require,module,exports){

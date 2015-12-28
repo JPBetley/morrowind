@@ -9,10 +9,10 @@ new Vue({
 		sex: null,
 		majorSkills: [],
 		minorSkills: [],
-		favoredAttributes: {
-			first: require('./attributes/default'),
-			second: require('./attributes/default')
-		},
+		favoredAttributes: [
+			require('./attributes/default'),
+			require('./attributes/default')
+		],
 		attributes: require('./attributes/all'),
 		birthsign: require('./birthsigns/default'),
 		birthsigns: require('./birthsigns/all'),
@@ -24,14 +24,14 @@ new Vue({
 
 	computed: {
 		build: function () {
-			var build = require('./defaultBuild');
+			var build = require('./defaultBuild')();
 			build.sex = this.sex;
 
 			this.race.apply(build);
 			this.birthsign.apply(build);
 			this.specialization.apply(build);
-			this.favoredAttributes.first.apply(build);
-			this.favoredAttributes.second.apply(build);
+			console.log(this.favoredAttributes)
+			this.favoredAttributes.forEach(function(attr) { attr.apply(build) });
 
 			return build;
 		}

@@ -84,12 +84,8 @@
             <fieldset>
                 <label>Favored Attributes:</label>
                 <br />
-                <select v-model="favoredAttributes.first">
-                    <option v-for="option in attributes" :value="option">
-                        {{ option.name }}
-                    </option>
-                </select>
-                <select v-model="favoredAttributes.second">
+
+                <select v-for="(index, attribute) in favoredAttributes" track-by="$index" v-model="attribute">
                     <option v-for="option in attributes" :value="option">
                         {{ option.name }}
                     </option>
