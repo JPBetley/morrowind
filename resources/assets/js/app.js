@@ -7,14 +7,14 @@ new Vue({
 
 	data: {
 		sex: null,
-		specialization: null,
 		majorSkills: [],
 		minorSkills: [],
-		birthsignIndex: 0,
-		birthsigns: require('./birthsigns/all'),
-		raceIndex: 0,
-		races: require('./races/all'),
 		favoredAttributes: [],
+		birthsign: require('./birthsigns/default'),
+		birthsigns: require('./birthsigns/all'),
+		race: require('./races/default'),
+		races: require('./races/all'),
+		specialization: require('./specializations/default'),
 		specializations: require('./specializations/all'),
 	},
 
@@ -50,14 +50,9 @@ new Vue({
 
 			this.race.apply(build);
 			this.birthsign.apply(build);
+			this.specialization.apply(build);
 
 			return build;
-		},
-		race: function () {
-			return this.races[this.raceIndex];
-		},
-		birthsign: function() {
-			return this.birthsigns[this.birthsignIndex];
 		}
 	}
 });

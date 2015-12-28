@@ -49,15 +49,16 @@
                 <label>
                     Sex
                     <select v-model="sex">
+                        <option value=""></option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                 </label>
                 <label>
                     Race
-                    <select v-model="raceIndex">
-                        <option v-for="race in races" :value="$index">
-                            {{ race.name }}
+                    <select v-model="race">
+                        <option v-for="option in races" :value="option">
+                            {{ option.name }}
                         </option>
                     </select>
                 </label>
@@ -65,17 +66,17 @@
             <fieldset>
                 <label>
                     Birthsign
-                    <select v-model="birthsignIndex">
-                        <option v-for="birthsign in birthsigns" :value="$index">
-                            {{ birthsign.name }}
+                    <select v-model="birthsign">
+                        <option v-for="option in birthsigns" :value="option">
+                            {{ option.name }}
                         </option>
                     </select>
                 </label>
                 <label>
                     Specialization
-                    <select v-model="specialization" options="specializations">
-                        <option v-for="option in specializations" :value="option.value">
-                            {{ option.text }}
+                    <select v-model="specialization">
+                        <option v-for="option in specializations" :value="option">
+                            {{ option.name }}
                         </option>
                     </select>
                 </label>

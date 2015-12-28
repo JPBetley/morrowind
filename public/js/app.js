@@ -9534,14 +9534,14 @@ new Vue({
 
 	data: {
 		sex: null,
-		specialization: null,
 		majorSkills: [],
 		minorSkills: [],
-		birthsignIndex: 0,
-		birthsigns: require('./birthsigns/all'),
-		raceIndex: 0,
-		races: require('./races/all'),
 		favoredAttributes: [],
+		birthsign: require('./birthsigns/default'),
+		birthsigns: require('./birthsigns/all'),
+		race: require('./races/default'),
+		races: require('./races/all'),
+		specialization: require('./specializations/default'),
 		specializations: require('./specializations/all')
 	},
 
@@ -9577,19 +9577,14 @@ new Vue({
 
 			this.race.apply(build);
 			this.birthsign.apply(build);
+			this.specialization.apply(build);
 
 			return build;
-		},
-		race: function race() {
-			return this.races[this.raceIndex];
-		},
-		birthsign: function birthsign() {
-			return this.birthsigns[this.birthsignIndex];
 		}
 	}
 });
 
-},{"./birthsigns/all":4,"./races/all":19,"./specializations/all":31,"vue":2}],4:[function(require,module,exports){
+},{"./birthsigns/all":4,"./birthsigns/default":7,"./races/all":19,"./races/default":23,"./specializations/all":31,"./specializations/default":33,"vue":2}],4:[function(require,module,exports){
 'use strict';
 
 module.exports = [require('./default'), require('./warrior'), require('./mage'), require('./thief'), require('./serpent'), require('./lady'), require('./steed'), require('./lord'), require('./apprentice'), require('./atronach'), require('./ritual'), require('./lover'), require('./shadow'), require('./tower')];
@@ -10125,7 +10120,7 @@ module.exports = {
 },{}],31:[function(require,module,exports){
 'use strict';
 
-module.exports = [{ text: require('./default').name, value: require('./default') }, { text: require('./combat').name, value: require('./combat') }, { text: require('./magic').name, value: require('./magic') }, { text: require('./stealth').name, value: require('./stealth') }];
+module.exports = [require('./default'), require('./combat'), require('./magic'), require('./stealth')];
 
 },{"./combat":32,"./default":33,"./magic":34,"./stealth":35}],32:[function(require,module,exports){
 'use strict';
