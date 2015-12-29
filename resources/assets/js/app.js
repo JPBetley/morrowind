@@ -43,5 +43,17 @@ new Vue({
 
 			return build;
 		},
+	},
+
+	methods: { 
+		reset: function() {
+			this.sex = '';
+			this.specialization = '';
+			this.majorSkills = ['', '', '', '', ''];
+			this.minorSkills = ['', '', '', '', ''];
+			this.favoredAttributes = ['', ''];
+			this.race = require('./races/default');
+			this.birthsign = require('./birthsigns/default');
+		}
 	}
 });
