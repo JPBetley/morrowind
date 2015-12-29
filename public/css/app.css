@@ -2673,4 +2673,20 @@ legend {
 #sex, #race, #birthsign, #specialization {
   width: auto; }
 
+#app {
+  margin-bottom: 50px; }
+
+footer {
+  text-align: center;
+  margin: 0 auto;
+  color: #999; }
+
+@media (min-width: 500px) {
+  footer {
+    width: 75%; } }
+
+@media (min-width: 1000px) {
+  footer {
+    width: 50%; } }
+
 /*# sourceMappingURL=app.css.map */
