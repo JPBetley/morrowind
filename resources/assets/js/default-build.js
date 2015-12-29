@@ -14,7 +14,7 @@ module.exports = function() {
 		multipliers: {
 			health: 1,
 			magicka: 1,
-			stamina: 1,
+			fatigue: 1,
 		},
 		resistances: {
 			fire: 0,
