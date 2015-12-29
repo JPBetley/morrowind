@@ -75,9 +75,10 @@
                 <label>
                     Specialization
                     <select v-model="specialization">
-                        <option v-for="option in specializations" :value="option">
-                            {{ option.name }}
-                        </option>
+                        <option value=""></option>
+                        <option value="combat">Combat</option>
+                        <option value="magic">Magic</option>
+                        <option value="stealth">Stealth</option>
                     </select>
                 </label>
             </fieldset>
@@ -85,9 +86,9 @@
                 <label>Favored Attributes:</label>
                 <br />
 
-                <select v-for="(index, attribute) in favoredAttributes" track-by="$index" v-model="attribute">
+                <select v-for="attribute in favoredAttributes" track-by="$index" v-model="attribute">
                     <option v-for="option in attributes" :value="option">
-                        {{ option.name }}
+                        {{ option | capitalize }}
                     </option>
                 </select>
             </fieldset>
@@ -101,6 +102,16 @@
         <h4>Endurance: {{ build.attributes.endurance }}</h4>
         <h4>Personality: {{ build.attributes.personality }}</h4>
         <h4>Luck: {{ build.attributes.luck }}</h4>
+
+        <table>
+        <tr v-for="skill in build.skills">
+            <td>{{ skill.name }}</td>
+            <td>{{ skill.value }}</td>
+            <td>
+                {{ skill.attribute }}
+            </td>
+        </tr>
+        </table>
 
 
         <div class="abilities">

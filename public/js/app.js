@@ -9526,6 +9526,10 @@ module.exports = Vue;
 'use strict';
 
 var Vue = require('vue');
+var specialization = require('./specialization');
+var favored = require('./attributes/favored');
+var major = require('./skills/major');
+var minor = require('./skills/minor');
 
 Vue.config.debug = true;
 
@@ -9533,17 +9537,21 @@ new Vue({
 	el: '#app',
 
 	data: {
-		sex: null,
-		majorSkills: [],
-		minorSkills: [],
-		favoredAttributes: [require('./attributes/default'), require('./attributes/default')],
+		sex: '',
+		specialization: '',
+
+		majorSkills: ['', '', '', '', ''],
+		minorSkills: ['', '', '', '', ''],
+		skills: require('./skills/all'),
+
+		favoredAttributes: ['', ''],
 		attributes: require('./attributes/all'),
+
 		birthsign: require('./birthsigns/default'),
 		birthsigns: require('./birthsigns/all'),
+
 		race: require('./races/default'),
-		races: require('./races/all'),
-		specialization: require('./specializations/default'),
-		specializations: require('./specializations/all')
+		races: require('./races/all')
 	},
 
 	computed: {
@@ -9552,11 +9560,16 @@ new Vue({
 			build.sex = this.sex;
 
 			this.race.apply(build);
+			this.majorSkills.forEach(function (skill) {
+				major(build, skill);
+			});
+			this.minorSkills.forEach(function (skill) {
+				minor(build, skill);
+			});
 			this.birthsign.apply(build);
-			this.specialization.apply(build);
-			console.log(this.favoredAttributes);
+			specialization(build, this.specialization);
 			this.favoredAttributes.forEach(function (attr) {
-				attr.apply(build);
+				favored(build, attr);
 			});
 
 			return build;
@@ -9564,105 +9577,24 @@ new Vue({
 	}
 });
 
-},{"./attributes/all":5,"./attributes/default":6,"./birthsigns/all":14,"./birthsigns/default":17,"./defaultBuild":29,"./races/all":30,"./races/default":34,"./specializations/all":42,"./specializations/default":44,"vue":2}],4:[function(require,module,exports){
+},{"./attributes/all":4,"./attributes/favored":5,"./birthsigns/all":6,"./birthsigns/default":9,"./defaultBuild":21,"./races/all":22,"./races/default":26,"./skills/all":34,"./skills/major":35,"./skills/minor":36,"./specialization":37,"vue":2}],4:[function(require,module,exports){
 'use strict';
 
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.agility += 10;
-	},
-	name: 'Agility'
-};
+module.exports = ['', 'strength', 'intelligence', 'willpower', 'agility', 'speed', 'endurance', 'personality', 'luck'];
 
 },{}],5:[function(require,module,exports){
-'use strict';
+"use strict";
 
-module.exports = [require('./default'), require('./strength'), require('./intelligence'), require('./willpower'), require('./agility'), require('./speed'), require('./endurance'), require('./personality'), require('./luck')];
-
-},{"./agility":4,"./default":6,"./endurance":7,"./intelligence":8,"./luck":9,"./personality":10,"./speed":11,"./strength":12,"./willpower":13}],6:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {},
-	name: ''
+module.exports = function (build, attribute) {
+	build.attributes[attribute] += 10;
 };
 
-},{}],7:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.endurance += 10;
-	},
-	name: 'Endurance'
-};
-
-},{}],8:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.intelligence += 10;
-	},
-	name: 'Intelligence'
-};
-
-},{}],9:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.luck += 10;
-	},
-	name: 'Luck'
-};
-
-},{}],10:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.personality += 10;
-	},
-	name: 'Personality'
-};
-
-},{}],11:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.speed += 10;
-	},
-	name: 'Speed'
-};
-
-},{}],12:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.strength += 10;
-	},
-	name: 'Strength'
-};
-
-},{}],13:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {
-		build.attributes.willpower += 10;
-	},
-	name: 'Willpower'
-};
-
-},{}],14:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 module.exports = [require('./default'), require('./warrior'), require('./mage'), require('./thief'), require('./serpent'), require('./lady'), require('./steed'), require('./lord'), require('./apprentice'), require('./atronach'), require('./ritual'), require('./lover'), require('./shadow'), require('./tower')];
 
-},{"./apprentice":15,"./atronach":16,"./default":17,"./lady":18,"./lord":19,"./lover":20,"./mage":21,"./ritual":22,"./serpent":23,"./shadow":24,"./steed":25,"./thief":26,"./tower":27,"./warrior":28}],15:[function(require,module,exports){
+},{"./apprentice":7,"./atronach":8,"./default":9,"./lady":10,"./lord":11,"./lover":12,"./mage":13,"./ritual":14,"./serpent":15,"./shadow":16,"./steed":17,"./thief":18,"./tower":19,"./warrior":20}],7:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9674,7 +9606,7 @@ module.exports = {
 	name: 'Apprentice'
 };
 
-},{}],16:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9685,9 +9617,15 @@ module.exports = {
 	name: 'Atronach'
 };
 
-},{}],17:[function(require,module,exports){
-arguments[4][6][0].apply(exports,arguments)
-},{"dup":6}],18:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: ''
+};
+
+},{}],10:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9700,7 +9638,7 @@ module.exports = {
 	name: 'Lady'
 };
 
-},{}],19:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9712,7 +9650,7 @@ module.exports = {
 	name: 'Lord'
 };
 
-},{}],20:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9724,7 +9662,7 @@ module.exports = {
 	name: 'Lover'
 };
 
-},{}],21:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9735,7 +9673,7 @@ module.exports = {
 	name: 'Mage'
 };
 
-},{}],22:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9747,7 +9685,7 @@ module.exports = {
 	name: 'Ritual'
 };
 
-},{}],23:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9757,7 +9695,7 @@ module.exports = {
 	name: 'Serpent'
 };
 
-},{}],24:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9767,7 +9705,7 @@ module.exports = {
 	name: 'Shadow'
 };
 
-},{}],25:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9778,7 +9716,7 @@ module.exports = {
 	name: 'Steed'
 };
 
-},{}],26:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9788,7 +9726,7 @@ module.exports = {
 	name: 'Thief'
 };
 
-},{}],27:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9799,7 +9737,7 @@ module.exports = {
 	name: 'Tower'
 };
 
-},{}],28:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9809,8 +9747,8 @@ module.exports = {
 	name: 'Warrior'
 };
 
-},{}],29:[function(require,module,exports){
-"use strict";
+},{}],21:[function(require,module,exports){
+'use strict';
 
 module.exports = function () {
 	return {
@@ -9837,18 +9775,181 @@ module.exports = function () {
 			shock: 0,
 			magicka: 0,
 			disease: 0
-		}
+		},
+		skills: [{
+			name: 'Block',
+			key: 'block',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'agility'
+		}, {
+			name: 'Armorer',
+			key: 'armorer',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Medium Armor',
+			key: 'medium-armor',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'endurance'
+		}, {
+			name: 'Heavy Armor',
+			key: 'heavy-armor',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'endurance'
+		}, {
+			name: 'Blunt Weapon',
+			key: 'blunt-weapon',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Long Blade',
+			key: 'long-blade',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Axe',
+			key: 'axe',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Spear',
+			key: 'spear',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'endurance'
+		}, {
+			name: 'Athletics',
+			key: 'athletics',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'speed'
+		}, {
+			name: 'Enchant',
+			key: 'enchant',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'intelligence'
+		}, {
+			name: 'Destruction',
+			key: 'destruction',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Alteration',
+			key: 'alteration',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Illusion',
+			key: 'illusion',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'perception'
+		}, {
+			name: 'Conjuration',
+			key: 'conjuration',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'intelligence'
+		}, {
+			name: 'Mysticism',
+			key: 'mysticism',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Restoration',
+			key: 'restoration',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Alchemy',
+			key: 'alchemy',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'intelligence'
+		}, {
+			name: 'Unarmored',
+			key: 'unarmored',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'speed'
+		}, {
+			name: 'Security',
+			key: 'security',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'intelligence'
+		}, {
+			name: 'Sneak',
+			key: 'sneak',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'agility'
+		}, {
+			name: 'Acrobatics',
+			key: 'acrobatics',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'strength'
+		}, {
+			name: 'Light Armor',
+			key: 'light-armor',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'agility'
+		}, {
+			name: 'Shortblade',
+			key: 'shortblade',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'speed'
+		}, {
+			name: 'Marksman',
+			key: 'marksman',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'agility'
+		}, {
+			name: 'Mercantile',
+			key: 'mercantile',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'perception'
+		}, {
+			name: 'Speechcraft',
+			key: 'speechcraft',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'perception'
+		}, {
+			name: 'Hand To Hand',
+			key: 'hand-to-hand',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'speed'
+		}]
 	};
 };
 
-},{}],30:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 var races = [require('./default.js'), require('./argonian.js'), require('./breton.js'), require('./dark-elf.js'), require('./high-elf.js'), require('./imperial.js'), require('./khajiit.js'), require('./nord.js'), require('./orc.js'), require('./redguard.js'), require('./wood-elf.js')];
 
 module.exports = races;
 
-},{"./argonian.js":31,"./breton.js":32,"./dark-elf.js":33,"./default.js":34,"./high-elf.js":35,"./imperial.js":36,"./khajiit.js":37,"./nord.js":38,"./orc.js":39,"./redguard.js":40,"./wood-elf.js":41}],31:[function(require,module,exports){
+},{"./argonian.js":23,"./breton.js":24,"./dark-elf.js":25,"./default.js":26,"./high-elf.js":27,"./imperial.js":28,"./khajiit.js":29,"./nord.js":30,"./orc.js":31,"./redguard.js":32,"./wood-elf.js":33}],23:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9884,7 +9985,7 @@ module.exports = {
 	name: 'Argonian'
 };
 
-},{}],32:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9920,7 +10021,7 @@ module.exports = {
 	name: 'Breton'
 };
 
-},{}],33:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -9956,7 +10057,7 @@ module.exports = {
 	name: 'Dark Elf'
 };
 
-},{}],34:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -9964,7 +10065,7 @@ module.exports = {
 	name: ''
 };
 
-},{}],35:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10000,7 +10101,7 @@ module.exports = {
 	name: 'High Elf'
 };
 
-},{}],36:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10036,7 +10137,7 @@ module.exports = {
 	name: 'Imperial'
 };
 
-},{}],37:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10072,7 +10173,7 @@ module.exports = {
 	name: 'Khajiit'
 };
 
-},{}],38:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10108,7 +10209,7 @@ module.exports = {
 	name: 'Nord'
 };
 
-},{}],39:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10144,7 +10245,7 @@ module.exports = {
 	name: 'Orc'
 };
 
-},{}],40:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10180,7 +10281,7 @@ module.exports = {
 	name: 'Redguard'
 };
 
-},{}],41:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 "use strict";
 
 function maleAttributes(build) {
@@ -10216,35 +10317,40 @@ module.exports = {
 	name: 'Wood Elf'
 };
 
-},{}],42:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 'use strict';
 
-module.exports = [require('./default'), require('./combat'), require('./magic'), require('./stealth')];
-
-},{"./combat":43,"./default":44,"./magic":45,"./stealth":46}],43:[function(require,module,exports){
-'use strict';
-
-module.exports = {
-	apply: function apply(build) {},
-	name: 'Combat'
+modulexports = {
+	default: 'default',
+	combat: ['block', 'armorer', 'medium-armor', 'heavy-armor', 'blunt-weapon', 'long-blade', 'axe', 'spear', 'athletics'],
+	magic: ['enchant', 'destruction', 'alteration', 'illusion', 'conjuration', 'mysticism', 'restoration', 'alchemy', 'unarmored'],
+	stealth: ['security', 'sneak', 'acrobatics', 'light-armor', 'shortblade', 'marksman', 'mercantile', 'speechcraft', 'hand-to-hand']
 };
 
-},{}],44:[function(require,module,exports){
-arguments[4][6][0].apply(exports,arguments)
-},{"dup":6}],45:[function(require,module,exports){
-'use strict';
+},{}],35:[function(require,module,exports){
+"use strict";
 
-module.exports = {
-	apply: function apply(build) {},
-	name: 'Magic'
+module.exports = function (build, skill) {
+	build.skills[skill] += 30;
 };
 
-},{}],46:[function(require,module,exports){
-'use strict';
+},{}],36:[function(require,module,exports){
+"use strict";
 
-module.exports = {
-	apply: function apply(build) {},
-	name: 'Stealth'
+module.exports = function (build, skill) {
+	build.skills[skill] = 15;
+};
+
+},{}],37:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build, specialization) {
+	var skills = build.skills.filter(function (skill) {
+		return skill.specialization == specialization;
+	});
+	skills.forEach(function (skill) {
+		skill.value += 5;
+	});
 };
 
 },{}]},{},[3]);

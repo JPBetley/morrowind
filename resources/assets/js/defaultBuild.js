@@ -23,6 +23,171 @@ module.exports = function() {
 			shock: 0,
 			magicka: 0,
 			disease: 0
-		}
+		},
+		skills: [
+			{
+				name: 'Block',
+				key: 'block',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'agility' 
+			}, {
+				name: 'Armorer',
+				key: 'armorer',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'strength' 
+			}, {
+				name: 'Medium Armor',
+				key: 'medium-armor',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'endurance' 
+			}, {
+				name: 'Heavy Armor',
+				key: 'heavy-armor',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'endurance' 
+			}, {
+				name: 'Blunt Weapon',
+				key: 'blunt-weapon',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'strength' 
+			}, {
+				name: 'Long Blade',
+				key: 'long-blade',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'strength' 
+			}, {
+				name: 'Axe',
+				key: 'axe',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'strength' 
+			}, {
+				name: 'Spear',
+				key: 'spear',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'endurance' 
+			}, {
+				name: 'Athletics',
+				key: 'athletics',
+				value: 5,
+				specialization: 'combat',
+				attribute: 'speed' 
+			}, {
+				name: 'Enchant',
+				key: 'enchant',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'intelligence' 
+			}, {
+				name: 'Destruction',
+				key: 'destruction',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'willpower' 
+			}, {
+				name: 'Alteration',
+				key: 'alteration',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'willpower' 
+			}, {
+				name: 'Illusion',
+				key: 'illusion',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'perception' 
+			}, {
+				name: 'Conjuration',
+				key: 'conjuration',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'intelligence' 
+			}, {
+				name: 'Mysticism',
+				key: 'mysticism',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'willpower' 
+			}, {
+				name: 'Restoration',
+				key: 'restoration',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'willpower' 
+			}, {
+				name: 'Alchemy',
+				key: 'alchemy',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'intelligence' 
+			}, {
+				name: 'Unarmored',
+				key: 'unarmored',
+				value: 5,
+				specialization: 'magic',
+				attribute: 'speed' 
+			}, {
+				name: 'Security',
+				key: 'security',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'intelligence' 
+			}, {
+				name: 'Sneak',
+				key: 'sneak',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'agility' 
+			}, {
+				name: 'Acrobatics',
+				key: 'acrobatics',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'strength' 
+			}, {
+				name: 'Light Armor',
+				key: 'light-armor',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'agility' 
+			}, {
+				name: 'Shortblade',
+				key: 'shortblade',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'speed' 
+			}, {
+				name: 'Marksman',
+				key: 'marksman',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'agility' 
+			}, {
+				name: 'Mercantile',
+				key: 'mercantile',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'perception' 
+			}, {
+				name: 'Speechcraft',
+				key: 'speechcraft',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'perception' 
+			}, {
+				name: 'Hand To Hand',
+				key: 'hand-to-hand',
+				value: 5,
+				specialization: 'stealth',
+				attribute: 'speed' 
+			},
+		],
 	};
 }

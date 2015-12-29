@@ -1,4 +1,8 @@
 var Vue = require('vue');
+var specialization = require('./specialization');
+var favored = require('./attributes/favored');
+var major = require('./skills/major');
+var minor = require('./skills/minor');
 
 Vue.config.debug = true
 
@@ -6,20 +10,21 @@ new Vue({
 	el: '#app',
 
 	data: {
-		sex: null,
-		majorSkills: [],
-		minorSkills: [],
-		favoredAttributes: [
-			require('./attributes/default'),
-			require('./attributes/default')
-		],
+		sex: '',
+		specialization: '',
+
+		majorSkills: ['', '', '', '', ''],
+		minorSkills: ['', '', '', '', ''],
+		skills: require('./skills/all'),
+
+		favoredAttributes: ['', ''],
 		attributes: require('./attributes/all'),
+
 		birthsign: require('./birthsigns/default'),
 		birthsigns: require('./birthsigns/all'),
+
 		race: require('./races/default'),
 		races: require('./races/all'),
-		specialization: require('./specializations/default'),
-		specializations: require('./specializations/all'),
 	},
 
 	computed: {
@@ -28,12 +33,13 @@ new Vue({
 			build.sex = this.sex;
 
 			this.race.apply(build);
+			this.majorSkills.forEach(function(skill) { major(build, skill) });
+			this.minorSkills.forEach(function(skill) { minor(build, skill) });
 			this.birthsign.apply(build);
-			this.specialization.apply(build);
-			console.log(this.favoredAttributes)
-			this.favoredAttributes.forEach(function(attr) { attr.apply(build) });
+			specialization(build, this.specialization);
+			this.favoredAttributes.forEach(function(attr) { favored(build, attr) });
 
 			return build;
-		}
+		},
 	}
 });
