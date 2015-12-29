@@ -1,8 +1,8 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: 50px;
 }
 
 a {
@@ -10,8 +10,44 @@ a {
 }
 
 .skills {
-	width: 200px;
 	&__skill {
 		display: block;
+		margin-bottom: 10px;
 	}
+}
+
+.character-planner {
+	display: flex;
+	flex-wrap: wrap;
+
+	section {
+		display: flex;
+		justify-content: space-between;
+		.form-group {
+			flex: 1;
+		}
+	}
+
+	.attributes {
+		display: flex;
+		justify-content: space-between;
+		.form-group {
+			flex: 1;
+		}
+		.form-control {
+			width: auto;
+		}
+	}
+}
+
+.character {
+}
+
+fieldset {
+	padding: 20px;
+	flex: 1 1 auto;
+}
+
+legend {
+	margin-bottom: 0;
 }
