@@ -9764,10 +9764,21 @@ module.exports = function () {
 			personality: 0,
 			luck: 0
 		},
+		attributeCount: {
+			strength: 0,
+			intelligence: 0,
+			willpower: 0,
+			agility: 0,
+			speed: 0,
+			endurance: 0,
+			personality: 0,
+			luck: 0
+		},
 		stats: {
 			health: 0,
 			magicka: 0,
-			fatigue: 0
+			fatigue: 0,
+			encumbrance: 0
 		},
 		abilities: [],
 		magickaMultiplier: 1,
@@ -10368,6 +10379,7 @@ module.exports = function (build, skill) {
 	});
 	skills.forEach(function (item) {
 		item.value = 30;
+		build.attributeCount[item.attribute] += 1;
 	});
 };
 
@@ -10380,6 +10392,7 @@ module.exports = function (build, skill) {
 	});
 	skills.forEach(function (item) {
 		item.value = 15;
+		build.attributeCount[item.attribute] += 1;
 	});
 };
 
@@ -10403,6 +10416,7 @@ module.exports = function (build) {
 	build.stats.health = (attrs.endurance + attrs.strength) / 2;
 	build.stats.magicka = attrs.intelligence * build.magickaMultiplier;
 	build.stats.fatigue = attrs.strength + attrs.willpower + attrs.agility + attrs.endurance;
+	build.stats.encumbrance = attrs.strength * 5;
 };
 
 },{}]},{},[3]);

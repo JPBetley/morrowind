@@ -5751,13 +5751,14 @@ button.close {
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin-top: 50px; }
+  margin: 50px 0; }
 
 a {
   color: #00B7FF; }
 
 .skills__skill {
   display: block;
+  width: auto;
   margin-bottom: 10px; }
 
 .character-planner {
@@ -5800,5 +5801,30 @@ fieldset {
 
 legend {
   margin-bottom: 0; }
+
+.output {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .output .attributes-tables {
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto; }
+  .output .skills-table {
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto; }
+
+.skill.combat {
+  background-color: #d9edf7; }
+
+.skill.magic {
+  background-color: #f2dede; }
+
+.skill.stealth {
+  background-color: #fcf8e3; }
 
 /*# sourceMappingURL=app.css.map */

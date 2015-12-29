@@ -155,33 +155,112 @@
             </fieldset>
         </div>
 
-        <h4>Strength: {{ build.attributes.strength }}</h4>
-        <h4>Intelligence: {{ build.attributes.intelligence }}</h4>
-        <h4>Willpower: {{ build.attributes.willpower }}</h4>
-        <h4>Agility: {{ build.attributes.agility }}</h4>
-        <h4>Speed: {{ build.attributes.speed }}</h4>
-        <h4>Endurance: {{ build.attributes.endurance }}</h4>
-        <h4>Personality: {{ build.attributes.personality }}</h4>
-        <h4>Luck: {{ build.attributes.luck }}</h4>
+        <div class="output">
+            <div class="attributes-tables">
+                <table class="table">
+                    <thead>
+                        <tr><th colspan="3">Primary Attributes</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Strength</td> 
+                            <td>{{ build.attributes.strength }}</td>
+                            <td class="text-danger">{{ build.attributeCount.strength }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Intelligence</td> 
+                            <td>{{ build.attributes.intelligence }}</td>
+                            <td class="text-danger">{{ build.attributeCount.intelligence }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Willpower</td> 
+                            <td>{{ build.attributes.willpower }}</td>
+                            <td class="text-danger">{{ build.attributeCount.willpower }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Agility</td> 
+                            <td>{{ build.attributes.agility }}</td>
+                            <td class="text-danger">{{ build.attributeCount.agility }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td> 
+                            <td>{{ build.attributes.speed }}</td>
+                            <td class="text-danger">{{ build.attributeCount.speed }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Endurance</td> 
+                            <td>{{ build.attributes.endurance }}</td>
+                            <td class="text-danger">{{ build.attributeCount.endurance }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Personality</td> 
+                            <td>{{ build.attributes.personality }}</td>
+                            <td class="text-danger">{{ build.attributeCount.personality }} M/m skills</td>
+                        </tr>
+                        <tr>
+                            <td>Luck</td> 
+                            <td>{{ build.attributes.luck }}</td>
+                            <td class="text-danger"></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <table class="skill-table">
-            <tr v-for="skill in build.skills">
-                <td>{{ skill.name }}</td>
-                <td>{{ skill.value }}</td>
-                <td>
-                    {{ skill.attribute }}
-                </td>
-            </tr>
-        </table>
+                <table class="table">
+                    <thead>
+                        <tr><th colspan="2">Derived Skills</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Health</td> 
+                            <td>{{ build.stats.health }}</td>
+                        </tr>
+                        <tr>
+                            <td>Magic</td> 
+                            <td>{{ build.stats.magicka }}</td>
+                        </tr>
+                        <tr>
+                            <td>Fatigue</td> 
+                            <td>{{ build.stats.fatigue }}</td>
+                        </tr>
+                        <tr>
+                            <td>Encumbrance</td> 
+                            <td>{{ build.stats.encumbrance }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="skills-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="skill in build.skills">
+                            <td>{{ skill.name }}</td>
+                            <td>{{ skill.value }}</td>
+                            <td class="skill" :class="skill.specialization">
+                                {{ skill.attribute | capitalize }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
 
-        <div class="abilities">
-            This character has the following abilities:
+        <div class="abilities" v-show="build.abilities.length > 0">
+            This character has the following abilities, powers, and spells:
             <ul>
                 <li v-for="ability in build.abilities">
                     {{ ability }}
                 </li>
             </ul>
+        </div>
+        <div class="abilities" v-else>
+            This character has no abilities, powers, or spells.
         </div>
 
     </div>
