@@ -4,5 +4,6 @@ module.exports = function(build, skill) {
 	});
 	skills.forEach(function(item) {
 		item.value = 30;
+		build.attributeCount[item.attribute] += 1;
 	});
 }
