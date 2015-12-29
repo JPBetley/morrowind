@@ -34,7 +34,8 @@ module.exports = function() {
 			poison: 0,
 			shock: 0,
 			magicka: 0,
-			disease: 0
+			commonDisease: 0,
+			blightDisease: 0,
 		},
 		skills: [
 			{
@@ -114,7 +115,7 @@ module.exports = function() {
 				key: 'illusion',
 				value: 5,
 				specialization: 'magic',
-				attribute: 'perception' 
+				attribute: 'personality' 
 			}, {
 				name: 'Conjuration',
 				key: 'conjuration',
@@ -186,13 +187,13 @@ module.exports = function() {
 				key: 'mercantile',
 				value: 5,
 				specialization: 'stealth',
-				attribute: 'perception' 
+				attribute: 'personality' 
 			}, {
 				name: 'Speechcraft',
 				key: 'speechcraft',
 				value: 5,
 				specialization: 'stealth',
-				attribute: 'perception' 
+				attribute: 'personality' 
 			}, {
 				name: 'Hand To Hand',
 				key: 'hand-to-hand',
