@@ -3,6 +3,7 @@ var specialization = require('./specialization');
 var favored = require('./attributes/favored');
 var major = require('./skills/major');
 var minor = require('./skills/minor');
+var stats = require('./stats');
 
 Vue.config.debug = true
 
@@ -29,7 +30,7 @@ new Vue({
 
 	computed: {
 		build: function () {
-			var build = require('./defaultBuild')();
+			var build = require('./default-build')();
 			build.sex = this.sex;
 
 			this.race.apply(build);
@@ -38,6 +39,7 @@ new Vue({
 			this.birthsign.apply(build);
 			specialization(build, this.specialization);
 			this.favoredAttributes.forEach(function(attr) { favored(build, attr) });
+			stats(build);
 
 			return build;
 		},

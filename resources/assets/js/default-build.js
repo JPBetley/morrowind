@@ -10,12 +10,13 @@ module.exports = function() {
 			personality: 0,
 			luck: 0,
 		},
-		abilities: [],
-		multipliers: {
-			health: 1,
-			magicka: 1,
-			fatigue: 1,
+		stats: {
+			health: 0,
+			magicka: 0,
+			fatigue: 0,
 		},
+		abilities: [],
+		magickaMultiplier: 1,
 		resistances: {
 			fire: 0,
 			frost: 0,

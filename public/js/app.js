@@ -9530,6 +9530,7 @@ var specialization = require('./specialization');
 var favored = require('./attributes/favored');
 var major = require('./skills/major');
 var minor = require('./skills/minor');
+var stats = require('./stats');
 
 Vue.config.debug = true;
 
@@ -9556,7 +9557,7 @@ new Vue({
 
 	computed: {
 		build: function build() {
-			var build = require('./defaultBuild')();
+			var build = require('./default-build')();
 			build.sex = this.sex;
 
 			this.race.apply(build);
@@ -9571,13 +9572,14 @@ new Vue({
 			this.favoredAttributes.forEach(function (attr) {
 				favored(build, attr);
 			});
+			stats(build);
 
 			return build;
 		}
 	}
 });
 
-},{"./attributes/all":4,"./attributes/favored":5,"./birthsigns/all":6,"./birthsigns/default":9,"./defaultBuild":21,"./races/all":22,"./races/default":26,"./skills/all":34,"./skills/major":35,"./skills/minor":36,"./specialization":37,"vue":2}],4:[function(require,module,exports){
+},{"./attributes/all":4,"./attributes/favored":5,"./birthsigns/all":6,"./birthsigns/default":9,"./default-build":21,"./races/all":22,"./races/default":26,"./skills/all":34,"./skills/major":35,"./skills/minor":36,"./specialization":37,"./stats":38,"vue":2}],4:[function(require,module,exports){
 'use strict';
 
 module.exports = ['', 'strength', 'intelligence', 'willpower', 'agility', 'speed', 'endurance', 'personality', 'luck'];
@@ -9599,7 +9601,7 @@ module.exports = [require('./default'), require('./warrior'), require('./mage'),
 
 module.exports = {
 	apply: function apply(build) {
-		build.multipliers.magicka += 1.5;
+		build.magickaMultiplier += 1.5;
 		build.resistances.magicka -= 50;
 		build.abilities.push('Elfborn - Fortify Maximum Magicka 1.5x INT, Weakness to Magicka 50%');
 	},
@@ -9611,7 +9613,7 @@ module.exports = {
 
 module.exports = {
 	apply: function apply(build) {
-		build.multipliers.magicka += 2;
+		build.magickaMultiplier += 2;
 		build.abilities.push('Wombburn - Spell Absorption 50%, Fortify Maximum Magicka 2.0x INT, Stunted Magicka');
 	},
 	name: 'Atronach'
@@ -9667,7 +9669,7 @@ module.exports = {
 
 module.exports = {
 	apply: function apply(build) {
-		build.multipliers.magicka += 0.5;
+		build.magickaMultiplier += 0.5;
 		build.abilities.push('Fay - Fortify Maximum Magicka 0.5x INT');
 	},
 	name: 'Mage'
@@ -9762,12 +9764,13 @@ module.exports = function () {
 			personality: 0,
 			luck: 0
 		},
-		abilities: [],
-		multipliers: {
-			health: 1,
-			magicka: 1,
-			stamina: 1
+		stats: {
+			health: 0,
+			magicka: 0,
+			fatigue: 0
 		},
+		abilities: [],
+		magickaMultiplier: 1,
 		resistances: {
 			fire: 0,
 			frost: 0,
@@ -10322,37 +10325,37 @@ module.exports = {
 
 module.exports = {
 	combat: {
-		'block': 'block',
-		'armorer': 'armorer',
-		'medium-armor': 'medium-armor',
-		'heavy-armor': 'heavy-armor',
-		'blunt-weapon': 'blunt-weapon',
-		'long-blade': 'long-blade',
-		'axe': 'axe',
-		'spear': 'spear',
-		'athletics': 'athletics'
+		'block': 'Block',
+		'armorer': 'Armorer',
+		'medium-armor': 'Medium Armor',
+		'heavy-armor': 'Heavy Armor',
+		'blunt-weapon': 'Blunt Weapon',
+		'long-blade': 'Long Blade',
+		'axe': 'Axe',
+		'spear': 'Spear',
+		'athletics': 'Athletics'
 	},
 	magic: {
-		'enchant': 'enchant',
-		'destruction': 'destruction',
-		'alteration': 'alteration',
-		'illusion': 'illusion',
-		'conjuration': 'conjuration',
-		'mysticism': 'mysticism',
-		'restoration': 'restoration',
-		'alchemy': 'alchemy',
-		'unarmored': 'unarmored'
+		'enchant': 'Enchant',
+		'destruction': 'Destruction',
+		'alteration': 'Alteration',
+		'illusion': 'Illusion',
+		'conjuration': 'Conjuration',
+		'mysticism': 'Mysticism',
+		'restoration': 'Restoration',
+		'alchemy': 'Alchemy',
+		'unarmored': 'Unarmored'
 	},
 	stealth: {
-		'security': 'security',
-		'sneak': 'sneak',
-		'acrobatics': 'acrobatics',
-		'light-armor': 'light-armor',
-		'shortblade': 'shortblade',
-		'marksman': 'marksman',
-		'mercantile': 'mercantile',
-		'speechcraft': 'speechcraft',
-		'hand-to-hand': 'hand-to-hand'
+		'security': 'Security',
+		'sneak': 'Sneak',
+		'acrobatics': 'Acrobatics',
+		'light-armor': 'Light Armor',
+		'shortblade': 'Shortblade',
+		'marksman': 'Marksman',
+		'mercantile': 'Mercantile',
+		'speechcraft': 'Speechcraft',
+		'hand-to-hand': 'Hand to Hand'
 	}
 };
 
@@ -10360,14 +10363,24 @@ module.exports = {
 "use strict";
 
 module.exports = function (build, skill) {
-	build.skills[skill] += 30;
+	var skills = build.skills.filter(function (item) {
+		return item.key == skill;
+	});
+	skills.forEach(function (item) {
+		item.value = 30;
+	});
 };
 
 },{}],36:[function(require,module,exports){
 "use strict";
 
 module.exports = function (build, skill) {
-	build.skills[skill] = 15;
+	var skills = build.skills.filter(function (item) {
+		return item.key == skill;
+	});
+	skills.forEach(function (item) {
+		item.value = 15;
+	});
 };
 
 },{}],37:[function(require,module,exports){
@@ -10380,6 +10393,16 @@ module.exports = function (build, specialization) {
 	skills.forEach(function (skill) {
 		skill.value += 5;
 	});
+};
+
+},{}],38:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build) {
+	var attrs = build.attributes;
+	build.stats.health = (attrs.endurance + attrs.strength) / 2;
+	build.stats.magicka = attrs.intelligence * build.magickaMultiplier;
+	build.stats.fatigue = attrs.strength + attrs.willpower + attrs.agility + attrs.endurance;
 };
 
 },{}]},{},[3]);
