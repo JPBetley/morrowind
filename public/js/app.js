@@ -10320,11 +10320,40 @@ module.exports = {
 },{}],34:[function(require,module,exports){
 'use strict';
 
-modulexports = {
-	default: 'default',
-	combat: ['block', 'armorer', 'medium-armor', 'heavy-armor', 'blunt-weapon', 'long-blade', 'axe', 'spear', 'athletics'],
-	magic: ['enchant', 'destruction', 'alteration', 'illusion', 'conjuration', 'mysticism', 'restoration', 'alchemy', 'unarmored'],
-	stealth: ['security', 'sneak', 'acrobatics', 'light-armor', 'shortblade', 'marksman', 'mercantile', 'speechcraft', 'hand-to-hand']
+module.exports = {
+	combat: {
+		'block': 'block',
+		'armorer': 'armorer',
+		'medium-armor': 'medium-armor',
+		'heavy-armor': 'heavy-armor',
+		'blunt-weapon': 'blunt-weapon',
+		'long-blade': 'long-blade',
+		'axe': 'axe',
+		'spear': 'spear',
+		'athletics': 'athletics'
+	},
+	magic: {
+		'enchant': 'enchant',
+		'destruction': 'destruction',
+		'alteration': 'alteration',
+		'illusion': 'illusion',
+		'conjuration': 'conjuration',
+		'mysticism': 'mysticism',
+		'restoration': 'restoration',
+		'alchemy': 'alchemy',
+		'unarmored': 'unarmored'
+	},
+	stealth: {
+		'security': 'security',
+		'sneak': 'sneak',
+		'acrobatics': 'acrobatics',
+		'light-armor': 'light-armor',
+		'shortblade': 'shortblade',
+		'marksman': 'marksman',
+		'mercantile': 'mercantile',
+		'speechcraft': 'speechcraft',
+		'hand-to-hand': 'hand-to-hand'
+	}
 };
 
 },{}],35:[function(require,module,exports){

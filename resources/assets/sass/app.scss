@@ -8,3 +8,10 @@ body {
 a {
   color: #00B7FF;
 }
+
+.skills {
+	width: 200px;
+	&__skill {
+		display: block;
+	}
+}

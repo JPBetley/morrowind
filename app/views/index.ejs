@@ -92,6 +92,48 @@
                     </option>
                 </select>
             </fieldset>
+            <fieldset class="skills">
+                <legend>Major Skills</legend>
+                <select v-for="skill in majorSkills" track-by="$index" v-model="skill" class="skills__skill">
+                    <option value=""></option>
+                    <optgroup label="Combat">
+                        <option v-for="(key, name) in skills.combat" :value="key">
+                            {{ name | capitalize }}
+                        </option>
+                    </optgroup>
+                    <optgroup label="Magic">
+                        <option v-for="(key, name) in skills.magic" :value="key">
+                            {{ name | capitalize }}
+                        </option>
+                    </optgroup>
+                    <optgroup label="Stealth">
+                        <option v-for="(key, name) in skills.stealth" :value="key">
+                            {{ name | capitalize }}
+                        </option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <fieldset class="skills">
+                <legend>Minor Skills</legend>
+                <select v-for="skill in minorSkills" track-by="$index" v-model="skill" class="skills__skill">
+                    <option value=""></option>
+                    <optgroup label="Combat">
+                        <option v-for="(key, name) in skills.combat" :value="key">
+                            {{ name | capitalize }}
+                        </option>
+                    </optgroup>
+                    <optgroup label="Magic">
+                        <option v-for="(key, name) in skills.magic" :value="key">
+                            {{ name | capitalize }}
+                        </option>
+                    </optgroup>
+                    <optgroup label="Stealth">
+                        <option v-for="(key, name) in skills.stealth" :value="key">
+                            {{ name | capitalize }}
+                        </option>
+                    </optgroup>
+                </select>
+            </fieldset>
         </div>
 
         <h4>Strength: {{ build.attributes.strength }}</h4>

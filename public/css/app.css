@@ -5756,4 +5756,9 @@ body {
 a {
   color: #00B7FF; }
 
+.skills {
+  width: 200px; }
+  .skills__skill {
+    display: block; }
+
 /*# sourceMappingURL=app.css.map */
