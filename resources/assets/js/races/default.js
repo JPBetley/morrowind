@@ -1,5 +1,6 @@
 module.exports = {
 	apply: function(build) {
 	},
-	name: ''
+	name: '',
+	key: ''
 }

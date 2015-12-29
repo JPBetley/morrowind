@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -35,5 +35,6 @@ module.exports = {
 		build.resistances.shock += 50;
 		build.resistances.frost += 100;
 	},
-	name: 'Nord'
+	name: 'Nord',
+	key: 'nord'
 }

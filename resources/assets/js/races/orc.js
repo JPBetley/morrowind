@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -36,5 +36,6 @@ module.exports = {
 			Drain Agility 100pts for 60sec on Self");
 		build.resistances.magicka += 25;
 	},
-	name: 'Orc'
+	name: 'Orc',
+	key: 'orc'
 }

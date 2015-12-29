@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -32,5 +32,6 @@ module.exports = {
 		build.abilities.push('Resist Common Disease: 75%');
 		build.resistances.commonDisease += 75;
 	},
-	name: 'Wood Elf'
+	name: 'Wood Elf',
+	key: 'wood-elf'
 }

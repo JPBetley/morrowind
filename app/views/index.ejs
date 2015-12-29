@@ -54,8 +54,8 @@
                         </label>
                         <select id="sex" v-model="sex" class="form-control">
                             <option value=""></option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
                         </select>
                     </div>
                     <div class="form-group col-xs-6">
@@ -160,6 +160,7 @@
         <div class="row command-row">
             <div class="col-xs-6">
                 <button class="btn btn-default" @click="reset">Reset</button>
+                <button class="btn btn-primary" @click="save">Save</button>
             </div>
         </div>
 

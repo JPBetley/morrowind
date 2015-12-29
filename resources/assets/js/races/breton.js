@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -34,5 +34,6 @@ module.exports = {
 		build.magickaMultiplier += 0.5;
 		build.resistances.magicka += 50;
 	},
-	name: 'Breton'
+	name: 'Breton',
+	key: 'breton'
 }

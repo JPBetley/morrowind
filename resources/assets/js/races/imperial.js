@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -31,5 +31,6 @@ module.exports = {
 		build.abilities.push('Star of the West - Absorb Fatigue Absorb Fatigue 200 pts on target');
 		build.abilities.push('Voice of the Emperor - Charm Charm 25 to 50 pts for 15 seconds on target');
 	},
-	name: 'Imperial'
+	name: 'Imperial',
+	key: 'imperial'
 }

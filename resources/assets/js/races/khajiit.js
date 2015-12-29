@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -31,5 +31,6 @@ module.exports = {
 		build.abilities.push('Eye of Night - Night Eye Night Eye 50pts for 30sec on Self');
 		build.abilities.push('Eye of Fear - Demoralize Humanoid Demoralize Humanoid 100pts for 30sec on Target');
 	},
-	name: 'Khajiit'
+	name: 'Khajiit',
+	key: 'khajiit'
 }

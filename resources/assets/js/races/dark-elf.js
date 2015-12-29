@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -32,5 +32,6 @@ module.exports = {
 		build.abilities.push('Resist Fire 75%');
 		build.resistances.fire += 75;
 	},
-	name: 'Dark Elf'
+	name: 'Dark Elf',
+	key: 'dark-elf'
 }

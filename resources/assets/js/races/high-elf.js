@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -41,5 +41,6 @@ module.exports = {
 		build.resistances.magicka += 50;
 		build.magickaMultiplier += 1.5;
 	},
-	name: 'High Elf'
+	name: 'High Elf',
+	key: 'high-elf'
 }

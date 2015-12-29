@@ -23,7 +23,7 @@ function femaleAttributes(build) {
 
 module.exports = {
 	apply: function(build) {
-		if (build.sex == "Male") {
+		if (build.sex == "male") {
 			maleAttributes(build);
 		} else {
 			femaleAttributes(build);
@@ -34,5 +34,6 @@ module.exports = {
 		build.resistances.poison += 100;
 		build.resistances.commonDisease += 75;
 	},
-	name: 'Argonian'
+	name: 'Argonian',
+	key: 'argonian'
 }

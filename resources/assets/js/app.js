@@ -4,8 +4,11 @@ var favored = require('./attributes/favored');
 var major = require('./skills/major');
 var minor = require('./skills/minor');
 var stats = require('./stats');
+var uri = require('urijs');
 
 Vue.config.debug = true
+
+
 
 new Vue({
 	el: '#app',
@@ -28,6 +31,48 @@ new Vue({
 		races: require('./races/all'),
 	},
 
+	ready: function () {
+		var self = this,
+			url = uri(window.location.href),
+			state = url.query(true);
+
+		function setArray(current, loaded, maxSize) {
+			var result = [];
+			if (Array.isArray(loaded)) {
+				result = loaded;
+			} else if (loaded !== undefined) {
+				result = [loaded];
+			}
+
+			while (result.length < maxSize) {
+				result.push('');
+			}
+			return result;
+		}
+
+		this.sex = state.sex;
+		this.specialization = state.specialization;
+
+		this.majorSkills = setArray(this.majorSkills, state.major, 5);
+		this.minorSkills = setArray(this.minorSkills, state.minor, 5);
+		this.favoredAttributes = setArray(this.favoredAttributes, state.favored, 2);
+		if (state.race === undefined) {
+			this.race = require('./races/default');
+		} else {
+			this.race = this.races.filter(function(value) {
+				return value.key == state.race;
+			})[0]; 
+		}
+
+		if (state.birthsign === undefined) {
+			this.birthsign = require('./birthsigns/default');
+		} else {
+			this.birthsign = this.birthsigns.filter(function(value) {
+				return value.name == state.birthsign;
+			})[0]; 
+		}
+	},
+
 	computed: {
 		build: function () {
 			var build = require('./default-build')();
@@ -43,6 +88,20 @@ new Vue({
 
 			return build;
 		},
+		state: function() {
+			function notBlank(value) { return value !== ''; }
+			var state = {
+				sex: this.sex,
+				race: this.race.key,
+				birthsign: this.birthsign.name,
+				specialization: this.specialization,
+				favored: this.favoredAttributes.filter(notBlank),
+				major: this.majorSkills.filter(notBlank),
+				minor: this.minorSkills.filter(notBlank),
+			};
+
+			return state;
+		}
 	},
 
 	methods: { 
@@ -54,6 +113,11 @@ new Vue({
 			this.favoredAttributes = ['', ''];
 			this.race = require('./races/default');
 			this.birthsign = require('./birthsigns/default');
+		},
+		save: function() {
+			var url = uri(window.location.href);
+			url.search(this.state);
+			window.history.pushState('character', document.title, url.toString());
 		}
 	}
 });
