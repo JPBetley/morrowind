@@ -12647,6 +12647,8 @@ new Vue({
 	el: '#app',
 
 	data: {
+		saved: false,
+
 		sex: '',
 		specialization: '',
 
@@ -12731,7 +12733,7 @@ new Vue({
 			function notBlank(value) {
 				return value !== '';
 			}
-			var state = {
+			return {
 				sex: this.sex,
 				race: this.race.key,
 				birthsign: this.birthsign.name,
@@ -12740,8 +12742,11 @@ new Vue({
 				major: this.majorSkills.filter(notBlank),
 				minor: this.minorSkills.filter(notBlank)
 			};
-
-			return state;
+		},
+		url: function url() {
+			var url = uri(window.location.href);
+			url.search(this.state);
+			return url.toString();
 		}
 	},
 
@@ -12756,9 +12761,8 @@ new Vue({
 			this.birthsign = require('./birthsigns/default');
 		},
 		save: function save() {
-			var url = uri(window.location.href);
-			url.search(this.state);
-			window.history.pushState('character', document.title, url.toString());
+			window.history.pushState('character', document.title, this.url);
+			this.saved = true;
 		}
 	}
 });

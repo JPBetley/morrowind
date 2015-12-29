@@ -161,6 +161,9 @@
             <div class="col-xs-6">
                 <button class="btn btn-default" @click="reset">Reset</button>
                 <button class="btn btn-primary" @click="save">Save</button>
+                <p class="bg-success save-message" v-show="saved">
+                    Saved! Copy URL to share
+                </p>
             </div>
         </div>
 

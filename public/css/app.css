@@ -2696,4 +2696,9 @@ footer {
 .command-row {
   margin-bottom: 15px; }
 
+.save-message {
+  padding: 10px 20px;
+  margin-left: 20px;
+  display: inline-block; }
+
 /*# sourceMappingURL=app.css.map */
