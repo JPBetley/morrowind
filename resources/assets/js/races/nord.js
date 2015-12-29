@@ -34,6 +34,24 @@ module.exports = {
 		build.abilities.push('Resist Frost 100%');
 		build.resistances.shock += 50;
 		build.resistances.frost += 100;
+		build.skills.filter(function(skill) {
+			return skill.key === 'axe';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'blunt-weapon';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'heavy-armor';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'long-blade';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'spear';
+		})[0].value += 5;
 	},
 	name: 'Nord',
 	key: 'nord'

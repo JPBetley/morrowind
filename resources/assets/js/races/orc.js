@@ -35,6 +35,21 @@ module.exports = {
 			Fortify Attack 100pts for 60sec on Self,\
 			Drain Agility 100pts for 60sec on Self");
 		build.resistances.magicka += 25;
+		build.skills.filter(function(skill) {
+			return skill.key === 'armorer';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'block';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'heavy-armor';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'axe';
+		})[0].value += 5;
 	},
 	name: 'Orc',
 	key: 'orc'

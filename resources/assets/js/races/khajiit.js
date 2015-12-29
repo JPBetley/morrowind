@@ -30,6 +30,27 @@ module.exports = {
 		}
 		build.abilities.push('Eye of Night - Night Eye Night Eye 50pts for 30sec on Self');
 		build.abilities.push('Eye of Fear - Demoralize Humanoid Demoralize Humanoid 100pts for 30sec on Target');
+		build.skills.filter(function(skill) {
+			return skill.key === 'acrobatics';
+		})[0].value += 15;
+		build.skills.filter(function(skill) {
+			return skill.key === 'athletics';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'hand-to-hand';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'light-armor';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'security';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'shortblade';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'sneak';
+		})[0].value += 5;
 	},
 	name: 'Khajiit',
 	key: 'khajiit'

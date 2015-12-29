@@ -1,5 +1,13865 @@
-!function t(e,i,n){function r(o,a){if(!i[o]){if(!e[o]){var u="function"==typeof require&&require;if(!a&&u)return u(o,!0);if(s)return s(o,!0);var c=new Error("Cannot find module '"+o+"'");throw c.code="MODULE_NOT_FOUND",c}var l=i[o]={exports:{}};e[o][0].call(l.exports,function(t){var i=e[o][1][t];return r(i?i:t)},l,l.exports,t,e,i,n)}return i[o].exports}for(var s="function"==typeof require&&require,o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,i){function n(){l=!1,a.length?c=a.concat(c):h=-1,c.length&&r()}function r(){if(!l){var t=setTimeout(n);l=!0;for(var e=c.length;e;){for(a=c,c=[];++h<e;)a&&a[h].run();h=-1,e=c.length}a=null,l=!1,clearTimeout(t)}}function s(t,e){this.fun=t,this.array=e}function o(){}var a,u=e.exports={},c=[],l=!1,h=-1;u.nextTick=function(t){var e=new Array(arguments.length-1);if(arguments.length>1)for(var i=1;i<arguments.length;i++)e[i-1]=arguments[i];c.push(new s(t,e)),1!==c.length||l||setTimeout(r,0)},s.prototype.run=function(){this.fun.apply(null,this.array)},u.title="browser",u.browser=!0,u.env={},u.argv=[],u.version="",u.versions={},u.on=o,u.addListener=o,u.once=o,u.off=o,u.removeListener=o,u.removeAllListeners=o,u.emit=o,u.binding=function(t){throw new Error("process.binding is not supported")},u.cwd=function(){return"/"},u.chdir=function(t){throw new Error("process.chdir is not supported")},u.umask=function(){return 0}},{}],2:[function(t,e,i){!function(t,n){"use strict";"object"==typeof i?e.exports=n():"function"==typeof define&&define.amd?define(n):t.IPv6=n(t)}(this,function(t){"use strict";function e(t){var e=t.toLowerCase(),i=e.split(":"),n=i.length,r=8;""===i[0]&&""===i[1]&&""===i[2]?(i.shift(),i.shift()):""===i[0]&&""===i[1]?i.shift():""===i[n-1]&&""===i[n-2]&&i.pop(),n=i.length,-1!==i[n-1].indexOf(".")&&(r=7);var s;for(s=0;n>s&&""!==i[s];s++);if(r>s){for(i.splice(s,1,"0000");i.length<r;)i.splice(s,0,"0000");n=i.length}for(var o,a=0;r>a;a++){o=i[a].split("");for(var u=0;3>u&&("0"===o[0]&&o.length>1);u++)o.splice(0,1);i[a]=o.join("")}var c=-1,l=0,h=0,p=-1,f=!1;for(a=0;r>a;a++)f?"0"===i[a]?h+=1:(f=!1,h>l&&(c=p,l=h)):"0"===i[a]&&(f=!0,p=a,h=1);h>l&&(c=p,l=h),l>1&&i.splice(c,l,""),n=i.length;var d="";for(""===i[0]&&(d=":"),a=0;n>a&&(d+=i[a],a!==n-1);a++)d+=":";return""===i[n-1]&&(d+=":"),d}function i(){return t.IPv6===this&&(t.IPv6=n),this}var n=t&&t.IPv6;return{best:e,noConflict:i}})},{}],3:[function(t,e,i){!function(t,n){"use strict";"object"==typeof i?e.exports=n():"function"==typeof define&&define.amd?define(n):t.SecondLevelDomains=n(t)}(this,function(t){"use strict";var e=t&&t.SecondLevelDomains,i={list:{ac:" com gov mil net org ",ae:" ac co gov mil name net org pro sch ",af:" com edu gov net org ",al:" com edu gov mil net org ",ao:" co ed gv it og pb ",ar:" com edu gob gov int mil net org tur ",at:" ac co gv or ",au:" asn com csiro edu gov id net org ",ba:" co com edu gov mil net org rs unbi unmo unsa untz unze ",bb:" biz co com edu gov info net org store tv ",bh:" biz cc com edu gov info net org ",bn:" com edu gov net org ",bo:" com edu gob gov int mil net org tv ",br:" adm adv agr am arq art ato b bio blog bmd cim cng cnt com coop ecn edu eng esp etc eti far flog fm fnd fot fst g12 ggf gov imb ind inf jor jus lel mat med mil mus net nom not ntr odo org ppg pro psc psi qsl rec slg srv tmp trd tur tv vet vlog wiki zlg ",bs:" com edu gov net org ",bz:" du et om ov rg ",ca:" ab bc mb nb nf nl ns nt nu on pe qc sk yk ",ck:" biz co edu gen gov info net org ",cn:" ac ah bj com cq edu fj gd gov gs gx gz ha hb he hi hl hn jl js jx ln mil net nm nx org qh sc sd sh sn sx tj tw xj xz yn zj ",co:" com edu gov mil net nom org ",cr:" ac c co ed fi go or sa ",cy:" ac biz com ekloges gov ltd name net org parliament press pro tm ","do":" art com edu gob gov mil net org sld web ",dz:" art asso com edu gov net org pol ",ec:" com edu fin gov info med mil net org pro ",eg:" com edu eun gov mil name net org sci ",er:" com edu gov ind mil net org rochest w ",es:" com edu gob nom org ",et:" biz com edu gov info name net org ",fj:" ac biz com info mil name net org pro ",fk:" ac co gov net nom org ",fr:" asso com f gouv nom prd presse tm ",gg:" co net org ",gh:" com edu gov mil org ",gn:" ac com gov net org ",gr:" com edu gov mil net org ",gt:" com edu gob ind mil net org ",gu:" com edu gov net org ",hk:" com edu gov idv net org ",hu:" 2000 agrar bolt casino city co erotica erotika film forum games hotel info ingatlan jogasz konyvelo lakas media news org priv reklam sex shop sport suli szex tm tozsde utazas video ",id:" ac co go mil net or sch web ",il:" ac co gov idf k12 muni net org ","in":" ac co edu ernet firm gen gov i ind mil net nic org res ",iq:" com edu gov i mil net org ",ir:" ac co dnssec gov i id net org sch ",it:" edu gov ",je:" co net org ",jo:" com edu gov mil name net org sch ",jp:" ac ad co ed go gr lg ne or ",ke:" ac co go info me mobi ne or sc ",kh:" com edu gov mil net org per ",ki:" biz com de edu gov info mob net org tel ",km:" asso com coop edu gouv k medecin mil nom notaires pharmaciens presse tm veterinaire ",kn:" edu gov net org ",kr:" ac busan chungbuk chungnam co daegu daejeon es gangwon go gwangju gyeongbuk gyeonggi gyeongnam hs incheon jeju jeonbuk jeonnam k kg mil ms ne or pe re sc seoul ulsan ",kw:" com edu gov net org ",ky:" com edu gov net org ",kz:" com edu gov mil net org ",lb:" com edu gov net org ",lk:" assn com edu gov grp hotel int ltd net ngo org sch soc web ",lr:" com edu gov net org ",lv:" asn com conf edu gov id mil net org ",ly:" com edu gov id med net org plc sch ",ma:" ac co gov m net org press ",mc:" asso tm ",me:" ac co edu gov its net org priv ",mg:" com edu gov mil nom org prd tm ",mk:" com edu gov inf name net org pro ",ml:" com edu gov net org presse ",mn:" edu gov org ",mo:" com edu gov net org ",mt:" com edu gov net org ",mv:" aero biz com coop edu gov info int mil museum name net org pro ",mw:" ac co com coop edu gov int museum net org ",mx:" com edu gob net org ",my:" com edu gov mil name net org sch ",nf:" arts com firm info net other per rec store web ",ng:" biz com edu gov mil mobi name net org sch ",ni:" ac co com edu gob mil net nom org ",np:" com edu gov mil net org ",nr:" biz com edu gov info net org ",om:" ac biz co com edu gov med mil museum net org pro sch ",pe:" com edu gob mil net nom org sld ",ph:" com edu gov i mil net ngo org ",pk:" biz com edu fam gob gok gon gop gos gov net org web ",pl:" art bialystok biz com edu gda gdansk gorzow gov info katowice krakow lodz lublin mil net ngo olsztyn org poznan pwr radom slupsk szczecin torun warszawa waw wroc wroclaw zgora ",pr:" ac biz com edu est gov info isla name net org pro prof ",ps:" com edu gov net org plo sec ",pw:" belau co ed go ne or ",ro:" arts com firm info nom nt org rec store tm www ",rs:" ac co edu gov in org ",sb:" com edu gov net org ",sc:" com edu gov net org ",sh:" co com edu gov net nom org ",sl:" com edu gov net org ",st:" co com consulado edu embaixada gov mil net org principe saotome store ",sv:" com edu gob org red ",sz:" ac co org ",tr:" av bbs bel biz com dr edu gen gov info k12 name net org pol tel tsk tv web ",tt:" aero biz cat co com coop edu gov info int jobs mil mobi museum name net org pro tel travel ",tw:" club com ebiz edu game gov idv mil net org ",mu:" ac co com gov net or org ",mz:" ac co edu gov org ",na:" co com ",nz:" ac co cri geek gen govt health iwi maori mil net org parliament school ",pa:" abo ac com edu gob ing med net nom org sld ",pt:" com edu gov int net nome org publ ",py:" com edu gov mil net org ",qa:" com edu gov mil net org ",re:" asso com nom ",ru:" ac adygeya altai amur arkhangelsk astrakhan bashkiria belgorod bir bryansk buryatia cbg chel chelyabinsk chita chukotka chuvashia com dagestan e-burg edu gov grozny int irkutsk ivanovo izhevsk jar joshkar-ola kalmykia kaluga kamchatka karelia kazan kchr kemerovo khabarovsk khakassia khv kirov koenig komi kostroma kranoyarsk kuban kurgan kursk lipetsk magadan mari mari-el marine mil mordovia mosreg msk murmansk nalchik net nnov nov novosibirsk nsk omsk orenburg org oryol penza perm pp pskov ptz rnd ryazan sakhalin samara saratov simbirsk smolensk spb stavropol stv surgut tambov tatarstan tom tomsk tsaritsyn tsk tula tuva tver tyumen udm udmurtia ulan-ude vladikavkaz vladimir vladivostok volgograd vologda voronezh vrn vyatka yakutia yamal yekaterinburg yuzhno-sakhalinsk ",rw:" ac co com edu gouv gov int mil net ",sa:" com edu gov med net org pub sch ",sd:" com edu gov info med net org tv ",se:" a ac b bd c d e f g h i k l m n o org p parti pp press r s t tm u w x y z ",sg:" com edu gov idn net org per ",sn:" art com edu gouv org perso univ ",sy:" com edu gov mil net news org ",th:" ac co go in mi net or ",tj:" ac biz co com edu go gov info int mil name net nic org test web ",tn:" agrinet com defense edunet ens fin gov ind info intl mincom nat net org perso rnrt rns rnu tourism ",tz:" ac co go ne or ",ua:" biz cherkassy chernigov chernovtsy ck cn co com crimea cv dn dnepropetrovsk donetsk dp edu gov if in ivano-frankivsk kh kharkov kherson khmelnitskiy kiev kirovograd km kr ks kv lg lugansk lutsk lviv me mk net nikolaev od odessa org pl poltava pp rovno rv sebastopol sumy te ternopil uzhgorod vinnica vn zaporizhzhe zhitomir zp zt ",ug:" ac co go ne or org sc ",uk:" ac bl british-library co cym gov govt icnet jet lea ltd me mil mod national-library-scotland nel net nhs nic nls org orgn parliament plc police sch scot soc ",us:" dni fed isa kids nsn ",uy:" com edu gub mil net org ",ve:" co com edu gob info mil net org web ",vi:" co com k12 net org ",vn:" ac biz com edu gov health info int name net org pro ",ye:" co com gov ltd me net org plc ",yu:" ac co edu gov org ",za:" ac agric alt bourse city co cybernet db edu gov grondar iaccess imt inca landesign law mil net ngo nis nom olivetti org pix school tm web ",zm:" ac co com edu gov net org sch "},has:function(t){var e=t.lastIndexOf(".");if(0>=e||e>=t.length-1)return!1;var n=t.lastIndexOf(".",e-1);if(0>=n||n>=e-1)return!1;var r=i.list[t.slice(e+1)];return r?r.indexOf(" "+t.slice(n+1,e)+" ")>=0:!1},is:function(t){var e=t.lastIndexOf(".");if(0>=e||e>=t.length-1)return!1;var n=t.lastIndexOf(".",e-1);if(n>=0)return!1;var r=i.list[t.slice(e+1)];return r?r.indexOf(" "+t.slice(0,e)+" ")>=0:!1},get:function(t){var e=t.lastIndexOf(".");if(0>=e||e>=t.length-1)return null;var n=t.lastIndexOf(".",e-1);if(0>=n||n>=e-1)return null;var r=i.list[t.slice(e+1)];return r?r.indexOf(" "+t.slice(n+1,e)+" ")<0?null:t.slice(n+1):null},noConflict:function(){return t.SecondLevelDomains===this&&(t.SecondLevelDomains=e),this}};return i})},{}],4:[function(t,e,i){!function(n,r){"use strict";"object"==typeof i?e.exports=r(t("./punycode"),t("./IPv6"),t("./SecondLevelDomains")):"function"==typeof define&&define.amd?define(["./punycode","./IPv6","./SecondLevelDomains"],r):n.URI=r(n.punycode,n.IPv6,n.SecondLevelDomains,n)}(this,function(t,e,i,n){"use strict";function r(t,e){var i=arguments.length>=1,n=arguments.length>=2;if(!(this instanceof r))return i?n?new r(t,e):new r(t):new r;if(void 0===t){if(i)throw new TypeError("undefined is not a valid argument for URI");t="undefined"!=typeof location?location.href+"":""}return this.href(t),void 0!==e?this.absoluteTo(e):this}function s(t){return t.replace(/([.*+?^=!:${}()|[\]\/\\])/g,"\\$1")}function o(t){return void 0===t?"Undefined":String(Object.prototype.toString.call(t)).slice(8,-1)}function a(t){return"Array"===o(t)}function u(t,e){var i,n,r={};if("RegExp"===o(e))r=null;else if(a(e))for(i=0,n=e.length;n>i;i++)r[e[i]]=!0;else r[e]=!0;for(i=0,n=t.length;n>i;i++){var s=r&&void 0!==r[t[i]]||!r&&e.test(t[i]);s&&(t.splice(i,1),n--,i--)}return t}function c(t,e){var i,n;if(a(e)){for(i=0,n=e.length;n>i;i++)if(!c(t,e[i]))return!1;return!0}var r=o(e);for(i=0,n=t.length;n>i;i++)if("RegExp"===r){if("string"==typeof t[i]&&t[i].match(e))return!0}else if(t[i]===e)return!0;return!1}function l(t,e){if(!a(t)||!a(e))return!1;if(t.length!==e.length)return!1;t.sort(),e.sort();for(var i=0,n=t.length;n>i;i++)if(t[i]!==e[i])return!1;return!0}function h(t){var e=/^\/+|\/+$/g;return t.replace(e,"")}function p(t){return escape(t)}function f(t){return encodeURIComponent(t).replace(/[!'()*]/g,p).replace(/\*/g,"%2A")}function d(t){return function(e,i){return void 0===e?this._parts[t]||"":(this._parts[t]=e||null,this.build(!i),this)}}function m(t,e){return function(i,n){return void 0===i?this._parts[t]||"":(null!==i&&(i+="",i.charAt(0)===e&&(i=i.substring(1))),this._parts[t]=i,this.build(!n),this)}}var v=n&&n.URI;r.version="1.17.0";var g=r.prototype,b=Object.prototype.hasOwnProperty;r._parts=function(){return{protocol:null,username:null,password:null,hostname:null,urn:null,port:null,path:null,query:null,fragment:null,duplicateQueryParameters:r.duplicateQueryParameters,escapeQuerySpace:r.escapeQuerySpace}},r.duplicateQueryParameters=!1,r.escapeQuerySpace=!0,r.protocol_expression=/^[a-z][a-z0-9.+-]*$/i,r.idn_expression=/[^a-z0-9\.-]/i,r.punycode_expression=/(xn--)/i,r.ip4_expression=/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/,r.ip6_expression=/^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/,r.find_uri_expression=/\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/gi,r.findUri={start:/\b(?:([a-z][a-z0-9.+-]*:\/\/)|www\.)/gi,end:/[\s\r\n]|$/,trim:/[`!()\[\]{};:'".,<>?«»“”„‘’]+$/},r.defaultPorts={http:"80",https:"443",ftp:"21",gopher:"70",ws:"80",wss:"443"},r.invalid_hostname_characters=/[^a-zA-Z0-9\.-]/,r.domAttributes={a:"href",blockquote:"cite",link:"href",base:"href",script:"src",form:"action",img:"src",area:"href",iframe:"src",embed:"src",source:"src",track:"src",input:"src",audio:"src",video:"src"},r.getDomAttribute=function(t){if(t&&t.nodeName){var e=t.nodeName.toLowerCase();if("input"!==e||"image"===t.type)return r.domAttributes[e]}},r.encode=f,r.decode=decodeURIComponent,r.iso8859=function(){r.encode=escape,r.decode=unescape},r.unicode=function(){r.encode=f,r.decode=decodeURIComponent},r.characters={pathname:{encode:{expression:/%(24|26|2B|2C|3B|3D|3A|40)/gi,map:{"%24":"$","%26":"&","%2B":"+","%2C":",","%3B":";","%3D":"=","%3A":":","%40":"@"}},decode:{expression:/[\/\?#]/g,map:{"/":"%2F","?":"%3F","#":"%23"}}},reserved:{encode:{expression:/%(21|23|24|26|27|28|29|2A|2B|2C|2F|3A|3B|3D|3F|40|5B|5D)/gi,map:{"%3A":":","%2F":"/","%3F":"?","%23":"#","%5B":"[","%5D":"]","%40":"@","%21":"!","%24":"$","%26":"&","%27":"'","%28":"(","%29":")","%2A":"*","%2B":"+","%2C":",","%3B":";","%3D":"="}}},urnpath:{encode:{expression:/%(21|24|27|28|29|2A|2B|2C|3B|3D|40)/gi,map:{"%21":"!","%24":"$","%27":"'","%28":"(","%29":")","%2A":"*","%2B":"+","%2C":",","%3B":";","%3D":"=","%40":"@"}},decode:{expression:/[\/\?#:]/g,map:{"/":"%2F","?":"%3F","#":"%23",":":"%3A"}}}},r.encodeQuery=function(t,e){var i=r.encode(t+"");return void 0===e&&(e=r.escapeQuerySpace),e?i.replace(/%20/g,"+"):i},r.decodeQuery=function(t,e){t+="",void 0===e&&(e=r.escapeQuerySpace);try{return r.decode(e?t.replace(/\+/g,"%20"):t)}catch(i){return t}};var y,_={encode:"encode",decode:"decode"},w=function(t,e){return function(i){try{return r[e](i+"").replace(r.characters[t][e].expression,function(i){return r.characters[t][e].map[i]})}catch(n){return i}}};for(y in _)r[y+"PathSegment"]=w("pathname",_[y]),r[y+"UrnPathSegment"]=w("urnpath",_[y]);var k=function(t,e,i){return function(n){var s;s=i?function(t){return r[e](r[i](t))}:r[e];for(var o=(n+"").split(t),a=0,u=o.length;u>a;a++)o[a]=s(o[a]);return o.join(t)}};r.decodePath=k("/","decodePathSegment"),r.decodeUrnPath=k(":","decodeUrnPathSegment"),r.recodePath=k("/","encodePathSegment","decode"),r.recodeUrnPath=k(":","encodeUrnPathSegment","decode"),r.encodeReserved=w("reserved","encode"),r.parse=function(t,e){var i;return e||(e={}),i=t.indexOf("#"),i>-1&&(e.fragment=t.substring(i+1)||null,t=t.substring(0,i)),i=t.indexOf("?"),i>-1&&(e.query=t.substring(i+1)||null,t=t.substring(0,i)),"//"===t.substring(0,2)?(e.protocol=null,t=t.substring(2),t=r.parseAuthority(t,e)):(i=t.indexOf(":"),i>-1&&(e.protocol=t.substring(0,i)||null,e.protocol&&!e.protocol.match(r.protocol_expression)?e.protocol=void 0:"//"===t.substring(i+1,i+3)?(t=t.substring(i+3),t=r.parseAuthority(t,e)):(t=t.substring(i+1),e.urn=!0))),e.path=t,e},r.parseHost=function(t,e){t=t.replace(/\\/g,"/");var i,n,r=t.indexOf("/");if(-1===r&&(r=t.length),"["===t.charAt(0))i=t.indexOf("]"),e.hostname=t.substring(1,i)||null,e.port=t.substring(i+2,r)||null,"/"===e.port&&(e.port=null);else{var s=t.indexOf(":"),o=t.indexOf("/"),a=t.indexOf(":",s+1);-1!==a&&(-1===o||o>a)?(e.hostname=t.substring(0,r)||null,e.port=null):(n=t.substring(0,r).split(":"),e.hostname=n[0]||null,e.port=n[1]||null)}return e.hostname&&"/"!==t.substring(r).charAt(0)&&(r++,t="/"+t),t.substring(r)||"/"},r.parseAuthority=function(t,e){return t=r.parseUserinfo(t,e),r.parseHost(t,e)},r.parseUserinfo=function(t,e){var i,n=t.indexOf("/"),s=t.lastIndexOf("@",n>-1?n:t.length-1);return s>-1&&(-1===n||n>s)?(i=t.substring(0,s).split(":"),e.username=i[0]?r.decode(i[0]):null,i.shift(),e.password=i[0]?r.decode(i.join(":")):null,t=t.substring(s+1)):(e.username=null,e.password=null),t},r.parseQuery=function(t,e){if(!t)return{};if(t=t.replace(/&+/g,"&").replace(/^\?*&*|&+$/g,""),!t)return{};for(var i,n,s,o={},a=t.split("&"),u=a.length,c=0;u>c;c++)i=a[c].split("="),n=r.decodeQuery(i.shift(),e),s=i.length?r.decodeQuery(i.join("="),e):null,b.call(o,n)?(("string"==typeof o[n]||null===o[n])&&(o[n]=[o[n]]),o[n].push(s)):o[n]=s;return o},r.build=function(t){var e="";return t.protocol&&(e+=t.protocol+":"),t.urn||!e&&!t.hostname||(e+="//"),e+=r.buildAuthority(t)||"","string"==typeof t.path&&("/"!==t.path.charAt(0)&&"string"==typeof t.hostname&&(e+="/"),e+=t.path),"string"==typeof t.query&&t.query&&(e+="?"+t.query),"string"==typeof t.fragment&&t.fragment&&(e+="#"+t.fragment),e},r.buildHost=function(t){var e="";return t.hostname?(e+=r.ip6_expression.test(t.hostname)?"["+t.hostname+"]":t.hostname,t.port&&(e+=":"+t.port),e):""},r.buildAuthority=function(t){return r.buildUserinfo(t)+r.buildHost(t)},r.buildUserinfo=function(t){var e="";return t.username&&(e+=r.encode(t.username),t.password&&(e+=":"+r.encode(t.password)),e+="@"),e},r.buildQuery=function(t,e,i){var n,s,o,u,c="";for(s in t)if(b.call(t,s)&&s)if(a(t[s]))for(n={},o=0,u=t[s].length;u>o;o++)void 0!==t[s][o]&&void 0===n[t[s][o]+""]&&(c+="&"+r.buildQueryParameter(s,t[s][o],i),e!==!0&&(n[t[s][o]+""]=!0));else void 0!==t[s]&&(c+="&"+r.buildQueryParameter(s,t[s],i));return c.substring(1)},r.buildQueryParameter=function(t,e,i){return r.encodeQuery(t,i)+(null!==e?"="+r.encodeQuery(e,i):"")},r.addQuery=function(t,e,i){if("object"==typeof e)for(var n in e)b.call(e,n)&&r.addQuery(t,n,e[n]);else{if("string"!=typeof e)throw new TypeError("URI.addQuery() accepts an object, string as the name parameter");if(void 0===t[e])return void(t[e]=i);"string"==typeof t[e]&&(t[e]=[t[e]]),a(i)||(i=[i]),t[e]=(t[e]||[]).concat(i)}},r.removeQuery=function(t,e,i){var n,s,c;if(a(e))for(n=0,s=e.length;s>n;n++)t[e[n]]=void 0;else if("RegExp"===o(e))for(c in t)e.test(c)&&(t[c]=void 0);else if("object"==typeof e)for(c in e)b.call(e,c)&&r.removeQuery(t,c,e[c]);else{if("string"!=typeof e)throw new TypeError("URI.removeQuery() accepts an object, string, RegExp as the first parameter");void 0!==i?"RegExp"===o(i)?!a(t[e])&&i.test(t[e])?t[e]=void 0:t[e]=u(t[e],i):t[e]!==String(i)||a(i)&&1!==i.length?a(t[e])&&(t[e]=u(t[e],i)):t[e]=void 0:t[e]=void 0}},r.hasQuery=function(t,e,i,n){if("object"==typeof e){for(var s in e)if(b.call(e,s)&&!r.hasQuery(t,s,e[s]))return!1;return!0}if("string"!=typeof e)throw new TypeError("URI.hasQuery() accepts an object, string as the name parameter");switch(o(i)){case"Undefined":return e in t;case"Boolean":var u=Boolean(a(t[e])?t[e].length:t[e]);return i===u;case"Function":return!!i(t[e],e,t);case"Array":if(!a(t[e]))return!1;var h=n?c:l;return h(t[e],i);case"RegExp":return a(t[e])?n?c(t[e],i):!1:Boolean(t[e]&&t[e].match(i));case"Number":i=String(i);case"String":return a(t[e])?n?c(t[e],i):!1:t[e]===i;default:throw new TypeError("URI.hasQuery() accepts undefined, boolean, string, number, RegExp, Function as the value parameter")}},r.commonPath=function(t,e){var i,n=Math.min(t.length,e.length);for(i=0;n>i;i++)if(t.charAt(i)!==e.charAt(i)){i--;break}return 1>i?t.charAt(0)===e.charAt(0)&&"/"===t.charAt(0)?"/":"":(("/"!==t.charAt(i)||"/"!==e.charAt(i))&&(i=t.substring(0,i).lastIndexOf("/")),t.substring(0,i+1))},r.withinString=function(t,e,i){i||(i={});var n=i.start||r.findUri.start,s=i.end||r.findUri.end,o=i.trim||r.findUri.trim,a=/[a-z0-9-]=["']?$/i;for(n.lastIndex=0;;){var u=n.exec(t);if(!u)break;var c=u.index;if(i.ignoreHtml){var l=t.slice(Math.max(c-3,0),c);if(l&&a.test(l))continue}var h=c+t.slice(c).search(s),p=t.slice(c,h).replace(o,"");if(!i.ignore||!i.ignore.test(p)){h=c+p.length;var f=e(p,c,h,t);t=t.slice(0,c)+f+t.slice(h),n.lastIndex=c+f.length}}return n.lastIndex=0,t},r.ensureValidHostname=function(e){if(e.match(r.invalid_hostname_characters)){if(!t)throw new TypeError('Hostname "'+e+'" contains characters other than [A-Z0-9.-] and Punycode.js is not available');if(t.toASCII(e).match(r.invalid_hostname_characters))throw new TypeError('Hostname "'+e+'" contains characters other than [A-Z0-9.-]')}},r.noConflict=function(t){if(t){var e={URI:this.noConflict()};return n.URITemplate&&"function"==typeof n.URITemplate.noConflict&&(e.URITemplate=n.URITemplate.noConflict()),n.IPv6&&"function"==typeof n.IPv6.noConflict&&(e.IPv6=n.IPv6.noConflict()),n.SecondLevelDomains&&"function"==typeof n.SecondLevelDomains.noConflict&&(e.SecondLevelDomains=n.SecondLevelDomains.noConflict()),e}return n.URI===this&&(n.URI=v),this},g.build=function(t){return t===!0?this._deferred_build=!0:(void 0===t||this._deferred_build)&&(this._string=r.build(this._parts),this._deferred_build=!1),this},g.clone=function(){return new r(this)},g.valueOf=g.toString=function(){return this.build(!1)._string},g.protocol=d("protocol"),g.username=d("username"),g.password=d("password"),g.hostname=d("hostname"),g.port=d("port"),g.query=m("query","?"),g.fragment=m("fragment","#"),g.search=function(t,e){var i=this.query(t,e);return"string"==typeof i&&i.length?"?"+i:i},g.hash=function(t,e){var i=this.fragment(t,e);return"string"==typeof i&&i.length?"#"+i:i},g.pathname=function(t,e){if(void 0===t||t===!0){var i=this._parts.path||(this._parts.hostname?"/":"");return t?(this._parts.urn?r.decodeUrnPath:r.decodePath)(i):i}return this._parts.urn?this._parts.path=t?r.recodeUrnPath(t):"":this._parts.path=t?r.recodePath(t):"/",this.build(!e),this},g.path=g.pathname,g.href=function(t,e){var i;if(void 0===t)return this.toString();this._string="",this._parts=r._parts();var n=t instanceof r,s="object"==typeof t&&(t.hostname||t.path||t.pathname);if(t.nodeName){var o=r.getDomAttribute(t);t=t[o]||"",s=!1}if(!n&&s&&void 0!==t.pathname&&(t=t.toString()),"string"==typeof t||t instanceof String)this._parts=r.parse(String(t),this._parts);else{if(!n&&!s)throw new TypeError("invalid input");var a=n?t._parts:t;for(i in a)b.call(this._parts,i)&&(this._parts[i]=a[i])}return this.build(!e),this},g.is=function(t){var e=!1,n=!1,s=!1,o=!1,a=!1,u=!1,c=!1,l=!this._parts.urn;switch(this._parts.hostname&&(l=!1,n=r.ip4_expression.test(this._parts.hostname),s=r.ip6_expression.test(this._parts.hostname),e=n||s,o=!e,a=o&&i&&i.has(this._parts.hostname),u=o&&r.idn_expression.test(this._parts.hostname),c=o&&r.punycode_expression.test(this._parts.hostname)),t.toLowerCase()){case"relative":return l;case"absolute":return!l;case"domain":case"name":return o;case"sld":return a;case"ip":return e;case"ip4":case"ipv4":case"inet4":return n;case"ip6":case"ipv6":case"inet6":return s;case"idn":return u;case"url":return!this._parts.urn;case"urn":return!!this._parts.urn;case"punycode":return c}return null};var x=g.protocol,E=g.port,C=g.hostname;g.protocol=function(t,e){if(void 0!==t&&t&&(t=t.replace(/:(\/\/)?$/,""),!t.match(r.protocol_expression)))throw new TypeError('Protocol "'+t+"\" contains characters other than [A-Z0-9.+-] or doesn't start with [A-Z]");return x.call(this,t,e)},g.scheme=g.protocol,g.port=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0!==t&&(0===t&&(t=null),t&&(t+="",":"===t.charAt(0)&&(t=t.substring(1)),t.match(/[^0-9]/))))throw new TypeError('Port "'+t+'" contains characters other than [0-9]');return E.call(this,t,e)},g.hostname=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0!==t){var i={},n=r.parseHost(t,i);if("/"!==n)throw new TypeError('Hostname "'+t+'" contains characters other than [A-Z0-9.-]');t=i.hostname}return C.call(this,t,e)},g.origin=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t){var i=this.protocol(),n=this.authority();return n?(i?i+"://":"")+this.authority():""}var s=r(t);return this.protocol(s.protocol()).authority(s.authority()).build(!e),this},g.host=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t)return this._parts.hostname?r.buildHost(this._parts):"";var i=r.parseHost(t,this._parts);if("/"!==i)throw new TypeError('Hostname "'+t+'" contains characters other than [A-Z0-9.-]');return this.build(!e),this},g.authority=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t)return this._parts.hostname?r.buildAuthority(this._parts):"";var i=r.parseAuthority(t,this._parts);if("/"!==i)throw new TypeError('Hostname "'+t+'" contains characters other than [A-Z0-9.-]');return this.build(!e),this},g.userinfo=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t){if(!this._parts.username)return"";var i=r.buildUserinfo(this._parts);return i.substring(0,i.length-1)}return"@"!==t[t.length-1]&&(t+="@"),r.parseUserinfo(t,this._parts),this.build(!e),this},g.resource=function(t,e){var i;return void 0===t?this.path()+this.search()+this.hash():(i=r.parse(t),this._parts.path=i.path,this._parts.query=i.query,this._parts.fragment=i.fragment,this.build(!e),this)},g.subdomain=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t){if(!this._parts.hostname||this.is("IP"))return"";var i=this._parts.hostname.length-this.domain().length-1;return this._parts.hostname.substring(0,i)||""}var n=this._parts.hostname.length-this.domain().length,o=this._parts.hostname.substring(0,n),a=new RegExp("^"+s(o));return t&&"."!==t.charAt(t.length-1)&&(t+="."),t&&r.ensureValidHostname(t),this._parts.hostname=this._parts.hostname.replace(a,t),this.build(!e),this},g.domain=function(t,e){if(this._parts.urn)return void 0===t?"":this;if("boolean"==typeof t&&(e=t,t=void 0),void 0===t){if(!this._parts.hostname||this.is("IP"))return"";var i=this._parts.hostname.match(/\./g);if(i&&i.length<2)return this._parts.hostname;var n=this._parts.hostname.length-this.tld(e).length-1;return n=this._parts.hostname.lastIndexOf(".",n-1)+1,this._parts.hostname.substring(n)||""}if(!t)throw new TypeError("cannot set domain empty");if(r.ensureValidHostname(t),!this._parts.hostname||this.is("IP"))this._parts.hostname=t;else{var o=new RegExp(s(this.domain())+"$");this._parts.hostname=this._parts.hostname.replace(o,t)}return this.build(!e),this},g.tld=function(t,e){if(this._parts.urn)return void 0===t?"":this;if("boolean"==typeof t&&(e=t,t=void 0),void 0===t){if(!this._parts.hostname||this.is("IP"))return"";var n=this._parts.hostname.lastIndexOf("."),r=this._parts.hostname.substring(n+1);return e!==!0&&i&&i.list[r.toLowerCase()]?i.get(this._parts.hostname)||r:r}var o;if(!t)throw new TypeError("cannot set TLD empty");if(t.match(/[^a-zA-Z0-9-]/)){if(!i||!i.is(t))throw new TypeError('TLD "'+t+'" contains characters other than [A-Z0-9]');o=new RegExp(s(this.tld())+"$"),this._parts.hostname=this._parts.hostname.replace(o,t)}else{if(!this._parts.hostname||this.is("IP"))throw new ReferenceError("cannot set TLD on non-domain host");o=new RegExp(s(this.tld())+"$"),this._parts.hostname=this._parts.hostname.replace(o,t)}return this.build(!e),this},g.directory=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t||t===!0){if(!this._parts.path&&!this._parts.hostname)return"";if("/"===this._parts.path)return"/";var i=this._parts.path.length-this.filename().length-1,n=this._parts.path.substring(0,i)||(this._parts.hostname?"/":"");return t?r.decodePath(n):n}var o=this._parts.path.length-this.filename().length,a=this._parts.path.substring(0,o),u=new RegExp("^"+s(a));return this.is("relative")||(t||(t="/"),"/"!==t.charAt(0)&&(t="/"+t)),t&&"/"!==t.charAt(t.length-1)&&(t+="/"),t=r.recodePath(t),this._parts.path=this._parts.path.replace(u,t),this.build(!e),this},g.filename=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t||t===!0){if(!this._parts.path||"/"===this._parts.path)return"";var i=this._parts.path.lastIndexOf("/"),n=this._parts.path.substring(i+1);return t?r.decodePathSegment(n):n}var o=!1;"/"===t.charAt(0)&&(t=t.substring(1)),t.match(/\.?\//)&&(o=!0);var a=new RegExp(s(this.filename())+"$");return t=r.recodePath(t),this._parts.path=this._parts.path.replace(a,t),o?this.normalizePath(e):this.build(!e),this},g.suffix=function(t,e){if(this._parts.urn)return void 0===t?"":this;if(void 0===t||t===!0){if(!this._parts.path||"/"===this._parts.path)return"";var i,n,o=this.filename(),a=o.lastIndexOf(".");return-1===a?"":(i=o.substring(a+1),n=/^[a-z0-9%]+$/i.test(i)?i:"",t?r.decodePathSegment(n):n)}"."===t.charAt(0)&&(t=t.substring(1));var u,c=this.suffix();if(c)u=t?new RegExp(s(c)+"$"):new RegExp(s("."+c)+"$");else{if(!t)return this;this._parts.path+="."+r.recodePath(t)}return u&&(t=r.recodePath(t),this._parts.path=this._parts.path.replace(u,t)),this.build(!e),this},g.segment=function(t,e,i){var n=this._parts.urn?":":"/",r=this.path(),s="/"===r.substring(0,1),o=r.split(n);if(void 0!==t&&"number"!=typeof t&&(i=e,e=t,t=void 0),void 0!==t&&"number"!=typeof t)throw new Error('Bad segment "'+t+'", must be 0-based integer');if(s&&o.shift(),0>t&&(t=Math.max(o.length+t,0)),void 0===e)return void 0===t?o:o[t];if(null===t||void 0===o[t])if(a(e)){o=[];for(var u=0,c=e.length;c>u;u++)(e[u].length||o.length&&o[o.length-1].length)&&(o.length&&!o[o.length-1].length&&o.pop(),o.push(h(e[u])))}else(e||"string"==typeof e)&&(e=h(e),""===o[o.length-1]?o[o.length-1]=e:o.push(e));else e?o[t]=h(e):o.splice(t,1);return s&&o.unshift(""),this.path(o.join(n),i)},g.segmentCoded=function(t,e,i){var n,s,o;if("number"!=typeof t&&(i=e,e=t,t=void 0),void 0===e){if(n=this.segment(t,e,i),a(n))for(s=0,o=n.length;o>s;s++)n[s]=r.decode(n[s]);else n=void 0!==n?r.decode(n):void 0;return n}if(a(e))for(s=0,o=e.length;o>s;s++)e[s]=r.encode(e[s]);else e="string"==typeof e||e instanceof String?r.encode(e):e;return this.segment(t,e,i)};var A=g.query;return g.query=function(t,e){if(t===!0)return r.parseQuery(this._parts.query,this._parts.escapeQuerySpace);if("function"==typeof t){var i=r.parseQuery(this._parts.query,this._parts.escapeQuerySpace),n=t.call(this,i);return this._parts.query=r.buildQuery(n||i,this._parts.duplicateQueryParameters,this._parts.escapeQuerySpace),
-this.build(!e),this}return void 0!==t&&"string"!=typeof t?(this._parts.query=r.buildQuery(t,this._parts.duplicateQueryParameters,this._parts.escapeQuerySpace),this.build(!e),this):A.call(this,t,e)},g.setQuery=function(t,e,i){var n=r.parseQuery(this._parts.query,this._parts.escapeQuerySpace);if("string"==typeof t||t instanceof String)n[t]=void 0!==e?e:null;else{if("object"!=typeof t)throw new TypeError("URI.addQuery() accepts an object, string as the name parameter");for(var s in t)b.call(t,s)&&(n[s]=t[s])}return this._parts.query=r.buildQuery(n,this._parts.duplicateQueryParameters,this._parts.escapeQuerySpace),"string"!=typeof t&&(i=e),this.build(!i),this},g.addQuery=function(t,e,i){var n=r.parseQuery(this._parts.query,this._parts.escapeQuerySpace);return r.addQuery(n,t,void 0===e?null:e),this._parts.query=r.buildQuery(n,this._parts.duplicateQueryParameters,this._parts.escapeQuerySpace),"string"!=typeof t&&(i=e),this.build(!i),this},g.removeQuery=function(t,e,i){var n=r.parseQuery(this._parts.query,this._parts.escapeQuerySpace);return r.removeQuery(n,t,e),this._parts.query=r.buildQuery(n,this._parts.duplicateQueryParameters,this._parts.escapeQuerySpace),"string"!=typeof t&&(i=e),this.build(!i),this},g.hasQuery=function(t,e,i){var n=r.parseQuery(this._parts.query,this._parts.escapeQuerySpace);return r.hasQuery(n,t,e,i)},g.setSearch=g.setQuery,g.addSearch=g.addQuery,g.removeSearch=g.removeQuery,g.hasSearch=g.hasQuery,g.normalize=function(){return this._parts.urn?this.normalizeProtocol(!1).normalizePath(!1).normalizeQuery(!1).normalizeFragment(!1).build():this.normalizeProtocol(!1).normalizeHostname(!1).normalizePort(!1).normalizePath(!1).normalizeQuery(!1).normalizeFragment(!1).build()},g.normalizeProtocol=function(t){return"string"==typeof this._parts.protocol&&(this._parts.protocol=this._parts.protocol.toLowerCase(),this.build(!t)),this},g.normalizeHostname=function(i){return this._parts.hostname&&(this.is("IDN")&&t?this._parts.hostname=t.toASCII(this._parts.hostname):this.is("IPv6")&&e&&(this._parts.hostname=e.best(this._parts.hostname)),this._parts.hostname=this._parts.hostname.toLowerCase(),this.build(!i)),this},g.normalizePort=function(t){return"string"==typeof this._parts.protocol&&this._parts.port===r.defaultPorts[this._parts.protocol]&&(this._parts.port=null,this.build(!t)),this},g.normalizePath=function(t){var e=this._parts.path;if(!e)return this;if(this._parts.urn)return this._parts.path=r.recodeUrnPath(this._parts.path),this.build(!t),this;if("/"===this._parts.path)return this;var i,n,s,o="";for("/"!==e.charAt(0)&&(i=!0,e="/"+e),("/.."===e.slice(-3)||"/."===e.slice(-2))&&(e+="/"),e=e.replace(/(\/(\.\/)+)|(\/\.$)/g,"/").replace(/\/{2,}/g,"/"),i&&(o=e.substring(1).match(/^(\.\.\/)+/)||"",o&&(o=o[0]));;){if(n=e.indexOf("/.."),-1===n)break;0!==n?(s=e.substring(0,n).lastIndexOf("/"),-1===s&&(s=n),e=e.substring(0,s)+e.substring(n+3)):e=e.substring(3)}return i&&this.is("relative")&&(e=o+e.substring(1)),e=r.recodePath(e),this._parts.path=e,this.build(!t),this},g.normalizePathname=g.normalizePath,g.normalizeQuery=function(t){return"string"==typeof this._parts.query&&(this._parts.query.length?this.query(r.parseQuery(this._parts.query,this._parts.escapeQuerySpace)):this._parts.query=null,this.build(!t)),this},g.normalizeFragment=function(t){return this._parts.fragment||(this._parts.fragment=null,this.build(!t)),this},g.normalizeSearch=g.normalizeQuery,g.normalizeHash=g.normalizeFragment,g.iso8859=function(){var t=r.encode,e=r.decode;r.encode=escape,r.decode=decodeURIComponent;try{this.normalize()}finally{r.encode=t,r.decode=e}return this},g.unicode=function(){var t=r.encode,e=r.decode;r.encode=f,r.decode=unescape;try{this.normalize()}finally{r.encode=t,r.decode=e}return this},g.readable=function(){var e=this.clone();e.username("").password("").normalize();var i="";if(e._parts.protocol&&(i+=e._parts.protocol+"://"),e._parts.hostname&&(e.is("punycode")&&t?(i+=t.toUnicode(e._parts.hostname),e._parts.port&&(i+=":"+e._parts.port)):i+=e.host()),e._parts.hostname&&e._parts.path&&"/"!==e._parts.path.charAt(0)&&(i+="/"),i+=e.path(!0),e._parts.query){for(var n="",s=0,o=e._parts.query.split("&"),a=o.length;a>s;s++){var u=(o[s]||"").split("=");n+="&"+r.decodeQuery(u[0],this._parts.escapeQuerySpace).replace(/&/g,"%26"),void 0!==u[1]&&(n+="="+r.decodeQuery(u[1],this._parts.escapeQuerySpace).replace(/&/g,"%26"))}i+="?"+n.substring(1)}return i+=r.decodeQuery(e.hash(),!0)},g.absoluteTo=function(t){var e,i,n,s=this.clone(),o=["protocol","username","password","hostname","port"];if(this._parts.urn)throw new Error("URNs do not have any generally defined hierarchical components");if(t instanceof r||(t=new r(t)),s._parts.protocol||(s._parts.protocol=t._parts.protocol),this._parts.hostname)return s;for(i=0;n=o[i];i++)s._parts[n]=t._parts[n];return s._parts.path?".."===s._parts.path.substring(-2)&&(s._parts.path+="/"):(s._parts.path=t._parts.path,s._parts.query||(s._parts.query=t._parts.query)),"/"!==s.path().charAt(0)&&(e=t.directory(),e=e?e:0===t.path().indexOf("/")?"/":"",s._parts.path=(e?e+"/":"")+s._parts.path,s.normalizePath()),s.build(),s},g.relativeTo=function(t){var e,i,n,s,o,a=this.clone().normalize();if(a._parts.urn)throw new Error("URNs do not have any generally defined hierarchical components");if(t=new r(t).normalize(),e=a._parts,i=t._parts,s=a.path(),o=t.path(),"/"!==s.charAt(0))throw new Error("URI is already relative");if("/"!==o.charAt(0))throw new Error("Cannot calculate a URI relative to another relative URI");if(e.protocol===i.protocol&&(e.protocol=null),e.username!==i.username||e.password!==i.password)return a.build();if(null!==e.protocol||null!==e.username||null!==e.password)return a.build();if(e.hostname!==i.hostname||e.port!==i.port)return a.build();if(e.hostname=null,e.port=null,s===o)return e.path="",a.build();if(n=r.commonPath(s,o),!n)return a.build();var u=i.path.substring(n.length).replace(/[^\/]*$/,"").replace(/.*?\//g,"../");return e.path=u+e.path.substring(n.length)||"./",a.build()},g.equals=function(t){var e,i,n,s=this.clone(),o=new r(t),u={},c={},h={};if(s.normalize(),o.normalize(),s.toString()===o.toString())return!0;if(e=s.query(),i=o.query(),s.query(""),o.query(""),s.toString()!==o.toString())return!1;if(e.length!==i.length)return!1;u=r.parseQuery(e,this._parts.escapeQuerySpace),c=r.parseQuery(i,this._parts.escapeQuerySpace);for(n in u)if(b.call(u,n)){if(a(u[n])){if(!l(u[n],c[n]))return!1}else if(u[n]!==c[n])return!1;h[n]=!0}for(n in c)if(b.call(c,n)&&!h[n])return!1;return!0},g.duplicateQueryParameters=function(t){return this._parts.duplicateQueryParameters=!!t,this},g.escapeQuerySpace=function(t){return this._parts.escapeQuerySpace=!!t,this},r})},{"./IPv6":2,"./SecondLevelDomains":3,"./punycode":5}],5:[function(t,e,i){(function(t){!function(n){function r(t){throw RangeError(z[t])}function s(t,e){for(var i=t.length;i--;)t[i]=e(t[i]);return t}function o(t,e){return s(t.split(j),e).join(".")}function a(t){for(var e,i,n=[],r=0,s=t.length;s>r;)e=t.charCodeAt(r++),e>=55296&&56319>=e&&s>r?(i=t.charCodeAt(r++),56320==(64512&i)?n.push(((1023&e)<<10)+(1023&i)+65536):(n.push(e),r--)):n.push(e);return n}function u(t){return s(t,function(t){var e="";return t>65535&&(t-=65536,e+=P(t>>>10&1023|55296),t=56320|1023&t),e+=P(t)}).join("")}function c(t){return 10>t-48?t-22:26>t-65?t-65:26>t-97?t-97:k}function l(t,e){return t+22+75*(26>t)-((0!=e)<<5)}function h(t,e,i){var n=0;for(t=i?F(t/A):t>>1,t+=F(t/e);t>T*E>>1;n+=k)t=F(t/T);return F(n+(T+1)*t/(t+C))}function p(t){var e,i,n,s,o,a,l,p,f,d,m=[],v=t.length,g=0,b=N,y=$;for(i=t.lastIndexOf(O),0>i&&(i=0),n=0;i>n;++n)t.charCodeAt(n)>=128&&r("not-basic"),m.push(t.charCodeAt(n));for(s=i>0?i+1:0;v>s;){for(o=g,a=1,l=k;s>=v&&r("invalid-input"),p=c(t.charCodeAt(s++)),(p>=k||p>F((w-g)/a))&&r("overflow"),g+=p*a,f=y>=l?x:l>=y+E?E:l-y,!(f>p);l+=k)d=k-f,a>F(w/d)&&r("overflow"),a*=d;e=m.length+1,y=h(g-o,e,0==o),F(g/e)>w-b&&r("overflow"),b+=F(g/e),g%=e,m.splice(g++,0,b)}return u(m)}function f(t){var e,i,n,s,o,u,c,p,f,d,m,v,g,b,y,_=[];for(t=a(t),v=t.length,e=N,i=0,o=$,u=0;v>u;++u)m=t[u],128>m&&_.push(P(m));for(n=s=_.length,s&&_.push(O);v>n;){for(c=w,u=0;v>u;++u)m=t[u],m>=e&&c>m&&(c=m);for(g=n+1,c-e>F((w-i)/g)&&r("overflow"),i+=(c-e)*g,e=c,u=0;v>u;++u)if(m=t[u],e>m&&++i>w&&r("overflow"),m==e){for(p=i,f=k;d=o>=f?x:f>=o+E?E:f-o,!(d>p);f+=k)y=p-d,b=k-d,_.push(P(l(d+y%b,0))),p=F(y/b);_.push(P(l(p,0))),o=h(i,g,n==s),i=0,++n}++i,++e}return _.join("")}function d(t){return o(t,function(t){return S.test(t)?p(t.slice(4).toLowerCase()):t})}function m(t){return o(t,function(t){return D.test(t)?"xn--"+f(t):t})}var v="object"==typeof i&&i,g="object"==typeof e&&e&&e.exports==v&&e,b="object"==typeof t&&t;(b.global===b||b.window===b)&&(n=b);var y,_,w=2147483647,k=36,x=1,E=26,C=38,A=700,$=72,N=128,O="-",S=/^xn--/,D=/[^ -~]/,j=/\x2E|\u3002|\uFF0E|\uFF61/g,z={overflow:"Overflow: input needs wider integers to process","not-basic":"Illegal input >= 0x80 (not a basic code point)","invalid-input":"Invalid input"},T=k-x,F=Math.floor,P=String.fromCharCode;if(y={version:"1.2.3",ucs2:{decode:a,encode:u},decode:p,encode:f,toASCII:m,toUnicode:d},"function"==typeof define&&"object"==typeof define.amd&&define.amd)define(function(){return y});else if(v&&!v.nodeType)if(g)g.exports=y;else for(_ in y)y.hasOwnProperty(_)&&(v[_]=y[_]);else n.punycode=y}(this)}).call(this,"undefined"!=typeof global?global:"undefined"!=typeof self?self:"undefined"!=typeof window?window:{})},{}],6:[function(t,e,i){(function(t){"use strict";function i(t,e,n){if(r(t,e))return void(t[e]=n);if(t._isVue)return void i(t._data,e,n);var s=t.__ob__;if(!s)return void(t[e]=n);if(s.convert(e,n),s.dep.notify(),s.vms)for(var o=s.vms.length;o--;){var a=s.vms[o];a._proxy(e),a._digest()}return n}function n(t,e){if(r(t,e)){delete t[e];var i=t.__ob__;if(i&&(i.dep.notify(),i.vms))for(var n=i.vms.length;n--;){var s=i.vms[n];s._unproxy(e),s._digest()}}}function r(t,e){return yi.call(t,e)}function s(t){return _i.test(t)}function o(t){var e=(t+"").charCodeAt(0);return 36===e||95===e}function a(t){return null==t?"":t.toString()}function u(t){if("string"!=typeof t)return t;var e=Number(t);return isNaN(e)?t:e}function c(t){return"true"===t?!0:"false"===t?!1:t}function l(t){var e=t.charCodeAt(0),i=t.charCodeAt(t.length-1);return e!==i||34!==e&&39!==e?t:t.slice(1,-1)}function h(t){return t.replace(wi,p)}function p(t,e){return e?e.toUpperCase():""}function f(t){return t.replace(ki,"$1-$2").toLowerCase()}function d(t){return t.replace(xi,p)}function m(t,e){return function(i){var n=arguments.length;return n?n>1?t.apply(e,arguments):t.call(e,i):t.call(e)}}function v(t,e){e=e||0;for(var i=t.length-e,n=new Array(i);i--;)n[i]=t[i+e];return n}function g(t,e){for(var i=Object.keys(e),n=i.length;n--;)t[i[n]]=e[i[n]];return t}function b(t){return null!==t&&"object"==typeof t}function y(t){return Ei.call(t)===Ci}function _(t,e,i,n){Object.defineProperty(t,e,{value:i,enumerable:!!n,writable:!0,configurable:!0})}function w(t,e){var i,n,r,s,o,a=function u(){var a=Date.now()-s;e>a&&a>=0?i=setTimeout(u,e-a):(i=null,o=t.apply(r,n),i||(r=n=null))};return function(){return r=this,n=arguments,s=Date.now(),i||(i=setTimeout(a,e)),o}}function k(t,e){for(var i=t.length;i--;)if(t[i]===e)return i;return-1}function x(t){var e=function i(){return i.cancelled?void 0:t.apply(this,arguments)};return e.cancel=function(){e.cancelled=!0},e}function E(t,e){return t==e||(b(t)&&b(e)?JSON.stringify(t)===JSON.stringify(e):!1)}function C(t){this.size=0,this.limit=t,this.head=this.tail=void 0,this._keymap=Object.create(null)}function A(){var t,e=Ii.slice(qi,Hi).trim();if(e){t={};var i=e.match(Yi);t.name=i[0],i.length>1&&(t.args=i.slice(1).map($))}t&&(Qi.filters=Qi.filters||[]).push(t),qi=Hi+1}function $(t){if(Xi.test(t))return{value:u(t),dynamic:!1};var e=l(t),i=e===t;return{value:i?t:e,dynamic:i}}function N(t){var e=Ki.get(t);if(e)return e;for(Ii=t,Bi=Wi=!1,Ji=Zi=Gi=0,qi=0,Qi={},Hi=0,Mi=Ii.length;Mi>Hi;Hi++)if(Li=Ui,Ui=Ii.charCodeAt(Hi),Bi)39===Ui&&92!==Li&&(Bi=!Bi);else if(Wi)34===Ui&&92!==Li&&(Wi=!Wi);else if(124===Ui&&124!==Ii.charCodeAt(Hi+1)&&124!==Ii.charCodeAt(Hi-1))null==Qi.expression?(qi=Hi+1,Qi.expression=Ii.slice(0,Hi).trim()):A();else switch(Ui){case 34:Wi=!0;break;case 39:Bi=!0;break;case 40:Gi++;break;case 41:Gi--;break;case 91:Zi++;break;case 93:Zi--;break;case 123:Ji++;break;case 125:Ji--}return null==Qi.expression?Qi.expression=Ii.slice(0,Hi).trim():0!==qi&&A(),Ki.put(t,Qi),Qi}function O(t){return t.replace(en,"\\$&")}function S(){var t=O(ln.delimiters[0]),e=O(ln.delimiters[1]),i=O(ln.unsafeDelimiters[0]),n=O(ln.unsafeDelimiters[1]);rn=new RegExp(i+"(.+?)"+n+"|"+t+"(.+?)"+e,"g"),sn=new RegExp("^"+i+".*"+n+"$"),nn=new C(1e3)}function D(t){nn||S();var e=nn.get(t);if(e)return e;if(t=t.replace(/\n/g,""),!rn.test(t))return null;for(var i,n,r,s,o,a,u=[],c=rn.lastIndex=0;i=rn.exec(t);)n=i.index,n>c&&u.push({value:t.slice(c,n)}),r=sn.test(i[0]),s=r?i[1]:i[2],o=s.charCodeAt(0),a=42===o,s=a?s.slice(1):s,u.push({tag:!0,value:s.trim(),html:r,oneTime:a}),c=n+i[0].length;return c<t.length&&u.push({value:t.slice(c)}),nn.put(t,u),u}function j(t){return t.length>1?t.map(function(t){return z(t)}).join("+"):z(t[0],!0)}function z(t,e){return t.tag?T(t.value,e):'"'+t.value+'"'}function T(t,e){if(on.test(t)){var i=N(t);return i.filters?"this._applyFilters("+i.expression+",null,"+JSON.stringify(i.filters)+",false)":"("+t+")"}return e?t:"("+t+")"}function F(t,e,i,n){R(t,1,function(){e.appendChild(t)},i,n)}function P(t,e,i,n){R(t,1,function(){M(t,e)},i,n)}function V(t,e,i){R(t,-1,function(){B(t)},e,i)}function R(t,e,i,n,r){var s=t.__v_trans;if(!s||!s.hooks&&!ji||!n._isCompiled||n.$parent&&!n.$parent._isCompiled)return i(),void(r&&r());var o=e>0?"enter":"leave";s[o](i,r)}function I(e){if("string"==typeof e){var i=e;e=document.querySelector(e),e||"production"!==t.env.NODE_ENV&&hn("Cannot find element: "+i)}return e}function Q(t){var e=document.documentElement,i=t&&t.parentNode;return e===t||e===i||!(!i||1!==i.nodeType||!e.contains(i))}function U(t,e){var i=t.getAttribute(e);return null!==i&&t.removeAttribute(e),i}function L(t,e){var i=U(t,":"+e);return null===i&&(i=U(t,"v-bind:"+e)),i}function H(t,e){return t.hasAttribute(e)||t.hasAttribute(":"+e)||t.hasAttribute("v-bind:"+e)}function M(t,e){e.parentNode.insertBefore(t,e)}function q(t,e){e.nextSibling?M(t,e.nextSibling):e.parentNode.appendChild(t)}function B(t){t.parentNode.removeChild(t)}function W(t,e){e.firstChild?M(t,e.firstChild):e.appendChild(t)}function J(t,e){var i=t.parentNode;i&&i.replaceChild(e,t)}function Z(t,e,i){t.addEventListener(e,i)}function G(t,e,i){t.removeEventListener(e,i)}function K(t,e){!Oi||t instanceof SVGElement?t.setAttribute("class",e):t.className=e}function Y(t,e){if(t.classList)t.classList.add(e);else{var i=" "+(t.getAttribute("class")||"")+" ";i.indexOf(" "+e+" ")<0&&K(t,(i+e).trim())}}function X(t,e){if(t.classList)t.classList.remove(e);else{for(var i=" "+(t.getAttribute("class")||"")+" ",n=" "+e+" ";i.indexOf(n)>=0;)i=i.replace(n," ");K(t,i.trim())}t.className||t.removeAttribute("class")}function tt(t,e){var i,n;if(nt(t)&&t.content instanceof DocumentFragment&&(t=t.content),t.hasChildNodes())for(et(t),n=e?document.createDocumentFragment():document.createElement("div");i=t.firstChild;)n.appendChild(i);return n}function et(t){it(t,t.firstChild),it(t,t.lastChild)}function it(t,e){e&&3===e.nodeType&&!e.data.trim()&&t.removeChild(e)}function nt(t){return t.tagName&&"template"===t.tagName.toLowerCase()}function rt(t,e){var i=ln.debug?document.createComment(t):document.createTextNode(e?" ":"");return i.__vue_anchor=!0,i}function st(t){if(t.hasAttributes())for(var e=t.attributes,i=0,n=e.length;n>i;i++){var r=e[i].name;if(pn.test(r))return h(r.replace(pn,""))}}function ot(t,e,i){for(var n;t!==e;)n=t.nextSibling,i(t),t=n;i(e)}function at(t,e,i,n,r){function s(){if(a++,o&&a>=u.length){for(var t=0;t<u.length;t++)n.appendChild(u[t]);r&&r()}}var o=!1,a=0,u=[];ot(t,e,function(t){t===e&&(o=!0),u.push(t),V(t,i,s)})}function ut(e,i){var n=e.tagName.toLowerCase(),r=e.hasAttributes();if(fn.test(n)||dn.test(n)){if(r)return ct(e)}else{if(wt(i,"components",n))return{id:n};var s=r&&ct(e);if(s)return s;"production"!==t.env.NODE_ENV&&(n.indexOf("-")>-1||/HTMLUnknownElement/.test(e.toString())&&!/^(data|time|rtc|rb)$/.test(n))&&hn("Unknown custom element: <"+n+"> - did you register the component correctly?")}}function ct(t){var e=U(t,"is");return null!=e?{id:e}:(e=L(t,"is"),null!=e?{id:e,dynamic:!0}:void 0)}function lt(t,e,i){var n=e.path;i=pt(e,i),t[n]=t._data[n]=ht(e,i)?i:void 0}function ht(e,i){if(null===e.raw&&!e.required)return!0;var n,r=e.options,s=r.type,o=!0;if(s&&(s===String?(n="string",o=typeof i===n):s===Number?(n="number",o="number"==typeof i):s===Boolean?(n="boolean",o="boolean"==typeof i):s===Function?(n="function",o="function"==typeof i):s===Object?(n="object",o=y(i)):s===Array?(n="array",o=Ai(i)):o=i instanceof s),!o)return"production"!==t.env.NODE_ENV&&hn("Invalid prop: type check failed for "+e.path+'="'+e.raw+'". Expected '+ft(n)+", got "+dt(i)+"."),!1;var a=r.validator;return a&&!a.call(null,i)?("production"!==t.env.NODE_ENV&&hn("Invalid prop: custom validator check failed for "+e.path+'="'+e.raw+'"'),!1):!0}function pt(t,e){var i=t.options.coerce;return i?i(e):e}function ft(t){return t?t.charAt(0).toUpperCase()+t.slice(1):"custom type"}function dt(t){return Object.prototype.toString.call(t).slice(8,-1)}function mt(t,e){var n,s,o;for(n in e)s=t[n],o=e[n],r(t,n)?b(s)&&b(o)&&mt(s,o):i(t,n,o);return t}function vt(t,e){var i=Object.create(t);return e?g(i,yt(e)):i}function gt(e){if(e.components)for(var i,n=e.components=yt(e.components),r=Object.keys(n),s=0,o=r.length;o>s;s++){var a=r[s];fn.test(a)||dn.test(a)?"production"!==t.env.NODE_ENV&&hn("Do not use built-in or reserved HTML elements as component id: "+a):(i=n[a],y(i)&&(n[a]=fi.extend(i)))}}function bt(t){var e,i,n=t.props;if(Ai(n))for(t.props={},e=n.length;e--;)i=n[e],"string"==typeof i?t.props[i]=null:i.name&&(t.props[i.name]=i);else if(y(n)){var r=Object.keys(n);for(e=r.length;e--;)i=n[r[e]],"function"==typeof i&&(n[r[e]]={type:i})}}function yt(e){if(Ai(e)){for(var i,n={},r=e.length;r--;){i=e[r];var s="function"==typeof i?i.options&&i.options.name||i.id:i.name||i.id;s?n[s]=i:"production"!==t.env.NODE_ENV&&hn('Array-syntax assets must provide a "name" or "id" field.')}return n}return e}function _t(t,e,i){function n(n){var r=mn[n]||vn;o[n]=r(t[n],e[n],i,n)}gt(e),bt(e);var s,o={};if(e.mixins)for(var a=0,u=e.mixins.length;u>a;a++)t=_t(t,e.mixins[a],i);for(s in t)n(s);for(s in e)r(t,s)||n(s);return o}function wt(t,e,i){var n,r=t[e];return r[i]||r[n=h(i)]||r[n.charAt(0).toUpperCase()+n.slice(1)]}function kt(e,i,n){e||"production"!==t.env.NODE_ENV&&hn("Failed to resolve "+i+": "+n)}function xt(){this.id=yn++,this.subs=[]}function Et(t){if(this.value=t,this.dep=new xt,_(t,"__ob__",this),Ai(t)){var e=$i?Ct:At;e(t,bn,_n),this.observeArray(t)}else this.walk(t)}function Ct(t,e){t.__proto__=e}function At(t,e,i){for(var n=0,r=i.length;r>n;n++){var s=i[n];_(t,s,e[s])}}function $t(t,e){if(t&&"object"==typeof t){var i;return r(t,"__ob__")&&t.__ob__ instanceof Et?i=t.__ob__:(Ai(t)||y(t))&&Object.isExtensible(t)&&!t._isVue&&(i=new Et(t)),i&&e&&i.addVm(e),i}}function Nt(t,e,i){var n,r,s=new xt;if(ln.convertAllProperties){var o=Object.getOwnPropertyDescriptor(t,e);if(o&&o.configurable===!1)return;n=o&&o.get,r=o&&o.set}var a=$t(i);Object.defineProperty(t,e,{enumerable:!0,configurable:!0,get:function(){var e=n?n.call(t):i;if(xt.target&&(s.depend(),a&&a.dep.depend(),Ai(e)))for(var r,o=0,u=e.length;u>o;o++)r=e[o],r&&r.__ob__&&r.__ob__.dep.depend();return e},set:function(e){var o=n?n.call(t):i;e!==o&&(r?r.call(t,e):i=e,a=$t(e),s.notify())}})}function Ot(t){t.prototype._init=function(t){t=t||{},this.$el=null,this.$parent=t.parent,this.$root=this.$parent?this.$parent.$root:this,this.$children=[],this.$refs={},this.$els={},this._watchers=[],this._directives=[],this._uid=kn++,this._isVue=!0,this._events={},this._eventsCount={},this._isFragment=!1,this._fragment=this._fragmentStart=this._fragmentEnd=null,this._isCompiled=this._isDestroyed=this._isReady=this._isAttached=this._isBeingDestroyed=!1,this._unlinkFn=null,this._context=t._context||this.$parent,this._scope=t._scope,this._frag=t._frag,this._frag&&this._frag.children.push(this),this.$parent&&this.$parent.$children.push(this),t=this.$options=_t(this.constructor.options,t,this),this._updateRef(),this._data={},this._callHook("init"),this._initState(),this._initEvents(),this._callHook("created"),t.el&&this.$mount(t.el)}}function St(t){if(void 0===t)return"eof";var e=t.charCodeAt(0);switch(e){case 91:case 93:case 46:case 34:case 39:case 48:return t;case 95:case 36:return"ident";case 32:case 9:case 10:case 13:case 160:case 65279:case 8232:case 8233:return"ws"}return e>=97&&122>=e||e>=65&&90>=e?"ident":e>=49&&57>=e?"number":"else"}function Dt(t){var e=t.trim();return"0"===t.charAt(0)&&isNaN(t)?!1:s(e)?l(e):"*"+e}function jt(t){function e(){var e=t[l+1];return h===zn&&"'"===e||h===Tn&&'"'===e?(l++,n="\\"+e,f[En](),!0):void 0}var i,n,r,s,o,a,u,c=[],l=-1,h=Nn,p=0,f=[];for(f[Cn]=function(){void 0!==r&&(c.push(r),r=void 0)},f[En]=function(){void 0===r?r=n:r+=n},f[An]=function(){f[En](),p++},f[$n]=function(){if(p>0)p--,h=jn,f[En]();else{if(p=0,r=Dt(r),r===!1)return!1;f[Cn]()}};null!=h;)if(l++,i=t[l],"\\"!==i||!e()){if(s=St(i),u=Vn[h],o=u[s]||u["else"]||Pn,o===Pn)return;if(h=o[0],a=f[o[1]],a&&(n=o[2],n=void 0===n?i:n,a()===!1))return;if(h===Fn)return c.raw=t,c}}function zt(t){var e=xn.get(t);return e||(e=jt(t),e&&xn.put(t,e)),e}function Tt(t,e){return Lt(e).get(t)}function Ft(e,n,r){var s=e;if("string"==typeof n&&(n=jt(n)),!n||!b(e))return!1;for(var o,a,u=0,c=n.length;c>u;u++)o=e,a=n[u],"*"===a.charAt(0)&&(a=Lt(a.slice(1)).get.call(s,s)),c-1>u?(e=e[a],b(e)||(e={},"production"!==t.env.NODE_ENV&&o._isVue&&Rn(n),i(o,a,e))):Ai(e)?e.$set(a,r):a in e?e[a]=r:("production"!==t.env.NODE_ENV&&e._isVue&&Rn(n),i(e,a,r));return!0}function Pt(t,e){var i=Yn.length;return Yn[i]=e?t.replace(Bn,"\\n"):t,'"'+i+'"'}function Vt(t){var e=t.charAt(0),i=t.slice(1);return Ln.test(i)?t:(i=i.indexOf('"')>-1?i.replace(Jn,Rt):i,e+"scope."+i)}function Rt(t,e){return Yn[e]}function It(e){Mn.test(e)&&"production"!==t.env.NODE_ENV&&hn("Avoid using reserved keywords in expression: "+e),Yn.length=0;var i=e.replace(Wn,Pt).replace(qn,"");return i=(" "+i).replace(Gn,Vt).replace(Jn,Rt),Qt(i)}function Qt(e){try{return new Function("scope","return "+e+";")}catch(i){"production"!==t.env.NODE_ENV&&hn("Invalid expression. Generated function body: "+e)}}function Ut(e){var i=zt(e);return i?function(t,e){Ft(t,i,e)}:void("production"!==t.env.NODE_ENV&&hn("Invalid setter expression: "+e))}function Lt(t,e){t=t.trim();var i=Qn.get(t);if(i)return e&&!i.set&&(i.set=Ut(i.exp)),i;var n={exp:t};return n.get=Ht(t)&&t.indexOf("[")<0?Qt("scope."+t):It(t),e&&(n.set=Ut(t)),Qn.put(t,n),n}function Ht(t){return Zn.test(t)&&!Kn.test(t)&&"Math."!==t.slice(0,5)}function Mt(){tr=[],er=[],ir={},nr={},rr=sr=!1}function qt(){Bt(tr),sr=!0,Bt(er),"production"!==t.env.NODE_ENV&&Ni&&window.__VUE_DEVTOOLS_GLOBAL_HOOK__&&window.__VUE_DEVTOOLS_GLOBAL_HOOK__.emit("flush"),Mt()}function Bt(e){for(var i=0;i<e.length;i++){var n=e[i],r=n.id;ir[r]=null,n.run(),"production"!==t.env.NODE_ENV&&null!=ir[r]&&(nr[r]=(nr[r]||0)+1,nr[r]>ln._maxUpdateCount&&(e.splice(ir[r],1),hn("You may have an infinite update loop for watcher with expression: "+n.expression)))}}function Wt(t){var e=t.id;if(null==ir[e]){if(sr&&!t.user)return void t.run();var i=t.user?er:tr;ir[e]=i.length,i.push(t),rr||(rr=!0,Vi(qt))}}function Jt(t,e,i,n){n&&g(this,n);var r="function"==typeof e;if(this.vm=t,t._watchers.push(this),this.expression=r?e.toString():e,this.cb=i,this.id=++or,this.active=!0,this.dirty=this.lazy,this.deps=Object.create(null),this.newDeps=null,this.prevError=null,r)this.getter=e,this.setter=void 0;else{var s=Lt(e,this.twoWay);this.getter=s.get,this.setter=s.set}this.value=this.lazy?void 0:this.get(),this.queued=this.shallow=!1}function Zt(t){var e,i;if(Ai(t))for(e=t.length;e--;)Zt(t[e]);else if(b(t))for(i=Object.keys(t),e=i.length;e--;)Zt(t[i[e]])}function Gt(t){if(xr[t])return xr[t];var e=Kt(t);return xr[t]=xr[e]=e,e}function Kt(t){t=f(t);var e=h(t),i=e.charAt(0).toUpperCase()+e.slice(1);if(Er||(Er=document.createElement("div")),e in Er.style)return t;for(var n,r=_r.length;r--;)if(n=wr[r]+i,n in Er.style)return _r[r]+t}function Yt(t,e){var i=e.map(function(t){var e=t.charCodeAt(0);return e>47&&58>e?parseInt(t,10):1===t.length&&(e=t.toUpperCase().charCodeAt(0),e>64&&91>e)?e:jr[t]});return function(e){return i.indexOf(e.keyCode)>-1?t.call(this,e):void 0}}function Xt(t){return function(e){return e.stopPropagation(),t.call(this,e)}}function te(t){return function(e){return e.preventDefault(),t.call(this,e)}}function ee(t,e,i){for(var n,r,s,o=e?[]:null,a=0,u=t.options.length;u>a;a++)if(n=t.options[a],s=i?n.hasAttribute("selected"):n.selected){if(r=n.hasOwnProperty("_value")?n._value:n.value,!e)return r;o.push(r)}return o}function ie(t,e){for(var i=t.length;i--;)if(E(t[i],e))return i;return-1}function ne(t){return nt(t)&&t.content instanceof DocumentFragment}function re(t,e){var i=Ur.get(t);if(i)return i;var n=document.createDocumentFragment(),r=t.match(Mr),s=qr.test(t);if(r||s){var o=r&&r[1],a=Hr[o]||Hr.efault,u=a[0],c=a[1],l=a[2],h=document.createElement("div");for(e||(t=t.trim()),h.innerHTML=c+t+l;u--;)h=h.lastChild;for(var p;p=h.firstChild;)n.appendChild(p)}else n.appendChild(document.createTextNode(t));return Ur.put(t,n),n}function se(t){if(ne(t))return et(t.content),t.content;if("SCRIPT"===t.tagName)return re(t.textContent);for(var e,i=oe(t),n=document.createDocumentFragment();e=i.firstChild;)n.appendChild(e);return et(n),n}function oe(t){if(!t.querySelectorAll)return t.cloneNode();var e,i,n,r=t.cloneNode(!0);if(Br){var s=r;if(ne(t)&&(t=t.content,s=r.content),i=t.querySelectorAll("template"),i.length)for(n=s.querySelectorAll("template"),e=n.length;e--;)n[e].parentNode.replaceChild(oe(i[e]),n[e])}if(Wr)if("TEXTAREA"===t.tagName)r.value=t.value;else if(i=t.querySelectorAll("textarea"),i.length)for(n=r.querySelectorAll("textarea"),e=n.length;e--;)n[e].value=i[e].value;return r}function ae(t,e,i){var n,r;return t instanceof DocumentFragment?(et(t),e?oe(t):t):("string"==typeof t?i||"#"!==t.charAt(0)?r=re(t,i):(r=Lr.get(t),r||(n=document.getElementById(t.slice(1)),n&&(r=se(n),Lr.put(t,r)))):t.nodeType&&(r=se(t)),r&&e?oe(r):r)}function ue(t,e,i,n,r,s){this.children=[],this.childFrags=[],this.vm=e,this.scope=r,this.inserted=!1,this.parentFrag=s,s&&s.childFrags.push(this),this.unlink=t(e,i,n,r,this);var o=this.single=1===i.childNodes.length&&!i.childNodes[0].__vue_anchor;o?(this.node=i.childNodes[0],this.before=ce,this.remove=le):(this.node=rt("fragment-start"),this.end=rt("fragment-end"),this.frag=i,W(this.node,i),i.appendChild(this.end),this.before=he,this.remove=pe),this.node.__vfrag__=this}function ce(t,e){this.inserted=!0;var i=e!==!1?P:M;i(this.node,t,this.vm),Q(this.node)&&this.callHook(fe)}function le(){this.inserted=!1;var t=Q(this.node),e=this;e.callHook(de),V(this.node,this.vm,function(){t&&e.callHook(me),e.destroy()})}function he(t,e){this.inserted=!0;var i=this.vm,n=e!==!1?P:M;ot(this.node,this.end,function(e){n(e,t,i)}),Q(this.node)&&this.callHook(fe)}function pe(){this.inserted=!1;var t=this,e=Q(this.node);t.callHook(de),at(this.node,this.end,this.vm,this.frag,function(){e&&t.callHook(me),t.destroy()})}function fe(t){t._isAttached||t._callHook("attached")}function de(t){t.$destroy(!1,!0)}function me(t){t._isAttached&&t._callHook("detached")}function ve(t,e){this.vm=t;var i,n="string"==typeof e;n||nt(e)?i=ae(e,!0):(i=document.createDocumentFragment(),i.appendChild(e)),this.template=i;var r,s=t.constructor.cid;if(s>0){var o=s+(n?e:e.outerHTML);r=Zr.get(o),r||(r=Oe(i,t.$options,!0),Zr.put(o,r))}else r=Oe(i,t.$options,!0);this.linker=r}function ge(t,e,i){var n=t.node.previousSibling;if(n){for(t=n.__vfrag__;!(t&&t.forId===i&&t.inserted||n===e);){if(n=n.previousSibling,!n)return;t=n.__vfrag__}return t}}function be(t){var e=t.node;if(t.end)for(;!e.__vue__&&e!==t.end&&e.nextSibling;)e=e.nextSibling;return e.__vue__}function ye(t){for(var e=-1,i=new Array(t);++e<t;)i[e]=e;return i}function _e(t){is.push(t),ns||(ns=!0,Vi(we))}function we(){for(var t=document.documentElement.offsetHeight,e=0;e<is.length;e++)is[e]();return is=[],ns=!1,t}function ke(t,e,i,n){this.id=e,this.el=t,this.enterClass=e+"-enter",this.leaveClass=e+"-leave",this.hooks=i,this.vm=n,this.pendingCssEvent=this.pendingCssCb=this.cancel=this.pendingJsCb=this.op=this.cb=null,this.justEntered=!1,this.entered=this.left=!1,this.typeCache={};var r=this;["enterNextTick","enterDone","leaveNextTick","leaveDone"].forEach(function(t){r[t]=m(r[t],r)})}function xe(t){return!(t.offsetWidth||t.offsetHeight||t.getClientRects().length)}function Ee(t){for(var e={},i=t.trim().split(/\s+/),n=i.length;n--;)e[i[n]]=!0;return e}function Ce(t,e){return Ai(t)?t.indexOf(e)>-1:r(t,e)}function Ae(e,i){for(var n,r,o,a,u,c,l,p=[],d=Object.keys(i),m=d.length;m--;)r=d[m],n=i[r]||vs,"production"===t.env.NODE_ENV||"$data"!==r?(u=h(r),gs.test(u)?(l={name:r,path:u,options:n,mode:ms.ONE_WAY,raw:null},o=f(r),null===(a=L(e,o))&&(null!==(a=L(e,o+".sync"))?l.mode=ms.TWO_WAY:null!==(a=L(e,o+".once"))&&(l.mode=ms.ONE_TIME)),null!==a?(l.raw=a,c=N(a),a=c.expression,l.filters=c.filters,s(a)?l.optimizedLiteral=!0:(l.dynamic=!0,"production"===t.env.NODE_ENV||l.mode!==ms.TWO_WAY||bs.test(a)||(l.mode=ms.ONE_WAY,hn("Cannot bind two-way prop with non-settable parent path: "+a))),l.parentPath=a,"production"!==t.env.NODE_ENV&&n.twoWay&&l.mode!==ms.TWO_WAY&&hn('Prop "'+r+'" expects a two-way binding type.')):null!==(a=U(e,o))?l.raw=a:n.required&&"production"!==t.env.NODE_ENV&&hn("Missing required prop: "+r),p.push(l)):"production"!==t.env.NODE_ENV&&hn('Invalid prop key: "'+r+'". Prop keys must be valid identifiers.')):hn("Do not use $data as prop.");return $e(p)}function $e(e){return function(i,n){i._props={};for(var r,s,o,a,h,p=e.length;p--;)if(r=e[p],h=r.raw,s=r.path,o=r.options,i._props[s]=r,null===h)lt(i,r,Ne(i,o));else if(r.dynamic)i._context?r.mode===ms.ONE_TIME?(a=(n||i._context).$get(r.parentPath),lt(i,r,a)):i._bindDir({name:"prop",def:hs,prop:r},null,null,n):"production"!==t.env.NODE_ENV&&hn("Cannot bind dynamic prop on a root instance with no parent: "+r.name+'="'+h+'"');else if(r.optimizedLiteral){var f=l(h);a=f===h?c(u(h)):f,lt(i,r,a)}else a=o.type===Boolean&&""===h?!0:h,lt(i,r,a)}}function Ne(e,i){if(!r(i,"default"))return i.type===Boolean?!1:void 0;var n=i["default"];return b(n)&&"production"!==t.env.NODE_ENV&&hn("Object/Array as default prop values will be shared across multiple instances. Use a factory function to return the default value instead."),"function"==typeof n&&i.type!==Function?n.call(e):n}function Oe(t,e,i){var n=i||!e._asComponent?Pe(t,e):null,r=n&&n.terminal||"SCRIPT"===t.tagName||!t.hasChildNodes()?null:Le(t.childNodes,e);return function(t,e,i,s,o){var a=v(e.childNodes),u=Se(function(){n&&n(t,e,i,s,o),r&&r(t,a,i,s,o)},t);return je(t,u)}}function Se(t,e){var i=e._directives.length;t();var n=e._directives.slice(i);n.sort(De);for(var r=0,s=n.length;s>r;r++)n[r]._bind();return n}function De(t,e){return t=t.descriptor.def.priority||Cs,e=e.descriptor.def.priority||Cs,t>e?-1:t===e?0:1}function je(t,e,i,n){return function(r){ze(t,e,r),i&&n&&ze(i,n)}}function ze(t,e,i){for(var n=e.length;n--;)e[n]._teardown(),i||t._directives.$remove(e[n])}function Te(t,e,i,n){var r=Ae(e,i),s=Se(function(){r(t,n)},t);return je(t,s)}function Fe(e,i,n){var r,s,o=i._containerAttrs,a=i._replacerAttrs;if(11!==e.nodeType)i._asComponent?(o&&n&&(r=Ze(o,n)),a&&(s=Ze(a,i))):s=Ze(e.attributes,i);else if("production"!==t.env.NODE_ENV&&o){var u=o.filter(function(t){return t.name.indexOf("_v-")<0&&!_s.test(t.name)&&"slot"!==t.name}).map(function(t){return'"'+t.name+'"'});if(u.length){var c=u.length>1;hn("Attribute"+(c?"s ":" ")+u.join(", ")+(c?" are":" is")+" ignored on component <"+i.el.tagName.toLowerCase()+"> because the component is a fragment instance: http://vuejs.org/guide/components.html#Fragment_Instance");
-}}return function(t,e,i){var n,o=t._context;o&&r&&(n=Se(function(){r(o,e,null,i)},o));var a=Se(function(){s&&s(t,e)},t);return je(t,a,o,n)}}function Pe(t,e){var i=t.nodeType;return 1===i&&"SCRIPT"!==t.tagName?Ve(t,e):3===i&&t.data.trim()?Re(t,e):null}function Ve(t,e){if("TEXTAREA"===t.tagName){var i=D(t.value);i&&(t.setAttribute(":value",j(i)),t.value="")}var n,r=t.hasAttributes();return r&&(n=Be(t,e)),n||(n=Me(t,e)),n||(n=qe(t,e)),!n&&r&&(n=Ze(t.attributes,e)),n}function Re(t,e){if(t._skip)return Ie;var i=D(t.wholeText);if(!i)return null;for(var n=t.nextSibling;n&&3===n.nodeType;)n._skip=!0,n=n.nextSibling;for(var r,s,o=document.createDocumentFragment(),a=0,u=i.length;u>a;a++)s=i[a],r=s.tag?Qe(s,e):document.createTextNode(s.value),o.appendChild(r);return Ue(i,o,e)}function Ie(t,e){B(e)}function Qe(t,e){function i(e){if(!t.descriptor){var i=N(t.value);t.descriptor={name:e,def:es[e],expression:i.expression,filters:i.filters}}}var n;return t.oneTime?n=document.createTextNode(t.value):t.html?(n=document.createComment("v-html"),i("html")):(n=document.createTextNode(" "),i("text")),n}function Ue(t,e){return function(i,n,r,s){for(var o,a,u,c=e.cloneNode(!0),l=v(c.childNodes),h=0,p=t.length;p>h;h++)o=t[h],a=o.value,o.tag&&(u=l[h],o.oneTime?(a=(s||i).$eval(a),o.html?J(u,ae(a,!0)):u.data=a):i._bindDir(o.descriptor,u,r,s));J(n,c)}}function Le(t,e){for(var i,n,r,s=[],o=0,a=t.length;a>o;o++)r=t[o],i=Pe(r,e),n=i&&i.terminal||"SCRIPT"===r.tagName||!r.hasChildNodes()?null:Le(r.childNodes,e),s.push(i,n);return s.length?He(s):null}function He(t){return function(e,i,n,r,s){for(var o,a,u,c=0,l=0,h=t.length;h>c;l++){o=i[l],a=t[c++],u=t[c++];var p=v(o.childNodes);a&&a(e,o,n,r,s),u&&u(e,p,n,r,s)}}}function Me(t,e){var i=t.tagName.toLowerCase();if(!fn.test(i)){"slot"===i&&H(t,"name")&&(i="_namedSlot");var n=wt(e,"elementDirectives",i);return n?Je(t,i,"",e,n):void 0}}function qe(t,e){var i=ut(t,e);if(i){var n=st(t),r={name:"component",ref:n,expression:i.id,def:ds.component,modifiers:{literal:!i.dynamic}},s=function(t,e,i,s,o){n&&Nt((s||t).$refs,n,null),t._bindDir(r,e,i,s,o)};return s.terminal=!0,s}}function Be(t,e){if(null!==U(t,"v-pre"))return We;if(t.hasAttribute("v-else")){var i=t.previousElementSibling;if(i&&i.hasAttribute("v-if"))return We}for(var n,r,s=0,o=Es.length;o>s;s++)if(r=Es[s],n=t.getAttribute("v-"+r))return Je(t,r,n,e)}function We(){}function Je(t,e,i,n,r){var s=N(i),o={name:e,expression:s.expression,filters:s.filters,raw:i,def:r||es[e]};("for"===e||"router-view"===e)&&(o.ref=st(t));var a=function(t,e,i,n,r){o.ref&&Nt((n||t).$refs,o.ref,null),t._bindDir(o,e,i,n,r)};return a.terminal=!0,a}function Ze(e,i){function n(t,e,i){var n=N(o);m.push({name:t,attr:a,raw:u,def:e,arg:l,modifiers:h,expression:n.expression,filters:n.filters,interp:i})}for(var r,s,o,a,u,c,l,h,p,f,d=e.length,m=[];d--;)if(r=e[d],s=a=r.name,o=u=r.value,f=D(o),l=null,h=Ge(s),s=s.replace(ks,""),f)o=j(f),l=s,n("bind",es.bind,!0),"production"!==t.env.NODE_ENV&&"class"===s&&Array.prototype.some.call(e,function(t){return":class"===t.name||"v-bind:class"===t.name})&&hn('class="'+u+'": Do not mix mustache interpolation and v-bind for "class" on the same element. Use one or the other.');else if(xs.test(s))h.literal=!ys.test(s),n("transition",ds.transition);else if(_s.test(s))l=s.replace(_s,""),n("on",es.on);else if(ys.test(s))c=s.replace(ys,""),"style"===c||"class"===c?n(c,ds[c]):(l=c,n("bind",es.bind));else if(0===s.indexOf("v-")){if(l=(l=s.match(ws))&&l[1],l&&(s=s.replace(ws,"")),c=s.slice(2),"else"===c)continue;p=wt(i,"directives",c),"production"!==t.env.NODE_ENV&&kt(p,"directive",c),p&&n(c,p)}return m.length?Ke(m):void 0}function Ge(t){var e=Object.create(null),i=t.match(ks);if(i)for(var n=i.length;n--;)e[i[n].slice(1)]=!0;return e}function Ke(t){return function(e,i,n,r,s){for(var o=t.length;o--;)e._bindDir(t[o],i,n,r,s)}}function Ye(t,e){return e&&(e._containerAttrs=ti(t)),nt(t)&&(t=ae(t)),e&&(e._asComponent&&!e.template&&(e.template="<slot></slot>"),e.template&&(e._content=tt(t),t=Xe(t,e))),t instanceof DocumentFragment&&(W(rt("v-start",!0),t),t.appendChild(rt("v-end",!0))),t}function Xe(e,i){var n=i.template,r=ae(n,!0);if(r){var s=r.firstChild,o=s.tagName&&s.tagName.toLowerCase();return i.replace?(e===document.body&&"production"!==t.env.NODE_ENV&&hn("You are mounting an instance with a template to <body>. This will replace <body> entirely. You should probably use `replace: false` here."),r.childNodes.length>1||1!==s.nodeType||"component"===o||wt(i,"components",o)||H(s,"is")||wt(i,"elementDirectives",o)||s.hasAttribute("v-for")||s.hasAttribute("v-if")?r:(i._replacerAttrs=ti(s),ei(e,s),s)):(e.appendChild(r),e)}"production"!==t.env.NODE_ENV&&hn("Invalid template option: "+n)}function ti(t){return 1===t.nodeType&&t.hasAttributes()?v(t.attributes):void 0}function ei(t,e){for(var i,n,r=t.attributes,s=r.length;s--;)i=r[s].name,n=r[s].value,e.hasAttribute(i)||As.test(i)?"class"===i&&n.split(/\s+/).forEach(function(t){Y(e,t)}):e.setAttribute(i,n)}function ii(e){function n(){}function s(t,e){var i=new Jt(e,t,null,{lazy:!0});return function(){return i.dirty&&i.evaluate(),xt.target&&i.depend(),i.value}}Object.defineProperty(e.prototype,"$data",{get:function(){return this._data},set:function(t){t!==this._data&&this._setData(t)}}),e.prototype._initState=function(){this._initProps(),this._initMeta(),this._initMethods(),this._initData(),this._initComputed()},e.prototype._initProps=function(){var e=this.$options,i=e.el,n=e.props;n&&!i&&"production"!==t.env.NODE_ENV&&hn("Props will not be compiled if no `el` option is provided at instantiation."),i=e.el=I(i),this._propsUnlinkFn=i&&1===i.nodeType&&n?Te(this,i,n,this._scope):null},e.prototype._initData=function(){var e=this._data,n=this.$options.data,s=n&&n();if(s){this._data=s;for(var o in e)"production"!==t.env.NODE_ENV&&r(s,o)&&hn('Data field "'+o+'" is already defined as a prop. Use prop default value instead.'),null===this._props[o].raw&&r(s,o)||i(s,o,e[o])}var a,u,c=this._data,l=Object.keys(c);for(a=l.length;a--;)u=l[a],this._proxy(u);$t(c,this)},e.prototype._setData=function(t){t=t||{};var e=this._data;this._data=t;var i,n,s;for(i=Object.keys(e),s=i.length;s--;)n=i[s],n in t||this._unproxy(n);for(i=Object.keys(t),s=i.length;s--;)n=i[s],r(this,n)||this._proxy(n);e.__ob__.removeVm(this),$t(t,this),this._digest()},e.prototype._proxy=function(t){if(!o(t)){var e=this;Object.defineProperty(e,t,{configurable:!0,enumerable:!0,get:function(){return e._data[t]},set:function(i){e._data[t]=i}})}},e.prototype._unproxy=function(t){o(t)||delete this[t]},e.prototype._digest=function(){for(var t=0,e=this._watchers.length;e>t;t++)this._watchers[t].update(!0)},e.prototype._initComputed=function(){var t=this.$options.computed;if(t)for(var e in t){var i=t[e],r={enumerable:!0,configurable:!0};"function"==typeof i?(r.get=s(i,this),r.set=n):(r.get=i.get?i.cache!==!1?s(i.get,this):m(i.get,this):n,r.set=i.set?m(i.set,this):n),Object.defineProperty(this,e,r)}},e.prototype._initMethods=function(){var t=this.$options.methods;if(t)for(var e in t)this[e]=m(t[e],this)},e.prototype._initMeta=function(){var t=this.$options._meta;if(t)for(var e in t)Nt(this,e,t[e])}}function ni(e){function i(t,e){for(var i,n,r=e.attributes,s=0,o=r.length;o>s;s++)i=r[s].name,Ns.test(i)&&(i=i.replace(Ns,""),n=(t._scope||t._context).$eval(r[s].value,!0),t.$on(i.replace(Ns),n))}function n(t,e,i){if(i){var n,s,o,a;for(s in i)if(n=i[s],Ai(n))for(o=0,a=n.length;a>o;o++)r(t,e,s,n[o]);else r(t,e,s,n)}}function r(e,i,n,s,o){var a=typeof s;if("function"===a)e[i](n,s,o);else if("string"===a){var u=e.$options.methods,c=u&&u[s];c?e[i](n,c,o):"production"!==t.env.NODE_ENV&&hn('Unknown method: "'+s+'" when registering callback for '+i+': "'+n+'".')}else s&&"object"===a&&r(e,i,n,s.handler,s)}function s(){this._isAttached||(this._isAttached=!0,this.$children.forEach(o))}function o(t){!t._isAttached&&Q(t.$el)&&t._callHook("attached")}function a(){this._isAttached&&(this._isAttached=!1,this.$children.forEach(u))}function u(t){t._isAttached&&!Q(t.$el)&&t._callHook("detached")}e.prototype._initEvents=function(){var t=this.$options;t._asComponent&&i(this,t.el),n(this,"$on",t.events),n(this,"$watch",t.watch)},e.prototype._initDOMHooks=function(){this.$on("hook:attached",s),this.$on("hook:detached",a)},e.prototype._callHook=function(t){this.$emit("pre-hook:"+t);var e=this.$options[t];if(e)for(var i=0,n=e.length;n>i;i++)e[i].call(this);this.$emit("hook:"+t)}}function ri(){}function si(e,i,n,r,s,o){this.vm=i,this.el=n,this.descriptor=e,this.name=e.name,this.expression=e.expression,this.arg=e.arg,this.modifiers=e.modifiers,this.filters=e.filters,this.literal=this.modifiers&&this.modifiers.literal,this._locked=!1,this._bound=!1,this._listeners=null,this._host=r,this._scope=s,this._frag=o,"production"!==t.env.NODE_ENV&&this.el&&(this.el._vue_directives=this.el._vue_directives||[],this.el._vue_directives.push(this))}function oi(t){t.prototype._updateRef=function(t){var e=this.$options._ref;if(e){var i=(this._scope||this._context).$refs;t?i[e]===this&&(i[e]=null):i[e]=this}},t.prototype._compile=function(t){var e=this.$options,i=t;if(t=Ye(t,e),this._initElement(t),1!==t.nodeType||null===U(t,"v-pre")){var n,r=this._context&&this._context.$options,s=Fe(t,e,r),o=this.constructor;e._linkerCachable&&(n=o.linker,n||(n=o.linker=Oe(t,e)));var a=s(this,t,this._scope),u=n?n(this,t):Oe(t,e)(this,t);return this._unlinkFn=function(){a(),u(!0)},e.replace&&J(i,t),this._isCompiled=!0,this._callHook("compiled"),t}},t.prototype._initElement=function(t){t instanceof DocumentFragment?(this._isFragment=!0,this.$el=this._fragmentStart=t.firstChild,this._fragmentEnd=t.lastChild,3===this._fragmentStart.nodeType&&(this._fragmentStart.data=this._fragmentEnd.data=""),this._fragment=t):this.$el=t,this.$el.__vue__=this,this._callHook("beforeCompile")},t.prototype._bindDir=function(t,e,i,n,r){this._directives.push(new si(t,this,e,i,n,r))},t.prototype._destroy=function(t,e){if(this._isBeingDestroyed)return void(e||this._cleanup());var i,n,r=this,s=function(){!i||n||e||r._cleanup()};t&&this.$el&&(n=!0,this.$remove(function(){n=!1,s()})),this._callHook("beforeDestroy"),this._isBeingDestroyed=!0;var o,a=this.$parent;for(a&&!a._isBeingDestroyed&&(a.$children.$remove(this),this._updateRef(!0)),o=this.$children.length;o--;)this.$children[o].$destroy();for(this._propsUnlinkFn&&this._propsUnlinkFn(),this._unlinkFn&&this._unlinkFn(),o=this._watchers.length;o--;)this._watchers[o].teardown();this.$el&&(this.$el.__vue__=null),i=!0,s()},t.prototype._cleanup=function(){this._isDestroyed||(this._frag&&this._frag.children.$remove(this),this._data.__ob__&&this._data.__ob__.removeVm(this),this.$el=this.$parent=this.$root=this.$children=this._watchers=this._context=this._scope=this._directives=null,this._isDestroyed=!0,this._callHook("destroyed"),this.$off())}}function ai(e){e.prototype._applyFilters=function(e,i,n,r){var s,o,a,u,c,l,h,p,f;for(l=0,h=n.length;h>l;l++)if(s=n[l],o=wt(this.$options,"filters",s.name),"production"!==t.env.NODE_ENV&&kt(o,"filter",s.name),o&&(o=r?o.write:o.read||o,"function"==typeof o)){if(a=r?[e,i]:[e],c=r?2:1,s.args)for(p=0,f=s.args.length;f>p;p++)u=s.args[p],a[p+c]=u.dynamic?this.$get(u.value):u.value;e=o.apply(this,a)}return e},e.prototype._resolveComponent=function(i,n){var r=wt(this.$options,"components",i);if("production"!==t.env.NODE_ENV&&kt(r,"component",i),r)if(r.options)n(r);else if(r.resolved)n(r.resolved);else if(r.requested)r.pendingCallbacks.push(n);else{r.requested=!0;var s=r.pendingCallbacks=[n];r(function(t){y(t)&&(t=e.extend(t)),r.resolved=t;for(var i=0,n=s.length;n>i;i++)s[i](t)},function(e){"production"!==t.env.NODE_ENV&&hn("Failed to resolve async component: "+i+". "+(e?"\nReason: "+e:""))})}}}function ui(e){function r(t){return new Function("return function "+d(t)+" (options) { this._init(options) }")()}e.util=wn,e.config=ln,e.set=i,e["delete"]=n,e.nextTick=Vi,e.compiler=$s,e.FragmentFactory=ve,e.internalDirectives=ds,e.parsers={path:In,text:an,template:Jr,directive:tn,expression:Xn},e.cid=0;var s=1;e.extend=function(e){e=e||{};var i=this,n=0===i.cid;if(n&&e._Ctor)return e._Ctor;var o=e.name||i.options.name;"production"!==t.env.NODE_ENV&&(/^[a-zA-Z][\w-]+$/.test(o)||(hn("Invalid component name: "+o),o=null));var a=r(o||"VueComponent");return a.prototype=Object.create(i.prototype),a.prototype.constructor=a,a.cid=s++,a.options=_t(i.options,e),a["super"]=i,a.extend=i.extend,ln._assetTypes.forEach(function(t){a[t]=i[t]}),o&&(a.options.components[o]=a),n&&(e._Ctor=a),a},e.use=function(t){if(!t.installed){var e=v(arguments,1);return e.unshift(this),"function"==typeof t.install?t.install.apply(t,e):t.apply(null,e),t.installed=!0,this}},e.mixin=function(t){e.options=_t(e.options,t)},ln._assetTypes.forEach(function(i){e[i]=function(n,r){return r?("production"!==t.env.NODE_ENV&&"component"===i&&(fn.test(n)||dn.test(n))&&hn("Do not use built-in or reserved HTML elements as component id: "+n),"component"===i&&y(r)&&(r.name=n,r=e.extend(r)),this.options[i+"s"][n]=r,r):this.options[i+"s"][n]}})}function ci(t){function e(t){return JSON.parse(JSON.stringify(t))}t.prototype.$get=function(t,e){var i=Lt(t);if(i){if(e&&!Ht(t)){var n=this;return function(){n.$arguments=v(arguments),i.get.call(n,n),n.$arguments=null}}try{return i.get.call(this,this)}catch(r){}}},t.prototype.$set=function(t,e){var i=Lt(t,!0);i&&i.set&&i.set.call(this,this,e)},t.prototype.$delete=function(t){n(this._data,t)},t.prototype.$watch=function(t,e,i){var n,r=this;"string"==typeof t&&(n=N(t),t=n.expression);var s=new Jt(r,t,e,{deep:i&&i.deep,sync:i&&i.sync,filters:n&&n.filters,user:!i||i.user!==!1});return i&&i.immediate&&e.call(r,s.value),function(){s.teardown()}},t.prototype.$eval=function(t,e){if(Os.test(t)){var i=N(t),n=this.$get(i.expression,e);return i.filters?this._applyFilters(n,null,i.filters):n}return this.$get(t,e)},t.prototype.$interpolate=function(t){var e=D(t),i=this;return e?1===e.length?i.$eval(e[0].value)+"":e.map(function(t){return t.tag?i.$eval(t.value):t.value}).join(""):t},t.prototype.$log=function(t){var i=t?Tt(this._data,t):this._data;if(i&&(i=e(i)),!t)for(var n in this.$options.computed)i[n]=e(this[n]);console.log(i)}}function li(t){function e(t,e,n,r,s,o){e=i(e);var a=!Q(e),u=r===!1||a?s:o,c=!a&&!t._isAttached&&!Q(t.$el);return t._isFragment?(ot(t._fragmentStart,t._fragmentEnd,function(i){u(i,e,t)}),n&&n()):u(t.$el,e,t,n),c&&t._callHook("attached"),t}function i(t){return"string"==typeof t?document.querySelector(t):t}function n(t,e,i,n){e.appendChild(t),n&&n()}function r(t,e,i,n){M(t,e),n&&n()}function s(t,e,i){B(t),i&&i()}t.prototype.$nextTick=function(t){Vi(t,this)},t.prototype.$appendTo=function(t,i,r){return e(this,t,i,r,n,F)},t.prototype.$prependTo=function(t,e,n){return t=i(t),t.hasChildNodes()?this.$before(t.firstChild,e,n):this.$appendTo(t,e,n),this},t.prototype.$before=function(t,i,n){return e(this,t,i,n,r,P)},t.prototype.$after=function(t,e,n){return t=i(t),t.nextSibling?this.$before(t.nextSibling,e,n):this.$appendTo(t.parentNode,e,n),this},t.prototype.$remove=function(t,e){if(!this.$el.parentNode)return t&&t();var i=this._isAttached&&Q(this.$el);i||(e=!1);var n=this,r=function(){i&&n._callHook("detached"),t&&t()};if(this._isFragment)at(this._fragmentStart,this._fragmentEnd,this,this._fragment,r);else{var o=e===!1?s:V;o(this.$el,this,r)}return this}}function hi(t){function e(t,e,n){var r=t.$parent;if(r&&n&&!i.test(e))for(;r;)r._eventsCount[e]=(r._eventsCount[e]||0)+n,r=r.$parent}t.prototype.$on=function(t,i){return(this._events[t]||(this._events[t]=[])).push(i),e(this,t,1),this},t.prototype.$once=function(t,e){function i(){n.$off(t,i),e.apply(this,arguments)}var n=this;return i.fn=e,this.$on(t,i),this},t.prototype.$off=function(t,i){var n;if(!arguments.length){if(this.$parent)for(t in this._events)n=this._events[t],n&&e(this,t,-n.length);return this._events={},this}if(n=this._events[t],!n)return this;if(1===arguments.length)return e(this,t,-n.length),this._events[t]=null,this;for(var r,s=n.length;s--;)if(r=n[s],r===i||r.fn===i){e(this,t,-1),n.splice(s,1);break}return this},t.prototype.$emit=function(t){var e=this._events[t],i=!e;if(e){e=e.length>1?v(e):e;for(var n=v(arguments,1),r=0,s=e.length;s>r;r++){var o=e[r].apply(this,n);o===!0&&(i=!0)}}return i},t.prototype.$broadcast=function(t){if(this._eventsCount[t]){for(var e=this.$children,i=0,n=e.length;n>i;i++){var r=e[i],s=r.$emit.apply(r,arguments);s&&r.$broadcast.apply(r,arguments)}return this}},t.prototype.$dispatch=function(){this.$emit.apply(this,arguments);for(var t=this.$parent;t;){var e=t.$emit.apply(t,arguments);t=e?t.$parent:null}return this};var i=/^hook:/}function pi(e){function i(){this._isAttached=!0,this._isReady=!0,this._callHook("ready")}e.prototype.$mount=function(e){return this._isCompiled?void("production"!==t.env.NODE_ENV&&hn("$mount() should be called only once.")):(e=I(e),e||(e=document.createElement("div")),this._compile(e),this._initDOMHooks(),Q(this.$el)?(this._callHook("attached"),i.call(this)):this.$once("hook:attached",i),this)},e.prototype.$destroy=function(t,e){this._destroy(t,e)},e.prototype.$compile=function(t,e,i,n){return Oe(t,this.$options,!0)(this,t,e,i,n)}}function fi(t){this._init(t)}function di(t,e,i){return i=i?parseInt(i,10):0,"number"==typeof e?t.slice(i,i+e):t}function mi(t,e,i){if(t=Ss(t),null==e)return t;if("function"==typeof e)return t.filter(e);e=(""+e).toLowerCase();for(var n,r,s,o,a="in"===i?3:2,u=v(arguments,a).reduce(function(t,e){return t.concat(e)},[]),c=[],l=0,h=t.length;h>l;l++)if(n=t[l],s=n&&n.$value||n,o=u.length){for(;o--;)if(r=u[o],"$key"===r&&gi(n.$key,e)||gi(Tt(s,r),e)){c.push(n);break}}else gi(n,e)&&c.push(n);return c}function vi(t,e,i){if(t=Ss(t),!e)return t;var n=i&&0>i?-1:1;return t.slice().sort(function(t,i){return"$key"!==e&&(b(t)&&"$value"in t&&(t=t.$value),b(i)&&"$value"in i&&(i=i.$value)),t=b(t)?Tt(t,e):t,i=b(i)?Tt(i,e):i,t===i?0:t>i?n:-n})}function gi(t,e){var i;if(y(t)){var n=Object.keys(t);for(i=n.length;i--;)if(gi(t[n[i]],e))return!0}else if(Ai(t)){for(i=t.length;i--;)if(gi(t[i],e))return!0}else if(null!=t)return t.toString().toLowerCase().indexOf(e)>-1}function bi(t,e,i){function n(t){!nt(t)||t.hasAttribute("v-if")||t.hasAttribute("v-for")||(t=ae(t)),t=oe(t),r.appendChild(t)}for(var r=document.createDocumentFragment(),s=0,o=t.length;o>s;s++){var a=t[s];i&&!a.__v_selected?n(a):i||a.parentNode!==e||(a.__v_selected=!0,n(a))}return r}var yi=Object.prototype.hasOwnProperty,_i=/^\s?(true|false|[\d\.]+|'[^']*'|"[^"]*")\s?$/,wi=/-(\w)/g,ki=/([a-z\d])([A-Z])/g,xi=/(?:^|[-_\/])(\w)/g,Ei=Object.prototype.toString,Ci="[object Object]",Ai=Array.isArray,$i="__proto__"in{},Ni="undefined"!=typeof window&&"[object Object]"!==Object.prototype.toString.call(window),Oi=Ni&&navigator.userAgent.toLowerCase().indexOf("msie 9.0")>0,Si=Ni&&navigator.userAgent.toLowerCase().indexOf("android")>0,Di=void 0,ji=void 0,zi=void 0,Ti=void 0;if(Ni&&!Oi){var Fi=void 0===window.ontransitionend&&void 0!==window.onwebkittransitionend,Pi=void 0===window.onanimationend&&void 0!==window.onwebkitanimationend;Di=Fi?"WebkitTransition":"transition",ji=Fi?"webkitTransitionEnd":"transitionend",zi=Pi?"WebkitAnimation":"animation",Ti=Pi?"webkitAnimationEnd":"animationend"}var Vi=function(){function t(){n=!1;var t=i.slice(0);i=[];for(var e=0;e<t.length;e++)t[e]()}var e,i=[],n=!1;if("undefined"!=typeof MutationObserver){var r=1,s=new MutationObserver(t),o=document.createTextNode(r);s.observe(o,{characterData:!0}),e=function(){r=(r+1)%2,o.data=r}}else e=setTimeout;return function(r,s){var o=s?function(){r.call(s)}:r;i.push(o),n||(n=!0,e(t,0))}}(),Ri=C.prototype;Ri.put=function(t,e){var i={key:t,value:e};return this._keymap[t]=i,this.tail?(this.tail.newer=i,i.older=this.tail):this.head=i,this.tail=i,this.size===this.limit?this.shift():void this.size++},Ri.shift=function(){var t=this.head;return t&&(this.head=this.head.newer,this.head.older=void 0,t.newer=t.older=void 0,this._keymap[t.key]=void 0),t},Ri.get=function(t,e){var i=this._keymap[t];if(void 0!==i)return i===this.tail?e?i:i.value:(i.newer&&(i===this.head&&(this.head=i.newer),i.newer.older=i.older),i.older&&(i.older.newer=i.newer),i.newer=void 0,i.older=this.tail,this.tail&&(this.tail.newer=i),this.tail=i,e?i:i.value)};var Ii,Qi,Ui,Li,Hi,Mi,qi,Bi,Wi,Ji,Zi,Gi,Ki=new C(1e3),Yi=/[^\s'"]+|'[^']*'|"[^"]*"/g,Xi=/^in$|^-?\d+/,tn=Object.freeze({parseDirective:N}),en=/[-.*+?^${}()|[\]\/\\]/g,nn=void 0,rn=void 0,sn=void 0,on=/[^|]\|[^|]/,an=Object.freeze({compileRegex:S,parseText:D,tokensToExp:j}),un=["{{","}}"],cn=["{{{","}}}"],ln=Object.defineProperties({debug:!1,silent:!1,async:!0,warnExpressionErrors:!0,convertAllProperties:!1,_delimitersChanged:!0,_assetTypes:["component","directive","elementDirective","filter","transition","partial"],_propBindingModes:{ONE_WAY:0,TWO_WAY:1,ONE_TIME:2},_maxUpdateCount:100},{delimiters:{get:function(){return un},set:function(t){un=t,S()},configurable:!0,enumerable:!0},unsafeDelimiters:{get:function(){return cn},set:function(t){cn=t,S()},configurable:!0,enumerable:!0}}),hn=void 0;"production"!==t.env.NODE_ENV&&!function(){var t="undefined"!=typeof console;hn=function(e,i){if(t&&(!ln.silent||ln.debug)&&(console.warn("[Vue warn]: "+e),ln.debug)){if(i)throw i;console.warn(new Error("Warning Stack Trace").stack)}}}();var pn=/^v-ref:/,fn=/^(div|p|span|img|a|b|i|br|ul|ol|li|h1|h2|h3|h4|h5|h6|code|pre|table|th|td|tr|form|label|input|select|option|nav|article|section|header|footer)$/,dn=/^(slot|partial|component)$/,mn=ln.optionMergeStrategies=Object.create(null);mn.data=function(e,i,n){return n?e||i?function(){var t="function"==typeof i?i.call(n):i,r="function"==typeof e?e.call(n):void 0;return t?mt(t,r):r}:void 0:i?"function"!=typeof i?("production"!==t.env.NODE_ENV&&hn('The "data" option should be a function that returns a per-instance value in component definitions.'),e):e?function(){return mt(i.call(this),e.call(this))}:i:e},mn.el=function(e,i,n){if(!n&&i&&"function"!=typeof i)return void("production"!==t.env.NODE_ENV&&hn('The "el" option should be a function that returns a per-instance value in component definitions.'));var r=i||e;return n&&"function"==typeof r?r.call(n):r},mn.init=mn.created=mn.ready=mn.attached=mn.detached=mn.beforeCompile=mn.compiled=mn.beforeDestroy=mn.destroyed=function(t,e){return e?t?t.concat(e):Ai(e)?e:[e]:t},mn.paramAttributes=function(){"production"!==t.env.NODE_ENV&&hn('"paramAttributes" option has been deprecated in 0.12. Use "props" instead.')},ln._assetTypes.forEach(function(t){mn[t+"s"]=vt}),mn.watch=mn.events=function(t,e){if(!e)return t;if(!t)return e;var i={};g(i,t);for(var n in e){var r=i[n],s=e[n];r&&!Ai(r)&&(r=[r]),i[n]=r?r.concat(s):[s]}return i},mn.props=mn.methods=mn.computed=function(t,e){if(!e)return t;if(!t)return e;var i=Object.create(null);return g(i,t),g(i,e),i};var vn=function(t,e){return void 0===e?t:e},gn=Array.prototype,bn=Object.create(gn);["push","pop","shift","unshift","splice","sort","reverse"].forEach(function(t){var e=gn[t];_(bn,t,function(){for(var i=arguments.length,n=new Array(i);i--;)n[i]=arguments[i];var r,s=e.apply(this,n),o=this.__ob__;switch(t){case"push":r=n;break;case"unshift":r=n;break;case"splice":r=n.slice(2)}return r&&o.observeArray(r),o.dep.notify(),s})}),_(gn,"$set",function(t,e){return t>=this.length&&(this.length=Number(t)+1),this.splice(t,1,e)[0]}),_(gn,"$remove",function(t){if(this.length){var e=k(this,t);return e>-1?this.splice(e,1):void 0}});var yn=0;xt.target=null,xt.prototype.addSub=function(t){this.subs.push(t)},xt.prototype.removeSub=function(t){this.subs.$remove(t)},xt.prototype.depend=function(){xt.target.addDep(this)},xt.prototype.notify=function(){for(var t=v(this.subs),e=0,i=t.length;i>e;e++)t[e].update()};var _n=Object.getOwnPropertyNames(bn);Et.prototype.walk=function(t){for(var e=Object.keys(t),i=0,n=e.length;n>i;i++)this.convert(e[i],t[e[i]])},Et.prototype.observeArray=function(t){for(var e=0,i=t.length;i>e;e++)$t(t[e])},Et.prototype.convert=function(t,e){Nt(this.value,t,e)},Et.prototype.addVm=function(t){(this.vms||(this.vms=[])).push(t)},Et.prototype.removeVm=function(t){this.vms.$remove(t)};var wn=Object.freeze({defineReactive:Nt,set:i,del:n,hasOwn:r,isLiteral:s,isReserved:o,_toString:a,toNumber:u,toBoolean:c,stripQuotes:l,camelize:h,hyphenate:f,classify:d,bind:m,toArray:v,extend:g,isObject:b,isPlainObject:y,def:_,debounce:w,indexOf:k,cancellable:x,looseEqual:E,isArray:Ai,hasProto:$i,inBrowser:Ni,isIE9:Oi,isAndroid:Si,get transitionProp(){return Di},get transitionEndEvent(){return ji},get animationProp(){return zi},get animationEndEvent(){return Ti},nextTick:Vi,query:I,inDoc:Q,getAttr:U,getBindAttr:L,hasBindAttr:H,before:M,after:q,remove:B,prepend:W,replace:J,on:Z,off:G,setClass:K,addClass:Y,removeClass:X,extractContent:tt,trimNode:et,isTemplate:nt,createAnchor:rt,findRef:st,mapNodeRange:ot,removeNodeRange:at,mergeOptions:_t,resolveAsset:wt,assertAsset:kt,checkComponentAttr:ut,initProp:lt,assertProp:ht,coerceProp:pt,commonTagRE:fn,reservedTagRE:dn,get warn(){return hn}}),kn=0,xn=new C(1e3),En=0,Cn=1,An=2,$n=3,Nn=0,On=1,Sn=2,Dn=3,jn=4,zn=5,Tn=6,Fn=7,Pn=8,Vn=[];Vn[Nn]={ws:[Nn],ident:[Dn,En],"[":[jn],eof:[Fn]},Vn[On]={ws:[On],".":[Sn],"[":[jn],eof:[Fn]},Vn[Sn]={ws:[Sn],ident:[Dn,En]},Vn[Dn]={ident:[Dn,En],0:[Dn,En],number:[Dn,En],ws:[On,Cn],".":[Sn,Cn],"[":[jn,Cn],eof:[Fn,Cn]},Vn[jn]={"'":[zn,En],'"':[Tn,En],"[":[jn,An],"]":[On,$n],eof:Pn,"else":[jn,En]},Vn[zn]={"'":[jn,En],eof:Pn,"else":[zn,En]},Vn[Tn]={'"':[jn,En],eof:Pn,"else":[Tn,En]};var Rn;"production"!==t.env.NODE_ENV&&(Rn=function(t){hn('You are setting a non-existent path "'+t.raw+'" on a vm instance. Consider pre-initializing the property with the "data" option for more reliable reactivity and better performance.')});var In=Object.freeze({parsePath:zt,getPath:Tt,setPath:Ft}),Qn=new C(1e3),Un="Math,Date,this,true,false,null,undefined,Infinity,NaN,isNaN,isFinite,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,parseInt,parseFloat",Ln=new RegExp("^("+Un.replace(/,/g,"\\b|")+"\\b)"),Hn="break,case,class,catch,const,continue,debugger,default,delete,do,else,export,extends,finally,for,function,if,import,in,instanceof,let,return,super,switch,throw,try,var,while,with,yield,enum,await,implements,package,proctected,static,interface,private,public",Mn=new RegExp("^("+Hn.replace(/,/g,"\\b|")+"\\b)"),qn=/\s/g,Bn=/\n/g,Wn=/[\{,]\s*[\w\$_]+\s*:|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")|new |typeof |void /g,Jn=/"(\d+)"/g,Zn=/^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['.*?'\]|\[".*?"\]|\[\d+\]|\[[A-Za-z_$][\w$]*\])*$/,Gn=/[^\w$\.](?:[A-Za-z_$][\w$]*)/g,Kn=/^(?:true|false)$/,Yn=[],Xn=Object.freeze({parseExpression:Lt,isSimplePath:Ht}),tr=[],er=[],ir={},nr={},rr=!1,sr=!1,or=0;Jt.prototype.addDep=function(t){var e=t.id;this.newDeps[e]||(this.newDeps[e]=t,this.deps[e]||(this.deps[e]=t,t.addSub(this)))},Jt.prototype.get=function(){this.beforeGet();var e,i=this.scope||this.vm;try{e=this.getter.call(i,i)}catch(n){"production"!==t.env.NODE_ENV&&ln.warnExpressionErrors&&hn('Error when evaluating expression "'+this.expression+'". '+(ln.debug?"":"Turn on debug mode to see stack trace."),n)}return this.deep&&Zt(e),this.preProcess&&(e=this.preProcess(e)),this.filters&&(e=i._applyFilters(e,null,this.filters,!1)),this.postProcess&&(e=this.postProcess(e)),this.afterGet(),e},Jt.prototype.set=function(e){var i=this.scope||this.vm;this.filters&&(e=i._applyFilters(e,this.value,this.filters,!0));try{this.setter.call(i,i,e)}catch(n){"production"!==t.env.NODE_ENV&&ln.warnExpressionErrors&&hn('Error when evaluating setter "'+this.expression+'"',n)}var r=i.$forContext;if(r&&r.alias===this.expression){if(r.filters)return void("production"!==t.env.NODE_ENV&&hn("It seems you are using two-way binding on a v-for alias ("+this.expression+"), and the v-for has filters. This will not work properly. Either remove the filters or use an array of objects and bind to object properties instead."));r._withLock(function(){i.$key?r.rawValue[i.$key]=e:r.rawValue.$set(i.$index,e)})}},Jt.prototype.beforeGet=function(){xt.target=this,this.newDeps=Object.create(null)},Jt.prototype.afterGet=function(){xt.target=null;for(var t=Object.keys(this.deps),e=t.length;e--;){var i=t[e];this.newDeps[i]||this.deps[i].removeSub(this)}this.deps=this.newDeps},Jt.prototype.update=function(e){this.lazy?this.dirty=!0:this.sync||!ln.async?this.run():(this.shallow=this.queued?e?this.shallow:!1:!!e,this.queued=!0,"production"!==t.env.NODE_ENV&&ln.debug&&(this.prevError=new Error("[vue] async stack trace")),Wt(this))},Jt.prototype.run=function(){if(this.active){var e=this.get();if(e!==this.value||(b(e)||this.deep)&&!this.shallow){var i=this.value;this.value=e;var n=this.prevError;if("production"!==t.env.NODE_ENV&&ln.debug&&n){this.prevError=null;try{this.cb.call(this.vm,e,i)}catch(r){throw Vi(function(){throw n},0),r}}else this.cb.call(this.vm,e,i)}this.queued=this.shallow=!1}},Jt.prototype.evaluate=function(){var t=xt.target;this.value=this.get(),this.dirty=!1,xt.target=t},Jt.prototype.depend=function(){for(var t=Object.keys(this.deps),e=t.length;e--;)this.deps[t[e]].depend()},Jt.prototype.teardown=function(){if(this.active){this.vm._isBeingDestroyed||this.vm._watchers.$remove(this);for(var t=Object.keys(this.deps),e=t.length;e--;)this.deps[t[e]].removeSub(this);this.active=!1,this.vm=this.cb=this.value=null}};var ar={bind:function(){var t=this.el;this.vm.$once("pre-hook:compiled",function(){t.removeAttribute("v-cloak")})}},ur={bind:function(){"production"!==t.env.NODE_ENV&&hn("v-ref:"+this.arg+" must be used on a child component. Found on <"+this.el.tagName.toLowerCase()+">.")}},cr=700,lr=800,hr=850,pr=1100,fr=1500,dr=1500,mr=1750,vr=1750,gr=2e3,br=2e3,yr={priority:fr,bind:function(){if(this.arg){var t=this.id=h(this.arg),e=(this._scope||this.vm).$els;r(e,t)?e[t]=this.el:Nt(e,t,this.el)}},unbind:function(){var t=(this._scope||this.vm).$els;t[this.id]===this.el&&(t[this.id]=null)}},_r=["-webkit-","-moz-","-ms-"],wr=["Webkit","Moz","ms"],kr=/!important;?$/,xr=Object.create(null),Er=null,Cr={deep:!0,update:function(t){"string"==typeof t?this.el.style.cssText=t:Ai(t)?this.handleObject(t.reduce(g,{})):this.handleObject(t||{})},handleObject:function(t){var e,i,n=this.cache||(this.cache={});for(e in n)e in t||(this.handleSingle(e,null),delete n[e]);for(e in t)i=t[e],i!==n[e]&&(n[e]=i,this.handleSingle(e,i))},handleSingle:function(t,e){if(t=Gt(t))if(null!=e&&(e+=""),e){var i=kr.test(e)?"important":"";i&&(e=e.replace(kr,"").trim()),this.el.style.setProperty(t,e,i)}else this.el.style.removeProperty(t)}},Ar="http://www.w3.org/1999/xlink",$r=/^xlink:/,Nr=/^v-|^:|^@|^(is|transition|transition-mode|debounce|track-by|stagger|enter-stagger|leave-stagger)$/,Or=/^(value|checked|selected|muted)$/,Sr={value:"_value","true-value":"_trueValue","false-value":"_falseValue"},Dr={priority:hr,bind:function(){var e=this.arg,i=this.el.tagName;if(e||(this.deep=!0),this.descriptor.interp&&((Nr.test(e)||"name"===e&&("PARTIAL"===i||"SLOT"===i))&&("production"!==t.env.NODE_ENV&&hn(e+'="'+this.descriptor.raw+'": attribute interpolation is not allowed in Vue.js directives and special attributes.'),this.el.removeAttribute(e),this.invalid=!0),"production"!==t.env.NODE_ENV)){var n=e+'="'+this.descriptor.raw+'": ';"src"===e&&hn(n+'interpolation in "src" attribute will cause a 404 request. Use v-bind:src instead.'),"style"===e&&hn(n+'interpolation in "style" attribute will cause the attribute to be discarded in Internet Explorer. Use v-bind:style instead.')}},update:function(t){if(!this.invalid){var e=this.arg;this.arg?this.handleSingle(e,t):this.handleObject(t||{})}},handleObject:Cr.handleObject,handleSingle:function(t,e){var i=this.el,n=this.descriptor.interp;!n&&Or.test(t)&&t in i&&(i[t]="value"===t&&null==e?"":e);var r=Sr[t];if(!n&&r){i[r]=e;var s=i.__v_model;s&&s.listener()}return"value"===t&&"TEXTAREA"===i.tagName?void i.removeAttribute(t):void(null!=e&&e!==!1?"class"===t?(i.__v_trans&&(e+=" "+i.__v_trans.id+"-transition"),K(i,e)):$r.test(t)?i.setAttributeNS(Ar,t,e):i.setAttribute(t,e):i.removeAttribute(t));
-}},jr={esc:27,tab:9,enter:13,space:32,"delete":46,up:38,left:37,right:39,down:40},zr={acceptStatement:!0,priority:cr,bind:function(){if("IFRAME"===this.el.tagName&&"load"!==this.arg){var t=this;this.iframeBind=function(){Z(t.el.contentWindow,t.arg,t.handler)},this.on("load",this.iframeBind)}},update:function(e){if(this.descriptor.raw||(e=function(){}),"function"!=typeof e)return void("production"!==t.env.NODE_ENV&&hn("v-on:"+this.arg+'="'+this.expression+'" expects a function value, got '+e));this.modifiers.stop&&(e=Xt(e)),this.modifiers.prevent&&(e=te(e));var i=Object.keys(this.modifiers).filter(function(t){return"stop"!==t&&"prevent"!==t});i.length&&(e=Yt(e,i)),this.reset(),this.handler=e,this.iframeBind?this.iframeBind():Z(this.el,this.arg,this.handler)},reset:function(){var t=this.iframeBind?this.el.contentWindow:this.el;this.handler&&G(t,this.arg,this.handler)},unbind:function(){this.reset()}},Tr={bind:function(){function t(){var t=i.checked;return t&&i.hasOwnProperty("_trueValue")?i._trueValue:!t&&i.hasOwnProperty("_falseValue")?i._falseValue:t}var e=this,i=this.el;this.getValue=function(){return i.hasOwnProperty("_value")?i._value:e.params.number?u(i.value):i.value},this.listener=function(){var n=e._watcher.value;if(Ai(n)){var r=e.getValue();i.checked?k(n,r)<0&&n.push(r):n.$remove(r)}else e.set(t())},this.on("change",this.listener),i.hasAttribute("checked")&&(this.afterBind=this.listener)},update:function(t){var e=this.el;Ai(t)?e.checked=k(t,this.getValue())>-1:e.hasOwnProperty("_trueValue")?e.checked=E(t,e._trueValue):e.checked=!!t}},Fr={bind:function(){var t=this,e=this.el;this.forceUpdate=function(){t._watcher&&t.update(t._watcher.get())};var i=this.multiple=e.hasAttribute("multiple");this.listener=function(){var n=ee(e,i);n=t.params.number?Ai(n)?n.map(u):u(n):n,t.set(n)},this.on("change",this.listener);var n=ee(e,i,!0);(i&&n.length||!i&&null!==n)&&(this.afterBind=this.listener),this.vm.$on("hook:attached",this.forceUpdate)},update:function(t){var e=this.el;e.selectedIndex=-1;for(var i,n,r=this.multiple&&Ai(t),s=e.options,o=s.length;o--;)i=s[o],n=i.hasOwnProperty("_value")?i._value:i.value,i.selected=r?ie(t,n)>-1:E(t,n)},unbind:function(){this.vm.$off("hook:attached",this.forceUpdate)}},Pr={bind:function(){var t=this,e=this.el;this.getValue=function(){if(e.hasOwnProperty("_value"))return e._value;var i=e.value;return t.params.number&&(i=u(i)),i},this.listener=function(){t.set(t.getValue())},this.on("change",this.listener),e.hasAttribute("checked")&&(this.afterBind=this.listener)},update:function(t){this.el.checked=E(t,this.getValue())}},Vr={bind:function(){var t=this,e=this.el,i="range"===e.type,n=this.params.lazy,r=this.params.number,s=this.params.debounce,o=!1;Si||i||(this.on("compositionstart",function(){o=!0}),this.on("compositionend",function(){o=!1,n||t.listener()})),this.focused=!1,i||(this.on("focus",function(){t.focused=!0}),this.on("blur",function(){t.focused=!1,(!t._frag||t._frag.inserted)&&t.rawListener()})),this.listener=this.rawListener=function(){if(!o&&t._bound){var n=r||i?u(e.value):e.value;t.set(n),Vi(function(){t._bound&&!t.focused&&t.update(t._watcher.value)})}},s&&(this.listener=w(this.listener,s)),this.hasjQuery="function"==typeof jQuery,this.hasjQuery?(jQuery(e).on("change",this.listener),n||jQuery(e).on("input",this.listener)):(this.on("change",this.listener),n||this.on("input",this.listener)),!n&&Oi&&(this.on("cut",function(){Vi(t.listener)}),this.on("keyup",function(e){(46===e.keyCode||8===e.keyCode)&&t.listener()})),(e.hasAttribute("value")||"TEXTAREA"===e.tagName&&e.value.trim())&&(this.afterBind=this.listener)},update:function(t){this.el.value=a(t)},unbind:function(){var t=this.el;this.hasjQuery&&(jQuery(t).off("change",this.listener),jQuery(t).off("input",this.listener))}},Rr={text:Vr,radio:Pr,select:Fr,checkbox:Tr},Ir={priority:lr,twoWay:!0,handlers:Rr,params:["lazy","number","debounce"],bind:function(){this.checkFilters(),this.hasRead&&!this.hasWrite&&"production"!==t.env.NODE_ENV&&hn("It seems you are using a read-only filter with v-model. You might want to use a two-way filter to ensure correct behavior.");var e,i=this.el,n=i.tagName;if("INPUT"===n)e=Rr[i.type]||Rr.text;else if("SELECT"===n)e=Rr.select;else{if("TEXTAREA"!==n)return void("production"!==t.env.NODE_ENV&&hn("v-model does not support element type: "+n));e=Rr.text}i.__v_model=this,e.bind.call(this),this.update=e.update,this._unbind=e.unbind},checkFilters:function(){var t=this.filters;if(t)for(var e=t.length;e--;){var i=wt(this.vm.$options,"filters",t[e].name);("function"==typeof i||i.read)&&(this.hasRead=!0),i.write&&(this.hasWrite=!0)}},unbind:function(){this.el.__v_model=null,this._unbind&&this._unbind()}},Qr={bind:function(){var t=this.el.nextElementSibling;t&&null!==U(t,"v-else")&&(this.elseEl=t)},update:function(t){this.apply(this.el,t),this.elseEl&&this.apply(this.elseEl,!t)},apply:function(t,e){function i(){t.style.display=e?"":"none"}Q(t)?R(t,e?1:-1,i,this.vm):i()}},Ur=new C(1e3),Lr=new C(1e3),Hr={efault:[0,"",""],legend:[1,"<fieldset>","</fieldset>"],tr:[2,"<table><tbody>","</tbody></table>"],col:[2,"<table><tbody></tbody><colgroup>","</colgroup></table>"]};Hr.td=Hr.th=[3,"<table><tbody><tr>","</tr></tbody></table>"],Hr.option=Hr.optgroup=[1,'<select multiple="multiple">',"</select>"],Hr.thead=Hr.tbody=Hr.colgroup=Hr.caption=Hr.tfoot=[1,"<table>","</table>"],Hr.g=Hr.defs=Hr.symbol=Hr.use=Hr.image=Hr.text=Hr.circle=Hr.ellipse=Hr.line=Hr.path=Hr.polygon=Hr.polyline=Hr.rect=[1,'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"version="1.1">',"</svg>"];var Mr=/<([\w:]+)/,qr=/&#?\w+?;/,Br=function(){if(Ni){var t=document.createElement("div");return t.innerHTML="<template>1</template>",!t.cloneNode(!0).firstChild.innerHTML}return!1}(),Wr=function(){if(Ni){var t=document.createElement("textarea");return t.placeholder="t","t"===t.cloneNode(!0).value}return!1}(),Jr=Object.freeze({cloneNode:oe,parseTemplate:ae});ue.prototype.callHook=function(t){var e,i;for(e=0,i=this.children.length;i>e;e++)t(this.children[e]);for(e=0,i=this.childFrags.length;i>e;e++)this.childFrags[e].callHook(t)},ue.prototype.destroy=function(){this.parentFrag&&this.parentFrag.childFrags.$remove(this),this.unlink()};var Zr=new C(5e3);ve.prototype.create=function(t,e,i){var n=oe(this.template);return new ue(this.linker,this.vm,n,t,e,i)};var Gr={priority:br,bind:function(){var e=this.el;if(e.__vue__)"production"!==t.env.NODE_ENV&&hn('v-if="'+this.expression+'" cannot be used on an instance root element.'),this.invalid=!0;else{var i=e.nextElementSibling;i&&null!==U(i,"v-else")&&(B(i),this.elseFactory=new ve(this.vm,i)),this.anchor=rt("v-if"),J(e,this.anchor),this.factory=new ve(this.vm,e)}},update:function(t){this.invalid||(t?this.frag||this.insert():this.remove())},insert:function(){this.elseFrag&&(this.elseFrag.remove(),this.elseFrag=null),this.frag=this.factory.create(this._host,this._scope,this._frag),this.frag.before(this.anchor)},remove:function(){this.frag&&(this.frag.remove(),this.frag=null),this.elseFactory&&!this.elseFrag&&(this.elseFrag=this.elseFactory.create(this._host,this._scope,this._frag),this.elseFrag.before(this.anchor))},unbind:function(){this.frag&&this.frag.destroy()}},Kr=0,Yr={priority:gr,params:["track-by","stagger","enter-stagger","leave-stagger"],bind:function(){var e=this.expression.match(/(.*) in (.*)/);if(e){var i=e[1].match(/\((.*),(.*)\)/);i?(this.iterator=i[1].trim(),this.alias=i[2].trim()):this.alias=e[1].trim(),this.expression=e[2]}if(!this.alias)return void("production"!==t.env.NODE_ENV&&hn("Alias is required in v-for."));this.id="__v-for__"+ ++Kr;var n=this.el.tagName;this.isOption=("OPTION"===n||"OPTGROUP"===n)&&"SELECT"===this.el.parentNode.tagName,this.start=rt("v-for-start"),this.end=rt("v-for-end"),J(this.el,this.end),M(this.start,this.end),this.cache=Object.create(null),this.factory=new ve(this.vm,this.el)},update:function(t){this.diff(t),this.updateRef(),this.updateModel()},diff:function(t){var e,i,n,s,o,a,u=t[0],c=this.fromObject=b(u)&&r(u,"$key")&&r(u,"$value"),l=this.params.trackBy,h=this.frags,p=this.frags=new Array(t.length),f=this.alias,d=this.iterator,m=this.start,v=this.end,g=Q(m),y=!h;for(e=0,i=t.length;i>e;e++)u=t[e],s=c?u.$key:null,o=c?u.$value:u,a=!b(o),n=!y&&this.getCachedFrag(o,e,s),n?(n.reused=!0,n.scope.$index=e,s&&(n.scope.$key=s),d&&(n.scope[d]=null!==s?s:e),(l||c||a)&&(n.scope[f]=o)):(n=this.create(o,f,e,s),n.fresh=!y),p[e]=n,y&&n.before(v);if(!y){var _=0,w=h.length-p.length;for(e=0,i=h.length;i>e;e++)n=h[e],n.reused||(this.deleteCachedFrag(n),this.remove(n,_++,w,g));var k,x,E,C=0;for(e=0,i=p.length;i>e;e++)n=p[e],k=p[e-1],x=k?k.staggerCb?k.staggerAnchor:k.end||k.node:m,n.reused&&!n.staggerCb?(E=ge(n,m,this.id),E===k||E&&ge(E,m,this.id)===k||this.move(n,x)):this.insert(n,C++,x,g),n.reused=n.fresh=!1}},create:function(t,e,i,n){var r=this._host,s=this._scope||this.vm,o=Object.create(s);o.$refs=Object.create(s.$refs),o.$els=Object.create(s.$els),o.$parent=s,o.$forContext=this,Nt(o,e,t),Nt(o,"$index",i),n?Nt(o,"$key",n):o.$key&&_(o,"$key",null),this.iterator&&Nt(o,this.iterator,null!==n?n:i);var a=this.factory.create(r,o,this._frag);return a.forId=this.id,this.cacheFrag(t,a,i,n),a},updateRef:function(){var t=this.descriptor.ref;if(t){var e,i=(this._scope||this.vm).$refs;this.fromObject?(e={},this.frags.forEach(function(t){e[t.scope.$key]=be(t)})):e=this.frags.map(be),i[t]=e}},updateModel:function(){if(this.isOption){var t=this.start.parentNode,e=t&&t.__v_model;e&&e.forceUpdate()}},insert:function(t,e,i,n){t.staggerCb&&(t.staggerCb.cancel(),t.staggerCb=null);var r=this.getStagger(t,e,null,"enter");if(n&&r){var s=t.staggerAnchor;s||(s=t.staggerAnchor=rt("stagger-anchor"),s.__vfrag__=t),q(s,i);var o=t.staggerCb=x(function(){t.staggerCb=null,t.before(s),B(s)});setTimeout(o,r)}else t.before(i.nextSibling)},remove:function(t,e,i,n){if(t.staggerCb)return t.staggerCb.cancel(),void(t.staggerCb=null);var r=this.getStagger(t,e,i,"leave");if(n&&r){var s=t.staggerCb=x(function(){t.staggerCb=null,t.remove()});setTimeout(s,r)}else t.remove()},move:function(t,e){t.before(e.nextSibling,!1)},cacheFrag:function(e,i,n,s){var o,a=this.params.trackBy,u=this.cache,c=!b(e);s||a||c?(o=a?"$index"===a?n:e[a]:s||e,u[o]?"$index"!==a&&"production"!==t.env.NODE_ENV&&this.warnDuplicate(e):u[o]=i):(o=this.id,r(e,o)?null===e[o]?e[o]=i:"production"!==t.env.NODE_ENV&&this.warnDuplicate(e):_(e,o,i)),i.raw=e},getCachedFrag:function(e,i,n){var r,s=this.params.trackBy,o=!b(e);if(n||s||o){var a=s?"$index"===s?i:e[s]:n||e;r=this.cache[a]}else r=e[this.id];return r&&(r.reused||r.fresh)&&"production"!==t.env.NODE_ENV&&this.warnDuplicate(e),r},deleteCachedFrag:function(t){var e=t.raw,i=this.params.trackBy,n=t.scope,s=n.$index,o=r(n,"$key")&&n.$key,a=!b(e);if(i||o||a){var u=i?"$index"===i?s:e[i]:o||e;this.cache[u]=null}else e[this.id]=null,t.raw=null},getStagger:function(t,e,i,n){n+="Stagger";var r=t.node.__v_trans,s=r&&r.hooks,o=s&&(s[n]||s.stagger);return o?o.call(t,e,i):e*parseInt(this.params[n]||this.params.stagger,10)},_preProcess:function(t){return this.rawValue=t,t},_postProcess:function(t){if(Ai(t))return t;if(y(t)){for(var e,i=Object.keys(t),n=i.length,r=new Array(n);n--;)e=i[n],r[n]={$key:e,$value:t[e]};return r}return"number"==typeof t&&(t=ye(t)),t||[]},unbind:function(){if(this.descriptor.ref&&((this._scope||this.vm).$refs[this.descriptor.ref]=null),this.frags)for(var t,e=this.frags.length;e--;)t=this.frags[e],this.deleteCachedFrag(t),t.destroy()}};"production"!==t.env.NODE_ENV&&(Yr.warnDuplicate=function(t){hn('Duplicate value found in v-for="'+this.descriptor.raw+'": '+JSON.stringify(t)+'. Use track-by="$index" if you are expecting duplicate values.')});var Xr={bind:function(){8===this.el.nodeType&&(this.nodes=[],this.anchor=rt("v-html"),J(this.el,this.anchor))},update:function(t){t=a(t),this.nodes?this.swap(t):this.el.innerHTML=t},swap:function(t){for(var e=this.nodes.length;e--;)B(this.nodes[e]);var i=ae(t,!0,!0);this.nodes=v(i.childNodes),M(i,this.anchor)}},ts={bind:function(){this.attr=3===this.el.nodeType?"data":"textContent"},update:function(t){this.el[this.attr]=a(t)}},es={text:ts,html:Xr,"for":Yr,"if":Gr,show:Qr,model:Ir,on:zr,bind:Dr,el:yr,ref:ur,cloak:ar},is=[],ns=!1,rs=1,ss=2,os=Di+"Duration",as=zi+"Duration",us=ke.prototype;us.enter=function(t,e){this.cancelPending(),this.callHook("beforeEnter"),this.cb=e,Y(this.el,this.enterClass),t(),this.entered=!1,this.callHookWithCb("enter"),this.entered||(this.cancel=this.hooks&&this.hooks.enterCancelled,_e(this.enterNextTick))},us.enterNextTick=function(){this.justEntered=!0;var t=this;setTimeout(function(){t.justEntered=!1},17);var e=this.enterDone,i=this.getCssTransitionType(this.enterClass);this.pendingJsCb?i===rs&&X(this.el,this.enterClass):i===rs?(X(this.el,this.enterClass),this.setupCssCb(ji,e)):i===ss?this.setupCssCb(Ti,e):e()},us.enterDone=function(){this.entered=!0,this.cancel=this.pendingJsCb=null,X(this.el,this.enterClass),this.callHook("afterEnter"),this.cb&&this.cb()},us.leave=function(t,e){this.cancelPending(),this.callHook("beforeLeave"),this.op=t,this.cb=e,Y(this.el,this.leaveClass),this.left=!1,this.callHookWithCb("leave"),this.left||(this.cancel=this.hooks&&this.hooks.leaveCancelled,this.op&&!this.pendingJsCb&&(this.justEntered?this.leaveDone():_e(this.leaveNextTick)))},us.leaveNextTick=function(){var t=this.getCssTransitionType(this.leaveClass);if(t){var e=t===rs?ji:Ti;this.setupCssCb(e,this.leaveDone)}else this.leaveDone()},us.leaveDone=function(){this.left=!0,this.cancel=this.pendingJsCb=null,this.op(),X(this.el,this.leaveClass),this.callHook("afterLeave"),this.cb&&this.cb(),this.op=null},us.cancelPending=function(){this.op=this.cb=null;var t=!1;this.pendingCssCb&&(t=!0,G(this.el,this.pendingCssEvent,this.pendingCssCb),this.pendingCssEvent=this.pendingCssCb=null),this.pendingJsCb&&(t=!0,this.pendingJsCb.cancel(),this.pendingJsCb=null),t&&(X(this.el,this.enterClass),X(this.el,this.leaveClass)),this.cancel&&(this.cancel.call(this.vm,this.el),this.cancel=null)},us.callHook=function(t){this.hooks&&this.hooks[t]&&this.hooks[t].call(this.vm,this.el)},us.callHookWithCb=function(t){var e=this.hooks&&this.hooks[t];e&&(e.length>1&&(this.pendingJsCb=x(this[t+"Done"])),e.call(this.vm,this.el,this.pendingJsCb))},us.getCssTransitionType=function(t){if(!(!ji||document.hidden||this.hooks&&this.hooks.css===!1||xe(this.el))){var e=this.typeCache[t];if(e)return e;var i=this.el.style,n=window.getComputedStyle(this.el),r=i[os]||n[os];if(r&&"0s"!==r)e=rs;else{var s=i[as]||n[as];s&&"0s"!==s&&(e=ss)}return e&&(this.typeCache[t]=e),e}},us.setupCssCb=function(t,e){this.pendingCssEvent=t;var i=this,n=this.el,r=this.pendingCssCb=function(s){s.target===n&&(G(n,t,r),i.pendingCssEvent=i.pendingCssCb=null,!i.pendingJsCb&&e&&e())};Z(n,t,r)};var cs={priority:pr,update:function(t,e){var i=this.el,n=wt(this.vm.$options,"transitions",t);t=t||"v",i.__v_trans=new ke(i,t,n,this.el.__vue__||this.vm),e&&X(i,e+"-transition"),Y(i,t+"-transition")}},ls=ln._propBindingModes,hs={bind:function(){var t=this.vm,e=t._context,i=this.descriptor.prop,n=i.path,r=i.parentPath,s=i.mode===ls.TWO_WAY,o=this.parentWatcher=new Jt(e,r,function(e){e=pt(i,e),ht(i,e)&&(t[n]=e)},{twoWay:s,filters:i.filters,scope:this._scope});if(lt(t,i,o.value),s){var a=this;t.$once("pre-hook:created",function(){a.childWatcher=new Jt(t,n,function(t){o.set(t)},{sync:!0})})}},unbind:function(){this.parentWatcher.teardown(),this.childWatcher&&this.childWatcher.teardown()}},ps={priority:dr,params:["keep-alive","transition-mode","inline-template"],bind:function(){this.el.__vue__?"production"!==t.env.NODE_ENV&&hn('cannot mount component "'+this.expression+'" on already mounted element: '+this.el):(this.keepAlive=this.params.keepAlive,this.keepAlive&&(this.cache={}),this.params.inlineTemplate&&(this.inlineTemplate=tt(this.el,!0)),this.pendingComponentCb=this.Component=null,this.pendingRemovals=0,this.pendingRemovalCb=null,this.anchor=rt("v-component"),J(this.el,this.anchor),this.el.removeAttribute("is"),this.descriptor.ref&&this.el.removeAttribute("v-ref:"+f(this.descriptor.ref)),this.literal&&this.setComponent(this.expression))},update:function(t){this.literal||this.setComponent(t)},setComponent:function(t,e){if(this.invalidatePending(),t){var i=this;this.resolveComponent(t,function(){i.mountComponent(e)})}else this.unbuild(!0),this.remove(this.childVM,e),this.childVM=null},resolveComponent:function(t,e){var i=this;this.pendingComponentCb=x(function(n){i.ComponentName=n.options.name||t,i.Component=n,e()}),this.vm._resolveComponent(t,this.pendingComponentCb)},mountComponent:function(t){this.unbuild(!0);var e=this,i=this.Component.options.activate,n=this.getCached(),r=this.build();i&&!n?(this.waitingFor=r,i.call(r,function(){e.waitingFor===r&&(e.waitingFor=null,e.transition(r,t))})):(n&&r._updateRef(),this.transition(r,t))},invalidatePending:function(){this.pendingComponentCb&&(this.pendingComponentCb.cancel(),this.pendingComponentCb=null)},build:function(e){var i=this.getCached();if(i)return i;if(this.Component){var n={name:this.ComponentName,el:oe(this.el),template:this.inlineTemplate,parent:this._host||this.vm,_linkerCachable:!this.inlineTemplate,_ref:this.descriptor.ref,_asComponent:!0,_isRouterView:this._isRouterView,_context:this.vm,_scope:this._scope,_frag:this._frag};e&&g(n,e);var r=new this.Component(n);return this.keepAlive&&(this.cache[this.Component.cid]=r),"production"!==t.env.NODE_ENV&&this.el.hasAttribute("transition")&&r._isFragment&&hn("Transitions will not work on a fragment instance. Template: "+r.$options.template),r}},getCached:function(){return this.keepAlive&&this.cache[this.Component.cid]},unbuild:function(t){this.waitingFor&&(this.waitingFor.$destroy(),this.waitingFor=null);var e=this.childVM;return!e||this.keepAlive?void(e&&e._updateRef(!0)):void e.$destroy(!1,t)},remove:function(t,e){var i=this.keepAlive;if(t){this.pendingRemovals++,this.pendingRemovalCb=e;var n=this;t.$remove(function(){n.pendingRemovals--,i||t._cleanup(),!n.pendingRemovals&&n.pendingRemovalCb&&(n.pendingRemovalCb(),n.pendingRemovalCb=null)})}else e&&e()},transition:function(e,i){var n=this,r=this.childVM;switch("production"!==t.env.NODE_ENV&&(r&&(r._inactive=!0),e._inactive=!1),this.childVM=e,n.params.transitionMode){case"in-out":e.$before(n.anchor,function(){n.remove(r,i)});break;case"out-in":n.remove(r,function(){e.$before(n.anchor,i)});break;default:n.remove(r),e.$before(n.anchor,i)}},unbind:function(){if(this.invalidatePending(),this.unbuild(),this.cache){for(var t in this.cache)this.cache[t].$destroy();this.cache=null}}},fs={deep:!0,update:function(t){t&&"string"==typeof t?this.handleObject(Ee(t)):y(t)?this.handleObject(t):Ai(t)?this.handleArray(t):this.cleanup()},handleObject:function(t){this.cleanup(t);for(var e=this.prevKeys=Object.keys(t),i=0,n=e.length;n>i;i++){var r=e[i];t[r]?Y(this.el,r):X(this.el,r)}},handleArray:function(t){this.cleanup(t);for(var e=0,i=t.length;i>e;e++)t[e]&&Y(this.el,t[e]);this.prevKeys=t.slice()},cleanup:function(t){if(this.prevKeys)for(var e=this.prevKeys.length;e--;){var i=this.prevKeys[e];!i||t&&Ce(t,i)||X(this.el,i)}}},ds={style:Cr,"class":fs,component:ps,prop:hs,transition:cs},ms=ln._propBindingModes,vs={},gs=/^[$_a-zA-Z]+[\w$]*$/,bs=/^[A-Za-z_$][\w$]*(\.[A-Za-z_$][\w$]*|\[[^\[\]]+\])*$/,ys=/^v-bind:|^:/,_s=/^v-on:|^@/,ws=/:(.*)$/,ks=/\.[^\.]+/g,xs=/^(v-bind:|:)?transition$/,Es=["for","if"],Cs=1e3;We.terminal=!0;var As=/[^\w\-:\.]/,$s=Object.freeze({compile:Oe,compileAndLinkProps:Te,compileRoot:Fe,transclude:Ye}),Ns=/^v-on:|^@/;si.prototype._bind=function(){var t=this.name,e=this.descriptor;if(("cloak"!==t||this.vm._isCompiled)&&this.el&&this.el.removeAttribute){var i=e.attr||"v-"+t;this.el.removeAttribute(i)}var n=e.def;if("function"==typeof n?this.update=n:g(this,n),this._setupParams(),this.bind&&this.bind(),this._bound=!0,this.literal)this.update&&this.update(e.raw);else if((this.expression||this.modifiers)&&(this.update||this.twoWay)&&!this._checkStatement()){var r=this;this.update?this._update=function(t,e){r._locked||r.update(t,e)}:this._update=ri;var s=this._preProcess?m(this._preProcess,this):null,o=this._postProcess?m(this._postProcess,this):null,a=this._watcher=new Jt(this.vm,this.expression,this._update,{filters:this.filters,twoWay:this.twoWay,deep:this.deep,preProcess:s,postProcess:o,scope:this._scope});this.afterBind?this.afterBind():this.update&&this.update(a.value)}},si.prototype._setupParams=function(){if(this.params){var t=this.params;this.params=Object.create(null);for(var e,i,n,r=t.length;r--;)e=t[r],n=h(e),i=L(this.el,e),null!=i?this._setupParamWatcher(n,i):(i=U(this.el,e),null!=i&&(this.params[n]=""===i?!0:i))}},si.prototype._setupParamWatcher=function(t,e){var i=this,n=!1,r=(this._scope||this.vm).$watch(e,function(e,r){if(i.params[t]=e,n){var s=i.paramWatchers&&i.paramWatchers[t];s&&s.call(i,e,r)}else n=!0},{immediate:!0,user:!1});(this._paramUnwatchFns||(this._paramUnwatchFns=[])).push(r)},si.prototype._checkStatement=function(){var t=this.expression;if(t&&this.acceptStatement&&!Ht(t)){var e=Lt(t).get,i=this._scope||this.vm,n=function(t){i.$event=t,e.call(i,i),i.$event=null};return this.filters&&(n=i._applyFilters(n,null,this.filters)),this.update(n),!0}},si.prototype.set=function(e){this.twoWay?this._withLock(function(){this._watcher.set(e)}):"production"!==t.env.NODE_ENV&&hn("Directive.set() can only be used inside twoWaydirectives.")},si.prototype._withLock=function(t){var e=this;e._locked=!0,t.call(e),Vi(function(){e._locked=!1})},si.prototype.on=function(t,e){Z(this.el,t,e),(this._listeners||(this._listeners=[])).push([t,e])},si.prototype._teardown=function(){if(this._bound){this._bound=!1,this.unbind&&this.unbind(),this._watcher&&this._watcher.teardown();var e,i=this._listeners;if(i)for(e=i.length;e--;)G(this.el,i[e][0],i[e][1]);var n=this._paramUnwatchFns;if(n)for(e=n.length;e--;)n[e]();"production"!==t.env.NODE_ENV&&this.el&&this.el._vue_directives.$remove(this),this.vm=this.el=this._watcher=this._listeners=null}};var Os=/[^|]\|[^|]/;Ot(fi),ii(fi),ni(fi),oi(fi),ai(fi),ui(fi),ci(fi),li(fi),hi(fi),pi(fi);var Ss=Yr._postProcess,Ds=/(\d{3})(?=\d)/g,js={orderBy:vi,filterBy:mi,limitBy:di,json:{read:function(t,e){return"string"==typeof t?t:JSON.stringify(t,null,Number(e)||2)},write:function(t){try{return JSON.parse(t)}catch(e){return t}}},capitalize:function(t){return t||0===t?(t=t.toString(),t.charAt(0).toUpperCase()+t.slice(1)):""},uppercase:function(t){return t||0===t?t.toString().toUpperCase():""},lowercase:function(t){return t||0===t?t.toString().toLowerCase():""},currency:function(t,e){if(t=parseFloat(t),!isFinite(t)||!t&&0!==t)return"";e=null!=e?e:"$";var i=Math.abs(t).toFixed(2),n=i.slice(0,-3),r=n.length%3,s=r>0?n.slice(0,r)+(n.length>3?",":""):"",o=i.slice(-3),a=0>t?"-":"";return e+a+s+n.slice(r).replace(Ds,"$1,")+o},pluralize:function(t){var e=v(arguments,1);return e.length>1?e[t%10-1]||e[e.length-1]:e[0]+(1===t?"":"s")},debounce:function(t,e){return t?(e||(e=300),w(t,e)):void 0}},zs={priority:mr,params:["name"],paramWatchers:{name:function(t){Gr.remove.call(this),t&&this.insert(t)}},bind:function(){this.anchor=rt("v-partial"),J(this.el,this.anchor),this.insert(this.params.name)},insert:function(e){var i=wt(this.vm.$options,"partials",e);"production"!==t.env.NODE_ENV&&kt(i,"partial",e),i&&(this.factory=new ve(this.vm,i),Gr.insert.call(this))},unbind:function(){this.frag&&this.frag.destroy()}},Ts={priority:vr,bind:function(){var t=this.vm,e=t.$options._content;if(!e)return void this.fallback();var i=t._context,n=this.params&&this.params.name;if(n){var r='[slot="'+n+'"]',s=e.querySelectorAll(r);s.length?this.tryCompile(bi(s,e),i,t):this.fallback()}else this.tryCompile(bi(e.childNodes,e,!0),i,t)},tryCompile:function(t,e,i){t.hasChildNodes()?this.compile(t,e,i):this.fallback()},compile:function(t,e,i){if(t&&e){var n=i?i._scope:this._scope;this.unlink=e.$compile(t,i,n,this._frag)}t?J(this.el,t):B(this.el)},fallback:function(){this.compile(tt(this.el,!0),this.vm)},unbind:function(){this.unlink&&this.unlink()}},Fs=g(g({},Ts),{priority:Ts.priority+1,params:["name"]}),Ps={slot:Ts,_namedSlot:Fs,partial:zs};fi.version="1.0.13",fi.options={directives:es,elementDirectives:Ps,filters:js,transitions:{},components:{},partials:{},replace:!0},"production"!==t.env.NODE_ENV&&Ni&&(window.__VUE_DEVTOOLS_GLOBAL_HOOK__?window.__VUE_DEVTOOLS_GLOBAL_HOOK__.emit("init",fi):/Chrome\/\d+/.test(navigator.userAgent)&&console.log("Download the Vue Devtools for a better development experience:\nhttps://github.com/vuejs/vue-devtools")),e.exports=fi}).call(this,t("_process"))},{_process:1}],7:[function(t,e,i){"use strict";var n=t("vue"),r=t("./specialization"),s=t("./attributes/favored"),o=t("./skills/major"),a=t("./skills/minor"),u=t("./stats"),c=t("urijs");n.config.debug=!0,new n({el:"#app",data:{saved:!1,sex:"",specialization:"",majorSkills:["","","","",""],minorSkills:["","","","",""],skills:t("./skills/all"),favoredAttributes:["",""],attributes:t("./attributes/all"),birthsign:t("./birthsigns/default"),birthsigns:t("./birthsigns/all"),race:t("./races/default"),races:t("./races/all")},ready:function(){function e(t,e,i){var n=[];for(Array.isArray(e)?n=e:void 0!==e&&(n=[e]);n.length<i;)n.push("");return n}var i=c(window.location.href),n=i.query(!0);this.sex=n.sex,this.specialization=n.specialization,this.majorSkills=e(this.majorSkills,n.major,5),this.minorSkills=e(this.minorSkills,n.minor,5),this.favoredAttributes=e(this.favoredAttributes,n.favored,2),void 0===n.race?this.race=t("./races/default"):this.race=this.races.filter(function(t){return t.key==n.race})[0],void 0===n.birthsign?this.birthsign=t("./birthsigns/default"):this.birthsign=this.birthsigns.filter(function(t){return t.name==n.birthsign})[0]},computed:{build:function l(){var l=t("./default-build")();return l.sex=this.sex,this.race.apply(l),this.majorSkills.forEach(function(t){o(l,t)}),this.minorSkills.forEach(function(t){a(l,t)}),this.birthsign.apply(l),r(l,this.specialization),this.favoredAttributes.forEach(function(t){s(l,t)}),u(l),l},state:function(){function t(t){return""!==t}return{sex:this.sex,race:this.race.key,birthsign:this.birthsign.name,specialization:this.specialization,favored:this.favoredAttributes.filter(t),major:this.majorSkills.filter(t),minor:this.minorSkills.filter(t)}},url:function h(){var h=c(window.location.href);return h.search(this.state),h.toString()}},methods:{reset:function(){this.sex="",this.specialization="",this.majorSkills=["","","","",""],this.minorSkills=["","","","",""],this.favoredAttributes=["",""],this.race=t("./races/default"),this.birthsign=t("./birthsigns/default")},save:function(){window.history.pushState("character",document.title,this.url),this.saved=!0}}})},{"./attributes/all":8,"./attributes/favored":9,"./birthsigns/all":10,"./birthsigns/default":13,"./default-build":25,"./races/all":26,"./races/default":30,"./skills/all":38,"./skills/major":39,"./skills/minor":40,"./specialization":41,"./stats":42,urijs:4,vue:6}],8:[function(t,e,i){"use strict";e.exports=["","strength","intelligence","willpower","agility","speed","endurance","personality","luck"]},{}],9:[function(t,e,i){"use strict";e.exports=function(t,e){t.attributes[e]+=10}},{}],10:[function(t,e,i){"use strict";e.exports=[t("./default"),t("./warrior"),t("./mage"),t("./thief"),t("./serpent"),t("./lady"),t("./steed"),t("./lord"),t("./apprentice"),t("./atronach"),t("./ritual"),t("./lover"),t("./shadow"),t("./tower")]},{"./apprentice":11,"./atronach":12,"./default":13,"./lady":14,"./lord":15,"./lover":16,"./mage":17,"./ritual":18,"./serpent":19,"./shadow":20,"./steed":21,"./thief":22,"./tower":23,"./warrior":24}],11:[function(t,e,i){"use strict";e.exports={apply:function(t){t.magickaMultiplier+=1.5,t.resistances.magicka-=50,t.abilities.push("Elfborn - Fortify Maximum Magicka 1.5x INT, Weakness to Magicka 50%")},name:"Apprentice"}},{}],12:[function(t,e,i){"use strict";e.exports={apply:function(t){t.magickaMultiplier+=2,t.abilities.push("Wombburn - Spell Absorption 50%, Fortify Maximum Magicka 2.0x INT, Stunted Magicka")},name:"Atronach"}},{}],13:[function(t,e,i){"use strict";e.exports={apply:function(t){},name:""}},{}],14:[function(t,e,i){"use strict";e.exports={apply:function(t){t.attributes.personality+=25,t.attributes.endurance+=25,t.abilities.push("Lady's Favor - Fortify Personality 25 pts"),t.abilities.push("Lady's Grace - Fortify Endurance 25 pts")},name:"Lady"}},{}],15:[function(t,e,i){"use strict";e.exports={apply:function(t){t.resistances.fire-=100,t.abilities.push("Blood of the North - Restore Health 2 pts for 30 secs on Self"),t.abilities.push("Trollkin - Weakness to Fire 100%")},name:"Lord"}},{}],16:[function(t,e,i){"use strict";e.exports={apply:function(t){t.attributes.agility+=25,t.abilities.push("Mooncalf - Fortify Agility 25 pts"),t.abilities.push("Lover's Kiss - Paralyze 60 secs on Target, Damage Fatigue 200 pts on Self")},name:"Lover"}},{}],17:[function(t,e,i){"use strict";e.exports={apply:function(t){t.magickaMultiplier+=.5,t.abilities.push("Fay - Fortify Maximum Magicka 0.5x INT")},name:"Mage"}},{}],18:[function(t,e,i){"use strict";e.exports={apply:function(t){t.abilities.push("Blessed Word - Turn Undead 100 pts for 30 secs on Target"),t.abilities.push("Blessed Touch - Turn Undead 100 pts for 30 secs on Touch"),t.abilities.push("Mara's Gift - Restore Health 100 pts on Self")},name:"Ritual"}},{}],19:[function(t,e,i){"use strict";e.exports={apply:function(t){t.abilities.push("Star Curse - Poison 3 pts for 30 secs on Touch, Damage Health 1 pt for 30 secs on Self")},name:"Serpent"}},{}],20:[function(t,e,i){"use strict";e.exports={apply:function(t){t.abilities.push("Moonshadow - Invisibility for 60 secs")},name:"Shadow"}},{}],21:[function(t,e,i){"use strict";e.exports={apply:function(t){t.attributes.speed+=25,t.abilities.push("Charioteer - Fortify Speed 25 pts")},name:"Steed"}},{}],22:[function(t,e,i){"use strict";e.exports={apply:function(t){t.abilities.push("Akaviri Danger-sense - Sanctuary 10 pts")},name:"Thief"}},{}],23:[function(t,e,i){"use strict";e.exports={apply:function(t){t.abilities.push("Beggar's Nose - Detect Animal / Key / Enchantment for 60 secs in 200 ft"),t.abilities.push("Tower Key - Open 50 pts on Touch")},name:"Tower"}},{}],24:[function(t,e,i){"use strict";e.exports={apply:function(t){t.abilities.push("Warwyrd - Fortify Attack 10 pts")},name:"Warrior"}},{}],25:[function(t,e,i){"use strict";e.exports=function(){return{attributes:{strength:0,intelligence:0,willpower:0,agility:0,speed:0,endurance:0,personality:0,luck:0},attributeCount:{strength:0,intelligence:0,willpower:0,agility:0,speed:0,endurance:0,personality:0,luck:0},stats:{health:0,magicka:0,fatigue:0,encumbrance:0},abilities:[],magickaMultiplier:1,resistances:{fire:0,frost:0,poison:0,shock:0,magicka:0,commonDisease:0,blightDisease:0},skills:[{name:"Block",key:"block",value:5,specialization:"combat",attribute:"agility"},{name:"Armorer",key:"armorer",value:5,specialization:"combat",attribute:"strength"},{name:"Medium Armor",key:"medium-armor",value:5,specialization:"combat",attribute:"endurance"},{name:"Heavy Armor",key:"heavy-armor",value:5,specialization:"combat",attribute:"endurance"},{name:"Blunt Weapon",key:"blunt-weapon",value:5,specialization:"combat",attribute:"strength"},{name:"Long Blade",key:"long-blade",value:5,specialization:"combat",attribute:"strength"},{name:"Axe",key:"axe",value:5,specialization:"combat",attribute:"strength"},{name:"Spear",key:"spear",value:5,specialization:"combat",attribute:"endurance"},{name:"Athletics",key:"athletics",value:5,specialization:"combat",attribute:"speed"},{name:"Enchant",key:"enchant",value:5,specialization:"magic",attribute:"intelligence"},{name:"Destruction",key:"destruction",value:5,specialization:"magic",attribute:"willpower"},{name:"Alteration",key:"alteration",value:5,specialization:"magic",attribute:"willpower"},{name:"Illusion",key:"illusion",value:5,specialization:"magic",attribute:"personality"
-},{name:"Conjuration",key:"conjuration",value:5,specialization:"magic",attribute:"intelligence"},{name:"Mysticism",key:"mysticism",value:5,specialization:"magic",attribute:"willpower"},{name:"Restoration",key:"restoration",value:5,specialization:"magic",attribute:"willpower"},{name:"Alchemy",key:"alchemy",value:5,specialization:"magic",attribute:"intelligence"},{name:"Unarmored",key:"unarmored",value:5,specialization:"magic",attribute:"speed"},{name:"Security",key:"security",value:5,specialization:"stealth",attribute:"intelligence"},{name:"Sneak",key:"sneak",value:5,specialization:"stealth",attribute:"agility"},{name:"Acrobatics",key:"acrobatics",value:5,specialization:"stealth",attribute:"strength"},{name:"Light Armor",key:"light-armor",value:5,specialization:"stealth",attribute:"agility"},{name:"Shortblade",key:"shortblade",value:5,specialization:"stealth",attribute:"speed"},{name:"Marksman",key:"marksman",value:5,specialization:"stealth",attribute:"agility"},{name:"Mercantile",key:"mercantile",value:5,specialization:"stealth",attribute:"personality"},{name:"Speechcraft",key:"speechcraft",value:5,specialization:"stealth",attribute:"personality"},{name:"Hand To Hand",key:"hand-to-hand",value:5,specialization:"stealth",attribute:"speed"}]}}},{}],26:[function(t,e,i){"use strict";var n=[t("./default.js"),t("./argonian.js"),t("./breton.js"),t("./dark-elf.js"),t("./high-elf.js"),t("./imperial.js"),t("./khajiit.js"),t("./nord.js"),t("./orc.js"),t("./redguard.js"),t("./wood-elf.js")];e.exports=n},{"./argonian.js":27,"./breton.js":28,"./dark-elf.js":29,"./default.js":30,"./high-elf.js":31,"./imperial.js":32,"./khajiit.js":33,"./nord.js":34,"./orc.js":35,"./redguard.js":36,"./wood-elf.js":37}],27:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=40,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=50,t.attributes.speed+=50,t.attributes.endurance+=30,t.attributes.personality+=30,t.attributes.luck+=40}function r(t){t.attributes.strength+=40,t.attributes.intelligence+=50,t.attributes.willpower+=40,t.attributes.agility+=40,t.attributes.speed+=40,t.attributes.endurance+=30,t.attributes.personality+=30,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Water Breathing for 120sec on Self, Cost: 5pts"),t.abilities.push("Resist Poison 100%"),t.abilities.push("Resist Common Disease 75%"),t.resistances.poison+=100,t.resistances.commonDisease+=75},name:"Argonian",key:"argonian"}},{}],28:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=40,t.attributes.intelligence+=50,t.attributes.willpower+=50,t.attributes.agility+=30,t.attributes.speed+=30,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}function r(t){t.attributes.strength+=30,t.attributes.intelligence+=50,t.attributes.willpower+=50,t.attributes.agility+=30,t.attributes.speed+=40,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Dragon Skin - Shield Shield 50pts for 60sec on Self"),t.abilities.push("Resist Magicka 50%"),t.abilities.push("Fortify Maximum Magicka 0.5x INT"),t.magickaMultiplier+=.5,t.resistances.magicka+=50},name:"Breton",key:"breton"}},{}],29:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=40,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=40,t.attributes.speed+=50,t.attributes.endurance+=40,t.attributes.personality+=30,t.attributes.luck+=40}function r(t){t.attributes.strength+=40,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=40,t.attributes.speed+=50,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Ancestor Guardian - Sanctuary Sanctuary 50pts for 60sec on self"),t.abilities.push("Resist Fire 75%"),t.resistances.fire+=75},name:"Dark Elf",key:"dark-elf"}},{}],30:[function(t,e,i){"use strict";e.exports={apply:function(t){},name:"",key:""}},{}],31:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=30,t.attributes.intelligence+=50,t.attributes.willpower+=40,t.attributes.agility+=40,t.attributes.speed+=30,t.attributes.endurance+=40,t.attributes.personality+=40,t.attributes.luck+=40}function r(t){t.attributes.strength+=30,t.attributes.intelligence+=50,t.attributes.willpower+=40,t.attributes.agility+=40,t.attributes.speed+=40,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Resist Common Disease: 75%"),t.abilities.push("Weakness to Shock: 25%"),t.abilities.push("Weakness to Frost: 25%"),t.abilities.push("Weakness to Fire: 50%"),t.abilities.push("Weakness to Magicka: 50%"),t.abilities.push("Fortify Maximum Magicka 1.5x INT"),t.resistances.commonDisease+=75,t.resistances.shock+=25,t.resistances.frost+=25,t.resistances.fire+=50,t.resistances.magicka+=50,t.magickaMultiplier+=1.5},name:"High Elf",key:"high-elf"}},{}],32:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=40,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=30,t.attributes.speed+=40,t.attributes.endurance+=40,t.attributes.personality+=50,t.attributes.luck+=40}function r(t){t.attributes.strength+=40,t.attributes.intelligence+=40,t.attributes.willpower+=40,t.attributes.agility+=30,t.attributes.speed+=30,t.attributes.endurance+=40,t.attributes.personality+=50,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Star of the West - Absorb Fatigue Absorb Fatigue 200 pts on target"),t.abilities.push("Voice of the Emperor - Charm Charm 25 to 50 pts for 15 seconds on target")},name:"Imperial",key:"imperial"}},{}],33:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=40,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=50,t.attributes.speed+=40,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}function r(t){t.attributes.strength+=40,t.attributes.intelligence+=50,t.attributes.willpower+=40,t.attributes.agility+=40,t.attributes.speed+=40,t.attributes.endurance+=30,t.attributes.personality+=30,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Eye of Night - Night Eye Night Eye 50pts for 30sec on Self"),t.abilities.push("Eye of Fear - Demoralize Humanoid Demoralize Humanoid 100pts for 30sec on Target")},name:"Khajiit",key:"khajiit"}},{}],34:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=50,t.attributes.intelligence+=30,t.attributes.willpower+=40,t.attributes.agility+=30,t.attributes.speed+=40,t.attributes.endurance+=50,t.attributes.personality+=30,t.attributes.luck+=40}function r(t){t.attributes.strength+=50,t.attributes.intelligence+=30,t.attributes.willpower+=50,t.attributes.agility+=30,t.attributes.speed+=40,t.attributes.endurance+=40,t.attributes.personality+=30,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Thunder Fist - Frost Damage Frost Damage 25pts on Touch"),t.abilities.push("Woad - Shield Shield 30pts for 60sec on Self"),t.abilities.push("Resist Shock 50%"),t.abilities.push("Resist Frost 100%"),t.resistances.shock+=50,t.resistances.frost+=100},name:"Nord",key:"nord"}},{}],35:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=45,t.attributes.intelligence+=30,t.attributes.willpower+=50,t.attributes.agility+=35,t.attributes.speed+=30,t.attributes.endurance+=50,t.attributes.personality+=30,t.attributes.luck+=40}function r(t){t.attributes.strength+=45,t.attributes.intelligence+=40,t.attributes.willpower+=45,t.attributes.agility+=35,t.attributes.speed+=30,t.attributes.endurance+=50,t.attributes.personality+=25,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Resist Magicka 25%"),t.abilities.push("Berserk -			Fortify Health 20pts for 60sec on Self,			Fortify Fatigue 200pts for 60sec on Self,			Fortify Attack 100pts for 60sec on Self,			Drain Agility 100pts for 60sec on Self"),t.resistances.magicka+=25},name:"Orc",key:"orc"}},{}],36:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=50,t.attributes.intelligence+=30,t.attributes.willpower+=30,t.attributes.agility+=40,t.attributes.speed+=40,t.attributes.endurance+=50,t.attributes.personality+=30,t.attributes.luck+=40}function r(t){t.attributes.strength+=40,t.attributes.intelligence+=30,t.attributes.willpower+=30,t.attributes.agility+=40,t.attributes.speed+=40,t.attributes.endurance+=50,t.attributes.personality+=40,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Adrenaline Rush -			Fortify Agility 50pts for 60sec on Self,			Fortify Endurance 50pts for 60sec on Self,			Fortify Speed 50pts for 60sec on Self,			Fortify Strength 50pts for 60sec on Self,			Fortify Health 25pts for 60sec on Self"),t.abilities.push("Resist Poison 75%"),t.abilities.push("Resist Common Disease 75%"),t.resistances.poison+=75,t.resistances.commonDisease+=75},name:"Redguard",key:"redguard"}},{}],37:[function(t,e,i){"use strict";function n(t){t.attributes.strength+=30,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=50,t.attributes.speed+=50,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}function r(t){t.attributes.strength+=30,t.attributes.intelligence+=40,t.attributes.willpower+=30,t.attributes.agility+=50,t.attributes.speed+=50,t.attributes.endurance+=30,t.attributes.personality+=40,t.attributes.luck+=40}e.exports={apply:function(t){"male"==t.sex?n(t):r(t),t.abilities.push("Beast Tongue - Command Creature Command Creature 5pts for 600sec"),t.abilities.push("Resist Common Disease: 75%"),t.resistances.commonDisease+=75},name:"Wood Elf",key:"wood-elf"}},{}],38:[function(t,e,i){"use strict";e.exports={combat:{block:"Block",armorer:"Armorer","medium-armor":"Medium Armor","heavy-armor":"Heavy Armor","blunt-weapon":"Blunt Weapon","long-blade":"Long Blade",axe:"Axe",spear:"Spear",athletics:"Athletics"},magic:{enchant:"Enchant",destruction:"Destruction",alteration:"Alteration",illusion:"Illusion",conjuration:"Conjuration",mysticism:"Mysticism",restoration:"Restoration",alchemy:"Alchemy",unarmored:"Unarmored"},stealth:{security:"Security",sneak:"Sneak",acrobatics:"Acrobatics","light-armor":"Light Armor",shortblade:"Shortblade",marksman:"Marksman",mercantile:"Mercantile",speechcraft:"Speechcraft","hand-to-hand":"Hand to Hand"}}},{}],39:[function(t,e,i){"use strict";e.exports=function(t,e){var i=t.skills.filter(function(t){return t.key==e});i.forEach(function(e){e.value=30,t.attributeCount[e.attribute]+=1})}},{}],40:[function(t,e,i){"use strict";e.exports=function(t,e){var i=t.skills.filter(function(t){return t.key==e});i.forEach(function(e){e.value=15,t.attributeCount[e.attribute]+=1})}},{}],41:[function(t,e,i){"use strict";e.exports=function(t,e){var i=t.skills.filter(function(t){return t.specialization==e});i.forEach(function(t){t.value+=5})}},{}],42:[function(t,e,i){"use strict";e.exports=function(t){var e=t.attributes;t.stats.health=(e.endurance+e.strength)/2,t.stats.magicka=e.intelligence*t.magickaMultiplier,t.stats.fatigue=e.strength+e.willpower+e.agility+e.endurance,t.stats.encumbrance=5*e.strength}},{}]},{},[7]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+// shim for using process in browser
+
+var process = module.exports = {};
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = setTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    clearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        setTimeout(drainQueue, 0);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+},{}],2:[function(require,module,exports){
+/*!
+ * URI.js - Mutating URLs
+ * IPv6 Support
+ *
+ * Version: 1.17.0
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ *
+ */
+
+(function (root, factory) {
+  'use strict';
+  // https://github.com/umdjs/umd/blob/master/returnExports.js
+  if (typeof exports === 'object') {
+    // Node
+    module.exports = factory();
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(factory);
+  } else {
+    // Browser globals (root is window)
+    root.IPv6 = factory(root);
+  }
+}(this, function (root) {
+  'use strict';
+
+  /*
+  var _in = "fe80:0000:0000:0000:0204:61ff:fe9d:f156";
+  var _out = IPv6.best(_in);
+  var _expected = "fe80::204:61ff:fe9d:f156";
+
+  console.log(_in, _out, _expected, _out === _expected);
+  */
+
+  // save current IPv6 variable, if any
+  var _IPv6 = root && root.IPv6;
+
+  function bestPresentation(address) {
+    // based on:
+    // Javascript to test an IPv6 address for proper format, and to
+    // present the "best text representation" according to IETF Draft RFC at
+    // http://tools.ietf.org/html/draft-ietf-6man-text-addr-representation-04
+    // 8 Feb 2010 Rich Brown, Dartware, LLC
+    // Please feel free to use this code as long as you provide a link to
+    // http://www.intermapper.com
+    // http://intermapper.com/support/tools/IPV6-Validator.aspx
+    // http://download.dartware.com/thirdparty/ipv6validator.js
+
+    var _address = address.toLowerCase();
+    var segments = _address.split(':');
+    var length = segments.length;
+    var total = 8;
+
+    // trim colons (:: or ::a:b:c… or …a:b:c::)
+    if (segments[0] === '' && segments[1] === '' && segments[2] === '') {
+      // must have been ::
+      // remove first two items
+      segments.shift();
+      segments.shift();
+    } else if (segments[0] === '' && segments[1] === '') {
+      // must have been ::xxxx
+      // remove the first item
+      segments.shift();
+    } else if (segments[length - 1] === '' && segments[length - 2] === '') {
+      // must have been xxxx::
+      segments.pop();
+    }
+
+    length = segments.length;
+
+    // adjust total segments for IPv4 trailer
+    if (segments[length - 1].indexOf('.') !== -1) {
+      // found a "." which means IPv4
+      total = 7;
+    }
+
+    // fill empty segments them with "0000"
+    var pos;
+    for (pos = 0; pos < length; pos++) {
+      if (segments[pos] === '') {
+        break;
+      }
+    }
+
+    if (pos < total) {
+      segments.splice(pos, 1, '0000');
+      while (segments.length < total) {
+        segments.splice(pos, 0, '0000');
+      }
+
+      length = segments.length;
+    }
+
+    // strip leading zeros
+    var _segments;
+    for (var i = 0; i < total; i++) {
+      _segments = segments[i].split('');
+      for (var j = 0; j < 3 ; j++) {
+        if (_segments[0] === '0' && _segments.length > 1) {
+          _segments.splice(0,1);
+        } else {
+          break;
+        }
+      }
+
+      segments[i] = _segments.join('');
+    }
+
+    // find longest sequence of zeroes and coalesce them into one segment
+    var best = -1;
+    var _best = 0;
+    var _current = 0;
+    var current = -1;
+    var inzeroes = false;
+    // i; already declared
+
+    for (i = 0; i < total; i++) {
+      if (inzeroes) {
+        if (segments[i] === '0') {
+          _current += 1;
+        } else {
+          inzeroes = false;
+          if (_current > _best) {
+            best = current;
+            _best = _current;
+          }
+        }
+      } else {
+        if (segments[i] === '0') {
+          inzeroes = true;
+          current = i;
+          _current = 1;
+        }
+      }
+    }
+
+    if (_current > _best) {
+      best = current;
+      _best = _current;
+    }
+
+    if (_best > 1) {
+      segments.splice(best, _best, '');
+    }
+
+    length = segments.length;
+
+    // assemble remaining segments
+    var result = '';
+    if (segments[0] === '')  {
+      result = ':';
+    }
+
+    for (i = 0; i < length; i++) {
+      result += segments[i];
+      if (i === length - 1) {
+        break;
+      }
+
+      result += ':';
+    }
+
+    if (segments[length - 1] === '') {
+      result += ':';
+    }
+
+    return result;
+  }
+
+  function noConflict() {
+    /*jshint validthis: true */
+    if (root.IPv6 === this) {
+      root.IPv6 = _IPv6;
+    }
+  
+    return this;
+  }
+
+  return {
+    best: bestPresentation,
+    noConflict: noConflict
+  };
+}));
+
+},{}],3:[function(require,module,exports){
+/*!
+ * URI.js - Mutating URLs
+ * Second Level Domain (SLD) Support
+ *
+ * Version: 1.17.0
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ *
+ */
+
+(function (root, factory) {
+  'use strict';
+  // https://github.com/umdjs/umd/blob/master/returnExports.js
+  if (typeof exports === 'object') {
+    // Node
+    module.exports = factory();
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(factory);
+  } else {
+    // Browser globals (root is window)
+    root.SecondLevelDomains = factory(root);
+  }
+}(this, function (root) {
+  'use strict';
+
+  // save current SecondLevelDomains variable, if any
+  var _SecondLevelDomains = root && root.SecondLevelDomains;
+
+  var SLD = {
+    // list of known Second Level Domains
+    // converted list of SLDs from https://github.com/gavingmiller/second-level-domains
+    // ----
+    // publicsuffix.org is more current and actually used by a couple of browsers internally.
+    // downside is it also contains domains like "dyndns.org" - which is fine for the security
+    // issues browser have to deal with (SOP for cookies, etc) - but is way overboard for URI.js
+    // ----
+    list: {
+      'ac':' com gov mil net org ',
+      'ae':' ac co gov mil name net org pro sch ',
+      'af':' com edu gov net org ',
+      'al':' com edu gov mil net org ',
+      'ao':' co ed gv it og pb ',
+      'ar':' com edu gob gov int mil net org tur ',
+      'at':' ac co gv or ',
+      'au':' asn com csiro edu gov id net org ',
+      'ba':' co com edu gov mil net org rs unbi unmo unsa untz unze ',
+      'bb':' biz co com edu gov info net org store tv ',
+      'bh':' biz cc com edu gov info net org ',
+      'bn':' com edu gov net org ',
+      'bo':' com edu gob gov int mil net org tv ',
+      'br':' adm adv agr am arq art ato b bio blog bmd cim cng cnt com coop ecn edu eng esp etc eti far flog fm fnd fot fst g12 ggf gov imb ind inf jor jus lel mat med mil mus net nom not ntr odo org ppg pro psc psi qsl rec slg srv tmp trd tur tv vet vlog wiki zlg ',
+      'bs':' com edu gov net org ',
+      'bz':' du et om ov rg ',
+      'ca':' ab bc mb nb nf nl ns nt nu on pe qc sk yk ',
+      'ck':' biz co edu gen gov info net org ',
+      'cn':' ac ah bj com cq edu fj gd gov gs gx gz ha hb he hi hl hn jl js jx ln mil net nm nx org qh sc sd sh sn sx tj tw xj xz yn zj ',
+      'co':' com edu gov mil net nom org ',
+      'cr':' ac c co ed fi go or sa ',
+      'cy':' ac biz com ekloges gov ltd name net org parliament press pro tm ',
+      'do':' art com edu gob gov mil net org sld web ',
+      'dz':' art asso com edu gov net org pol ',
+      'ec':' com edu fin gov info med mil net org pro ',
+      'eg':' com edu eun gov mil name net org sci ',
+      'er':' com edu gov ind mil net org rochest w ',
+      'es':' com edu gob nom org ',
+      'et':' biz com edu gov info name net org ',
+      'fj':' ac biz com info mil name net org pro ',
+      'fk':' ac co gov net nom org ',
+      'fr':' asso com f gouv nom prd presse tm ',
+      'gg':' co net org ',
+      'gh':' com edu gov mil org ',
+      'gn':' ac com gov net org ',
+      'gr':' com edu gov mil net org ',
+      'gt':' com edu gob ind mil net org ',
+      'gu':' com edu gov net org ',
+      'hk':' com edu gov idv net org ',
+      'hu':' 2000 agrar bolt casino city co erotica erotika film forum games hotel info ingatlan jogasz konyvelo lakas media news org priv reklam sex shop sport suli szex tm tozsde utazas video ',
+      'id':' ac co go mil net or sch web ',
+      'il':' ac co gov idf k12 muni net org ',
+      'in':' ac co edu ernet firm gen gov i ind mil net nic org res ',
+      'iq':' com edu gov i mil net org ',
+      'ir':' ac co dnssec gov i id net org sch ',
+      'it':' edu gov ',
+      'je':' co net org ',
+      'jo':' com edu gov mil name net org sch ',
+      'jp':' ac ad co ed go gr lg ne or ',
+      'ke':' ac co go info me mobi ne or sc ',
+      'kh':' com edu gov mil net org per ',
+      'ki':' biz com de edu gov info mob net org tel ',
+      'km':' asso com coop edu gouv k medecin mil nom notaires pharmaciens presse tm veterinaire ',
+      'kn':' edu gov net org ',
+      'kr':' ac busan chungbuk chungnam co daegu daejeon es gangwon go gwangju gyeongbuk gyeonggi gyeongnam hs incheon jeju jeonbuk jeonnam k kg mil ms ne or pe re sc seoul ulsan ',
+      'kw':' com edu gov net org ',
+      'ky':' com edu gov net org ',
+      'kz':' com edu gov mil net org ',
+      'lb':' com edu gov net org ',
+      'lk':' assn com edu gov grp hotel int ltd net ngo org sch soc web ',
+      'lr':' com edu gov net org ',
+      'lv':' asn com conf edu gov id mil net org ',
+      'ly':' com edu gov id med net org plc sch ',
+      'ma':' ac co gov m net org press ',
+      'mc':' asso tm ',
+      'me':' ac co edu gov its net org priv ',
+      'mg':' com edu gov mil nom org prd tm ',
+      'mk':' com edu gov inf name net org pro ',
+      'ml':' com edu gov net org presse ',
+      'mn':' edu gov org ',
+      'mo':' com edu gov net org ',
+      'mt':' com edu gov net org ',
+      'mv':' aero biz com coop edu gov info int mil museum name net org pro ',
+      'mw':' ac co com coop edu gov int museum net org ',
+      'mx':' com edu gob net org ',
+      'my':' com edu gov mil name net org sch ',
+      'nf':' arts com firm info net other per rec store web ',
+      'ng':' biz com edu gov mil mobi name net org sch ',
+      'ni':' ac co com edu gob mil net nom org ',
+      'np':' com edu gov mil net org ',
+      'nr':' biz com edu gov info net org ',
+      'om':' ac biz co com edu gov med mil museum net org pro sch ',
+      'pe':' com edu gob mil net nom org sld ',
+      'ph':' com edu gov i mil net ngo org ',
+      'pk':' biz com edu fam gob gok gon gop gos gov net org web ',
+      'pl':' art bialystok biz com edu gda gdansk gorzow gov info katowice krakow lodz lublin mil net ngo olsztyn org poznan pwr radom slupsk szczecin torun warszawa waw wroc wroclaw zgora ',
+      'pr':' ac biz com edu est gov info isla name net org pro prof ',
+      'ps':' com edu gov net org plo sec ',
+      'pw':' belau co ed go ne or ',
+      'ro':' arts com firm info nom nt org rec store tm www ',
+      'rs':' ac co edu gov in org ',
+      'sb':' com edu gov net org ',
+      'sc':' com edu gov net org ',
+      'sh':' co com edu gov net nom org ',
+      'sl':' com edu gov net org ',
+      'st':' co com consulado edu embaixada gov mil net org principe saotome store ',
+      'sv':' com edu gob org red ',
+      'sz':' ac co org ',
+      'tr':' av bbs bel biz com dr edu gen gov info k12 name net org pol tel tsk tv web ',
+      'tt':' aero biz cat co com coop edu gov info int jobs mil mobi museum name net org pro tel travel ',
+      'tw':' club com ebiz edu game gov idv mil net org ',
+      'mu':' ac co com gov net or org ',
+      'mz':' ac co edu gov org ',
+      'na':' co com ',
+      'nz':' ac co cri geek gen govt health iwi maori mil net org parliament school ',
+      'pa':' abo ac com edu gob ing med net nom org sld ',
+      'pt':' com edu gov int net nome org publ ',
+      'py':' com edu gov mil net org ',
+      'qa':' com edu gov mil net org ',
+      're':' asso com nom ',
+      'ru':' ac adygeya altai amur arkhangelsk astrakhan bashkiria belgorod bir bryansk buryatia cbg chel chelyabinsk chita chukotka chuvashia com dagestan e-burg edu gov grozny int irkutsk ivanovo izhevsk jar joshkar-ola kalmykia kaluga kamchatka karelia kazan kchr kemerovo khabarovsk khakassia khv kirov koenig komi kostroma kranoyarsk kuban kurgan kursk lipetsk magadan mari mari-el marine mil mordovia mosreg msk murmansk nalchik net nnov nov novosibirsk nsk omsk orenburg org oryol penza perm pp pskov ptz rnd ryazan sakhalin samara saratov simbirsk smolensk spb stavropol stv surgut tambov tatarstan tom tomsk tsaritsyn tsk tula tuva tver tyumen udm udmurtia ulan-ude vladikavkaz vladimir vladivostok volgograd vologda voronezh vrn vyatka yakutia yamal yekaterinburg yuzhno-sakhalinsk ',
+      'rw':' ac co com edu gouv gov int mil net ',
+      'sa':' com edu gov med net org pub sch ',
+      'sd':' com edu gov info med net org tv ',
+      'se':' a ac b bd c d e f g h i k l m n o org p parti pp press r s t tm u w x y z ',
+      'sg':' com edu gov idn net org per ',
+      'sn':' art com edu gouv org perso univ ',
+      'sy':' com edu gov mil net news org ',
+      'th':' ac co go in mi net or ',
+      'tj':' ac biz co com edu go gov info int mil name net nic org test web ',
+      'tn':' agrinet com defense edunet ens fin gov ind info intl mincom nat net org perso rnrt rns rnu tourism ',
+      'tz':' ac co go ne or ',
+      'ua':' biz cherkassy chernigov chernovtsy ck cn co com crimea cv dn dnepropetrovsk donetsk dp edu gov if in ivano-frankivsk kh kharkov kherson khmelnitskiy kiev kirovograd km kr ks kv lg lugansk lutsk lviv me mk net nikolaev od odessa org pl poltava pp rovno rv sebastopol sumy te ternopil uzhgorod vinnica vn zaporizhzhe zhitomir zp zt ',
+      'ug':' ac co go ne or org sc ',
+      'uk':' ac bl british-library co cym gov govt icnet jet lea ltd me mil mod national-library-scotland nel net nhs nic nls org orgn parliament plc police sch scot soc ',
+      'us':' dni fed isa kids nsn ',
+      'uy':' com edu gub mil net org ',
+      've':' co com edu gob info mil net org web ',
+      'vi':' co com k12 net org ',
+      'vn':' ac biz com edu gov health info int name net org pro ',
+      'ye':' co com gov ltd me net org plc ',
+      'yu':' ac co edu gov org ',
+      'za':' ac agric alt bourse city co cybernet db edu gov grondar iaccess imt inca landesign law mil net ngo nis nom olivetti org pix school tm web ',
+      'zm':' ac co com edu gov net org sch '
+    },
+    // gorhill 2013-10-25: Using indexOf() instead Regexp(). Significant boost
+    // in both performance and memory footprint. No initialization required.
+    // http://jsperf.com/uri-js-sld-regex-vs-binary-search/4
+    // Following methods use lastIndexOf() rather than array.split() in order
+    // to avoid any memory allocations.
+    has: function(domain) {
+      var tldOffset = domain.lastIndexOf('.');
+      if (tldOffset <= 0 || tldOffset >= (domain.length-1)) {
+        return false;
+      }
+      var sldOffset = domain.lastIndexOf('.', tldOffset-1);
+      if (sldOffset <= 0 || sldOffset >= (tldOffset-1)) {
+        return false;
+      }
+      var sldList = SLD.list[domain.slice(tldOffset+1)];
+      if (!sldList) {
+        return false;
+      }
+      return sldList.indexOf(' ' + domain.slice(sldOffset+1, tldOffset) + ' ') >= 0;
+    },
+    is: function(domain) {
+      var tldOffset = domain.lastIndexOf('.');
+      if (tldOffset <= 0 || tldOffset >= (domain.length-1)) {
+        return false;
+      }
+      var sldOffset = domain.lastIndexOf('.', tldOffset-1);
+      if (sldOffset >= 0) {
+        return false;
+      }
+      var sldList = SLD.list[domain.slice(tldOffset+1)];
+      if (!sldList) {
+        return false;
+      }
+      return sldList.indexOf(' ' + domain.slice(0, tldOffset) + ' ') >= 0;
+    },
+    get: function(domain) {
+      var tldOffset = domain.lastIndexOf('.');
+      if (tldOffset <= 0 || tldOffset >= (domain.length-1)) {
+        return null;
+      }
+      var sldOffset = domain.lastIndexOf('.', tldOffset-1);
+      if (sldOffset <= 0 || sldOffset >= (tldOffset-1)) {
+        return null;
+      }
+      var sldList = SLD.list[domain.slice(tldOffset+1)];
+      if (!sldList) {
+        return null;
+      }
+      if (sldList.indexOf(' ' + domain.slice(sldOffset+1, tldOffset) + ' ') < 0) {
+        return null;
+      }
+      return domain.slice(sldOffset+1);
+    },
+    noConflict: function(){
+      if (root.SecondLevelDomains === this) {
+        root.SecondLevelDomains = _SecondLevelDomains;
+      }
+      return this;
+    }
+  };
+
+  return SLD;
+}));
+
+},{}],4:[function(require,module,exports){
+/*!
+ * URI.js - Mutating URLs
+ *
+ * Version: 1.17.0
+ *
+ * Author: Rodney Rehm
+ * Web: http://medialize.github.io/URI.js/
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *   GPL v3 http://opensource.org/licenses/GPL-3.0
+ *
+ */
+(function (root, factory) {
+  'use strict';
+  // https://github.com/umdjs/umd/blob/master/returnExports.js
+  if (typeof exports === 'object') {
+    // Node
+    module.exports = factory(require('./punycode'), require('./IPv6'), require('./SecondLevelDomains'));
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['./punycode', './IPv6', './SecondLevelDomains'], factory);
+  } else {
+    // Browser globals (root is window)
+    root.URI = factory(root.punycode, root.IPv6, root.SecondLevelDomains, root);
+  }
+}(this, function (punycode, IPv6, SLD, root) {
+  'use strict';
+  /*global location, escape, unescape */
+  // FIXME: v2.0.0 renamce non-camelCase properties to uppercase
+  /*jshint camelcase: false */
+
+  // save current URI variable, if any
+  var _URI = root && root.URI;
+
+  function URI(url, base) {
+    var _urlSupplied = arguments.length >= 1;
+    var _baseSupplied = arguments.length >= 2;
+
+    // Allow instantiation without the 'new' keyword
+    if (!(this instanceof URI)) {
+      if (_urlSupplied) {
+        if (_baseSupplied) {
+          return new URI(url, base);
+        }
+
+        return new URI(url);
+      }
+
+      return new URI();
+    }
+
+    if (url === undefined) {
+      if (_urlSupplied) {
+        throw new TypeError('undefined is not a valid argument for URI');
+      }
+
+      if (typeof location !== 'undefined') {
+        url = location.href + '';
+      } else {
+        url = '';
+      }
+    }
+
+    this.href(url);
+
+    // resolve to base according to http://dvcs.w3.org/hg/url/raw-file/tip/Overview.html#constructor
+    if (base !== undefined) {
+      return this.absoluteTo(base);
+    }
+
+    return this;
+  }
+
+  URI.version = '1.17.0';
+
+  var p = URI.prototype;
+  var hasOwn = Object.prototype.hasOwnProperty;
+
+  function escapeRegEx(string) {
+    // https://github.com/medialize/URI.js/commit/85ac21783c11f8ccab06106dba9735a31a86924d#commitcomment-821963
+    return string.replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+  }
+
+  function getType(value) {
+    // IE8 doesn't return [Object Undefined] but [Object Object] for undefined value
+    if (value === undefined) {
+      return 'Undefined';
+    }
+
+    return String(Object.prototype.toString.call(value)).slice(8, -1);
+  }
+
+  function isArray(obj) {
+    return getType(obj) === 'Array';
+  }
+
+  function filterArrayValues(data, value) {
+    var lookup = {};
+    var i, length;
+
+    if (getType(value) === 'RegExp') {
+      lookup = null;
+    } else if (isArray(value)) {
+      for (i = 0, length = value.length; i < length; i++) {
+        lookup[value[i]] = true;
+      }
+    } else {
+      lookup[value] = true;
+    }
+
+    for (i = 0, length = data.length; i < length; i++) {
+      /*jshint laxbreak: true */
+      var _match = lookup && lookup[data[i]] !== undefined
+        || !lookup && value.test(data[i]);
+      /*jshint laxbreak: false */
+      if (_match) {
+        data.splice(i, 1);
+        length--;
+        i--;
+      }
+    }
+
+    return data;
+  }
+
+  function arrayContains(list, value) {
+    var i, length;
+
+    // value may be string, number, array, regexp
+    if (isArray(value)) {
+      // Note: this can be optimized to O(n) (instead of current O(m * n))
+      for (i = 0, length = value.length; i < length; i++) {
+        if (!arrayContains(list, value[i])) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    var _type = getType(value);
+    for (i = 0, length = list.length; i < length; i++) {
+      if (_type === 'RegExp') {
+        if (typeof list[i] === 'string' && list[i].match(value)) {
+          return true;
+        }
+      } else if (list[i] === value) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function arraysEqual(one, two) {
+    if (!isArray(one) || !isArray(two)) {
+      return false;
+    }
+
+    // arrays can't be equal if they have different amount of content
+    if (one.length !== two.length) {
+      return false;
+    }
+
+    one.sort();
+    two.sort();
+
+    for (var i = 0, l = one.length; i < l; i++) {
+      if (one[i] !== two[i]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  function trimSlashes(text) {
+    var trim_expression = /^\/+|\/+$/g;
+    return text.replace(trim_expression, '');
+  }
+
+  URI._parts = function() {
+    return {
+      protocol: null,
+      username: null,
+      password: null,
+      hostname: null,
+      urn: null,
+      port: null,
+      path: null,
+      query: null,
+      fragment: null,
+      // state
+      duplicateQueryParameters: URI.duplicateQueryParameters,
+      escapeQuerySpace: URI.escapeQuerySpace
+    };
+  };
+  // state: allow duplicate query parameters (a=1&a=1)
+  URI.duplicateQueryParameters = false;
+  // state: replaces + with %20 (space in query strings)
+  URI.escapeQuerySpace = true;
+  // static properties
+  URI.protocol_expression = /^[a-z][a-z0-9.+-]*$/i;
+  URI.idn_expression = /[^a-z0-9\.-]/i;
+  URI.punycode_expression = /(xn--)/i;
+  // well, 333.444.555.666 matches, but it sure ain't no IPv4 - do we care?
+  URI.ip4_expression = /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/;
+  // credits to Rich Brown
+  // source: http://forums.intermapper.com/viewtopic.php?p=1096#1096
+  // specification: http://www.ietf.org/rfc/rfc4291.txt
+  URI.ip6_expression = /^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/;
+  // expression used is "gruber revised" (@gruber v2) determined to be the
+  // best solution in a regex-golf we did a couple of ages ago at
+  // * http://mathiasbynens.be/demo/url-regex
+  // * http://rodneyrehm.de/t/url-regex.html
+  URI.find_uri_expression = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/ig;
+  URI.findUri = {
+    // valid "scheme://" or "www."
+    start: /\b(?:([a-z][a-z0-9.+-]*:\/\/)|www\.)/gi,
+    // everything up to the next whitespace
+    end: /[\s\r\n]|$/,
+    // trim trailing punctuation captured by end RegExp
+    trim: /[`!()\[\]{};:'".,<>?«»“”„‘’]+$/
+  };
+  // http://www.iana.org/assignments/uri-schemes.html
+  // http://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers#Well-known_ports
+  URI.defaultPorts = {
+    http: '80',
+    https: '443',
+    ftp: '21',
+    gopher: '70',
+    ws: '80',
+    wss: '443'
+  };
+  // allowed hostname characters according to RFC 3986
+  // ALPHA DIGIT "-" "." "_" "~" "!" "$" "&" "'" "(" ")" "*" "+" "," ";" "=" %encoded
+  // I've never seen a (non-IDN) hostname other than: ALPHA DIGIT . -
+  URI.invalid_hostname_characters = /[^a-zA-Z0-9\.-]/;
+  // map DOM Elements to their URI attribute
+  URI.domAttributes = {
+    'a': 'href',
+    'blockquote': 'cite',
+    'link': 'href',
+    'base': 'href',
+    'script': 'src',
+    'form': 'action',
+    'img': 'src',
+    'area': 'href',
+    'iframe': 'src',
+    'embed': 'src',
+    'source': 'src',
+    'track': 'src',
+    'input': 'src', // but only if type="image"
+    'audio': 'src',
+    'video': 'src'
+  };
+  URI.getDomAttribute = function(node) {
+    if (!node || !node.nodeName) {
+      return undefined;
+    }
+
+    var nodeName = node.nodeName.toLowerCase();
+    // <input> should only expose src for type="image"
+    if (nodeName === 'input' && node.type !== 'image') {
+      return undefined;
+    }
+
+    return URI.domAttributes[nodeName];
+  };
+
+  function escapeForDumbFirefox36(value) {
+    // https://github.com/medialize/URI.js/issues/91
+    return escape(value);
+  }
+
+  // encoding / decoding according to RFC3986
+  function strictEncodeURIComponent(string) {
+    // see https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/encodeURIComponent
+    return encodeURIComponent(string)
+      .replace(/[!'()*]/g, escapeForDumbFirefox36)
+      .replace(/\*/g, '%2A');
+  }
+  URI.encode = strictEncodeURIComponent;
+  URI.decode = decodeURIComponent;
+  URI.iso8859 = function() {
+    URI.encode = escape;
+    URI.decode = unescape;
+  };
+  URI.unicode = function() {
+    URI.encode = strictEncodeURIComponent;
+    URI.decode = decodeURIComponent;
+  };
+  URI.characters = {
+    pathname: {
+      encode: {
+        // RFC3986 2.1: For consistency, URI producers and normalizers should
+        // use uppercase hexadecimal digits for all percent-encodings.
+        expression: /%(24|26|2B|2C|3B|3D|3A|40)/ig,
+        map: {
+          // -._~!'()*
+          '%24': '$',
+          '%26': '&',
+          '%2B': '+',
+          '%2C': ',',
+          '%3B': ';',
+          '%3D': '=',
+          '%3A': ':',
+          '%40': '@'
+        }
+      },
+      decode: {
+        expression: /[\/\?#]/g,
+        map: {
+          '/': '%2F',
+          '?': '%3F',
+          '#': '%23'
+        }
+      }
+    },
+    reserved: {
+      encode: {
+        // RFC3986 2.1: For consistency, URI producers and normalizers should
+        // use uppercase hexadecimal digits for all percent-encodings.
+        expression: /%(21|23|24|26|27|28|29|2A|2B|2C|2F|3A|3B|3D|3F|40|5B|5D)/ig,
+        map: {
+          // gen-delims
+          '%3A': ':',
+          '%2F': '/',
+          '%3F': '?',
+          '%23': '#',
+          '%5B': '[',
+          '%5D': ']',
+          '%40': '@',
+          // sub-delims
+          '%21': '!',
+          '%24': '$',
+          '%26': '&',
+          '%27': '\'',
+          '%28': '(',
+          '%29': ')',
+          '%2A': '*',
+          '%2B': '+',
+          '%2C': ',',
+          '%3B': ';',
+          '%3D': '='
+        }
+      }
+    },
+    urnpath: {
+      // The characters under `encode` are the characters called out by RFC 2141 as being acceptable
+      // for usage in a URN. RFC2141 also calls out "-", ".", and "_" as acceptable characters, but
+      // these aren't encoded by encodeURIComponent, so we don't have to call them out here. Also
+      // note that the colon character is not featured in the encoding map; this is because URI.js
+      // gives the colons in URNs semantic meaning as the delimiters of path segements, and so it
+      // should not appear unencoded in a segment itself.
+      // See also the note above about RFC3986 and capitalalized hex digits.
+      encode: {
+        expression: /%(21|24|27|28|29|2A|2B|2C|3B|3D|40)/ig,
+        map: {
+          '%21': '!',
+          '%24': '$',
+          '%27': '\'',
+          '%28': '(',
+          '%29': ')',
+          '%2A': '*',
+          '%2B': '+',
+          '%2C': ',',
+          '%3B': ';',
+          '%3D': '=',
+          '%40': '@'
+        }
+      },
+      // These characters are the characters called out by RFC2141 as "reserved" characters that
+      // should never appear in a URN, plus the colon character (see note above).
+      decode: {
+        expression: /[\/\?#:]/g,
+        map: {
+          '/': '%2F',
+          '?': '%3F',
+          '#': '%23',
+          ':': '%3A'
+        }
+      }
+    }
+  };
+  URI.encodeQuery = function(string, escapeQuerySpace) {
+    var escaped = URI.encode(string + '');
+    if (escapeQuerySpace === undefined) {
+      escapeQuerySpace = URI.escapeQuerySpace;
+    }
+
+    return escapeQuerySpace ? escaped.replace(/%20/g, '+') : escaped;
+  };
+  URI.decodeQuery = function(string, escapeQuerySpace) {
+    string += '';
+    if (escapeQuerySpace === undefined) {
+      escapeQuerySpace = URI.escapeQuerySpace;
+    }
+
+    try {
+      return URI.decode(escapeQuerySpace ? string.replace(/\+/g, '%20') : string);
+    } catch(e) {
+      // we're not going to mess with weird encodings,
+      // give up and return the undecoded original string
+      // see https://github.com/medialize/URI.js/issues/87
+      // see https://github.com/medialize/URI.js/issues/92
+      return string;
+    }
+  };
+  // generate encode/decode path functions
+  var _parts = {'encode':'encode', 'decode':'decode'};
+  var _part;
+  var generateAccessor = function(_group, _part) {
+    return function(string) {
+      try {
+        return URI[_part](string + '').replace(URI.characters[_group][_part].expression, function(c) {
+          return URI.characters[_group][_part].map[c];
+        });
+      } catch (e) {
+        // we're not going to mess with weird encodings,
+        // give up and return the undecoded original string
+        // see https://github.com/medialize/URI.js/issues/87
+        // see https://github.com/medialize/URI.js/issues/92
+        return string;
+      }
+    };
+  };
+
+  for (_part in _parts) {
+    URI[_part + 'PathSegment'] = generateAccessor('pathname', _parts[_part]);
+    URI[_part + 'UrnPathSegment'] = generateAccessor('urnpath', _parts[_part]);
+  }
+
+  var generateSegmentedPathFunction = function(_sep, _codingFuncName, _innerCodingFuncName) {
+    return function(string) {
+      // Why pass in names of functions, rather than the function objects themselves? The
+      // definitions of some functions (but in particular, URI.decode) will occasionally change due
+      // to URI.js having ISO8859 and Unicode modes. Passing in the name and getting it will ensure
+      // that the functions we use here are "fresh".
+      var actualCodingFunc;
+      if (!_innerCodingFuncName) {
+        actualCodingFunc = URI[_codingFuncName];
+      } else {
+        actualCodingFunc = function(string) {
+          return URI[_codingFuncName](URI[_innerCodingFuncName](string));
+        };
+      }
+
+      var segments = (string + '').split(_sep);
+
+      for (var i = 0, length = segments.length; i < length; i++) {
+        segments[i] = actualCodingFunc(segments[i]);
+      }
+
+      return segments.join(_sep);
+    };
+  };
+
+  // This takes place outside the above loop because we don't want, e.g., encodeUrnPath functions.
+  URI.decodePath = generateSegmentedPathFunction('/', 'decodePathSegment');
+  URI.decodeUrnPath = generateSegmentedPathFunction(':', 'decodeUrnPathSegment');
+  URI.recodePath = generateSegmentedPathFunction('/', 'encodePathSegment', 'decode');
+  URI.recodeUrnPath = generateSegmentedPathFunction(':', 'encodeUrnPathSegment', 'decode');
+
+  URI.encodeReserved = generateAccessor('reserved', 'encode');
+
+  URI.parse = function(string, parts) {
+    var pos;
+    if (!parts) {
+      parts = {};
+    }
+    // [protocol"://"[username[":"password]"@"]hostname[":"port]"/"?][path]["?"querystring]["#"fragment]
+
+    // extract fragment
+    pos = string.indexOf('#');
+    if (pos > -1) {
+      // escaping?
+      parts.fragment = string.substring(pos + 1) || null;
+      string = string.substring(0, pos);
+    }
+
+    // extract query
+    pos = string.indexOf('?');
+    if (pos > -1) {
+      // escaping?
+      parts.query = string.substring(pos + 1) || null;
+      string = string.substring(0, pos);
+    }
+
+    // extract protocol
+    if (string.substring(0, 2) === '//') {
+      // relative-scheme
+      parts.protocol = null;
+      string = string.substring(2);
+      // extract "user:pass@host:port"
+      string = URI.parseAuthority(string, parts);
+    } else {
+      pos = string.indexOf(':');
+      if (pos > -1) {
+        parts.protocol = string.substring(0, pos) || null;
+        if (parts.protocol && !parts.protocol.match(URI.protocol_expression)) {
+          // : may be within the path
+          parts.protocol = undefined;
+        } else if (string.substring(pos + 1, pos + 3) === '//') {
+          string = string.substring(pos + 3);
+
+          // extract "user:pass@host:port"
+          string = URI.parseAuthority(string, parts);
+        } else {
+          string = string.substring(pos + 1);
+          parts.urn = true;
+        }
+      }
+    }
+
+    // what's left must be the path
+    parts.path = string;
+
+    // and we're done
+    return parts;
+  };
+  URI.parseHost = function(string, parts) {
+    // Copy chrome, IE, opera backslash-handling behavior.
+    // Back slashes before the query string get converted to forward slashes
+    // See: https://github.com/joyent/node/blob/386fd24f49b0e9d1a8a076592a404168faeecc34/lib/url.js#L115-L124
+    // See: https://code.google.com/p/chromium/issues/detail?id=25916
+    // https://github.com/medialize/URI.js/pull/233
+    string = string.replace(/\\/g, '/');
+
+    // extract host:port
+    var pos = string.indexOf('/');
+    var bracketPos;
+    var t;
+
+    if (pos === -1) {
+      pos = string.length;
+    }
+
+    if (string.charAt(0) === '[') {
+      // IPv6 host - http://tools.ietf.org/html/draft-ietf-6man-text-addr-representation-04#section-6
+      // I claim most client software breaks on IPv6 anyways. To simplify things, URI only accepts
+      // IPv6+port in the format [2001:db8::1]:80 (for the time being)
+      bracketPos = string.indexOf(']');
+      parts.hostname = string.substring(1, bracketPos) || null;
+      parts.port = string.substring(bracketPos + 2, pos) || null;
+      if (parts.port === '/') {
+        parts.port = null;
+      }
+    } else {
+      var firstColon = string.indexOf(':');
+      var firstSlash = string.indexOf('/');
+      var nextColon = string.indexOf(':', firstColon + 1);
+      if (nextColon !== -1 && (firstSlash === -1 || nextColon < firstSlash)) {
+        // IPv6 host contains multiple colons - but no port
+        // this notation is actually not allowed by RFC 3986, but we're a liberal parser
+        parts.hostname = string.substring(0, pos) || null;
+        parts.port = null;
+      } else {
+        t = string.substring(0, pos).split(':');
+        parts.hostname = t[0] || null;
+        parts.port = t[1] || null;
+      }
+    }
+
+    if (parts.hostname && string.substring(pos).charAt(0) !== '/') {
+      pos++;
+      string = '/' + string;
+    }
+
+    return string.substring(pos) || '/';
+  };
+  URI.parseAuthority = function(string, parts) {
+    string = URI.parseUserinfo(string, parts);
+    return URI.parseHost(string, parts);
+  };
+  URI.parseUserinfo = function(string, parts) {
+    // extract username:password
+    var firstSlash = string.indexOf('/');
+    var pos = string.lastIndexOf('@', firstSlash > -1 ? firstSlash : string.length - 1);
+    var t;
+
+    // authority@ must come before /path
+    if (pos > -1 && (firstSlash === -1 || pos < firstSlash)) {
+      t = string.substring(0, pos).split(':');
+      parts.username = t[0] ? URI.decode(t[0]) : null;
+      t.shift();
+      parts.password = t[0] ? URI.decode(t.join(':')) : null;
+      string = string.substring(pos + 1);
+    } else {
+      parts.username = null;
+      parts.password = null;
+    }
+
+    return string;
+  };
+  URI.parseQuery = function(string, escapeQuerySpace) {
+    if (!string) {
+      return {};
+    }
+
+    // throw out the funky business - "?"[name"="value"&"]+
+    string = string.replace(/&+/g, '&').replace(/^\?*&*|&+$/g, '');
+
+    if (!string) {
+      return {};
+    }
+
+    var items = {};
+    var splits = string.split('&');
+    var length = splits.length;
+    var v, name, value;
+
+    for (var i = 0; i < length; i++) {
+      v = splits[i].split('=');
+      name = URI.decodeQuery(v.shift(), escapeQuerySpace);
+      // no "=" is null according to http://dvcs.w3.org/hg/url/raw-file/tip/Overview.html#collect-url-parameters
+      value = v.length ? URI.decodeQuery(v.join('='), escapeQuerySpace) : null;
+
+      if (hasOwn.call(items, name)) {
+        if (typeof items[name] === 'string' || items[name] === null) {
+          items[name] = [items[name]];
+        }
+
+        items[name].push(value);
+      } else {
+        items[name] = value;
+      }
+    }
+
+    return items;
+  };
+
+  URI.build = function(parts) {
+    var t = '';
+
+    if (parts.protocol) {
+      t += parts.protocol + ':';
+    }
+
+    if (!parts.urn && (t || parts.hostname)) {
+      t += '//';
+    }
+
+    t += (URI.buildAuthority(parts) || '');
+
+    if (typeof parts.path === 'string') {
+      if (parts.path.charAt(0) !== '/' && typeof parts.hostname === 'string') {
+        t += '/';
+      }
+
+      t += parts.path;
+    }
+
+    if (typeof parts.query === 'string' && parts.query) {
+      t += '?' + parts.query;
+    }
+
+    if (typeof parts.fragment === 'string' && parts.fragment) {
+      t += '#' + parts.fragment;
+    }
+    return t;
+  };
+  URI.buildHost = function(parts) {
+    var t = '';
+
+    if (!parts.hostname) {
+      return '';
+    } else if (URI.ip6_expression.test(parts.hostname)) {
+      t += '[' + parts.hostname + ']';
+    } else {
+      t += parts.hostname;
+    }
+
+    if (parts.port) {
+      t += ':' + parts.port;
+    }
+
+    return t;
+  };
+  URI.buildAuthority = function(parts) {
+    return URI.buildUserinfo(parts) + URI.buildHost(parts);
+  };
+  URI.buildUserinfo = function(parts) {
+    var t = '';
+
+    if (parts.username) {
+      t += URI.encode(parts.username);
+
+      if (parts.password) {
+        t += ':' + URI.encode(parts.password);
+      }
+
+      t += '@';
+    }
+
+    return t;
+  };
+  URI.buildQuery = function(data, duplicateQueryParameters, escapeQuerySpace) {
+    // according to http://tools.ietf.org/html/rfc3986 or http://labs.apache.org/webarch/uri/rfc/rfc3986.html
+    // being »-._~!$&'()*+,;=:@/?« %HEX and alnum are allowed
+    // the RFC explicitly states ?/foo being a valid use case, no mention of parameter syntax!
+    // URI.js treats the query string as being application/x-www-form-urlencoded
+    // see http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type
+
+    var t = '';
+    var unique, key, i, length;
+    for (key in data) {
+      if (hasOwn.call(data, key) && key) {
+        if (isArray(data[key])) {
+          unique = {};
+          for (i = 0, length = data[key].length; i < length; i++) {
+            if (data[key][i] !== undefined && unique[data[key][i] + ''] === undefined) {
+              t += '&' + URI.buildQueryParameter(key, data[key][i], escapeQuerySpace);
+              if (duplicateQueryParameters !== true) {
+                unique[data[key][i] + ''] = true;
+              }
+            }
+          }
+        } else if (data[key] !== undefined) {
+          t += '&' + URI.buildQueryParameter(key, data[key], escapeQuerySpace);
+        }
+      }
+    }
+
+    return t.substring(1);
+  };
+  URI.buildQueryParameter = function(name, value, escapeQuerySpace) {
+    // http://www.w3.org/TR/REC-html40/interact/forms.html#form-content-type -- application/x-www-form-urlencoded
+    // don't append "=" for null values, according to http://dvcs.w3.org/hg/url/raw-file/tip/Overview.html#url-parameter-serialization
+    return URI.encodeQuery(name, escapeQuerySpace) + (value !== null ? '=' + URI.encodeQuery(value, escapeQuerySpace) : '');
+  };
+
+  URI.addQuery = function(data, name, value) {
+    if (typeof name === 'object') {
+      for (var key in name) {
+        if (hasOwn.call(name, key)) {
+          URI.addQuery(data, key, name[key]);
+        }
+      }
+    } else if (typeof name === 'string') {
+      if (data[name] === undefined) {
+        data[name] = value;
+        return;
+      } else if (typeof data[name] === 'string') {
+        data[name] = [data[name]];
+      }
+
+      if (!isArray(value)) {
+        value = [value];
+      }
+
+      data[name] = (data[name] || []).concat(value);
+    } else {
+      throw new TypeError('URI.addQuery() accepts an object, string as the name parameter');
+    }
+  };
+  URI.removeQuery = function(data, name, value) {
+    var i, length, key;
+
+    if (isArray(name)) {
+      for (i = 0, length = name.length; i < length; i++) {
+        data[name[i]] = undefined;
+      }
+    } else if (getType(name) === 'RegExp') {
+      for (key in data) {
+        if (name.test(key)) {
+          data[key] = undefined;
+        }
+      }
+    } else if (typeof name === 'object') {
+      for (key in name) {
+        if (hasOwn.call(name, key)) {
+          URI.removeQuery(data, key, name[key]);
+        }
+      }
+    } else if (typeof name === 'string') {
+      if (value !== undefined) {
+        if (getType(value) === 'RegExp') {
+          if (!isArray(data[name]) && value.test(data[name])) {
+            data[name] = undefined;
+          } else {
+            data[name] = filterArrayValues(data[name], value);
+          }
+        } else if (data[name] === String(value) && (!isArray(value) || value.length === 1)) {
+          data[name] = undefined;
+        } else if (isArray(data[name])) {
+          data[name] = filterArrayValues(data[name], value);
+        }
+      } else {
+        data[name] = undefined;
+      }
+    } else {
+      throw new TypeError('URI.removeQuery() accepts an object, string, RegExp as the first parameter');
+    }
+  };
+  URI.hasQuery = function(data, name, value, withinArray) {
+    if (typeof name === 'object') {
+      for (var key in name) {
+        if (hasOwn.call(name, key)) {
+          if (!URI.hasQuery(data, key, name[key])) {
+            return false;
+          }
+        }
+      }
+
+      return true;
+    } else if (typeof name !== 'string') {
+      throw new TypeError('URI.hasQuery() accepts an object, string as the name parameter');
+    }
+
+    switch (getType(value)) {
+      case 'Undefined':
+        // true if exists (but may be empty)
+        return name in data; // data[name] !== undefined;
+
+      case 'Boolean':
+        // true if exists and non-empty
+        var _booly = Boolean(isArray(data[name]) ? data[name].length : data[name]);
+        return value === _booly;
+
+      case 'Function':
+        // allow complex comparison
+        return !!value(data[name], name, data);
+
+      case 'Array':
+        if (!isArray(data[name])) {
+          return false;
+        }
+
+        var op = withinArray ? arrayContains : arraysEqual;
+        return op(data[name], value);
+
+      case 'RegExp':
+        if (!isArray(data[name])) {
+          return Boolean(data[name] && data[name].match(value));
+        }
+
+        if (!withinArray) {
+          return false;
+        }
+
+        return arrayContains(data[name], value);
+
+      case 'Number':
+        value = String(value);
+        /* falls through */
+      case 'String':
+        if (!isArray(data[name])) {
+          return data[name] === value;
+        }
+
+        if (!withinArray) {
+          return false;
+        }
+
+        return arrayContains(data[name], value);
+
+      default:
+        throw new TypeError('URI.hasQuery() accepts undefined, boolean, string, number, RegExp, Function as the value parameter');
+    }
+  };
+
+
+  URI.commonPath = function(one, two) {
+    var length = Math.min(one.length, two.length);
+    var pos;
+
+    // find first non-matching character
+    for (pos = 0; pos < length; pos++) {
+      if (one.charAt(pos) !== two.charAt(pos)) {
+        pos--;
+        break;
+      }
+    }
+
+    if (pos < 1) {
+      return one.charAt(0) === two.charAt(0) && one.charAt(0) === '/' ? '/' : '';
+    }
+
+    // revert to last /
+    if (one.charAt(pos) !== '/' || two.charAt(pos) !== '/') {
+      pos = one.substring(0, pos).lastIndexOf('/');
+    }
+
+    return one.substring(0, pos + 1);
+  };
+
+  URI.withinString = function(string, callback, options) {
+    options || (options = {});
+    var _start = options.start || URI.findUri.start;
+    var _end = options.end || URI.findUri.end;
+    var _trim = options.trim || URI.findUri.trim;
+    var _attributeOpen = /[a-z0-9-]=["']?$/i;
+
+    _start.lastIndex = 0;
+    while (true) {
+      var match = _start.exec(string);
+      if (!match) {
+        break;
+      }
+
+      var start = match.index;
+      if (options.ignoreHtml) {
+        // attribut(e=["']?$)
+        var attributeOpen = string.slice(Math.max(start - 3, 0), start);
+        if (attributeOpen && _attributeOpen.test(attributeOpen)) {
+          continue;
+        }
+      }
+
+      var end = start + string.slice(start).search(_end);
+      var slice = string.slice(start, end).replace(_trim, '');
+      if (options.ignore && options.ignore.test(slice)) {
+        continue;
+      }
+
+      end = start + slice.length;
+      var result = callback(slice, start, end, string);
+      string = string.slice(0, start) + result + string.slice(end);
+      _start.lastIndex = start + result.length;
+    }
+
+    _start.lastIndex = 0;
+    return string;
+  };
+
+  URI.ensureValidHostname = function(v) {
+    // Theoretically URIs allow percent-encoding in Hostnames (according to RFC 3986)
+    // they are not part of DNS and therefore ignored by URI.js
+
+    if (v.match(URI.invalid_hostname_characters)) {
+      // test punycode
+      if (!punycode) {
+        throw new TypeError('Hostname "' + v + '" contains characters other than [A-Z0-9.-] and Punycode.js is not available');
+      }
+
+      if (punycode.toASCII(v).match(URI.invalid_hostname_characters)) {
+        throw new TypeError('Hostname "' + v + '" contains characters other than [A-Z0-9.-]');
+      }
+    }
+  };
+
+  // noConflict
+  URI.noConflict = function(removeAll) {
+    if (removeAll) {
+      var unconflicted = {
+        URI: this.noConflict()
+      };
+
+      if (root.URITemplate && typeof root.URITemplate.noConflict === 'function') {
+        unconflicted.URITemplate = root.URITemplate.noConflict();
+      }
+
+      if (root.IPv6 && typeof root.IPv6.noConflict === 'function') {
+        unconflicted.IPv6 = root.IPv6.noConflict();
+      }
+
+      if (root.SecondLevelDomains && typeof root.SecondLevelDomains.noConflict === 'function') {
+        unconflicted.SecondLevelDomains = root.SecondLevelDomains.noConflict();
+      }
+
+      return unconflicted;
+    } else if (root.URI === this) {
+      root.URI = _URI;
+    }
+
+    return this;
+  };
+
+  p.build = function(deferBuild) {
+    if (deferBuild === true) {
+      this._deferred_build = true;
+    } else if (deferBuild === undefined || this._deferred_build) {
+      this._string = URI.build(this._parts);
+      this._deferred_build = false;
+    }
+
+    return this;
+  };
+
+  p.clone = function() {
+    return new URI(this);
+  };
+
+  p.valueOf = p.toString = function() {
+    return this.build(false)._string;
+  };
+
+
+  function generateSimpleAccessor(_part){
+    return function(v, build) {
+      if (v === undefined) {
+        return this._parts[_part] || '';
+      } else {
+        this._parts[_part] = v || null;
+        this.build(!build);
+        return this;
+      }
+    };
+  }
+
+  function generatePrefixAccessor(_part, _key){
+    return function(v, build) {
+      if (v === undefined) {
+        return this._parts[_part] || '';
+      } else {
+        if (v !== null) {
+          v = v + '';
+          if (v.charAt(0) === _key) {
+            v = v.substring(1);
+          }
+        }
+
+        this._parts[_part] = v;
+        this.build(!build);
+        return this;
+      }
+    };
+  }
+
+  p.protocol = generateSimpleAccessor('protocol');
+  p.username = generateSimpleAccessor('username');
+  p.password = generateSimpleAccessor('password');
+  p.hostname = generateSimpleAccessor('hostname');
+  p.port = generateSimpleAccessor('port');
+  p.query = generatePrefixAccessor('query', '?');
+  p.fragment = generatePrefixAccessor('fragment', '#');
+
+  p.search = function(v, build) {
+    var t = this.query(v, build);
+    return typeof t === 'string' && t.length ? ('?' + t) : t;
+  };
+  p.hash = function(v, build) {
+    var t = this.fragment(v, build);
+    return typeof t === 'string' && t.length ? ('#' + t) : t;
+  };
+
+  p.pathname = function(v, build) {
+    if (v === undefined || v === true) {
+      var res = this._parts.path || (this._parts.hostname ? '/' : '');
+      return v ? (this._parts.urn ? URI.decodeUrnPath : URI.decodePath)(res) : res;
+    } else {
+      if (this._parts.urn) {
+        this._parts.path = v ? URI.recodeUrnPath(v) : '';
+      } else {
+        this._parts.path = v ? URI.recodePath(v) : '/';
+      }
+      this.build(!build);
+      return this;
+    }
+  };
+  p.path = p.pathname;
+  p.href = function(href, build) {
+    var key;
+
+    if (href === undefined) {
+      return this.toString();
+    }
+
+    this._string = '';
+    this._parts = URI._parts();
+
+    var _URI = href instanceof URI;
+    var _object = typeof href === 'object' && (href.hostname || href.path || href.pathname);
+    if (href.nodeName) {
+      var attribute = URI.getDomAttribute(href);
+      href = href[attribute] || '';
+      _object = false;
+    }
+
+    // window.location is reported to be an object, but it's not the sort
+    // of object we're looking for:
+    // * location.protocol ends with a colon
+    // * location.query != object.search
+    // * location.hash != object.fragment
+    // simply serializing the unknown object should do the trick
+    // (for location, not for everything...)
+    if (!_URI && _object && href.pathname !== undefined) {
+      href = href.toString();
+    }
+
+    if (typeof href === 'string' || href instanceof String) {
+      this._parts = URI.parse(String(href), this._parts);
+    } else if (_URI || _object) {
+      var src = _URI ? href._parts : href;
+      for (key in src) {
+        if (hasOwn.call(this._parts, key)) {
+          this._parts[key] = src[key];
+        }
+      }
+    } else {
+      throw new TypeError('invalid input');
+    }
+
+    this.build(!build);
+    return this;
+  };
+
+  // identification accessors
+  p.is = function(what) {
+    var ip = false;
+    var ip4 = false;
+    var ip6 = false;
+    var name = false;
+    var sld = false;
+    var idn = false;
+    var punycode = false;
+    var relative = !this._parts.urn;
+
+    if (this._parts.hostname) {
+      relative = false;
+      ip4 = URI.ip4_expression.test(this._parts.hostname);
+      ip6 = URI.ip6_expression.test(this._parts.hostname);
+      ip = ip4 || ip6;
+      name = !ip;
+      sld = name && SLD && SLD.has(this._parts.hostname);
+      idn = name && URI.idn_expression.test(this._parts.hostname);
+      punycode = name && URI.punycode_expression.test(this._parts.hostname);
+    }
+
+    switch (what.toLowerCase()) {
+      case 'relative':
+        return relative;
+
+      case 'absolute':
+        return !relative;
+
+      // hostname identification
+      case 'domain':
+      case 'name':
+        return name;
+
+      case 'sld':
+        return sld;
+
+      case 'ip':
+        return ip;
+
+      case 'ip4':
+      case 'ipv4':
+      case 'inet4':
+        return ip4;
+
+      case 'ip6':
+      case 'ipv6':
+      case 'inet6':
+        return ip6;
+
+      case 'idn':
+        return idn;
+
+      case 'url':
+        return !this._parts.urn;
+
+      case 'urn':
+        return !!this._parts.urn;
+
+      case 'punycode':
+        return punycode;
+    }
+
+    return null;
+  };
+
+  // component specific input validation
+  var _protocol = p.protocol;
+  var _port = p.port;
+  var _hostname = p.hostname;
+
+  p.protocol = function(v, build) {
+    if (v !== undefined) {
+      if (v) {
+        // accept trailing ://
+        v = v.replace(/:(\/\/)?$/, '');
+
+        if (!v.match(URI.protocol_expression)) {
+          throw new TypeError('Protocol "' + v + '" contains characters other than [A-Z0-9.+-] or doesn\'t start with [A-Z]');
+        }
+      }
+    }
+    return _protocol.call(this, v, build);
+  };
+  p.scheme = p.protocol;
+  p.port = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v !== undefined) {
+      if (v === 0) {
+        v = null;
+      }
+
+      if (v) {
+        v += '';
+        if (v.charAt(0) === ':') {
+          v = v.substring(1);
+        }
+
+        if (v.match(/[^0-9]/)) {
+          throw new TypeError('Port "' + v + '" contains characters other than [0-9]');
+        }
+      }
+    }
+    return _port.call(this, v, build);
+  };
+  p.hostname = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v !== undefined) {
+      var x = {};
+      var res = URI.parseHost(v, x);
+      if (res !== '/') {
+        throw new TypeError('Hostname "' + v + '" contains characters other than [A-Z0-9.-]');
+      }
+
+      v = x.hostname;
+    }
+    return _hostname.call(this, v, build);
+  };
+
+  // compound accessors
+  p.origin = function(v, build) {
+    var parts;
+
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined) {
+      var protocol = this.protocol();
+      var authority = this.authority();
+      if (!authority) return '';
+      return (protocol ? protocol + '://' : '') + this.authority();
+    } else {
+      var origin = URI(v);
+      this
+        .protocol(origin.protocol())
+        .authority(origin.authority())
+        .build(!build);
+      return this;
+    }
+  };
+  p.host = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined) {
+      return this._parts.hostname ? URI.buildHost(this._parts) : '';
+    } else {
+      var res = URI.parseHost(v, this._parts);
+      if (res !== '/') {
+        throw new TypeError('Hostname "' + v + '" contains characters other than [A-Z0-9.-]');
+      }
+
+      this.build(!build);
+      return this;
+    }
+  };
+  p.authority = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined) {
+      return this._parts.hostname ? URI.buildAuthority(this._parts) : '';
+    } else {
+      var res = URI.parseAuthority(v, this._parts);
+      if (res !== '/') {
+        throw new TypeError('Hostname "' + v + '" contains characters other than [A-Z0-9.-]');
+      }
+
+      this.build(!build);
+      return this;
+    }
+  };
+  p.userinfo = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined) {
+      if (!this._parts.username) {
+        return '';
+      }
+
+      var t = URI.buildUserinfo(this._parts);
+      return t.substring(0, t.length -1);
+    } else {
+      if (v[v.length-1] !== '@') {
+        v += '@';
+      }
+
+      URI.parseUserinfo(v, this._parts);
+      this.build(!build);
+      return this;
+    }
+  };
+  p.resource = function(v, build) {
+    var parts;
+
+    if (v === undefined) {
+      return this.path() + this.search() + this.hash();
+    }
+
+    parts = URI.parse(v);
+    this._parts.path = parts.path;
+    this._parts.query = parts.query;
+    this._parts.fragment = parts.fragment;
+    this.build(!build);
+    return this;
+  };
+
+  // fraction accessors
+  p.subdomain = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    // convenience, return "www" from "www.example.org"
+    if (v === undefined) {
+      if (!this._parts.hostname || this.is('IP')) {
+        return '';
+      }
+
+      // grab domain and add another segment
+      var end = this._parts.hostname.length - this.domain().length - 1;
+      return this._parts.hostname.substring(0, end) || '';
+    } else {
+      var e = this._parts.hostname.length - this.domain().length;
+      var sub = this._parts.hostname.substring(0, e);
+      var replace = new RegExp('^' + escapeRegEx(sub));
+
+      if (v && v.charAt(v.length - 1) !== '.') {
+        v += '.';
+      }
+
+      if (v) {
+        URI.ensureValidHostname(v);
+      }
+
+      this._parts.hostname = this._parts.hostname.replace(replace, v);
+      this.build(!build);
+      return this;
+    }
+  };
+  p.domain = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (typeof v === 'boolean') {
+      build = v;
+      v = undefined;
+    }
+
+    // convenience, return "example.org" from "www.example.org"
+    if (v === undefined) {
+      if (!this._parts.hostname || this.is('IP')) {
+        return '';
+      }
+
+      // if hostname consists of 1 or 2 segments, it must be the domain
+      var t = this._parts.hostname.match(/\./g);
+      if (t && t.length < 2) {
+        return this._parts.hostname;
+      }
+
+      // grab tld and add another segment
+      var end = this._parts.hostname.length - this.tld(build).length - 1;
+      end = this._parts.hostname.lastIndexOf('.', end -1) + 1;
+      return this._parts.hostname.substring(end) || '';
+    } else {
+      if (!v) {
+        throw new TypeError('cannot set domain empty');
+      }
+
+      URI.ensureValidHostname(v);
+
+      if (!this._parts.hostname || this.is('IP')) {
+        this._parts.hostname = v;
+      } else {
+        var replace = new RegExp(escapeRegEx(this.domain()) + '$');
+        this._parts.hostname = this._parts.hostname.replace(replace, v);
+      }
+
+      this.build(!build);
+      return this;
+    }
+  };
+  p.tld = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (typeof v === 'boolean') {
+      build = v;
+      v = undefined;
+    }
+
+    // return "org" from "www.example.org"
+    if (v === undefined) {
+      if (!this._parts.hostname || this.is('IP')) {
+        return '';
+      }
+
+      var pos = this._parts.hostname.lastIndexOf('.');
+      var tld = this._parts.hostname.substring(pos + 1);
+
+      if (build !== true && SLD && SLD.list[tld.toLowerCase()]) {
+        return SLD.get(this._parts.hostname) || tld;
+      }
+
+      return tld;
+    } else {
+      var replace;
+
+      if (!v) {
+        throw new TypeError('cannot set TLD empty');
+      } else if (v.match(/[^a-zA-Z0-9-]/)) {
+        if (SLD && SLD.is(v)) {
+          replace = new RegExp(escapeRegEx(this.tld()) + '$');
+          this._parts.hostname = this._parts.hostname.replace(replace, v);
+        } else {
+          throw new TypeError('TLD "' + v + '" contains characters other than [A-Z0-9]');
+        }
+      } else if (!this._parts.hostname || this.is('IP')) {
+        throw new ReferenceError('cannot set TLD on non-domain host');
+      } else {
+        replace = new RegExp(escapeRegEx(this.tld()) + '$');
+        this._parts.hostname = this._parts.hostname.replace(replace, v);
+      }
+
+      this.build(!build);
+      return this;
+    }
+  };
+  p.directory = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined || v === true) {
+      if (!this._parts.path && !this._parts.hostname) {
+        return '';
+      }
+
+      if (this._parts.path === '/') {
+        return '/';
+      }
+
+      var end = this._parts.path.length - this.filename().length - 1;
+      var res = this._parts.path.substring(0, end) || (this._parts.hostname ? '/' : '');
+
+      return v ? URI.decodePath(res) : res;
+
+    } else {
+      var e = this._parts.path.length - this.filename().length;
+      var directory = this._parts.path.substring(0, e);
+      var replace = new RegExp('^' + escapeRegEx(directory));
+
+      // fully qualifier directories begin with a slash
+      if (!this.is('relative')) {
+        if (!v) {
+          v = '/';
+        }
+
+        if (v.charAt(0) !== '/') {
+          v = '/' + v;
+        }
+      }
+
+      // directories always end with a slash
+      if (v && v.charAt(v.length - 1) !== '/') {
+        v += '/';
+      }
+
+      v = URI.recodePath(v);
+      this._parts.path = this._parts.path.replace(replace, v);
+      this.build(!build);
+      return this;
+    }
+  };
+  p.filename = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined || v === true) {
+      if (!this._parts.path || this._parts.path === '/') {
+        return '';
+      }
+
+      var pos = this._parts.path.lastIndexOf('/');
+      var res = this._parts.path.substring(pos+1);
+
+      return v ? URI.decodePathSegment(res) : res;
+    } else {
+      var mutatedDirectory = false;
+
+      if (v.charAt(0) === '/') {
+        v = v.substring(1);
+      }
+
+      if (v.match(/\.?\//)) {
+        mutatedDirectory = true;
+      }
+
+      var replace = new RegExp(escapeRegEx(this.filename()) + '$');
+      v = URI.recodePath(v);
+      this._parts.path = this._parts.path.replace(replace, v);
+
+      if (mutatedDirectory) {
+        this.normalizePath(build);
+      } else {
+        this.build(!build);
+      }
+
+      return this;
+    }
+  };
+  p.suffix = function(v, build) {
+    if (this._parts.urn) {
+      return v === undefined ? '' : this;
+    }
+
+    if (v === undefined || v === true) {
+      if (!this._parts.path || this._parts.path === '/') {
+        return '';
+      }
+
+      var filename = this.filename();
+      var pos = filename.lastIndexOf('.');
+      var s, res;
+
+      if (pos === -1) {
+        return '';
+      }
+
+      // suffix may only contain alnum characters (yup, I made this up.)
+      s = filename.substring(pos+1);
+      res = (/^[a-z0-9%]+$/i).test(s) ? s : '';
+      return v ? URI.decodePathSegment(res) : res;
+    } else {
+      if (v.charAt(0) === '.') {
+        v = v.substring(1);
+      }
+
+      var suffix = this.suffix();
+      var replace;
+
+      if (!suffix) {
+        if (!v) {
+          return this;
+        }
+
+        this._parts.path += '.' + URI.recodePath(v);
+      } else if (!v) {
+        replace = new RegExp(escapeRegEx('.' + suffix) + '$');
+      } else {
+        replace = new RegExp(escapeRegEx(suffix) + '$');
+      }
+
+      if (replace) {
+        v = URI.recodePath(v);
+        this._parts.path = this._parts.path.replace(replace, v);
+      }
+
+      this.build(!build);
+      return this;
+    }
+  };
+  p.segment = function(segment, v, build) {
+    var separator = this._parts.urn ? ':' : '/';
+    var path = this.path();
+    var absolute = path.substring(0, 1) === '/';
+    var segments = path.split(separator);
+
+    if (segment !== undefined && typeof segment !== 'number') {
+      build = v;
+      v = segment;
+      segment = undefined;
+    }
+
+    if (segment !== undefined && typeof segment !== 'number') {
+      throw new Error('Bad segment "' + segment + '", must be 0-based integer');
+    }
+
+    if (absolute) {
+      segments.shift();
+    }
+
+    if (segment < 0) {
+      // allow negative indexes to address from the end
+      segment = Math.max(segments.length + segment, 0);
+    }
+
+    if (v === undefined) {
+      /*jshint laxbreak: true */
+      return segment === undefined
+        ? segments
+        : segments[segment];
+      /*jshint laxbreak: false */
+    } else if (segment === null || segments[segment] === undefined) {
+      if (isArray(v)) {
+        segments = [];
+        // collapse empty elements within array
+        for (var i=0, l=v.length; i < l; i++) {
+          if (!v[i].length && (!segments.length || !segments[segments.length -1].length)) {
+            continue;
+          }
+
+          if (segments.length && !segments[segments.length -1].length) {
+            segments.pop();
+          }
+
+          segments.push(trimSlashes(v[i]));
+        }
+      } else if (v || typeof v === 'string') {
+        v = trimSlashes(v);
+        if (segments[segments.length -1] === '') {
+          // empty trailing elements have to be overwritten
+          // to prevent results such as /foo//bar
+          segments[segments.length -1] = v;
+        } else {
+          segments.push(v);
+        }
+      }
+    } else {
+      if (v) {
+        segments[segment] = trimSlashes(v);
+      } else {
+        segments.splice(segment, 1);
+      }
+    }
+
+    if (absolute) {
+      segments.unshift('');
+    }
+
+    return this.path(segments.join(separator), build);
+  };
+  p.segmentCoded = function(segment, v, build) {
+    var segments, i, l;
+
+    if (typeof segment !== 'number') {
+      build = v;
+      v = segment;
+      segment = undefined;
+    }
+
+    if (v === undefined) {
+      segments = this.segment(segment, v, build);
+      if (!isArray(segments)) {
+        segments = segments !== undefined ? URI.decode(segments) : undefined;
+      } else {
+        for (i = 0, l = segments.length; i < l; i++) {
+          segments[i] = URI.decode(segments[i]);
+        }
+      }
+
+      return segments;
+    }
+
+    if (!isArray(v)) {
+      v = (typeof v === 'string' || v instanceof String) ? URI.encode(v) : v;
+    } else {
+      for (i = 0, l = v.length; i < l; i++) {
+        v[i] = URI.encode(v[i]);
+      }
+    }
+
+    return this.segment(segment, v, build);
+  };
+
+  // mutating query string
+  var q = p.query;
+  p.query = function(v, build) {
+    if (v === true) {
+      return URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace);
+    } else if (typeof v === 'function') {
+      var data = URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace);
+      var result = v.call(this, data);
+      this._parts.query = URI.buildQuery(result || data, this._parts.duplicateQueryParameters, this._parts.escapeQuerySpace);
+      this.build(!build);
+      return this;
+    } else if (v !== undefined && typeof v !== 'string') {
+      this._parts.query = URI.buildQuery(v, this._parts.duplicateQueryParameters, this._parts.escapeQuerySpace);
+      this.build(!build);
+      return this;
+    } else {
+      return q.call(this, v, build);
+    }
+  };
+  p.setQuery = function(name, value, build) {
+    var data = URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace);
+
+    if (typeof name === 'string' || name instanceof String) {
+      data[name] = value !== undefined ? value : null;
+    } else if (typeof name === 'object') {
+      for (var key in name) {
+        if (hasOwn.call(name, key)) {
+          data[key] = name[key];
+        }
+      }
+    } else {
+      throw new TypeError('URI.addQuery() accepts an object, string as the name parameter');
+    }
+
+    this._parts.query = URI.buildQuery(data, this._parts.duplicateQueryParameters, this._parts.escapeQuerySpace);
+    if (typeof name !== 'string') {
+      build = value;
+    }
+
+    this.build(!build);
+    return this;
+  };
+  p.addQuery = function(name, value, build) {
+    var data = URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace);
+    URI.addQuery(data, name, value === undefined ? null : value);
+    this._parts.query = URI.buildQuery(data, this._parts.duplicateQueryParameters, this._parts.escapeQuerySpace);
+    if (typeof name !== 'string') {
+      build = value;
+    }
+
+    this.build(!build);
+    return this;
+  };
+  p.removeQuery = function(name, value, build) {
+    var data = URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace);
+    URI.removeQuery(data, name, value);
+    this._parts.query = URI.buildQuery(data, this._parts.duplicateQueryParameters, this._parts.escapeQuerySpace);
+    if (typeof name !== 'string') {
+      build = value;
+    }
+
+    this.build(!build);
+    return this;
+  };
+  p.hasQuery = function(name, value, withinArray) {
+    var data = URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace);
+    return URI.hasQuery(data, name, value, withinArray);
+  };
+  p.setSearch = p.setQuery;
+  p.addSearch = p.addQuery;
+  p.removeSearch = p.removeQuery;
+  p.hasSearch = p.hasQuery;
+
+  // sanitizing URLs
+  p.normalize = function() {
+    if (this._parts.urn) {
+      return this
+        .normalizeProtocol(false)
+        .normalizePath(false)
+        .normalizeQuery(false)
+        .normalizeFragment(false)
+        .build();
+    }
+
+    return this
+      .normalizeProtocol(false)
+      .normalizeHostname(false)
+      .normalizePort(false)
+      .normalizePath(false)
+      .normalizeQuery(false)
+      .normalizeFragment(false)
+      .build();
+  };
+  p.normalizeProtocol = function(build) {
+    if (typeof this._parts.protocol === 'string') {
+      this._parts.protocol = this._parts.protocol.toLowerCase();
+      this.build(!build);
+    }
+
+    return this;
+  };
+  p.normalizeHostname = function(build) {
+    if (this._parts.hostname) {
+      if (this.is('IDN') && punycode) {
+        this._parts.hostname = punycode.toASCII(this._parts.hostname);
+      } else if (this.is('IPv6') && IPv6) {
+        this._parts.hostname = IPv6.best(this._parts.hostname);
+      }
+
+      this._parts.hostname = this._parts.hostname.toLowerCase();
+      this.build(!build);
+    }
+
+    return this;
+  };
+  p.normalizePort = function(build) {
+    // remove port of it's the protocol's default
+    if (typeof this._parts.protocol === 'string' && this._parts.port === URI.defaultPorts[this._parts.protocol]) {
+      this._parts.port = null;
+      this.build(!build);
+    }
+
+    return this;
+  };
+  p.normalizePath = function(build) {
+    var _path = this._parts.path;
+    if (!_path) {
+      return this;
+    }
+
+    if (this._parts.urn) {
+      this._parts.path = URI.recodeUrnPath(this._parts.path);
+      this.build(!build);
+      return this;
+    }
+
+    if (this._parts.path === '/') {
+      return this;
+    }
+
+    var _was_relative;
+    var _leadingParents = '';
+    var _parent, _pos;
+
+    // handle relative paths
+    if (_path.charAt(0) !== '/') {
+      _was_relative = true;
+      _path = '/' + _path;
+    }
+
+    // handle relative files (as opposed to directories)
+    if (_path.slice(-3) === '/..' || _path.slice(-2) === '/.') {
+      _path += '/';
+    }
+
+    // resolve simples
+    _path = _path
+      .replace(/(\/(\.\/)+)|(\/\.$)/g, '/')
+      .replace(/\/{2,}/g, '/');
+
+    // remember leading parents
+    if (_was_relative) {
+      _leadingParents = _path.substring(1).match(/^(\.\.\/)+/) || '';
+      if (_leadingParents) {
+        _leadingParents = _leadingParents[0];
+      }
+    }
+
+    // resolve parents
+    while (true) {
+      _parent = _path.indexOf('/..');
+      if (_parent === -1) {
+        // no more ../ to resolve
+        break;
+      } else if (_parent === 0) {
+        // top level cannot be relative, skip it
+        _path = _path.substring(3);
+        continue;
+      }
+
+      _pos = _path.substring(0, _parent).lastIndexOf('/');
+      if (_pos === -1) {
+        _pos = _parent;
+      }
+      _path = _path.substring(0, _pos) + _path.substring(_parent + 3);
+    }
+
+    // revert to relative
+    if (_was_relative && this.is('relative')) {
+      _path = _leadingParents + _path.substring(1);
+    }
+
+    _path = URI.recodePath(_path);
+    this._parts.path = _path;
+    this.build(!build);
+    return this;
+  };
+  p.normalizePathname = p.normalizePath;
+  p.normalizeQuery = function(build) {
+    if (typeof this._parts.query === 'string') {
+      if (!this._parts.query.length) {
+        this._parts.query = null;
+      } else {
+        this.query(URI.parseQuery(this._parts.query, this._parts.escapeQuerySpace));
+      }
+
+      this.build(!build);
+    }
+
+    return this;
+  };
+  p.normalizeFragment = function(build) {
+    if (!this._parts.fragment) {
+      this._parts.fragment = null;
+      this.build(!build);
+    }
+
+    return this;
+  };
+  p.normalizeSearch = p.normalizeQuery;
+  p.normalizeHash = p.normalizeFragment;
+
+  p.iso8859 = function() {
+    // expect unicode input, iso8859 output
+    var e = URI.encode;
+    var d = URI.decode;
+
+    URI.encode = escape;
+    URI.decode = decodeURIComponent;
+    try {
+      this.normalize();
+    } finally {
+      URI.encode = e;
+      URI.decode = d;
+    }
+    return this;
+  };
+
+  p.unicode = function() {
+    // expect iso8859 input, unicode output
+    var e = URI.encode;
+    var d = URI.decode;
+
+    URI.encode = strictEncodeURIComponent;
+    URI.decode = unescape;
+    try {
+      this.normalize();
+    } finally {
+      URI.encode = e;
+      URI.decode = d;
+    }
+    return this;
+  };
+
+  p.readable = function() {
+    var uri = this.clone();
+    // removing username, password, because they shouldn't be displayed according to RFC 3986
+    uri.username('').password('').normalize();
+    var t = '';
+    if (uri._parts.protocol) {
+      t += uri._parts.protocol + '://';
+    }
+
+    if (uri._parts.hostname) {
+      if (uri.is('punycode') && punycode) {
+        t += punycode.toUnicode(uri._parts.hostname);
+        if (uri._parts.port) {
+          t += ':' + uri._parts.port;
+        }
+      } else {
+        t += uri.host();
+      }
+    }
+
+    if (uri._parts.hostname && uri._parts.path && uri._parts.path.charAt(0) !== '/') {
+      t += '/';
+    }
+
+    t += uri.path(true);
+    if (uri._parts.query) {
+      var q = '';
+      for (var i = 0, qp = uri._parts.query.split('&'), l = qp.length; i < l; i++) {
+        var kv = (qp[i] || '').split('=');
+        q += '&' + URI.decodeQuery(kv[0], this._parts.escapeQuerySpace)
+          .replace(/&/g, '%26');
+
+        if (kv[1] !== undefined) {
+          q += '=' + URI.decodeQuery(kv[1], this._parts.escapeQuerySpace)
+            .replace(/&/g, '%26');
+        }
+      }
+      t += '?' + q.substring(1);
+    }
+
+    t += URI.decodeQuery(uri.hash(), true);
+    return t;
+  };
+
+  // resolving relative and absolute URLs
+  p.absoluteTo = function(base) {
+    var resolved = this.clone();
+    var properties = ['protocol', 'username', 'password', 'hostname', 'port'];
+    var basedir, i, p;
+
+    if (this._parts.urn) {
+      throw new Error('URNs do not have any generally defined hierarchical components');
+    }
+
+    if (!(base instanceof URI)) {
+      base = new URI(base);
+    }
+
+    if (!resolved._parts.protocol) {
+      resolved._parts.protocol = base._parts.protocol;
+    }
+
+    if (this._parts.hostname) {
+      return resolved;
+    }
+
+    for (i = 0; (p = properties[i]); i++) {
+      resolved._parts[p] = base._parts[p];
+    }
+
+    if (!resolved._parts.path) {
+      resolved._parts.path = base._parts.path;
+      if (!resolved._parts.query) {
+        resolved._parts.query = base._parts.query;
+      }
+    } else if (resolved._parts.path.substring(-2) === '..') {
+      resolved._parts.path += '/';
+    }
+
+    if (resolved.path().charAt(0) !== '/') {
+      basedir = base.directory();
+      basedir = basedir ? basedir : base.path().indexOf('/') === 0 ? '/' : '';
+      resolved._parts.path = (basedir ? (basedir + '/') : '') + resolved._parts.path;
+      resolved.normalizePath();
+    }
+
+    resolved.build();
+    return resolved;
+  };
+  p.relativeTo = function(base) {
+    var relative = this.clone().normalize();
+    var relativeParts, baseParts, common, relativePath, basePath;
+
+    if (relative._parts.urn) {
+      throw new Error('URNs do not have any generally defined hierarchical components');
+    }
+
+    base = new URI(base).normalize();
+    relativeParts = relative._parts;
+    baseParts = base._parts;
+    relativePath = relative.path();
+    basePath = base.path();
+
+    if (relativePath.charAt(0) !== '/') {
+      throw new Error('URI is already relative');
+    }
+
+    if (basePath.charAt(0) !== '/') {
+      throw new Error('Cannot calculate a URI relative to another relative URI');
+    }
+
+    if (relativeParts.protocol === baseParts.protocol) {
+      relativeParts.protocol = null;
+    }
+
+    if (relativeParts.username !== baseParts.username || relativeParts.password !== baseParts.password) {
+      return relative.build();
+    }
+
+    if (relativeParts.protocol !== null || relativeParts.username !== null || relativeParts.password !== null) {
+      return relative.build();
+    }
+
+    if (relativeParts.hostname === baseParts.hostname && relativeParts.port === baseParts.port) {
+      relativeParts.hostname = null;
+      relativeParts.port = null;
+    } else {
+      return relative.build();
+    }
+
+    if (relativePath === basePath) {
+      relativeParts.path = '';
+      return relative.build();
+    }
+
+    // determine common sub path
+    common = URI.commonPath(relativePath, basePath);
+
+    // If the paths have nothing in common, return a relative URL with the absolute path.
+    if (!common) {
+      return relative.build();
+    }
+
+    var parents = baseParts.path
+      .substring(common.length)
+      .replace(/[^\/]*$/, '')
+      .replace(/.*?\//g, '../');
+
+    relativeParts.path = (parents + relativeParts.path.substring(common.length)) || './';
+
+    return relative.build();
+  };
+
+  // comparing URIs
+  p.equals = function(uri) {
+    var one = this.clone();
+    var two = new URI(uri);
+    var one_map = {};
+    var two_map = {};
+    var checked = {};
+    var one_query, two_query, key;
+
+    one.normalize();
+    two.normalize();
+
+    // exact match
+    if (one.toString() === two.toString()) {
+      return true;
+    }
+
+    // extract query string
+    one_query = one.query();
+    two_query = two.query();
+    one.query('');
+    two.query('');
+
+    // definitely not equal if not even non-query parts match
+    if (one.toString() !== two.toString()) {
+      return false;
+    }
+
+    // query parameters have the same length, even if they're permuted
+    if (one_query.length !== two_query.length) {
+      return false;
+    }
+
+    one_map = URI.parseQuery(one_query, this._parts.escapeQuerySpace);
+    two_map = URI.parseQuery(two_query, this._parts.escapeQuerySpace);
+
+    for (key in one_map) {
+      if (hasOwn.call(one_map, key)) {
+        if (!isArray(one_map[key])) {
+          if (one_map[key] !== two_map[key]) {
+            return false;
+          }
+        } else if (!arraysEqual(one_map[key], two_map[key])) {
+          return false;
+        }
+
+        checked[key] = true;
+      }
+    }
+
+    for (key in two_map) {
+      if (hasOwn.call(two_map, key)) {
+        if (!checked[key]) {
+          // two contains a parameter not present in one
+          return false;
+        }
+      }
+    }
+
+    return true;
+  };
+
+  // state
+  p.duplicateQueryParameters = function(v) {
+    this._parts.duplicateQueryParameters = !!v;
+    return this;
+  };
+
+  p.escapeQuerySpace = function(v) {
+    this._parts.escapeQuerySpace = !!v;
+    return this;
+  };
+
+  return URI;
+}));
+
+},{"./IPv6":2,"./SecondLevelDomains":3,"./punycode":5}],5:[function(require,module,exports){
+(function (global){
+/*! http://mths.be/punycode v1.2.3 by @mathias */
+;(function(root) {
+
+	/** Detect free variables */
+	var freeExports = typeof exports == 'object' && exports;
+	var freeModule = typeof module == 'object' && module &&
+		module.exports == freeExports && module;
+	var freeGlobal = typeof global == 'object' && global;
+	if (freeGlobal.global === freeGlobal || freeGlobal.window === freeGlobal) {
+		root = freeGlobal;
+	}
+
+	/**
+	 * The `punycode` object.
+	 * @name punycode
+	 * @type Object
+	 */
+	var punycode,
+
+	/** Highest positive signed 32-bit float value */
+	maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
+
+	/** Bootstring parameters */
+	base = 36,
+	tMin = 1,
+	tMax = 26,
+	skew = 38,
+	damp = 700,
+	initialBias = 72,
+	initialN = 128, // 0x80
+	delimiter = '-', // '\x2D'
+
+	/** Regular expressions */
+	regexPunycode = /^xn--/,
+	regexNonASCII = /[^ -~]/, // unprintable ASCII chars + non-ASCII chars
+	regexSeparators = /\x2E|\u3002|\uFF0E|\uFF61/g, // RFC 3490 separators
+
+	/** Error messages */
+	errors = {
+		'overflow': 'Overflow: input needs wider integers to process',
+		'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
+		'invalid-input': 'Invalid input'
+	},
+
+	/** Convenience shortcuts */
+	baseMinusTMin = base - tMin,
+	floor = Math.floor,
+	stringFromCharCode = String.fromCharCode,
+
+	/** Temporary variable */
+	key;
+
+	/*--------------------------------------------------------------------------*/
+
+	/**
+	 * A generic error utility function.
+	 * @private
+	 * @param {String} type The error type.
+	 * @returns {Error} Throws a `RangeError` with the applicable error message.
+	 */
+	function error(type) {
+		throw RangeError(errors[type]);
+	}
+
+	/**
+	 * A generic `Array#map` utility function.
+	 * @private
+	 * @param {Array} array The array to iterate over.
+	 * @param {Function} callback The function that gets called for every array
+	 * item.
+	 * @returns {Array} A new array of values returned by the callback function.
+	 */
+	function map(array, fn) {
+		var length = array.length;
+		while (length--) {
+			array[length] = fn(array[length]);
+		}
+		return array;
+	}
+
+	/**
+	 * A simple `Array#map`-like wrapper to work with domain name strings.
+	 * @private
+	 * @param {String} domain The domain name.
+	 * @param {Function} callback The function that gets called for every
+	 * character.
+	 * @returns {Array} A new string of characters returned by the callback
+	 * function.
+	 */
+	function mapDomain(string, fn) {
+		return map(string.split(regexSeparators), fn).join('.');
+	}
+
+	/**
+	 * Creates an array containing the numeric code points of each Unicode
+	 * character in the string. While JavaScript uses UCS-2 internally,
+	 * this function will convert a pair of surrogate halves (each of which
+	 * UCS-2 exposes as separate characters) into a single code point,
+	 * matching UTF-16.
+	 * @see `punycode.ucs2.encode`
+	 * @see <http://mathiasbynens.be/notes/javascript-encoding>
+	 * @memberOf punycode.ucs2
+	 * @name decode
+	 * @param {String} string The Unicode input string (UCS-2).
+	 * @returns {Array} The new array of code points.
+	 */
+	function ucs2decode(string) {
+		var output = [],
+		    counter = 0,
+		    length = string.length,
+		    value,
+		    extra;
+		while (counter < length) {
+			value = string.charCodeAt(counter++);
+			if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
+				// high surrogate, and there is a next character
+				extra = string.charCodeAt(counter++);
+				if ((extra & 0xFC00) == 0xDC00) { // low surrogate
+					output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
+				} else {
+					// unmatched surrogate; only append this code unit, in case the next
+					// code unit is the high surrogate of a surrogate pair
+					output.push(value);
+					counter--;
+				}
+			} else {
+				output.push(value);
+			}
+		}
+		return output;
+	}
+
+	/**
+	 * Creates a string based on an array of numeric code points.
+	 * @see `punycode.ucs2.decode`
+	 * @memberOf punycode.ucs2
+	 * @name encode
+	 * @param {Array} codePoints The array of numeric code points.
+	 * @returns {String} The new Unicode string (UCS-2).
+	 */
+	function ucs2encode(array) {
+		return map(array, function(value) {
+			var output = '';
+			if (value > 0xFFFF) {
+				value -= 0x10000;
+				output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
+				value = 0xDC00 | value & 0x3FF;
+			}
+			output += stringFromCharCode(value);
+			return output;
+		}).join('');
+	}
+
+	/**
+	 * Converts a basic code point into a digit/integer.
+	 * @see `digitToBasic()`
+	 * @private
+	 * @param {Number} codePoint The basic numeric code point value.
+	 * @returns {Number} The numeric value of a basic code point (for use in
+	 * representing integers) in the range `0` to `base - 1`, or `base` if
+	 * the code point does not represent a value.
+	 */
+	function basicToDigit(codePoint) {
+		if (codePoint - 48 < 10) {
+			return codePoint - 22;
+		}
+		if (codePoint - 65 < 26) {
+			return codePoint - 65;
+		}
+		if (codePoint - 97 < 26) {
+			return codePoint - 97;
+		}
+		return base;
+	}
+
+	/**
+	 * Converts a digit/integer into a basic code point.
+	 * @see `basicToDigit()`
+	 * @private
+	 * @param {Number} digit The numeric value of a basic code point.
+	 * @returns {Number} The basic code point whose value (when used for
+	 * representing integers) is `digit`, which needs to be in the range
+	 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
+	 * used; else, the lowercase form is used. The behavior is undefined
+	 * if `flag` is non-zero and `digit` has no uppercase form.
+	 */
+	function digitToBasic(digit, flag) {
+		//  0..25 map to ASCII a..z or A..Z
+		// 26..35 map to ASCII 0..9
+		return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
+	}
+
+	/**
+	 * Bias adaptation function as per section 3.4 of RFC 3492.
+	 * http://tools.ietf.org/html/rfc3492#section-3.4
+	 * @private
+	 */
+	function adapt(delta, numPoints, firstTime) {
+		var k = 0;
+		delta = firstTime ? floor(delta / damp) : delta >> 1;
+		delta += floor(delta / numPoints);
+		for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
+			delta = floor(delta / baseMinusTMin);
+		}
+		return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
+	}
+
+	/**
+	 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
+	 * symbols.
+	 * @memberOf punycode
+	 * @param {String} input The Punycode string of ASCII-only symbols.
+	 * @returns {String} The resulting string of Unicode symbols.
+	 */
+	function decode(input) {
+		// Don't use UCS-2
+		var output = [],
+		    inputLength = input.length,
+		    out,
+		    i = 0,
+		    n = initialN,
+		    bias = initialBias,
+		    basic,
+		    j,
+		    index,
+		    oldi,
+		    w,
+		    k,
+		    digit,
+		    t,
+		    length,
+		    /** Cached calculation results */
+		    baseMinusT;
+
+		// Handle the basic code points: let `basic` be the number of input code
+		// points before the last delimiter, or `0` if there is none, then copy
+		// the first basic code points to the output.
+
+		basic = input.lastIndexOf(delimiter);
+		if (basic < 0) {
+			basic = 0;
+		}
+
+		for (j = 0; j < basic; ++j) {
+			// if it's not a basic code point
+			if (input.charCodeAt(j) >= 0x80) {
+				error('not-basic');
+			}
+			output.push(input.charCodeAt(j));
+		}
+
+		// Main decoding loop: start just after the last delimiter if any basic code
+		// points were copied; start at the beginning otherwise.
+
+		for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
+
+			// `index` is the index of the next character to be consumed.
+			// Decode a generalized variable-length integer into `delta`,
+			// which gets added to `i`. The overflow checking is easier
+			// if we increase `i` as we go, then subtract off its starting
+			// value at the end to obtain `delta`.
+			for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
+
+				if (index >= inputLength) {
+					error('invalid-input');
+				}
+
+				digit = basicToDigit(input.charCodeAt(index++));
+
+				if (digit >= base || digit > floor((maxInt - i) / w)) {
+					error('overflow');
+				}
+
+				i += digit * w;
+				t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+
+				if (digit < t) {
+					break;
+				}
+
+				baseMinusT = base - t;
+				if (w > floor(maxInt / baseMinusT)) {
+					error('overflow');
+				}
+
+				w *= baseMinusT;
+
+			}
+
+			out = output.length + 1;
+			bias = adapt(i - oldi, out, oldi == 0);
+
+			// `i` was supposed to wrap around from `out` to `0`,
+			// incrementing `n` each time, so we'll fix that now:
+			if (floor(i / out) > maxInt - n) {
+				error('overflow');
+			}
+
+			n += floor(i / out);
+			i %= out;
+
+			// Insert `n` at position `i` of the output
+			output.splice(i++, 0, n);
+
+		}
+
+		return ucs2encode(output);
+	}
+
+	/**
+	 * Converts a string of Unicode symbols to a Punycode string of ASCII-only
+	 * symbols.
+	 * @memberOf punycode
+	 * @param {String} input The string of Unicode symbols.
+	 * @returns {String} The resulting Punycode string of ASCII-only symbols.
+	 */
+	function encode(input) {
+		var n,
+		    delta,
+		    handledCPCount,
+		    basicLength,
+		    bias,
+		    j,
+		    m,
+		    q,
+		    k,
+		    t,
+		    currentValue,
+		    output = [],
+		    /** `inputLength` will hold the number of code points in `input`. */
+		    inputLength,
+		    /** Cached calculation results */
+		    handledCPCountPlusOne,
+		    baseMinusT,
+		    qMinusT;
+
+		// Convert the input in UCS-2 to Unicode
+		input = ucs2decode(input);
+
+		// Cache the length
+		inputLength = input.length;
+
+		// Initialize the state
+		n = initialN;
+		delta = 0;
+		bias = initialBias;
+
+		// Handle the basic code points
+		for (j = 0; j < inputLength; ++j) {
+			currentValue = input[j];
+			if (currentValue < 0x80) {
+				output.push(stringFromCharCode(currentValue));
+			}
+		}
+
+		handledCPCount = basicLength = output.length;
+
+		// `handledCPCount` is the number of code points that have been handled;
+		// `basicLength` is the number of basic code points.
+
+		// Finish the basic string - if it is not empty - with a delimiter
+		if (basicLength) {
+			output.push(delimiter);
+		}
+
+		// Main encoding loop:
+		while (handledCPCount < inputLength) {
+
+			// All non-basic code points < n have been handled already. Find the next
+			// larger one:
+			for (m = maxInt, j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+				if (currentValue >= n && currentValue < m) {
+					m = currentValue;
+				}
+			}
+
+			// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
+			// but guard against overflow
+			handledCPCountPlusOne = handledCPCount + 1;
+			if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
+				error('overflow');
+			}
+
+			delta += (m - n) * handledCPCountPlusOne;
+			n = m;
+
+			for (j = 0; j < inputLength; ++j) {
+				currentValue = input[j];
+
+				if (currentValue < n && ++delta > maxInt) {
+					error('overflow');
+				}
+
+				if (currentValue == n) {
+					// Represent delta as a generalized variable-length integer
+					for (q = delta, k = base; /* no condition */; k += base) {
+						t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
+						if (q < t) {
+							break;
+						}
+						qMinusT = q - t;
+						baseMinusT = base - t;
+						output.push(
+							stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
+						);
+						q = floor(qMinusT / baseMinusT);
+					}
+
+					output.push(stringFromCharCode(digitToBasic(q, 0)));
+					bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
+					delta = 0;
+					++handledCPCount;
+				}
+			}
+
+			++delta;
+			++n;
+
+		}
+		return output.join('');
+	}
+
+	/**
+	 * Converts a Punycode string representing a domain name to Unicode. Only the
+	 * Punycoded parts of the domain name will be converted, i.e. it doesn't
+	 * matter if you call it on a string that has already been converted to
+	 * Unicode.
+	 * @memberOf punycode
+	 * @param {String} domain The Punycode domain name to convert to Unicode.
+	 * @returns {String} The Unicode representation of the given Punycode
+	 * string.
+	 */
+	function toUnicode(domain) {
+		return mapDomain(domain, function(string) {
+			return regexPunycode.test(string)
+				? decode(string.slice(4).toLowerCase())
+				: string;
+		});
+	}
+
+	/**
+	 * Converts a Unicode string representing a domain name to Punycode. Only the
+	 * non-ASCII parts of the domain name will be converted, i.e. it doesn't
+	 * matter if you call it with a domain that's already in ASCII.
+	 * @memberOf punycode
+	 * @param {String} domain The domain name to convert, as a Unicode string.
+	 * @returns {String} The Punycode representation of the given domain name.
+	 */
+	function toASCII(domain) {
+		return mapDomain(domain, function(string) {
+			return regexNonASCII.test(string)
+				? 'xn--' + encode(string)
+				: string;
+		});
+	}
+
+	/*--------------------------------------------------------------------------*/
+
+	/** Define the public API */
+	punycode = {
+		/**
+		 * A string representing the current Punycode.js version number.
+		 * @memberOf punycode
+		 * @type String
+		 */
+		'version': '1.2.3',
+		/**
+		 * An object of methods to convert from JavaScript's internal character
+		 * representation (UCS-2) to Unicode code points, and back.
+		 * @see <http://mathiasbynens.be/notes/javascript-encoding>
+		 * @memberOf punycode
+		 * @type Object
+		 */
+		'ucs2': {
+			'decode': ucs2decode,
+			'encode': ucs2encode
+		},
+		'decode': decode,
+		'encode': encode,
+		'toASCII': toASCII,
+		'toUnicode': toUnicode
+	};
+
+	/** Expose `punycode` */
+	// Some AMD build optimizers, like r.js, check for specific condition patterns
+	// like the following:
+	if (
+		typeof define == 'function' &&
+		typeof define.amd == 'object' &&
+		define.amd
+	) {
+		define(function() {
+			return punycode;
+		});
+	}	else if (freeExports && !freeExports.nodeType) {
+		if (freeModule) { // in Node.js or RingoJS v0.8.0+
+			freeModule.exports = punycode;
+		} else { // in Narwhal or RingoJS v0.7.0-
+			for (key in punycode) {
+				punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
+			}
+		}
+	} else { // in Rhino or a web browser
+		root.punycode = punycode;
+	}
+
+}(this));
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],6:[function(require,module,exports){
+(function (process){
+/*!
+ * Vue.js v1.0.13
+ * (c) 2015 Evan You
+ * Released under the MIT License.
+ */
+'use strict';
+
+function set(obj, key, val) {
+  if (hasOwn(obj, key)) {
+    obj[key] = val;
+    return;
+  }
+  if (obj._isVue) {
+    set(obj._data, key, val);
+    return;
+  }
+  var ob = obj.__ob__;
+  if (!ob) {
+    obj[key] = val;
+    return;
+  }
+  ob.convert(key, val);
+  ob.dep.notify();
+  if (ob.vms) {
+    var i = ob.vms.length;
+    while (i--) {
+      var vm = ob.vms[i];
+      vm._proxy(key);
+      vm._digest();
+    }
+  }
+  return val;
+}
+
+/**
+ * Delete a property and trigger change if necessary.
+ *
+ * @param {Object} obj
+ * @param {String} key
+ */
+
+function del(obj, key) {
+  if (!hasOwn(obj, key)) {
+    return;
+  }
+  delete obj[key];
+  var ob = obj.__ob__;
+  if (!ob) {
+    return;
+  }
+  ob.dep.notify();
+  if (ob.vms) {
+    var i = ob.vms.length;
+    while (i--) {
+      var vm = ob.vms[i];
+      vm._unproxy(key);
+      vm._digest();
+    }
+  }
+}
+
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+/**
+ * Check whether the object has the property.
+ *
+ * @param {Object} obj
+ * @param {String} key
+ * @return {Boolean}
+ */
+
+function hasOwn(obj, key) {
+  return hasOwnProperty.call(obj, key);
+}
+
+/**
+ * Check if an expression is a literal value.
+ *
+ * @param {String} exp
+ * @return {Boolean}
+ */
+
+var literalValueRE = /^\s?(true|false|[\d\.]+|'[^']*'|"[^"]*")\s?$/;
+
+function isLiteral(exp) {
+  return literalValueRE.test(exp);
+}
+
+/**
+ * Check if a string starts with $ or _
+ *
+ * @param {String} str
+ * @return {Boolean}
+ */
+
+function isReserved(str) {
+  var c = (str + '').charCodeAt(0);
+  return c === 0x24 || c === 0x5F;
+}
+
+/**
+ * Guard text output, make sure undefined outputs
+ * empty string
+ *
+ * @param {*} value
+ * @return {String}
+ */
+
+function _toString(value) {
+  return value == null ? '' : value.toString();
+}
+
+/**
+ * Check and convert possible numeric strings to numbers
+ * before setting back to data
+ *
+ * @param {*} value
+ * @return {*|Number}
+ */
+
+function toNumber(value) {
+  if (typeof value !== 'string') {
+    return value;
+  } else {
+    var parsed = Number(value);
+    return isNaN(parsed) ? value : parsed;
+  }
+}
+
+/**
+ * Convert string boolean literals into real booleans.
+ *
+ * @param {*} value
+ * @return {*|Boolean}
+ */
+
+function toBoolean(value) {
+  return value === 'true' ? true : value === 'false' ? false : value;
+}
+
+/**
+ * Strip quotes from a string
+ *
+ * @param {String} str
+ * @return {String | false}
+ */
+
+function stripQuotes(str) {
+  var a = str.charCodeAt(0);
+  var b = str.charCodeAt(str.length - 1);
+  return a === b && (a === 0x22 || a === 0x27) ? str.slice(1, -1) : str;
+}
+
+/**
+ * Camelize a hyphen-delmited string.
+ *
+ * @param {String} str
+ * @return {String}
+ */
+
+var camelizeRE = /-(\w)/g;
+
+function camelize(str) {
+  return str.replace(camelizeRE, toUpper);
+}
+
+function toUpper(_, c) {
+  return c ? c.toUpperCase() : '';
+}
+
+/**
+ * Hyphenate a camelCase string.
+ *
+ * @param {String} str
+ * @return {String}
+ */
+
+var hyphenateRE = /([a-z\d])([A-Z])/g;
+
+function hyphenate(str) {
+  return str.replace(hyphenateRE, '$1-$2').toLowerCase();
+}
+
+/**
+ * Converts hyphen/underscore/slash delimitered names into
+ * camelized classNames.
+ *
+ * e.g. my-component => MyComponent
+ *      some_else    => SomeElse
+ *      some/comp    => SomeComp
+ *
+ * @param {String} str
+ * @return {String}
+ */
+
+var classifyRE = /(?:^|[-_\/])(\w)/g;
+
+function classify(str) {
+  return str.replace(classifyRE, toUpper);
+}
+
+/**
+ * Simple bind, faster than native
+ *
+ * @param {Function} fn
+ * @param {Object} ctx
+ * @return {Function}
+ */
+
+function bind$1(fn, ctx) {
+  return function (a) {
+    var l = arguments.length;
+    return l ? l > 1 ? fn.apply(ctx, arguments) : fn.call(ctx, a) : fn.call(ctx);
+  };
+}
+
+/**
+ * Convert an Array-like object to a real Array.
+ *
+ * @param {Array-like} list
+ * @param {Number} [start] - start index
+ * @return {Array}
+ */
+
+function toArray(list, start) {
+  start = start || 0;
+  var i = list.length - start;
+  var ret = new Array(i);
+  while (i--) {
+    ret[i] = list[i + start];
+  }
+  return ret;
+}
+
+/**
+ * Mix properties into target object.
+ *
+ * @param {Object} to
+ * @param {Object} from
+ */
+
+function extend(to, from) {
+  var keys = Object.keys(from);
+  var i = keys.length;
+  while (i--) {
+    to[keys[i]] = from[keys[i]];
+  }
+  return to;
+}
+
+/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ *
+ * @param {*} obj
+ * @return {Boolean}
+ */
+
+function isObject(obj) {
+  return obj !== null && typeof obj === 'object';
+}
+
+/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ *
+ * @param {*} obj
+ * @return {Boolean}
+ */
+
+var toString = Object.prototype.toString;
+var OBJECT_STRING = '[object Object]';
+
+function isPlainObject(obj) {
+  return toString.call(obj) === OBJECT_STRING;
+}
+
+/**
+ * Array type check.
+ *
+ * @param {*} obj
+ * @return {Boolean}
+ */
+
+var isArray = Array.isArray;
+
+/**
+ * Define a non-enumerable property
+ *
+ * @param {Object} obj
+ * @param {String} key
+ * @param {*} val
+ * @param {Boolean} [enumerable]
+ */
+
+function def(obj, key, val, enumerable) {
+  Object.defineProperty(obj, key, {
+    value: val,
+    enumerable: !!enumerable,
+    writable: true,
+    configurable: true
+  });
+}
+
+/**
+ * Debounce a function so it only gets called after the
+ * input stops arriving after the given wait period.
+ *
+ * @param {Function} func
+ * @param {Number} wait
+ * @return {Function} - the debounced function
+ */
+
+function _debounce(func, wait) {
+  var timeout, args, context, timestamp, result;
+  var later = function later() {
+    var last = Date.now() - timestamp;
+    if (last < wait && last >= 0) {
+      timeout = setTimeout(later, wait - last);
+    } else {
+      timeout = null;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    }
+  };
+  return function () {
+    context = this;
+    args = arguments;
+    timestamp = Date.now();
+    if (!timeout) {
+      timeout = setTimeout(later, wait);
+    }
+    return result;
+  };
+}
+
+/**
+ * Manual indexOf because it's slightly faster than
+ * native.
+ *
+ * @param {Array} arr
+ * @param {*} obj
+ */
+
+function indexOf(arr, obj) {
+  var i = arr.length;
+  while (i--) {
+    if (arr[i] === obj) return i;
+  }
+  return -1;
+}
+
+/**
+ * Make a cancellable version of an async callback.
+ *
+ * @param {Function} fn
+ * @return {Function}
+ */
+
+function cancellable(fn) {
+  var cb = function cb() {
+    if (!cb.cancelled) {
+      return fn.apply(this, arguments);
+    }
+  };
+  cb.cancel = function () {
+    cb.cancelled = true;
+  };
+  return cb;
+}
+
+/**
+ * Check if two values are loosely equal - that is,
+ * if they are plain objects, do they have the same shape?
+ *
+ * @param {*} a
+ * @param {*} b
+ * @return {Boolean}
+ */
+
+function looseEqual(a, b) {
+  /* eslint-disable eqeqeq */
+  return a == b || (isObject(a) && isObject(b) ? JSON.stringify(a) === JSON.stringify(b) : false);
+  /* eslint-enable eqeqeq */
+}
+
+var hasProto = ('__proto__' in {});
+
+// Browser environment sniffing
+var inBrowser = typeof window !== 'undefined' && Object.prototype.toString.call(window) !== '[object Object]';
+
+var isIE9 = inBrowser && navigator.userAgent.toLowerCase().indexOf('msie 9.0') > 0;
+
+var isAndroid = inBrowser && navigator.userAgent.toLowerCase().indexOf('android') > 0;
+
+var transitionProp = undefined;
+var transitionEndEvent = undefined;
+var animationProp = undefined;
+var animationEndEvent = undefined;
+
+// Transition property/event sniffing
+if (inBrowser && !isIE9) {
+  var isWebkitTrans = window.ontransitionend === undefined && window.onwebkittransitionend !== undefined;
+  var isWebkitAnim = window.onanimationend === undefined && window.onwebkitanimationend !== undefined;
+  transitionProp = isWebkitTrans ? 'WebkitTransition' : 'transition';
+  transitionEndEvent = isWebkitTrans ? 'webkitTransitionEnd' : 'transitionend';
+  animationProp = isWebkitAnim ? 'WebkitAnimation' : 'animation';
+  animationEndEvent = isWebkitAnim ? 'webkitAnimationEnd' : 'animationend';
+}
+
+/**
+ * Defer a task to execute it asynchronously. Ideally this
+ * should be executed as a microtask, so we leverage
+ * MutationObserver if it's available, and fallback to
+ * setTimeout(0).
+ *
+ * @param {Function} cb
+ * @param {Object} ctx
+ */
+
+var nextTick = (function () {
+  var callbacks = [];
+  var pending = false;
+  var timerFunc;
+  function nextTickHandler() {
+    pending = false;
+    var copies = callbacks.slice(0);
+    callbacks = [];
+    for (var i = 0; i < copies.length; i++) {
+      copies[i]();
+    }
+  }
+  /* istanbul ignore if */
+  if (typeof MutationObserver !== 'undefined') {
+    var counter = 1;
+    var observer = new MutationObserver(nextTickHandler);
+    var textNode = document.createTextNode(counter);
+    observer.observe(textNode, {
+      characterData: true
+    });
+    timerFunc = function () {
+      counter = (counter + 1) % 2;
+      textNode.data = counter;
+    };
+  } else {
+    timerFunc = setTimeout;
+  }
+  return function (cb, ctx) {
+    var func = ctx ? function () {
+      cb.call(ctx);
+    } : cb;
+    callbacks.push(func);
+    if (pending) return;
+    pending = true;
+    timerFunc(nextTickHandler, 0);
+  };
+})();
+
+function Cache(limit) {
+  this.size = 0;
+  this.limit = limit;
+  this.head = this.tail = undefined;
+  this._keymap = Object.create(null);
+}
+
+var p = Cache.prototype;
+
+/**
+ * Put <value> into the cache associated with <key>.
+ * Returns the entry which was removed to make room for
+ * the new entry. Otherwise undefined is returned.
+ * (i.e. if there was enough room already).
+ *
+ * @param {String} key
+ * @param {*} value
+ * @return {Entry|undefined}
+ */
+
+p.put = function (key, value) {
+  var entry = {
+    key: key,
+    value: value
+  };
+  this._keymap[key] = entry;
+  if (this.tail) {
+    this.tail.newer = entry;
+    entry.older = this.tail;
+  } else {
+    this.head = entry;
+  }
+  this.tail = entry;
+  if (this.size === this.limit) {
+    return this.shift();
+  } else {
+    this.size++;
+  }
+};
+
+/**
+ * Purge the least recently used (oldest) entry from the
+ * cache. Returns the removed entry or undefined if the
+ * cache was empty.
+ */
+
+p.shift = function () {
+  var entry = this.head;
+  if (entry) {
+    this.head = this.head.newer;
+    this.head.older = undefined;
+    entry.newer = entry.older = undefined;
+    this._keymap[entry.key] = undefined;
+  }
+  return entry;
+};
+
+/**
+ * Get and register recent use of <key>. Returns the value
+ * associated with <key> or undefined if not in cache.
+ *
+ * @param {String} key
+ * @param {Boolean} returnEntry
+ * @return {Entry|*}
+ */
+
+p.get = function (key, returnEntry) {
+  var entry = this._keymap[key];
+  if (entry === undefined) return;
+  if (entry === this.tail) {
+    return returnEntry ? entry : entry.value;
+  }
+  // HEAD--------------TAIL
+  //   <.older   .newer>
+  //  <--- add direction --
+  //   A  B  C  <D>  E
+  if (entry.newer) {
+    if (entry === this.head) {
+      this.head = entry.newer;
+    }
+    entry.newer.older = entry.older; // C <-- E.
+  }
+  if (entry.older) {
+    entry.older.newer = entry.newer; // C. --> E
+  }
+  entry.newer = undefined; // D --x
+  entry.older = this.tail; // D. --> E
+  if (this.tail) {
+    this.tail.newer = entry; // E. <-- D
+  }
+  this.tail = entry;
+  return returnEntry ? entry : entry.value;
+};
+
+var cache$1 = new Cache(1000);
+var filterTokenRE = /[^\s'"]+|'[^']*'|"[^"]*"/g;
+var reservedArgRE = /^in$|^-?\d+/;
+
+/**
+ * Parser state
+ */
+
+var str;
+var dir;
+var c;
+var prev;
+var i;
+var l;
+var lastFilterIndex;
+var inSingle;
+var inDouble;
+var curly;
+var square;
+var paren;
+/**
+ * Push a filter to the current directive object
+ */
+
+function pushFilter() {
+  var exp = str.slice(lastFilterIndex, i).trim();
+  var filter;
+  if (exp) {
+    filter = {};
+    var tokens = exp.match(filterTokenRE);
+    filter.name = tokens[0];
+    if (tokens.length > 1) {
+      filter.args = tokens.slice(1).map(processFilterArg);
+    }
+  }
+  if (filter) {
+    (dir.filters = dir.filters || []).push(filter);
+  }
+  lastFilterIndex = i + 1;
+}
+
+/**
+ * Check if an argument is dynamic and strip quotes.
+ *
+ * @param {String} arg
+ * @return {Object}
+ */
+
+function processFilterArg(arg) {
+  if (reservedArgRE.test(arg)) {
+    return {
+      value: toNumber(arg),
+      dynamic: false
+    };
+  } else {
+    var stripped = stripQuotes(arg);
+    var dynamic = stripped === arg;
+    return {
+      value: dynamic ? arg : stripped,
+      dynamic: dynamic
+    };
+  }
+}
+
+/**
+ * Parse a directive value and extract the expression
+ * and its filters into a descriptor.
+ *
+ * Example:
+ *
+ * "a + 1 | uppercase" will yield:
+ * {
+ *   expression: 'a + 1',
+ *   filters: [
+ *     { name: 'uppercase', args: null }
+ *   ]
+ * }
+ *
+ * @param {String} str
+ * @return {Object}
+ */
+
+function parseDirective(s) {
+
+  var hit = cache$1.get(s);
+  if (hit) {
+    return hit;
+  }
+
+  // reset parser state
+  str = s;
+  inSingle = inDouble = false;
+  curly = square = paren = 0;
+  lastFilterIndex = 0;
+  dir = {};
+
+  for (i = 0, l = str.length; i < l; i++) {
+    prev = c;
+    c = str.charCodeAt(i);
+    if (inSingle) {
+      // check single quote
+      if (c === 0x27 && prev !== 0x5C) inSingle = !inSingle;
+    } else if (inDouble) {
+      // check double quote
+      if (c === 0x22 && prev !== 0x5C) inDouble = !inDouble;
+    } else if (c === 0x7C && // pipe
+    str.charCodeAt(i + 1) !== 0x7C && str.charCodeAt(i - 1) !== 0x7C) {
+      if (dir.expression == null) {
+        // first filter, end of expression
+        lastFilterIndex = i + 1;
+        dir.expression = str.slice(0, i).trim();
+      } else {
+        // already has filter
+        pushFilter();
+      }
+    } else {
+      switch (c) {
+        case 0x22:
+          inDouble = true;break; // "
+        case 0x27:
+          inSingle = true;break; // '
+        case 0x28:
+          paren++;break; // (
+        case 0x29:
+          paren--;break; // )
+        case 0x5B:
+          square++;break; // [
+        case 0x5D:
+          square--;break; // ]
+        case 0x7B:
+          curly++;break; // {
+        case 0x7D:
+          curly--;break; // }
+      }
+    }
+  }
+
+  if (dir.expression == null) {
+    dir.expression = str.slice(0, i).trim();
+  } else if (lastFilterIndex !== 0) {
+    pushFilter();
+  }
+
+  cache$1.put(s, dir);
+  return dir;
+}
+
+var directive = Object.freeze({
+  parseDirective: parseDirective
+});
+
+var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
+var cache = undefined;
+var tagRE = undefined;
+var htmlRE = undefined;
+/**
+ * Escape a string so it can be used in a RegExp
+ * constructor.
+ *
+ * @param {String} str
+ */
+
+function escapeRegex(str) {
+  return str.replace(regexEscapeRE, '\\$&');
+}
+
+function compileRegex() {
+  var open = escapeRegex(config.delimiters[0]);
+  var close = escapeRegex(config.delimiters[1]);
+  var unsafeOpen = escapeRegex(config.unsafeDelimiters[0]);
+  var unsafeClose = escapeRegex(config.unsafeDelimiters[1]);
+  tagRE = new RegExp(unsafeOpen + '(.+?)' + unsafeClose + '|' + open + '(.+?)' + close, 'g');
+  htmlRE = new RegExp('^' + unsafeOpen + '.*' + unsafeClose + '$');
+  // reset cache
+  cache = new Cache(1000);
+}
+
+/**
+ * Parse a template text string into an array of tokens.
+ *
+ * @param {String} text
+ * @return {Array<Object> | null}
+ *               - {String} type
+ *               - {String} value
+ *               - {Boolean} [html]
+ *               - {Boolean} [oneTime]
+ */
+
+function parseText(text) {
+  if (!cache) {
+    compileRegex();
+  }
+  var hit = cache.get(text);
+  if (hit) {
+    return hit;
+  }
+  text = text.replace(/\n/g, '');
+  if (!tagRE.test(text)) {
+    return null;
+  }
+  var tokens = [];
+  var lastIndex = tagRE.lastIndex = 0;
+  var match, index, html, value, first, oneTime;
+  /* eslint-disable no-cond-assign */
+  while (match = tagRE.exec(text)) {
+    /* eslint-enable no-cond-assign */
+    index = match.index;
+    // push text token
+    if (index > lastIndex) {
+      tokens.push({
+        value: text.slice(lastIndex, index)
+      });
+    }
+    // tag token
+    html = htmlRE.test(match[0]);
+    value = html ? match[1] : match[2];
+    first = value.charCodeAt(0);
+    oneTime = first === 42; // *
+    value = oneTime ? value.slice(1) : value;
+    tokens.push({
+      tag: true,
+      value: value.trim(),
+      html: html,
+      oneTime: oneTime
+    });
+    lastIndex = index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    tokens.push({
+      value: text.slice(lastIndex)
+    });
+  }
+  cache.put(text, tokens);
+  return tokens;
+}
+
+/**
+ * Format a list of tokens into an expression.
+ * e.g. tokens parsed from 'a {{b}} c' can be serialized
+ * into one single expression as '"a " + b + " c"'.
+ *
+ * @param {Array} tokens
+ * @return {String}
+ */
+
+function tokensToExp(tokens) {
+  if (tokens.length > 1) {
+    return tokens.map(function (token) {
+      return formatToken(token);
+    }).join('+');
+  } else {
+    return formatToken(tokens[0], true);
+  }
+}
+
+/**
+ * Format a single token.
+ *
+ * @param {Object} token
+ * @param {Boolean} single
+ * @return {String}
+ */
+
+function formatToken(token, single) {
+  return token.tag ? inlineFilters(token.value, single) : '"' + token.value + '"';
+}
+
+/**
+ * For an attribute with multiple interpolation tags,
+ * e.g. attr="some-{{thing | filter}}", in order to combine
+ * the whole thing into a single watchable expression, we
+ * have to inline those filters. This function does exactly
+ * that. This is a bit hacky but it avoids heavy changes
+ * to directive parser and watcher mechanism.
+ *
+ * @param {String} exp
+ * @param {Boolean} single
+ * @return {String}
+ */
+
+var filterRE$1 = /[^|]\|[^|]/;
+function inlineFilters(exp, single) {
+  if (!filterRE$1.test(exp)) {
+    return single ? exp : '(' + exp + ')';
+  } else {
+    var dir = parseDirective(exp);
+    if (!dir.filters) {
+      return '(' + exp + ')';
+    } else {
+      return 'this._applyFilters(' + dir.expression + // value
+      ',null,' + // oldValue (null for read)
+      JSON.stringify(dir.filters) + // filter descriptors
+      ',false)'; // write?
+    }
+  }
+}
+
+var text$1 = Object.freeze({
+  compileRegex: compileRegex,
+  parseText: parseText,
+  tokensToExp: tokensToExp
+});
+
+var delimiters = ['{{', '}}'];
+var unsafeDelimiters = ['{{{', '}}}'];
+
+var config = Object.defineProperties({
+
+  /**
+   * Whether to print debug messages.
+   * Also enables stack trace for warnings.
+   *
+   * @type {Boolean}
+   */
+
+  debug: false,
+
+  /**
+   * Whether to suppress warnings.
+   *
+   * @type {Boolean}
+   */
+
+  silent: false,
+
+  /**
+   * Whether to use async rendering.
+   */
+
+  async: true,
+
+  /**
+   * Whether to warn against errors caught when evaluating
+   * expressions.
+   */
+
+  warnExpressionErrors: true,
+
+  /**
+   * Whether or not to handle fully object properties which
+   * are already backed by getters and seters. Depending on
+   * use case and environment, this might introduce non-neglible
+   * performance penalties.
+   */
+  convertAllProperties: false,
+
+  /**
+   * Internal flag to indicate the delimiters have been
+   * changed.
+   *
+   * @type {Boolean}
+   */
+
+  _delimitersChanged: true,
+
+  /**
+   * List of asset types that a component can own.
+   *
+   * @type {Array}
+   */
+
+  _assetTypes: ['component', 'directive', 'elementDirective', 'filter', 'transition', 'partial'],
+
+  /**
+   * prop binding modes
+   */
+
+  _propBindingModes: {
+    ONE_WAY: 0,
+    TWO_WAY: 1,
+    ONE_TIME: 2
+  },
+
+  /**
+   * Max circular updates allowed in a batcher flush cycle.
+   */
+
+  _maxUpdateCount: 100
+
+}, {
+  delimiters: { /**
+                 * Interpolation delimiters. Changing these would trigger
+                 * the text parser to re-compile the regular expressions.
+                 *
+                 * @type {Array<String>}
+                 */
+
+    get: function get() {
+      return delimiters;
+    },
+    set: function set(val) {
+      delimiters = val;
+      compileRegex();
+    },
+    configurable: true,
+    enumerable: true
+  },
+  unsafeDelimiters: {
+    get: function get() {
+      return unsafeDelimiters;
+    },
+    set: function set(val) {
+      unsafeDelimiters = val;
+      compileRegex();
+    },
+    configurable: true,
+    enumerable: true
+  }
+});
+
+var warn = undefined;
+
+if (process.env.NODE_ENV !== 'production') {
+  (function () {
+    var hasConsole = typeof console !== 'undefined';
+    warn = function (msg, e) {
+      if (hasConsole && (!config.silent || config.debug)) {
+        console.warn('[Vue warn]: ' + msg);
+        /* istanbul ignore if */
+        if (config.debug) {
+          if (e) {
+            throw e;
+          } else {
+            console.warn(new Error('Warning Stack Trace').stack);
+          }
+        }
+      }
+    };
+  })();
+}
+
+/**
+ * Append with transition.
+ *
+ * @param {Element} el
+ * @param {Element} target
+ * @param {Vue} vm
+ * @param {Function} [cb]
+ */
+
+function appendWithTransition(el, target, vm, cb) {
+  applyTransition(el, 1, function () {
+    target.appendChild(el);
+  }, vm, cb);
+}
+
+/**
+ * InsertBefore with transition.
+ *
+ * @param {Element} el
+ * @param {Element} target
+ * @param {Vue} vm
+ * @param {Function} [cb]
+ */
+
+function beforeWithTransition(el, target, vm, cb) {
+  applyTransition(el, 1, function () {
+    before(el, target);
+  }, vm, cb);
+}
+
+/**
+ * Remove with transition.
+ *
+ * @param {Element} el
+ * @param {Vue} vm
+ * @param {Function} [cb]
+ */
+
+function removeWithTransition(el, vm, cb) {
+  applyTransition(el, -1, function () {
+    remove(el);
+  }, vm, cb);
+}
+
+/**
+ * Apply transitions with an operation callback.
+ *
+ * @param {Element} el
+ * @param {Number} direction
+ *                  1: enter
+ *                 -1: leave
+ * @param {Function} op - the actual DOM operation
+ * @param {Vue} vm
+ * @param {Function} [cb]
+ */
+
+function applyTransition(el, direction, op, vm, cb) {
+  var transition = el.__v_trans;
+  if (!transition ||
+  // skip if there are no js hooks and CSS transition is
+  // not supported
+  !transition.hooks && !transitionEndEvent ||
+  // skip transitions for initial compile
+  !vm._isCompiled ||
+  // if the vm is being manipulated by a parent directive
+  // during the parent's compilation phase, skip the
+  // animation.
+  vm.$parent && !vm.$parent._isCompiled) {
+    op();
+    if (cb) cb();
+    return;
+  }
+  var action = direction > 0 ? 'enter' : 'leave';
+  transition[action](op, cb);
+}
+
+/**
+ * Query an element selector if it's not an element already.
+ *
+ * @param {String|Element} el
+ * @return {Element}
+ */
+
+function query(el) {
+  if (typeof el === 'string') {
+    var selector = el;
+    el = document.querySelector(el);
+    if (!el) {
+      process.env.NODE_ENV !== 'production' && warn('Cannot find element: ' + selector);
+    }
+  }
+  return el;
+}
+
+/**
+ * Check if a node is in the document.
+ * Note: document.documentElement.contains should work here
+ * but always returns false for comment nodes in phantomjs,
+ * making unit tests difficult. This is fixed by doing the
+ * contains() check on the node's parentNode instead of
+ * the node itself.
+ *
+ * @param {Node} node
+ * @return {Boolean}
+ */
+
+function inDoc(node) {
+  var doc = document.documentElement;
+  var parent = node && node.parentNode;
+  return doc === node || doc === parent || !!(parent && parent.nodeType === 1 && doc.contains(parent));
+}
+
+/**
+ * Get and remove an attribute from a node.
+ *
+ * @param {Node} node
+ * @param {String} _attr
+ */
+
+function getAttr(node, _attr) {
+  var val = node.getAttribute(_attr);
+  if (val !== null) {
+    node.removeAttribute(_attr);
+  }
+  return val;
+}
+
+/**
+ * Get an attribute with colon or v-bind: prefix.
+ *
+ * @param {Node} node
+ * @param {String} name
+ * @return {String|null}
+ */
+
+function getBindAttr(node, name) {
+  var val = getAttr(node, ':' + name);
+  if (val === null) {
+    val = getAttr(node, 'v-bind:' + name);
+  }
+  return val;
+}
+
+/**
+ * Check the presence of a bind attribute.
+ *
+ * @param {Node} node
+ * @param {String} name
+ * @return {Boolean}
+ */
+
+function hasBindAttr(node, name) {
+  return node.hasAttribute(name) || node.hasAttribute(':' + name) || node.hasAttribute('v-bind:' + name);
+}
+
+/**
+ * Insert el before target
+ *
+ * @param {Element} el
+ * @param {Element} target
+ */
+
+function before(el, target) {
+  target.parentNode.insertBefore(el, target);
+}
+
+/**
+ * Insert el after target
+ *
+ * @param {Element} el
+ * @param {Element} target
+ */
+
+function after(el, target) {
+  if (target.nextSibling) {
+    before(el, target.nextSibling);
+  } else {
+    target.parentNode.appendChild(el);
+  }
+}
+
+/**
+ * Remove el from DOM
+ *
+ * @param {Element} el
+ */
+
+function remove(el) {
+  el.parentNode.removeChild(el);
+}
+
+/**
+ * Prepend el to target
+ *
+ * @param {Element} el
+ * @param {Element} target
+ */
+
+function prepend(el, target) {
+  if (target.firstChild) {
+    before(el, target.firstChild);
+  } else {
+    target.appendChild(el);
+  }
+}
+
+/**
+ * Replace target with el
+ *
+ * @param {Element} target
+ * @param {Element} el
+ */
+
+function replace(target, el) {
+  var parent = target.parentNode;
+  if (parent) {
+    parent.replaceChild(el, target);
+  }
+}
+
+/**
+ * Add event listener shorthand.
+ *
+ * @param {Element} el
+ * @param {String} event
+ * @param {Function} cb
+ */
+
+function on$1(el, event, cb) {
+  el.addEventListener(event, cb);
+}
+
+/**
+ * Remove event listener shorthand.
+ *
+ * @param {Element} el
+ * @param {String} event
+ * @param {Function} cb
+ */
+
+function off(el, event, cb) {
+  el.removeEventListener(event, cb);
+}
+
+/**
+ * In IE9, setAttribute('class') will result in empty class
+ * if the element also has the :class attribute; However in
+ * PhantomJS, setting `className` does not work on SVG elements...
+ * So we have to do a conditional check here.
+ *
+ * @param {Element} el
+ * @param {String} cls
+ */
+
+function setClass(el, cls) {
+  /* istanbul ignore if */
+  if (isIE9 && !(el instanceof SVGElement)) {
+    el.className = cls;
+  } else {
+    el.setAttribute('class', cls);
+  }
+}
+
+/**
+ * Add class with compatibility for IE & SVG
+ *
+ * @param {Element} el
+ * @param {String} cls
+ */
+
+function addClass(el, cls) {
+  if (el.classList) {
+    el.classList.add(cls);
+  } else {
+    var cur = ' ' + (el.getAttribute('class') || '') + ' ';
+    if (cur.indexOf(' ' + cls + ' ') < 0) {
+      setClass(el, (cur + cls).trim());
+    }
+  }
+}
+
+/**
+ * Remove class with compatibility for IE & SVG
+ *
+ * @param {Element} el
+ * @param {String} cls
+ */
+
+function removeClass(el, cls) {
+  if (el.classList) {
+    el.classList.remove(cls);
+  } else {
+    var cur = ' ' + (el.getAttribute('class') || '') + ' ';
+    var tar = ' ' + cls + ' ';
+    while (cur.indexOf(tar) >= 0) {
+      cur = cur.replace(tar, ' ');
+    }
+    setClass(el, cur.trim());
+  }
+  if (!el.className) {
+    el.removeAttribute('class');
+  }
+}
+
+/**
+ * Extract raw content inside an element into a temporary
+ * container div
+ *
+ * @param {Element} el
+ * @param {Boolean} asFragment
+ * @return {Element}
+ */
+
+function extractContent(el, asFragment) {
+  var child;
+  var rawContent;
+  /* istanbul ignore if */
+  if (isTemplate(el) && el.content instanceof DocumentFragment) {
+    el = el.content;
+  }
+  if (el.hasChildNodes()) {
+    trimNode(el);
+    rawContent = asFragment ? document.createDocumentFragment() : document.createElement('div');
+    /* eslint-disable no-cond-assign */
+    while (child = el.firstChild) {
+      /* eslint-enable no-cond-assign */
+      rawContent.appendChild(child);
+    }
+  }
+  return rawContent;
+}
+
+/**
+ * Trim possible empty head/tail textNodes inside a parent.
+ *
+ * @param {Node} node
+ */
+
+function trimNode(node) {
+  trim(node, node.firstChild);
+  trim(node, node.lastChild);
+}
+
+function trim(parent, node) {
+  if (node && node.nodeType === 3 && !node.data.trim()) {
+    parent.removeChild(node);
+  }
+}
+
+/**
+ * Check if an element is a template tag.
+ * Note if the template appears inside an SVG its tagName
+ * will be in lowercase.
+ *
+ * @param {Element} el
+ */
+
+function isTemplate(el) {
+  return el.tagName && el.tagName.toLowerCase() === 'template';
+}
+
+/**
+ * Create an "anchor" for performing dom insertion/removals.
+ * This is used in a number of scenarios:
+ * - fragment instance
+ * - v-html
+ * - v-if
+ * - v-for
+ * - component
+ *
+ * @param {String} content
+ * @param {Boolean} persist - IE trashes empty textNodes on
+ *                            cloneNode(true), so in certain
+ *                            cases the anchor needs to be
+ *                            non-empty to be persisted in
+ *                            templates.
+ * @return {Comment|Text}
+ */
+
+function createAnchor(content, persist) {
+  var anchor = config.debug ? document.createComment(content) : document.createTextNode(persist ? ' ' : '');
+  anchor.__vue_anchor = true;
+  return anchor;
+}
+
+/**
+ * Find a component ref attribute that starts with $.
+ *
+ * @param {Element} node
+ * @return {String|undefined}
+ */
+
+var refRE = /^v-ref:/;
+
+function findRef(node) {
+  if (node.hasAttributes()) {
+    var attrs = node.attributes;
+    for (var i = 0, l = attrs.length; i < l; i++) {
+      var name = attrs[i].name;
+      if (refRE.test(name)) {
+        return camelize(name.replace(refRE, ''));
+      }
+    }
+  }
+}
+
+/**
+ * Map a function to a range of nodes .
+ *
+ * @param {Node} node
+ * @param {Node} end
+ * @param {Function} op
+ */
+
+function mapNodeRange(node, end, op) {
+  var next;
+  while (node !== end) {
+    next = node.nextSibling;
+    op(node);
+    node = next;
+  }
+  op(end);
+}
+
+/**
+ * Remove a range of nodes with transition, store
+ * the nodes in a fragment with correct ordering,
+ * and call callback when done.
+ *
+ * @param {Node} start
+ * @param {Node} end
+ * @param {Vue} vm
+ * @param {DocumentFragment} frag
+ * @param {Function} cb
+ */
+
+function removeNodeRange(start, end, vm, frag, cb) {
+  var done = false;
+  var removed = 0;
+  var nodes = [];
+  mapNodeRange(start, end, function (node) {
+    if (node === end) done = true;
+    nodes.push(node);
+    removeWithTransition(node, vm, onRemoved);
+  });
+  function onRemoved() {
+    removed++;
+    if (done && removed >= nodes.length) {
+      for (var i = 0; i < nodes.length; i++) {
+        frag.appendChild(nodes[i]);
+      }
+      cb && cb();
+    }
+  }
+}
+
+var commonTagRE = /^(div|p|span|img|a|b|i|br|ul|ol|li|h1|h2|h3|h4|h5|h6|code|pre|table|th|td|tr|form|label|input|select|option|nav|article|section|header|footer)$/;
+var reservedTagRE = /^(slot|partial|component)$/;
+
+/**
+ * Check if an element is a component, if yes return its
+ * component id.
+ *
+ * @param {Element} el
+ * @param {Object} options
+ * @return {Object|undefined}
+ */
+
+function checkComponentAttr(el, options) {
+  var tag = el.tagName.toLowerCase();
+  var hasAttrs = el.hasAttributes();
+  if (!commonTagRE.test(tag) && !reservedTagRE.test(tag)) {
+    if (resolveAsset(options, 'components', tag)) {
+      return { id: tag };
+    } else {
+      var is = hasAttrs && getIsBinding(el);
+      if (is) {
+        return is;
+      } else if (process.env.NODE_ENV !== 'production') {
+        if (tag.indexOf('-') > -1 || /HTMLUnknownElement/.test(el.toString()) &&
+        // Chrome returns unknown for several HTML5 elements.
+        // https://code.google.com/p/chromium/issues/detail?id=540526
+        !/^(data|time|rtc|rb)$/.test(tag)) {
+          warn('Unknown custom element: <' + tag + '> - did you ' + 'register the component correctly?');
+        }
+      }
+    }
+  } else if (hasAttrs) {
+    return getIsBinding(el);
+  }
+}
+
+/**
+ * Get "is" binding from an element.
+ *
+ * @param {Element} el
+ * @return {Object|undefined}
+ */
+
+function getIsBinding(el) {
+  // dynamic syntax
+  var exp = getAttr(el, 'is');
+  if (exp != null) {
+    return { id: exp };
+  } else {
+    exp = getBindAttr(el, 'is');
+    if (exp != null) {
+      return { id: exp, dynamic: true };
+    }
+  }
+}
+
+/**
+ * Set a prop's initial value on a vm and its data object.
+ *
+ * @param {Vue} vm
+ * @param {Object} prop
+ * @param {*} value
+ */
+
+function initProp(vm, prop, value) {
+  var key = prop.path;
+  value = coerceProp(prop, value);
+  vm[key] = vm._data[key] = assertProp(prop, value) ? value : undefined;
+}
+
+/**
+ * Assert whether a prop is valid.
+ *
+ * @param {Object} prop
+ * @param {*} value
+ */
+
+function assertProp(prop, value) {
+  // if a prop is not provided and is not required,
+  // skip the check.
+  if (prop.raw === null && !prop.required) {
+    return true;
+  }
+  var options = prop.options;
+  var type = options.type;
+  var valid = true;
+  var expectedType;
+  if (type) {
+    if (type === String) {
+      expectedType = 'string';
+      valid = typeof value === expectedType;
+    } else if (type === Number) {
+      expectedType = 'number';
+      valid = typeof value === 'number';
+    } else if (type === Boolean) {
+      expectedType = 'boolean';
+      valid = typeof value === 'boolean';
+    } else if (type === Function) {
+      expectedType = 'function';
+      valid = typeof value === 'function';
+    } else if (type === Object) {
+      expectedType = 'object';
+      valid = isPlainObject(value);
+    } else if (type === Array) {
+      expectedType = 'array';
+      valid = isArray(value);
+    } else {
+      valid = value instanceof type;
+    }
+  }
+  if (!valid) {
+    process.env.NODE_ENV !== 'production' && warn('Invalid prop: type check failed for ' + prop.path + '="' + prop.raw + '".' + ' Expected ' + formatType(expectedType) + ', got ' + formatValue(value) + '.');
+    return false;
+  }
+  var validator = options.validator;
+  if (validator) {
+    if (!validator.call(null, value)) {
+      process.env.NODE_ENV !== 'production' && warn('Invalid prop: custom validator check failed for ' + prop.path + '="' + prop.raw + '"');
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Force parsing value with coerce option.
+ *
+ * @param {*} value
+ * @param {Object} options
+ * @return {*}
+ */
+
+function coerceProp(prop, value) {
+  var coerce = prop.options.coerce;
+  if (!coerce) {
+    return value;
+  }
+  // coerce is a function
+  return coerce(value);
+}
+
+function formatType(val) {
+  return val ? val.charAt(0).toUpperCase() + val.slice(1) : 'custom type';
+}
+
+function formatValue(val) {
+  return Object.prototype.toString.call(val).slice(8, -1);
+}
+
+/**
+ * Option overwriting strategies are functions that handle
+ * how to merge a parent option value and a child option
+ * value into the final value.
+ *
+ * All strategy functions follow the same signature:
+ *
+ * @param {*} parentVal
+ * @param {*} childVal
+ * @param {Vue} [vm]
+ */
+
+var strats = config.optionMergeStrategies = Object.create(null);
+
+/**
+ * Helper that recursively merges two data objects together.
+ */
+
+function mergeData(to, from) {
+  var key, toVal, fromVal;
+  for (key in from) {
+    toVal = to[key];
+    fromVal = from[key];
+    if (!hasOwn(to, key)) {
+      set(to, key, fromVal);
+    } else if (isObject(toVal) && isObject(fromVal)) {
+      mergeData(toVal, fromVal);
+    }
+  }
+  return to;
+}
+
+/**
+ * Data
+ */
+
+strats.data = function (parentVal, childVal, vm) {
+  if (!vm) {
+    // in a Vue.extend merge, both should be functions
+    if (!childVal) {
+      return parentVal;
+    }
+    if (typeof childVal !== 'function') {
+      process.env.NODE_ENV !== 'production' && warn('The "data" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
+      return parentVal;
+    }
+    if (!parentVal) {
+      return childVal;
+    }
+    // when parentVal & childVal are both present,
+    // we need to return a function that returns the
+    // merged result of both functions... no need to
+    // check if parentVal is a function here because
+    // it has to be a function to pass previous merges.
+    return function mergedDataFn() {
+      return mergeData(childVal.call(this), parentVal.call(this));
+    };
+  } else if (parentVal || childVal) {
+    return function mergedInstanceDataFn() {
+      // instance merge
+      var instanceData = typeof childVal === 'function' ? childVal.call(vm) : childVal;
+      var defaultData = typeof parentVal === 'function' ? parentVal.call(vm) : undefined;
+      if (instanceData) {
+        return mergeData(instanceData, defaultData);
+      } else {
+        return defaultData;
+      }
+    };
+  }
+};
+
+/**
+ * El
+ */
+
+strats.el = function (parentVal, childVal, vm) {
+  if (!vm && childVal && typeof childVal !== 'function') {
+    process.env.NODE_ENV !== 'production' && warn('The "el" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.');
+    return;
+  }
+  var ret = childVal || parentVal;
+  // invoke the element factory if this is instance merge
+  return vm && typeof ret === 'function' ? ret.call(vm) : ret;
+};
+
+/**
+ * Hooks and param attributes are merged as arrays.
+ */
+
+strats.init = strats.created = strats.ready = strats.attached = strats.detached = strats.beforeCompile = strats.compiled = strats.beforeDestroy = strats.destroyed = function (parentVal, childVal) {
+  return childVal ? parentVal ? parentVal.concat(childVal) : isArray(childVal) ? childVal : [childVal] : parentVal;
+};
+
+/**
+ * 0.11 deprecation warning
+ */
+
+strats.paramAttributes = function () {
+  /* istanbul ignore next */
+  process.env.NODE_ENV !== 'production' && warn('"paramAttributes" option has been deprecated in 0.12. ' + 'Use "props" instead.');
+};
+
+/**
+ * Assets
+ *
+ * When a vm is present (instance creation), we need to do
+ * a three-way merge between constructor options, instance
+ * options and parent options.
+ */
+
+function mergeAssets(parentVal, childVal) {
+  var res = Object.create(parentVal);
+  return childVal ? extend(res, guardArrayAssets(childVal)) : res;
+}
+
+config._assetTypes.forEach(function (type) {
+  strats[type + 's'] = mergeAssets;
+});
+
+/**
+ * Events & Watchers.
+ *
+ * Events & watchers hashes should not overwrite one
+ * another, so we merge them as arrays.
+ */
+
+strats.watch = strats.events = function (parentVal, childVal) {
+  if (!childVal) return parentVal;
+  if (!parentVal) return childVal;
+  var ret = {};
+  extend(ret, parentVal);
+  for (var key in childVal) {
+    var parent = ret[key];
+    var child = childVal[key];
+    if (parent && !isArray(parent)) {
+      parent = [parent];
+    }
+    ret[key] = parent ? parent.concat(child) : [child];
+  }
+  return ret;
+};
+
+/**
+ * Other object hashes.
+ */
+
+strats.props = strats.methods = strats.computed = function (parentVal, childVal) {
+  if (!childVal) return parentVal;
+  if (!parentVal) return childVal;
+  var ret = Object.create(null);
+  extend(ret, parentVal);
+  extend(ret, childVal);
+  return ret;
+};
+
+/**
+ * Default strategy.
+ */
+
+var defaultStrat = function defaultStrat(parentVal, childVal) {
+  return childVal === undefined ? parentVal : childVal;
+};
+
+/**
+ * Make sure component options get converted to actual
+ * constructors.
+ *
+ * @param {Object} options
+ */
+
+function guardComponents(options) {
+  if (options.components) {
+    var components = options.components = guardArrayAssets(options.components);
+    var def;
+    var ids = Object.keys(components);
+    for (var i = 0, l = ids.length; i < l; i++) {
+      var key = ids[i];
+      if (commonTagRE.test(key) || reservedTagRE.test(key)) {
+        process.env.NODE_ENV !== 'production' && warn('Do not use built-in or reserved HTML elements as component ' + 'id: ' + key);
+        continue;
+      }
+      def = components[key];
+      if (isPlainObject(def)) {
+        components[key] = Vue.extend(def);
+      }
+    }
+  }
+}
+
+/**
+ * Ensure all props option syntax are normalized into the
+ * Object-based format.
+ *
+ * @param {Object} options
+ */
+
+function guardProps(options) {
+  var props = options.props;
+  var i, val;
+  if (isArray(props)) {
+    options.props = {};
+    i = props.length;
+    while (i--) {
+      val = props[i];
+      if (typeof val === 'string') {
+        options.props[val] = null;
+      } else if (val.name) {
+        options.props[val.name] = val;
+      }
+    }
+  } else if (isPlainObject(props)) {
+    var keys = Object.keys(props);
+    i = keys.length;
+    while (i--) {
+      val = props[keys[i]];
+      if (typeof val === 'function') {
+        props[keys[i]] = { type: val };
+      }
+    }
+  }
+}
+
+/**
+ * Guard an Array-format assets option and converted it
+ * into the key-value Object format.
+ *
+ * @param {Object|Array} assets
+ * @return {Object}
+ */
+
+function guardArrayAssets(assets) {
+  if (isArray(assets)) {
+    var res = {};
+    var i = assets.length;
+    var asset;
+    while (i--) {
+      asset = assets[i];
+      var id = typeof asset === 'function' ? asset.options && asset.options.name || asset.id : asset.name || asset.id;
+      if (!id) {
+        process.env.NODE_ENV !== 'production' && warn('Array-syntax assets must provide a "name" or "id" field.');
+      } else {
+        res[id] = asset;
+      }
+    }
+    return res;
+  }
+  return assets;
+}
+
+/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ *
+ * @param {Object} parent
+ * @param {Object} child
+ * @param {Vue} [vm] - if vm is present, indicates this is
+ *                     an instantiation merge.
+ */
+
+function mergeOptions(parent, child, vm) {
+  guardComponents(child);
+  guardProps(child);
+  var options = {};
+  var key;
+  if (child.mixins) {
+    for (var i = 0, l = child.mixins.length; i < l; i++) {
+      parent = mergeOptions(parent, child.mixins[i], vm);
+    }
+  }
+  for (key in parent) {
+    mergeField(key);
+  }
+  for (key in child) {
+    if (!hasOwn(parent, key)) {
+      mergeField(key);
+    }
+  }
+  function mergeField(key) {
+    var strat = strats[key] || defaultStrat;
+    options[key] = strat(parent[key], child[key], vm, key);
+  }
+  return options;
+}
+
+/**
+ * Resolve an asset.
+ * This function is used because child instances need access
+ * to assets defined in its ancestor chain.
+ *
+ * @param {Object} options
+ * @param {String} type
+ * @param {String} id
+ * @return {Object|Function}
+ */
+
+function resolveAsset(options, type, id) {
+  var assets = options[type];
+  var camelizedId;
+  return assets[id] ||
+  // camelCase ID
+  assets[camelizedId = camelize(id)] ||
+  // Pascal Case ID
+  assets[camelizedId.charAt(0).toUpperCase() + camelizedId.slice(1)];
+}
+
+/**
+ * Assert asset exists
+ */
+
+function assertAsset(val, type, id) {
+  if (!val) {
+    process.env.NODE_ENV !== 'production' && warn('Failed to resolve ' + type + ': ' + id);
+  }
+}
+
+var arrayProto = Array.prototype;
+var arrayMethods = Object.create(arrayProto)
+
+/**
+ * Intercept mutating methods and emit events
+ */
+
+;['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'].forEach(function (method) {
+  // cache original method
+  var original = arrayProto[method];
+  def(arrayMethods, method, function mutator() {
+    // avoid leaking arguments:
+    // http://jsperf.com/closure-with-arguments
+    var i = arguments.length;
+    var args = new Array(i);
+    while (i--) {
+      args[i] = arguments[i];
+    }
+    var result = original.apply(this, args);
+    var ob = this.__ob__;
+    var inserted;
+    switch (method) {
+      case 'push':
+        inserted = args;
+        break;
+      case 'unshift':
+        inserted = args;
+        break;
+      case 'splice':
+        inserted = args.slice(2);
+        break;
+    }
+    if (inserted) ob.observeArray(inserted);
+    // notify change
+    ob.dep.notify();
+    return result;
+  });
+});
+
+/**
+ * Swap the element at the given index with a new value
+ * and emits corresponding event.
+ *
+ * @param {Number} index
+ * @param {*} val
+ * @return {*} - replaced element
+ */
+
+def(arrayProto, '$set', function $set(index, val) {
+  if (index >= this.length) {
+    this.length = Number(index) + 1;
+  }
+  return this.splice(index, 1, val)[0];
+});
+
+/**
+ * Convenience method to remove the element at given index.
+ *
+ * @param {Number} index
+ * @param {*} val
+ */
+
+def(arrayProto, '$remove', function $remove(item) {
+  /* istanbul ignore if */
+  if (!this.length) return;
+  var index = indexOf(this, item);
+  if (index > -1) {
+    return this.splice(index, 1);
+  }
+});
+
+var uid$3 = 0;
+
+/**
+ * A dep is an observable that can have multiple
+ * directives subscribing to it.
+ *
+ * @constructor
+ */
+function Dep() {
+  this.id = uid$3++;
+  this.subs = [];
+}
+
+// the current target watcher being evaluated.
+// this is globally unique because there could be only one
+// watcher being evaluated at any time.
+Dep.target = null;
+
+/**
+ * Add a directive subscriber.
+ *
+ * @param {Directive} sub
+ */
+
+Dep.prototype.addSub = function (sub) {
+  this.subs.push(sub);
+};
+
+/**
+ * Remove a directive subscriber.
+ *
+ * @param {Directive} sub
+ */
+
+Dep.prototype.removeSub = function (sub) {
+  this.subs.$remove(sub);
+};
+
+/**
+ * Add self as a dependency to the target watcher.
+ */
+
+Dep.prototype.depend = function () {
+  Dep.target.addDep(this);
+};
+
+/**
+ * Notify all subscribers of a new value.
+ */
+
+Dep.prototype.notify = function () {
+  // stablize the subscriber list first
+  var subs = toArray(this.subs);
+  for (var i = 0, l = subs.length; i < l; i++) {
+    subs[i].update();
+  }
+};
+
+var arrayKeys = Object.getOwnPropertyNames(arrayMethods);
+
+/**
+ * Observer class that are attached to each observed
+ * object. Once attached, the observer converts target
+ * object's property keys into getter/setters that
+ * collect dependencies and dispatches updates.
+ *
+ * @param {Array|Object} value
+ * @constructor
+ */
+
+function Observer(value) {
+  this.value = value;
+  this.dep = new Dep();
+  def(value, '__ob__', this);
+  if (isArray(value)) {
+    var augment = hasProto ? protoAugment : copyAugment;
+    augment(value, arrayMethods, arrayKeys);
+    this.observeArray(value);
+  } else {
+    this.walk(value);
+  }
+}
+
+// Instance methods
+
+/**
+ * Walk through each property and convert them into
+ * getter/setters. This method should only be called when
+ * value type is Object.
+ *
+ * @param {Object} obj
+ */
+
+Observer.prototype.walk = function (obj) {
+  var keys = Object.keys(obj);
+  for (var i = 0, l = keys.length; i < l; i++) {
+    this.convert(keys[i], obj[keys[i]]);
+  }
+};
+
+/**
+ * Observe a list of Array items.
+ *
+ * @param {Array} items
+ */
+
+Observer.prototype.observeArray = function (items) {
+  for (var i = 0, l = items.length; i < l; i++) {
+    observe(items[i]);
+  }
+};
+
+/**
+ * Convert a property into getter/setter so we can emit
+ * the events when the property is accessed/changed.
+ *
+ * @param {String} key
+ * @param {*} val
+ */
+
+Observer.prototype.convert = function (key, val) {
+  defineReactive(this.value, key, val);
+};
+
+/**
+ * Add an owner vm, so that when $set/$delete mutations
+ * happen we can notify owner vms to proxy the keys and
+ * digest the watchers. This is only called when the object
+ * is observed as an instance's root $data.
+ *
+ * @param {Vue} vm
+ */
+
+Observer.prototype.addVm = function (vm) {
+  (this.vms || (this.vms = [])).push(vm);
+};
+
+/**
+ * Remove an owner vm. This is called when the object is
+ * swapped out as an instance's $data object.
+ *
+ * @param {Vue} vm
+ */
+
+Observer.prototype.removeVm = function (vm) {
+  this.vms.$remove(vm);
+};
+
+// helpers
+
+/**
+ * Augment an target Object or Array by intercepting
+ * the prototype chain using __proto__
+ *
+ * @param {Object|Array} target
+ * @param {Object} proto
+ */
+
+function protoAugment(target, src) {
+  target.__proto__ = src;
+}
+
+/**
+ * Augment an target Object or Array by defining
+ * hidden properties.
+ *
+ * @param {Object|Array} target
+ * @param {Object} proto
+ */
+
+function copyAugment(target, src, keys) {
+  for (var i = 0, l = keys.length; i < l; i++) {
+    var key = keys[i];
+    def(target, key, src[key]);
+  }
+}
+
+/**
+ * Attempt to create an observer instance for a value,
+ * returns the new observer if successfully observed,
+ * or the existing observer if the value already has one.
+ *
+ * @param {*} value
+ * @param {Vue} [vm]
+ * @return {Observer|undefined}
+ * @static
+ */
+
+function observe(value, vm) {
+  if (!value || typeof value !== 'object') {
+    return;
+  }
+  var ob;
+  if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
+    ob = value.__ob__;
+  } else if ((isArray(value) || isPlainObject(value)) && Object.isExtensible(value) && !value._isVue) {
+    ob = new Observer(value);
+  }
+  if (ob && vm) {
+    ob.addVm(vm);
+  }
+  return ob;
+}
+
+/**
+ * Define a reactive property on an Object.
+ *
+ * @param {Object} obj
+ * @param {String} key
+ * @param {*} val
+ */
+
+function defineReactive(obj, key, val) {
+  var dep = new Dep();
+
+  // cater for pre-defined getter/setters
+  var getter, setter;
+  if (config.convertAllProperties) {
+    var property = Object.getOwnPropertyDescriptor(obj, key);
+    if (property && property.configurable === false) {
+      return;
+    }
+    getter = property && property.get;
+    setter = property && property.set;
+  }
+
+  var childOb = observe(val);
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter() {
+      var value = getter ? getter.call(obj) : val;
+      if (Dep.target) {
+        dep.depend();
+        if (childOb) {
+          childOb.dep.depend();
+        }
+        if (isArray(value)) {
+          for (var e, i = 0, l = value.length; i < l; i++) {
+            e = value[i];
+            e && e.__ob__ && e.__ob__.dep.depend();
+          }
+        }
+      }
+      return value;
+    },
+    set: function reactiveSetter(newVal) {
+      var value = getter ? getter.call(obj) : val;
+      if (newVal === value) {
+        return;
+      }
+      if (setter) {
+        setter.call(obj, newVal);
+      } else {
+        val = newVal;
+      }
+      childOb = observe(newVal);
+      dep.notify();
+    }
+  });
+}
+
+var util = Object.freeze({
+	defineReactive: defineReactive,
+	set: set,
+	del: del,
+	hasOwn: hasOwn,
+	isLiteral: isLiteral,
+	isReserved: isReserved,
+	_toString: _toString,
+	toNumber: toNumber,
+	toBoolean: toBoolean,
+	stripQuotes: stripQuotes,
+	camelize: camelize,
+	hyphenate: hyphenate,
+	classify: classify,
+	bind: bind$1,
+	toArray: toArray,
+	extend: extend,
+	isObject: isObject,
+	isPlainObject: isPlainObject,
+	def: def,
+	debounce: _debounce,
+	indexOf: indexOf,
+	cancellable: cancellable,
+	looseEqual: looseEqual,
+	isArray: isArray,
+	hasProto: hasProto,
+	inBrowser: inBrowser,
+	isIE9: isIE9,
+	isAndroid: isAndroid,
+	get transitionProp () { return transitionProp; },
+	get transitionEndEvent () { return transitionEndEvent; },
+	get animationProp () { return animationProp; },
+	get animationEndEvent () { return animationEndEvent; },
+	nextTick: nextTick,
+	query: query,
+	inDoc: inDoc,
+	getAttr: getAttr,
+	getBindAttr: getBindAttr,
+	hasBindAttr: hasBindAttr,
+	before: before,
+	after: after,
+	remove: remove,
+	prepend: prepend,
+	replace: replace,
+	on: on$1,
+	off: off,
+	setClass: setClass,
+	addClass: addClass,
+	removeClass: removeClass,
+	extractContent: extractContent,
+	trimNode: trimNode,
+	isTemplate: isTemplate,
+	createAnchor: createAnchor,
+	findRef: findRef,
+	mapNodeRange: mapNodeRange,
+	removeNodeRange: removeNodeRange,
+	mergeOptions: mergeOptions,
+	resolveAsset: resolveAsset,
+	assertAsset: assertAsset,
+	checkComponentAttr: checkComponentAttr,
+	initProp: initProp,
+	assertProp: assertProp,
+	coerceProp: coerceProp,
+	commonTagRE: commonTagRE,
+	reservedTagRE: reservedTagRE,
+	get warn () { return warn; }
+});
+
+var uid = 0;
+
+function initMixin (Vue) {
+
+  /**
+   * The main init sequence. This is called for every
+   * instance, including ones that are created from extended
+   * constructors.
+   *
+   * @param {Object} options - this options object should be
+   *                           the result of merging class
+   *                           options and the options passed
+   *                           in to the constructor.
+   */
+
+  Vue.prototype._init = function (options) {
+
+    options = options || {};
+
+    this.$el = null;
+    this.$parent = options.parent;
+    this.$root = this.$parent ? this.$parent.$root : this;
+    this.$children = [];
+    this.$refs = {}; // child vm references
+    this.$els = {}; // element references
+    this._watchers = []; // all watchers as an array
+    this._directives = []; // all directives
+
+    // a uid
+    this._uid = uid++;
+
+    // a flag to avoid this being observed
+    this._isVue = true;
+
+    // events bookkeeping
+    this._events = {}; // registered callbacks
+    this._eventsCount = {}; // for $broadcast optimization
+
+    // fragment instance properties
+    this._isFragment = false;
+    this._fragment = // @type {DocumentFragment}
+    this._fragmentStart = // @type {Text|Comment}
+    this._fragmentEnd = null; // @type {Text|Comment}
+
+    // lifecycle state
+    this._isCompiled = this._isDestroyed = this._isReady = this._isAttached = this._isBeingDestroyed = false;
+    this._unlinkFn = null;
+
+    // context:
+    // if this is a transcluded component, context
+    // will be the common parent vm of this instance
+    // and its host.
+    this._context = options._context || this.$parent;
+
+    // scope:
+    // if this is inside an inline v-for, the scope
+    // will be the intermediate scope created for this
+    // repeat fragment. this is used for linking props
+    // and container directives.
+    this._scope = options._scope;
+
+    // fragment:
+    // if this instance is compiled inside a Fragment, it
+    // needs to reigster itself as a child of that fragment
+    // for attach/detach to work properly.
+    this._frag = options._frag;
+    if (this._frag) {
+      this._frag.children.push(this);
+    }
+
+    // push self into parent / transclusion host
+    if (this.$parent) {
+      this.$parent.$children.push(this);
+    }
+
+    // merge options.
+    options = this.$options = mergeOptions(this.constructor.options, options, this);
+
+    // set ref
+    this._updateRef();
+
+    // initialize data as empty object.
+    // it will be filled up in _initScope().
+    this._data = {};
+
+    // call init hook
+    this._callHook('init');
+
+    // initialize data observation and scope inheritance.
+    this._initState();
+
+    // setup event system and option events.
+    this._initEvents();
+
+    // call created hook
+    this._callHook('created');
+
+    // if `el` option is passed, start compilation.
+    if (options.el) {
+      this.$mount(options.el);
+    }
+  };
+}
+
+var pathCache = new Cache(1000);
+
+// actions
+var APPEND = 0;
+var PUSH = 1;
+var INC_SUB_PATH_DEPTH = 2;
+var PUSH_SUB_PATH = 3;
+
+// states
+var BEFORE_PATH = 0;
+var IN_PATH = 1;
+var BEFORE_IDENT = 2;
+var IN_IDENT = 3;
+var IN_SUB_PATH = 4;
+var IN_SINGLE_QUOTE = 5;
+var IN_DOUBLE_QUOTE = 6;
+var AFTER_PATH = 7;
+var ERROR = 8;
+
+var pathStateMachine = [];
+
+pathStateMachine[BEFORE_PATH] = {
+  'ws': [BEFORE_PATH],
+  'ident': [IN_IDENT, APPEND],
+  '[': [IN_SUB_PATH],
+  'eof': [AFTER_PATH]
+};
+
+pathStateMachine[IN_PATH] = {
+  'ws': [IN_PATH],
+  '.': [BEFORE_IDENT],
+  '[': [IN_SUB_PATH],
+  'eof': [AFTER_PATH]
+};
+
+pathStateMachine[BEFORE_IDENT] = {
+  'ws': [BEFORE_IDENT],
+  'ident': [IN_IDENT, APPEND]
+};
+
+pathStateMachine[IN_IDENT] = {
+  'ident': [IN_IDENT, APPEND],
+  '0': [IN_IDENT, APPEND],
+  'number': [IN_IDENT, APPEND],
+  'ws': [IN_PATH, PUSH],
+  '.': [BEFORE_IDENT, PUSH],
+  '[': [IN_SUB_PATH, PUSH],
+  'eof': [AFTER_PATH, PUSH]
+};
+
+pathStateMachine[IN_SUB_PATH] = {
+  "'": [IN_SINGLE_QUOTE, APPEND],
+  '"': [IN_DOUBLE_QUOTE, APPEND],
+  '[': [IN_SUB_PATH, INC_SUB_PATH_DEPTH],
+  ']': [IN_PATH, PUSH_SUB_PATH],
+  'eof': ERROR,
+  'else': [IN_SUB_PATH, APPEND]
+};
+
+pathStateMachine[IN_SINGLE_QUOTE] = {
+  "'": [IN_SUB_PATH, APPEND],
+  'eof': ERROR,
+  'else': [IN_SINGLE_QUOTE, APPEND]
+};
+
+pathStateMachine[IN_DOUBLE_QUOTE] = {
+  '"': [IN_SUB_PATH, APPEND],
+  'eof': ERROR,
+  'else': [IN_DOUBLE_QUOTE, APPEND]
+};
+
+/**
+ * Determine the type of a character in a keypath.
+ *
+ * @param {Char} ch
+ * @return {String} type
+ */
+
+function getPathCharType(ch) {
+  if (ch === undefined) {
+    return 'eof';
+  }
+
+  var code = ch.charCodeAt(0);
+
+  switch (code) {
+    case 0x5B: // [
+    case 0x5D: // ]
+    case 0x2E: // .
+    case 0x22: // "
+    case 0x27: // '
+    case 0x30:
+      // 0
+      return ch;
+
+    case 0x5F: // _
+    case 0x24:
+      // $
+      return 'ident';
+
+    case 0x20: // Space
+    case 0x09: // Tab
+    case 0x0A: // Newline
+    case 0x0D: // Return
+    case 0xA0: // No-break space
+    case 0xFEFF: // Byte Order Mark
+    case 0x2028: // Line Separator
+    case 0x2029:
+      // Paragraph Separator
+      return 'ws';
+  }
+
+  // a-z, A-Z
+  if (code >= 0x61 && code <= 0x7A || code >= 0x41 && code <= 0x5A) {
+    return 'ident';
+  }
+
+  // 1-9
+  if (code >= 0x31 && code <= 0x39) {
+    return 'number';
+  }
+
+  return 'else';
+}
+
+/**
+ * Format a subPath, return its plain form if it is
+ * a literal string or number. Otherwise prepend the
+ * dynamic indicator (*).
+ *
+ * @param {String} path
+ * @return {String}
+ */
+
+function formatSubPath(path) {
+  var trimmed = path.trim();
+  // invalid leading 0
+  if (path.charAt(0) === '0' && isNaN(path)) {
+    return false;
+  }
+  return isLiteral(trimmed) ? stripQuotes(trimmed) : '*' + trimmed;
+}
+
+/**
+ * Parse a string path into an array of segments
+ *
+ * @param {String} path
+ * @return {Array|undefined}
+ */
+
+function parse(path) {
+  var keys = [];
+  var index = -1;
+  var mode = BEFORE_PATH;
+  var subPathDepth = 0;
+  var c, newChar, key, type, transition, action, typeMap;
+
+  var actions = [];
+
+  actions[PUSH] = function () {
+    if (key !== undefined) {
+      keys.push(key);
+      key = undefined;
+    }
+  };
+
+  actions[APPEND] = function () {
+    if (key === undefined) {
+      key = newChar;
+    } else {
+      key += newChar;
+    }
+  };
+
+  actions[INC_SUB_PATH_DEPTH] = function () {
+    actions[APPEND]();
+    subPathDepth++;
+  };
+
+  actions[PUSH_SUB_PATH] = function () {
+    if (subPathDepth > 0) {
+      subPathDepth--;
+      mode = IN_SUB_PATH;
+      actions[APPEND]();
+    } else {
+      subPathDepth = 0;
+      key = formatSubPath(key);
+      if (key === false) {
+        return false;
+      } else {
+        actions[PUSH]();
+      }
+    }
+  };
+
+  function maybeUnescapeQuote() {
+    var nextChar = path[index + 1];
+    if (mode === IN_SINGLE_QUOTE && nextChar === "'" || mode === IN_DOUBLE_QUOTE && nextChar === '"') {
+      index++;
+      newChar = '\\' + nextChar;
+      actions[APPEND]();
+      return true;
+    }
+  }
+
+  while (mode != null) {
+    index++;
+    c = path[index];
+
+    if (c === '\\' && maybeUnescapeQuote()) {
+      continue;
+    }
+
+    type = getPathCharType(c);
+    typeMap = pathStateMachine[mode];
+    transition = typeMap[type] || typeMap['else'] || ERROR;
+
+    if (transition === ERROR) {
+      return; // parse error
+    }
+
+    mode = transition[0];
+    action = actions[transition[1]];
+    if (action) {
+      newChar = transition[2];
+      newChar = newChar === undefined ? c : newChar;
+      if (action() === false) {
+        return;
+      }
+    }
+
+    if (mode === AFTER_PATH) {
+      keys.raw = path;
+      return keys;
+    }
+  }
+}
+
+/**
+ * External parse that check for a cache hit first
+ *
+ * @param {String} path
+ * @return {Array|undefined}
+ */
+
+function parsePath(path) {
+  var hit = pathCache.get(path);
+  if (!hit) {
+    hit = parse(path);
+    if (hit) {
+      pathCache.put(path, hit);
+    }
+  }
+  return hit;
+}
+
+/**
+ * Get from an object from a path string
+ *
+ * @param {Object} obj
+ * @param {String} path
+ */
+
+function getPath(obj, path) {
+  return parseExpression(path).get(obj);
+}
+
+/**
+ * Warn against setting non-existent root path on a vm.
+ */
+
+var warnNonExistent;
+if (process.env.NODE_ENV !== 'production') {
+  warnNonExistent = function (path) {
+    warn('You are setting a non-existent path "' + path.raw + '" ' + 'on a vm instance. Consider pre-initializing the property ' + 'with the "data" option for more reliable reactivity ' + 'and better performance.');
+  };
+}
+
+/**
+ * Set on an object from a path
+ *
+ * @param {Object} obj
+ * @param {String | Array} path
+ * @param {*} val
+ */
+
+function setPath(obj, path, val) {
+  var original = obj;
+  if (typeof path === 'string') {
+    path = parse(path);
+  }
+  if (!path || !isObject(obj)) {
+    return false;
+  }
+  var last, key;
+  for (var i = 0, l = path.length; i < l; i++) {
+    last = obj;
+    key = path[i];
+    if (key.charAt(0) === '*') {
+      key = parseExpression(key.slice(1)).get.call(original, original);
+    }
+    if (i < l - 1) {
+      obj = obj[key];
+      if (!isObject(obj)) {
+        obj = {};
+        if (process.env.NODE_ENV !== 'production' && last._isVue) {
+          warnNonExistent(path);
+        }
+        set(last, key, obj);
+      }
+    } else {
+      if (isArray(obj)) {
+        obj.$set(key, val);
+      } else if (key in obj) {
+        obj[key] = val;
+      } else {
+        if (process.env.NODE_ENV !== 'production' && obj._isVue) {
+          warnNonExistent(path);
+        }
+        set(obj, key, val);
+      }
+    }
+  }
+  return true;
+}
+
+var path = Object.freeze({
+  parsePath: parsePath,
+  getPath: getPath,
+  setPath: setPath
+});
+
+var expressionCache = new Cache(1000);
+
+var allowedKeywords = 'Math,Date,this,true,false,null,undefined,Infinity,NaN,' + 'isNaN,isFinite,decodeURI,decodeURIComponent,encodeURI,' + 'encodeURIComponent,parseInt,parseFloat';
+var allowedKeywordsRE = new RegExp('^(' + allowedKeywords.replace(/,/g, '\\b|') + '\\b)');
+
+// keywords that don't make sense inside expressions
+var improperKeywords = 'break,case,class,catch,const,continue,debugger,default,' + 'delete,do,else,export,extends,finally,for,function,if,' + 'import,in,instanceof,let,return,super,switch,throw,try,' + 'var,while,with,yield,enum,await,implements,package,' + 'proctected,static,interface,private,public';
+var improperKeywordsRE = new RegExp('^(' + improperKeywords.replace(/,/g, '\\b|') + '\\b)');
+
+var wsRE = /\s/g;
+var newlineRE = /\n/g;
+var saveRE = /[\{,]\s*[\w\$_]+\s*:|('(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*")|new |typeof |void /g;
+var restoreRE = /"(\d+)"/g;
+var pathTestRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['.*?'\]|\[".*?"\]|\[\d+\]|\[[A-Za-z_$][\w$]*\])*$/;
+var identRE = /[^\w$\.](?:[A-Za-z_$][\w$]*)/g;
+var booleanLiteralRE = /^(?:true|false)$/;
+
+/**
+ * Save / Rewrite / Restore
+ *
+ * When rewriting paths found in an expression, it is
+ * possible for the same letter sequences to be found in
+ * strings and Object literal property keys. Therefore we
+ * remove and store these parts in a temporary array, and
+ * restore them after the path rewrite.
+ */
+
+var saved = [];
+
+/**
+ * Save replacer
+ *
+ * The save regex can match two possible cases:
+ * 1. An opening object literal
+ * 2. A string
+ * If matched as a plain string, we need to escape its
+ * newlines, since the string needs to be preserved when
+ * generating the function body.
+ *
+ * @param {String} str
+ * @param {String} isString - str if matched as a string
+ * @return {String} - placeholder with index
+ */
+
+function save(str, isString) {
+  var i = saved.length;
+  saved[i] = isString ? str.replace(newlineRE, '\\n') : str;
+  return '"' + i + '"';
+}
+
+/**
+ * Path rewrite replacer
+ *
+ * @param {String} raw
+ * @return {String}
+ */
+
+function rewrite(raw) {
+  var c = raw.charAt(0);
+  var path = raw.slice(1);
+  if (allowedKeywordsRE.test(path)) {
+    return raw;
+  } else {
+    path = path.indexOf('"') > -1 ? path.replace(restoreRE, restore) : path;
+    return c + 'scope.' + path;
+  }
+}
+
+/**
+ * Restore replacer
+ *
+ * @param {String} str
+ * @param {String} i - matched save index
+ * @return {String}
+ */
+
+function restore(str, i) {
+  return saved[i];
+}
+
+/**
+ * Rewrite an expression, prefixing all path accessors with
+ * `scope.` and generate getter/setter functions.
+ *
+ * @param {String} exp
+ * @return {Function}
+ */
+
+function compileGetter(exp) {
+  if (improperKeywordsRE.test(exp)) {
+    process.env.NODE_ENV !== 'production' && warn('Avoid using reserved keywords in expression: ' + exp);
+  }
+  // reset state
+  saved.length = 0;
+  // save strings and object literal keys
+  var body = exp.replace(saveRE, save).replace(wsRE, '');
+  // rewrite all paths
+  // pad 1 space here becaue the regex matches 1 extra char
+  body = (' ' + body).replace(identRE, rewrite).replace(restoreRE, restore);
+  return makeGetterFn(body);
+}
+
+/**
+ * Build a getter function. Requires eval.
+ *
+ * We isolate the try/catch so it doesn't affect the
+ * optimization of the parse function when it is not called.
+ *
+ * @param {String} body
+ * @return {Function|undefined}
+ */
+
+function makeGetterFn(body) {
+  try {
+    return new Function('scope', 'return ' + body + ';');
+  } catch (e) {
+    process.env.NODE_ENV !== 'production' && warn('Invalid expression. ' + 'Generated function body: ' + body);
+  }
+}
+
+/**
+ * Compile a setter function for the expression.
+ *
+ * @param {String} exp
+ * @return {Function|undefined}
+ */
+
+function compileSetter(exp) {
+  var path = parsePath(exp);
+  if (path) {
+    return function (scope, val) {
+      setPath(scope, path, val);
+    };
+  } else {
+    process.env.NODE_ENV !== 'production' && warn('Invalid setter expression: ' + exp);
+  }
+}
+
+/**
+ * Parse an expression into re-written getter/setters.
+ *
+ * @param {String} exp
+ * @param {Boolean} needSet
+ * @return {Function}
+ */
+
+function parseExpression(exp, needSet) {
+  exp = exp.trim();
+  // try cache
+  var hit = expressionCache.get(exp);
+  if (hit) {
+    if (needSet && !hit.set) {
+      hit.set = compileSetter(hit.exp);
+    }
+    return hit;
+  }
+  var res = { exp: exp };
+  res.get = isSimplePath(exp) && exp.indexOf('[') < 0
+  // optimized super simple getter
+  ? makeGetterFn('scope.' + exp)
+  // dynamic getter
+  : compileGetter(exp);
+  if (needSet) {
+    res.set = compileSetter(exp);
+  }
+  expressionCache.put(exp, res);
+  return res;
+}
+
+/**
+ * Check if an expression is a simple path.
+ *
+ * @param {String} exp
+ * @return {Boolean}
+ */
+
+function isSimplePath(exp) {
+  return pathTestRE.test(exp) &&
+  // don't treat true/false as paths
+  !booleanLiteralRE.test(exp) &&
+  // Math constants e.g. Math.PI, Math.E etc.
+  exp.slice(0, 5) !== 'Math.';
+}
+
+var expression = Object.freeze({
+  parseExpression: parseExpression,
+  isSimplePath: isSimplePath
+});
+
+// we have two separate queues: one for directive updates
+// and one for user watcher registered via $watch().
+// we want to guarantee directive updates to be called
+// before user watchers so that when user watchers are
+// triggered, the DOM would have already been in updated
+// state.
+var queue = [];
+var userQueue = [];
+var has = {};
+var circular = {};
+var waiting = false;
+var internalQueueDepleted = false;
+
+/**
+ * Reset the batcher's state.
+ */
+
+function resetBatcherState() {
+  queue = [];
+  userQueue = [];
+  has = {};
+  circular = {};
+  waiting = internalQueueDepleted = false;
+}
+
+/**
+ * Flush both queues and run the watchers.
+ */
+
+function flushBatcherQueue() {
+  runBatcherQueue(queue);
+  internalQueueDepleted = true;
+  runBatcherQueue(userQueue);
+  // dev tool hook
+  /* istanbul ignore if */
+  if (process.env.NODE_ENV !== 'production') {
+    if (inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
+      window.__VUE_DEVTOOLS_GLOBAL_HOOK__.emit('flush');
+    }
+  }
+  resetBatcherState();
+}
+
+/**
+ * Run the watchers in a single queue.
+ *
+ * @param {Array} queue
+ */
+
+function runBatcherQueue(queue) {
+  // do not cache length because more watchers might be pushed
+  // as we run existing watchers
+  for (var i = 0; i < queue.length; i++) {
+    var watcher = queue[i];
+    var id = watcher.id;
+    has[id] = null;
+    watcher.run();
+    // in dev build, check and stop circular updates.
+    if (process.env.NODE_ENV !== 'production' && has[id] != null) {
+      circular[id] = (circular[id] || 0) + 1;
+      if (circular[id] > config._maxUpdateCount) {
+        queue.splice(has[id], 1);
+        warn('You may have an infinite update loop for watcher ' + 'with expression: ' + watcher.expression);
+      }
+    }
+  }
+}
+
+/**
+ * Push a watcher into the watcher queue.
+ * Jobs with duplicate IDs will be skipped unless it's
+ * pushed when the queue is being flushed.
+ *
+ * @param {Watcher} watcher
+ *   properties:
+ *   - {Number} id
+ *   - {Function} run
+ */
+
+function pushWatcher(watcher) {
+  var id = watcher.id;
+  if (has[id] == null) {
+    // if an internal watcher is pushed, but the internal
+    // queue is already depleted, we run it immediately.
+    if (internalQueueDepleted && !watcher.user) {
+      watcher.run();
+      return;
+    }
+    // push watcher into appropriate queue
+    var q = watcher.user ? userQueue : queue;
+    has[id] = q.length;
+    q.push(watcher);
+    // queue the flush
+    if (!waiting) {
+      waiting = true;
+      nextTick(flushBatcherQueue);
+    }
+  }
+}
+
+var uid$2 = 0;
+
+/**
+ * A watcher parses an expression, collects dependencies,
+ * and fires callback when the expression value changes.
+ * This is used for both the $watch() api and directives.
+ *
+ * @param {Vue} vm
+ * @param {String} expression
+ * @param {Function} cb
+ * @param {Object} options
+ *                 - {Array} filters
+ *                 - {Boolean} twoWay
+ *                 - {Boolean} deep
+ *                 - {Boolean} user
+ *                 - {Boolean} sync
+ *                 - {Boolean} lazy
+ *                 - {Function} [preProcess]
+ *                 - {Function} [postProcess]
+ * @constructor
+ */
+function Watcher(vm, expOrFn, cb, options) {
+  // mix in options
+  if (options) {
+    extend(this, options);
+  }
+  var isFn = typeof expOrFn === 'function';
+  this.vm = vm;
+  vm._watchers.push(this);
+  this.expression = isFn ? expOrFn.toString() : expOrFn;
+  this.cb = cb;
+  this.id = ++uid$2; // uid for batching
+  this.active = true;
+  this.dirty = this.lazy; // for lazy watchers
+  this.deps = Object.create(null);
+  this.newDeps = null;
+  this.prevError = null; // for async error stacks
+  // parse expression for getter/setter
+  if (isFn) {
+    this.getter = expOrFn;
+    this.setter = undefined;
+  } else {
+    var res = parseExpression(expOrFn, this.twoWay);
+    this.getter = res.get;
+    this.setter = res.set;
+  }
+  this.value = this.lazy ? undefined : this.get();
+  // state for avoiding false triggers for deep and Array
+  // watchers during vm._digest()
+  this.queued = this.shallow = false;
+}
+
+/**
+ * Add a dependency to this directive.
+ *
+ * @param {Dep} dep
+ */
+
+Watcher.prototype.addDep = function (dep) {
+  var id = dep.id;
+  if (!this.newDeps[id]) {
+    this.newDeps[id] = dep;
+    if (!this.deps[id]) {
+      this.deps[id] = dep;
+      dep.addSub(this);
+    }
+  }
+};
+
+/**
+ * Evaluate the getter, and re-collect dependencies.
+ */
+
+Watcher.prototype.get = function () {
+  this.beforeGet();
+  var scope = this.scope || this.vm;
+  var value;
+  try {
+    value = this.getter.call(scope, scope);
+  } catch (e) {
+    if (process.env.NODE_ENV !== 'production' && config.warnExpressionErrors) {
+      warn('Error when evaluating expression "' + this.expression + '". ' + (config.debug ? '' : 'Turn on debug mode to see stack trace.'), e);
+    }
+  }
+  // "touch" every property so they are all tracked as
+  // dependencies for deep watching
+  if (this.deep) {
+    traverse(value);
+  }
+  if (this.preProcess) {
+    value = this.preProcess(value);
+  }
+  if (this.filters) {
+    value = scope._applyFilters(value, null, this.filters, false);
+  }
+  if (this.postProcess) {
+    value = this.postProcess(value);
+  }
+  this.afterGet();
+  return value;
+};
+
+/**
+ * Set the corresponding value with the setter.
+ *
+ * @param {*} value
+ */
+
+Watcher.prototype.set = function (value) {
+  var scope = this.scope || this.vm;
+  if (this.filters) {
+    value = scope._applyFilters(value, this.value, this.filters, true);
+  }
+  try {
+    this.setter.call(scope, scope, value);
+  } catch (e) {
+    if (process.env.NODE_ENV !== 'production' && config.warnExpressionErrors) {
+      warn('Error when evaluating setter "' + this.expression + '"', e);
+    }
+  }
+  // two-way sync for v-for alias
+  var forContext = scope.$forContext;
+  if (forContext && forContext.alias === this.expression) {
+    if (forContext.filters) {
+      process.env.NODE_ENV !== 'production' && warn('It seems you are using two-way binding on ' + 'a v-for alias (' + this.expression + '), and the ' + 'v-for has filters. This will not work properly. ' + 'Either remove the filters or use an array of ' + 'objects and bind to object properties instead.');
+      return;
+    }
+    forContext._withLock(function () {
+      if (scope.$key) {
+        // original is an object
+        forContext.rawValue[scope.$key] = value;
+      } else {
+        forContext.rawValue.$set(scope.$index, value);
+      }
+    });
+  }
+};
+
+/**
+ * Prepare for dependency collection.
+ */
+
+Watcher.prototype.beforeGet = function () {
+  Dep.target = this;
+  this.newDeps = Object.create(null);
+};
+
+/**
+ * Clean up for dependency collection.
+ */
+
+Watcher.prototype.afterGet = function () {
+  Dep.target = null;
+  var ids = Object.keys(this.deps);
+  var i = ids.length;
+  while (i--) {
+    var id = ids[i];
+    if (!this.newDeps[id]) {
+      this.deps[id].removeSub(this);
+    }
+  }
+  this.deps = this.newDeps;
+};
+
+/**
+ * Subscriber interface.
+ * Will be called when a dependency changes.
+ *
+ * @param {Boolean} shallow
+ */
+
+Watcher.prototype.update = function (shallow) {
+  if (this.lazy) {
+    this.dirty = true;
+  } else if (this.sync || !config.async) {
+    this.run();
+  } else {
+    // if queued, only overwrite shallow with non-shallow,
+    // but not the other way around.
+    this.shallow = this.queued ? shallow ? this.shallow : false : !!shallow;
+    this.queued = true;
+    // record before-push error stack in debug mode
+    /* istanbul ignore if */
+    if (process.env.NODE_ENV !== 'production' && config.debug) {
+      this.prevError = new Error('[vue] async stack trace');
+    }
+    pushWatcher(this);
+  }
+};
+
+/**
+ * Batcher job interface.
+ * Will be called by the batcher.
+ */
+
+Watcher.prototype.run = function () {
+  if (this.active) {
+    var value = this.get();
+    if (value !== this.value ||
+    // Deep watchers and watchers on Object/Arrays should fire even
+    // when the value is the same, because the value may
+    // have mutated; but only do so if this is a
+    // non-shallow update (caused by a vm digest).
+    (isObject(value) || this.deep) && !this.shallow) {
+      // set new value
+      var oldValue = this.value;
+      this.value = value;
+      // in debug + async mode, when a watcher callbacks
+      // throws, we also throw the saved before-push error
+      // so the full cross-tick stack trace is available.
+      var prevError = this.prevError;
+      /* istanbul ignore if */
+      if (process.env.NODE_ENV !== 'production' && config.debug && prevError) {
+        this.prevError = null;
+        try {
+          this.cb.call(this.vm, value, oldValue);
+        } catch (e) {
+          nextTick(function () {
+            throw prevError;
+          }, 0);
+          throw e;
+        }
+      } else {
+        this.cb.call(this.vm, value, oldValue);
+      }
+    }
+    this.queued = this.shallow = false;
+  }
+};
+
+/**
+ * Evaluate the value of the watcher.
+ * This only gets called for lazy watchers.
+ */
+
+Watcher.prototype.evaluate = function () {
+  // avoid overwriting another watcher that is being
+  // collected.
+  var current = Dep.target;
+  this.value = this.get();
+  this.dirty = false;
+  Dep.target = current;
+};
+
+/**
+ * Depend on all deps collected by this watcher.
+ */
+
+Watcher.prototype.depend = function () {
+  var depIds = Object.keys(this.deps);
+  var i = depIds.length;
+  while (i--) {
+    this.deps[depIds[i]].depend();
+  }
+};
+
+/**
+ * Remove self from all dependencies' subcriber list.
+ */
+
+Watcher.prototype.teardown = function () {
+  if (this.active) {
+    // remove self from vm's watcher list
+    // we can skip this if the vm if being destroyed
+    // which can improve teardown performance.
+    if (!this.vm._isBeingDestroyed) {
+      this.vm._watchers.$remove(this);
+    }
+    var depIds = Object.keys(this.deps);
+    var i = depIds.length;
+    while (i--) {
+      this.deps[depIds[i]].removeSub(this);
+    }
+    this.active = false;
+    this.vm = this.cb = this.value = null;
+  }
+};
+
+/**
+ * Recrusively traverse an object to evoke all converted
+ * getters, so that every nested property inside the object
+ * is collected as a "deep" dependency.
+ *
+ * @param {*} val
+ */
+
+function traverse(val) {
+  var i, keys;
+  if (isArray(val)) {
+    i = val.length;
+    while (i--) traverse(val[i]);
+  } else if (isObject(val)) {
+    keys = Object.keys(val);
+    i = keys.length;
+    while (i--) traverse(val[keys[i]]);
+  }
+}
+
+var cloak = {
+  bind: function bind() {
+    var el = this.el;
+    this.vm.$once('pre-hook:compiled', function () {
+      el.removeAttribute('v-cloak');
+    });
+  }
+};
+
+var ref = {
+  bind: function bind() {
+    process.env.NODE_ENV !== 'production' && warn('v-ref:' + this.arg + ' must be used on a child ' + 'component. Found on <' + this.el.tagName.toLowerCase() + '>.');
+  }
+};
+
+var ON = 700;
+var MODEL = 800;
+var BIND = 850;
+var TRANSITION = 1100;
+var EL = 1500;
+var COMPONENT = 1500;
+var PARTIAL = 1750;
+var SLOT = 1750;
+var FOR = 2000;
+var IF = 2000;
+
+var el = {
+
+  priority: EL,
+
+  bind: function bind() {
+    /* istanbul ignore if */
+    if (!this.arg) {
+      return;
+    }
+    var id = this.id = camelize(this.arg);
+    var refs = (this._scope || this.vm).$els;
+    if (hasOwn(refs, id)) {
+      refs[id] = this.el;
+    } else {
+      defineReactive(refs, id, this.el);
+    }
+  },
+
+  unbind: function unbind() {
+    var refs = (this._scope || this.vm).$els;
+    if (refs[this.id] === this.el) {
+      refs[this.id] = null;
+    }
+  }
+};
+
+var prefixes = ['-webkit-', '-moz-', '-ms-'];
+var camelPrefixes = ['Webkit', 'Moz', 'ms'];
+var importantRE = /!important;?$/;
+var propCache = Object.create(null);
+
+var testEl = null;
+
+var style = {
+
+  deep: true,
+
+  update: function update(value) {
+    if (typeof value === 'string') {
+      this.el.style.cssText = value;
+    } else if (isArray(value)) {
+      this.handleObject(value.reduce(extend, {}));
+    } else {
+      this.handleObject(value || {});
+    }
+  },
+
+  handleObject: function handleObject(value) {
+    // cache object styles so that only changed props
+    // are actually updated.
+    var cache = this.cache || (this.cache = {});
+    var name, val;
+    for (name in cache) {
+      if (!(name in value)) {
+        this.handleSingle(name, null);
+        delete cache[name];
+      }
+    }
+    for (name in value) {
+      val = value[name];
+      if (val !== cache[name]) {
+        cache[name] = val;
+        this.handleSingle(name, val);
+      }
+    }
+  },
+
+  handleSingle: function handleSingle(prop, value) {
+    prop = normalize(prop);
+    if (!prop) return; // unsupported prop
+    // cast possible numbers/booleans into strings
+    if (value != null) value += '';
+    if (value) {
+      var isImportant = importantRE.test(value) ? 'important' : '';
+      if (isImportant) {
+        value = value.replace(importantRE, '').trim();
+      }
+      this.el.style.setProperty(prop, value, isImportant);
+    } else {
+      this.el.style.removeProperty(prop);
+    }
+  }
+
+};
+
+/**
+ * Normalize a CSS property name.
+ * - cache result
+ * - auto prefix
+ * - camelCase -> dash-case
+ *
+ * @param {String} prop
+ * @return {String}
+ */
+
+function normalize(prop) {
+  if (propCache[prop]) {
+    return propCache[prop];
+  }
+  var res = prefix(prop);
+  propCache[prop] = propCache[res] = res;
+  return res;
+}
+
+/**
+ * Auto detect the appropriate prefix for a CSS property.
+ * https://gist.github.com/paulirish/523692
+ *
+ * @param {String} prop
+ * @return {String}
+ */
+
+function prefix(prop) {
+  prop = hyphenate(prop);
+  var camel = camelize(prop);
+  var upper = camel.charAt(0).toUpperCase() + camel.slice(1);
+  if (!testEl) {
+    testEl = document.createElement('div');
+  }
+  if (camel in testEl.style) {
+    return prop;
+  }
+  var i = prefixes.length;
+  var prefixed;
+  while (i--) {
+    prefixed = camelPrefixes[i] + upper;
+    if (prefixed in testEl.style) {
+      return prefixes[i] + prop;
+    }
+  }
+}
+
+// xlink
+var xlinkNS = 'http://www.w3.org/1999/xlink';
+var xlinkRE = /^xlink:/;
+
+// check for attributes that prohibit interpolations
+var disallowedInterpAttrRE = /^v-|^:|^@|^(is|transition|transition-mode|debounce|track-by|stagger|enter-stagger|leave-stagger)$/;
+
+// these attributes should also set their corresponding properties
+// because they only affect the initial state of the element
+var attrWithPropsRE = /^(value|checked|selected|muted)$/;
+
+// these attributes should set a hidden property for
+// binding v-model to object values
+var modelProps = {
+  value: '_value',
+  'true-value': '_trueValue',
+  'false-value': '_falseValue'
+};
+
+var bind = {
+
+  priority: BIND,
+
+  bind: function bind() {
+    var attr = this.arg;
+    var tag = this.el.tagName;
+    // should be deep watch on object mode
+    if (!attr) {
+      this.deep = true;
+    }
+    // handle interpolation bindings
+    if (this.descriptor.interp) {
+      // only allow binding on native attributes
+      if (disallowedInterpAttrRE.test(attr) || attr === 'name' && (tag === 'PARTIAL' || tag === 'SLOT')) {
+        process.env.NODE_ENV !== 'production' && warn(attr + '="' + this.descriptor.raw + '": ' + 'attribute interpolation is not allowed in Vue.js ' + 'directives and special attributes.');
+        this.el.removeAttribute(attr);
+        this.invalid = true;
+      }
+
+      /* istanbul ignore if */
+      if (process.env.NODE_ENV !== 'production') {
+        var raw = attr + '="' + this.descriptor.raw + '": ';
+        // warn src
+        if (attr === 'src') {
+          warn(raw + 'interpolation in "src" attribute will cause ' + 'a 404 request. Use v-bind:src instead.');
+        }
+
+        // warn style
+        if (attr === 'style') {
+          warn(raw + 'interpolation in "style" attribute will cause ' + 'the attribute to be discarded in Internet Explorer. ' + 'Use v-bind:style instead.');
+        }
+      }
+    }
+  },
+
+  update: function update(value) {
+    if (this.invalid) {
+      return;
+    }
+    var attr = this.arg;
+    if (this.arg) {
+      this.handleSingle(attr, value);
+    } else {
+      this.handleObject(value || {});
+    }
+  },
+
+  // share object handler with v-bind:class
+  handleObject: style.handleObject,
+
+  handleSingle: function handleSingle(attr, value) {
+    var el = this.el;
+    var interp = this.descriptor.interp;
+    if (!interp && attrWithPropsRE.test(attr) && attr in el) {
+      el[attr] = attr === 'value' ? value == null // IE9 will set input.value to "null" for null...
+      ? '' : value : value;
+    }
+    // set model props
+    var modelProp = modelProps[attr];
+    if (!interp && modelProp) {
+      el[modelProp] = value;
+      // update v-model if present
+      var model = el.__v_model;
+      if (model) {
+        model.listener();
+      }
+    }
+    // do not set value attribute for textarea
+    if (attr === 'value' && el.tagName === 'TEXTAREA') {
+      el.removeAttribute(attr);
+      return;
+    }
+    // update attribute
+    if (value != null && value !== false) {
+      if (attr === 'class') {
+        // handle edge case #1960:
+        // class interpolation should not overwrite Vue transition class
+        if (el.__v_trans) {
+          value += ' ' + el.__v_trans.id + '-transition';
+        }
+        setClass(el, value);
+      } else if (xlinkRE.test(attr)) {
+        el.setAttributeNS(xlinkNS, attr, value);
+      } else {
+        el.setAttribute(attr, value);
+      }
+    } else {
+      el.removeAttribute(attr);
+    }
+  }
+};
+
+// keyCode aliases
+var keyCodes = {
+  esc: 27,
+  tab: 9,
+  enter: 13,
+  space: 32,
+  'delete': 46,
+  up: 38,
+  left: 37,
+  right: 39,
+  down: 40
+};
+
+function keyFilter(handler, keys) {
+  var codes = keys.map(function (key) {
+    var charCode = key.charCodeAt(0);
+    if (charCode > 47 && charCode < 58) {
+      return parseInt(key, 10);
+    }
+    if (key.length === 1) {
+      charCode = key.toUpperCase().charCodeAt(0);
+      if (charCode > 64 && charCode < 91) {
+        return charCode;
+      }
+    }
+    return keyCodes[key];
+  });
+  return function keyHandler(e) {
+    if (codes.indexOf(e.keyCode) > -1) {
+      return handler.call(this, e);
+    }
+  };
+}
+
+function stopFilter(handler) {
+  return function stopHandler(e) {
+    e.stopPropagation();
+    return handler.call(this, e);
+  };
+}
+
+function preventFilter(handler) {
+  return function preventHandler(e) {
+    e.preventDefault();
+    return handler.call(this, e);
+  };
+}
+
+var on = {
+
+  acceptStatement: true,
+  priority: ON,
+
+  bind: function bind() {
+    // deal with iframes
+    if (this.el.tagName === 'IFRAME' && this.arg !== 'load') {
+      var self = this;
+      this.iframeBind = function () {
+        on$1(self.el.contentWindow, self.arg, self.handler);
+      };
+      this.on('load', this.iframeBind);
+    }
+  },
+
+  update: function update(handler) {
+    // stub a noop for v-on with no value,
+    // e.g. @mousedown.prevent
+    if (!this.descriptor.raw) {
+      handler = function () {};
+    }
+
+    if (typeof handler !== 'function') {
+      process.env.NODE_ENV !== 'production' && warn('v-on:' + this.arg + '="' + this.expression + '" expects a function value, ' + 'got ' + handler);
+      return;
+    }
+
+    // apply modifiers
+    if (this.modifiers.stop) {
+      handler = stopFilter(handler);
+    }
+    if (this.modifiers.prevent) {
+      handler = preventFilter(handler);
+    }
+    // key filter
+    var keys = Object.keys(this.modifiers).filter(function (key) {
+      return key !== 'stop' && key !== 'prevent';
+    });
+    if (keys.length) {
+      handler = keyFilter(handler, keys);
+    }
+
+    this.reset();
+    this.handler = handler;
+
+    if (this.iframeBind) {
+      this.iframeBind();
+    } else {
+      on$1(this.el, this.arg, this.handler);
+    }
+  },
+
+  reset: function reset() {
+    var el = this.iframeBind ? this.el.contentWindow : this.el;
+    if (this.handler) {
+      off(el, this.arg, this.handler);
+    }
+  },
+
+  unbind: function unbind() {
+    this.reset();
+  }
+};
+
+var checkbox = {
+
+  bind: function bind() {
+    var self = this;
+    var el = this.el;
+
+    this.getValue = function () {
+      return el.hasOwnProperty('_value') ? el._value : self.params.number ? toNumber(el.value) : el.value;
+    };
+
+    function getBooleanValue() {
+      var val = el.checked;
+      if (val && el.hasOwnProperty('_trueValue')) {
+        return el._trueValue;
+      }
+      if (!val && el.hasOwnProperty('_falseValue')) {
+        return el._falseValue;
+      }
+      return val;
+    }
+
+    this.listener = function () {
+      var model = self._watcher.value;
+      if (isArray(model)) {
+        var val = self.getValue();
+        if (el.checked) {
+          if (indexOf(model, val) < 0) {
+            model.push(val);
+          }
+        } else {
+          model.$remove(val);
+        }
+      } else {
+        self.set(getBooleanValue());
+      }
+    };
+
+    this.on('change', this.listener);
+    if (el.hasAttribute('checked')) {
+      this.afterBind = this.listener;
+    }
+  },
+
+  update: function update(value) {
+    var el = this.el;
+    if (isArray(value)) {
+      el.checked = indexOf(value, this.getValue()) > -1;
+    } else {
+      if (el.hasOwnProperty('_trueValue')) {
+        el.checked = looseEqual(value, el._trueValue);
+      } else {
+        el.checked = !!value;
+      }
+    }
+  }
+};
+
+var select = {
+
+  bind: function bind() {
+    var self = this;
+    var el = this.el;
+
+    // method to force update DOM using latest value.
+    this.forceUpdate = function () {
+      if (self._watcher) {
+        self.update(self._watcher.get());
+      }
+    };
+
+    // check if this is a multiple select
+    var multiple = this.multiple = el.hasAttribute('multiple');
+
+    // attach listener
+    this.listener = function () {
+      var value = getValue(el, multiple);
+      value = self.params.number ? isArray(value) ? value.map(toNumber) : toNumber(value) : value;
+      self.set(value);
+    };
+    this.on('change', this.listener);
+
+    // if has initial value, set afterBind
+    var initValue = getValue(el, multiple, true);
+    if (multiple && initValue.length || !multiple && initValue !== null) {
+      this.afterBind = this.listener;
+    }
+
+    // All major browsers except Firefox resets
+    // selectedIndex with value -1 to 0 when the element
+    // is appended to a new parent, therefore we have to
+    // force a DOM update whenever that happens...
+    this.vm.$on('hook:attached', this.forceUpdate);
+  },
+
+  update: function update(value) {
+    var el = this.el;
+    el.selectedIndex = -1;
+    var multi = this.multiple && isArray(value);
+    var options = el.options;
+    var i = options.length;
+    var op, val;
+    while (i--) {
+      op = options[i];
+      val = op.hasOwnProperty('_value') ? op._value : op.value;
+      /* eslint-disable eqeqeq */
+      op.selected = multi ? indexOf$1(value, val) > -1 : looseEqual(value, val);
+      /* eslint-enable eqeqeq */
+    }
+  },
+
+  unbind: function unbind() {
+    /* istanbul ignore next */
+    this.vm.$off('hook:attached', this.forceUpdate);
+  }
+};
+
+/**
+ * Get select value
+ *
+ * @param {SelectElement} el
+ * @param {Boolean} multi
+ * @param {Boolean} init
+ * @return {Array|*}
+ */
+
+function getValue(el, multi, init) {
+  var res = multi ? [] : null;
+  var op, val, selected;
+  for (var i = 0, l = el.options.length; i < l; i++) {
+    op = el.options[i];
+    selected = init ? op.hasAttribute('selected') : op.selected;
+    if (selected) {
+      val = op.hasOwnProperty('_value') ? op._value : op.value;
+      if (multi) {
+        res.push(val);
+      } else {
+        return val;
+      }
+    }
+  }
+  return res;
+}
+
+/**
+ * Native Array.indexOf uses strict equal, but in this
+ * case we need to match string/numbers with custom equal.
+ *
+ * @param {Array} arr
+ * @param {*} val
+ */
+
+function indexOf$1(arr, val) {
+  var i = arr.length;
+  while (i--) {
+    if (looseEqual(arr[i], val)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+var radio = {
+
+  bind: function bind() {
+    var self = this;
+    var el = this.el;
+
+    this.getValue = function () {
+      // value overwrite via v-bind:value
+      if (el.hasOwnProperty('_value')) {
+        return el._value;
+      }
+      var val = el.value;
+      if (self.params.number) {
+        val = toNumber(val);
+      }
+      return val;
+    };
+
+    this.listener = function () {
+      self.set(self.getValue());
+    };
+    this.on('change', this.listener);
+
+    if (el.hasAttribute('checked')) {
+      this.afterBind = this.listener;
+    }
+  },
+
+  update: function update(value) {
+    this.el.checked = looseEqual(value, this.getValue());
+  }
+};
+
+var text$2 = {
+
+  bind: function bind() {
+    var self = this;
+    var el = this.el;
+    var isRange = el.type === 'range';
+    var lazy = this.params.lazy;
+    var number = this.params.number;
+    var debounce = this.params.debounce;
+
+    // handle composition events.
+    //   http://blog.evanyou.me/2014/01/03/composition-event/
+    // skip this for Android because it handles composition
+    // events quite differently. Android doesn't trigger
+    // composition events for language input methods e.g.
+    // Chinese, but instead triggers them for spelling
+    // suggestions... (see Discussion/#162)
+    var composing = false;
+    if (!isAndroid && !isRange) {
+      this.on('compositionstart', function () {
+        composing = true;
+      });
+      this.on('compositionend', function () {
+        composing = false;
+        // in IE11 the "compositionend" event fires AFTER
+        // the "input" event, so the input handler is blocked
+        // at the end... have to call it here.
+        //
+        // #1327: in lazy mode this is unecessary.
+        if (!lazy) {
+          self.listener();
+        }
+      });
+    }
+
+    // prevent messing with the input when user is typing,
+    // and force update on blur.
+    this.focused = false;
+    if (!isRange) {
+      this.on('focus', function () {
+        self.focused = true;
+      });
+      this.on('blur', function () {
+        self.focused = false;
+        // do not sync value after fragment removal (#2017)
+        if (!self._frag || self._frag.inserted) {
+          self.rawListener();
+        }
+      });
+    }
+
+    // Now attach the main listener
+    this.listener = this.rawListener = function () {
+      if (composing || !self._bound) {
+        return;
+      }
+      var val = number || isRange ? toNumber(el.value) : el.value;
+      self.set(val);
+      // force update on next tick to avoid lock & same value
+      // also only update when user is not typing
+      nextTick(function () {
+        if (self._bound && !self.focused) {
+          self.update(self._watcher.value);
+        }
+      });
+    };
+
+    // apply debounce
+    if (debounce) {
+      this.listener = _debounce(this.listener, debounce);
+    }
+
+    // Support jQuery events, since jQuery.trigger() doesn't
+    // trigger native events in some cases and some plugins
+    // rely on $.trigger()
+    //
+    // We want to make sure if a listener is attached using
+    // jQuery, it is also removed with jQuery, that's why
+    // we do the check for each directive instance and
+    // store that check result on itself. This also allows
+    // easier test coverage control by unsetting the global
+    // jQuery variable in tests.
+    this.hasjQuery = typeof jQuery === 'function';
+    if (this.hasjQuery) {
+      jQuery(el).on('change', this.listener);
+      if (!lazy) {
+        jQuery(el).on('input', this.listener);
+      }
+    } else {
+      this.on('change', this.listener);
+      if (!lazy) {
+        this.on('input', this.listener);
+      }
+    }
+
+    // IE9 doesn't fire input event on backspace/del/cut
+    if (!lazy && isIE9) {
+      this.on('cut', function () {
+        nextTick(self.listener);
+      });
+      this.on('keyup', function (e) {
+        if (e.keyCode === 46 || e.keyCode === 8) {
+          self.listener();
+        }
+      });
+    }
+
+    // set initial value if present
+    if (el.hasAttribute('value') || el.tagName === 'TEXTAREA' && el.value.trim()) {
+      this.afterBind = this.listener;
+    }
+  },
+
+  update: function update(value) {
+    this.el.value = _toString(value);
+  },
+
+  unbind: function unbind() {
+    var el = this.el;
+    if (this.hasjQuery) {
+      jQuery(el).off('change', this.listener);
+      jQuery(el).off('input', this.listener);
+    }
+  }
+};
+
+var handlers = {
+  text: text$2,
+  radio: radio,
+  select: select,
+  checkbox: checkbox
+};
+
+var model = {
+
+  priority: MODEL,
+  twoWay: true,
+  handlers: handlers,
+  params: ['lazy', 'number', 'debounce'],
+
+  /**
+   * Possible elements:
+   *   <select>
+   *   <textarea>
+   *   <input type="*">
+   *     - text
+   *     - checkbox
+   *     - radio
+   *     - number
+   */
+
+  bind: function bind() {
+    // friendly warning...
+    this.checkFilters();
+    if (this.hasRead && !this.hasWrite) {
+      process.env.NODE_ENV !== 'production' && warn('It seems you are using a read-only filter with ' + 'v-model. You might want to use a two-way filter ' + 'to ensure correct behavior.');
+    }
+    var el = this.el;
+    var tag = el.tagName;
+    var handler;
+    if (tag === 'INPUT') {
+      handler = handlers[el.type] || handlers.text;
+    } else if (tag === 'SELECT') {
+      handler = handlers.select;
+    } else if (tag === 'TEXTAREA') {
+      handler = handlers.text;
+    } else {
+      process.env.NODE_ENV !== 'production' && warn('v-model does not support element type: ' + tag);
+      return;
+    }
+    el.__v_model = this;
+    handler.bind.call(this);
+    this.update = handler.update;
+    this._unbind = handler.unbind;
+  },
+
+  /**
+   * Check read/write filter stats.
+   */
+
+  checkFilters: function checkFilters() {
+    var filters = this.filters;
+    if (!filters) return;
+    var i = filters.length;
+    while (i--) {
+      var filter = resolveAsset(this.vm.$options, 'filters', filters[i].name);
+      if (typeof filter === 'function' || filter.read) {
+        this.hasRead = true;
+      }
+      if (filter.write) {
+        this.hasWrite = true;
+      }
+    }
+  },
+
+  unbind: function unbind() {
+    this.el.__v_model = null;
+    this._unbind && this._unbind();
+  }
+};
+
+var show = {
+
+  bind: function bind() {
+    // check else block
+    var next = this.el.nextElementSibling;
+    if (next && getAttr(next, 'v-else') !== null) {
+      this.elseEl = next;
+    }
+  },
+
+  update: function update(value) {
+    this.apply(this.el, value);
+    if (this.elseEl) {
+      this.apply(this.elseEl, !value);
+    }
+  },
+
+  apply: function apply(el, value) {
+    if (inDoc(el)) {
+      applyTransition(el, value ? 1 : -1, toggle, this.vm);
+    } else {
+      toggle();
+    }
+    function toggle() {
+      el.style.display = value ? '' : 'none';
+    }
+  }
+};
+
+var templateCache = new Cache(1000);
+var idSelectorCache = new Cache(1000);
+
+var map = {
+  efault: [0, '', ''],
+  legend: [1, '<fieldset>', '</fieldset>'],
+  tr: [2, '<table><tbody>', '</tbody></table>'],
+  col: [2, '<table><tbody></tbody><colgroup>', '</colgroup></table>']
+};
+
+map.td = map.th = [3, '<table><tbody><tr>', '</tr></tbody></table>'];
+
+map.option = map.optgroup = [1, '<select multiple="multiple">', '</select>'];
+
+map.thead = map.tbody = map.colgroup = map.caption = map.tfoot = [1, '<table>', '</table>'];
+
+map.g = map.defs = map.symbol = map.use = map.image = map.text = map.circle = map.ellipse = map.line = map.path = map.polygon = map.polyline = map.rect = [1, '<svg ' + 'xmlns="http://www.w3.org/2000/svg" ' + 'xmlns:xlink="http://www.w3.org/1999/xlink" ' + 'xmlns:ev="http://www.w3.org/2001/xml-events"' + 'version="1.1">', '</svg>'];
+
+/**
+ * Check if a node is a supported template node with a
+ * DocumentFragment content.
+ *
+ * @param {Node} node
+ * @return {Boolean}
+ */
+
+function isRealTemplate(node) {
+  return isTemplate(node) && node.content instanceof DocumentFragment;
+}
+
+var tagRE$1 = /<([\w:]+)/;
+var entityRE = /&#?\w+?;/;
+
+/**
+ * Convert a string template to a DocumentFragment.
+ * Determines correct wrapping by tag types. Wrapping
+ * strategy found in jQuery & component/domify.
+ *
+ * @param {String} templateString
+ * @param {Boolean} raw
+ * @return {DocumentFragment}
+ */
+
+function stringToFragment(templateString, raw) {
+  // try a cache hit first
+  var hit = templateCache.get(templateString);
+  if (hit) {
+    return hit;
+  }
+
+  var frag = document.createDocumentFragment();
+  var tagMatch = templateString.match(tagRE$1);
+  var entityMatch = entityRE.test(templateString);
+
+  if (!tagMatch && !entityMatch) {
+    // text only, return a single text node.
+    frag.appendChild(document.createTextNode(templateString));
+  } else {
+
+    var tag = tagMatch && tagMatch[1];
+    var wrap = map[tag] || map.efault;
+    var depth = wrap[0];
+    var prefix = wrap[1];
+    var suffix = wrap[2];
+    var node = document.createElement('div');
+
+    if (!raw) {
+      templateString = templateString.trim();
+    }
+    node.innerHTML = prefix + templateString + suffix;
+    while (depth--) {
+      node = node.lastChild;
+    }
+
+    var child;
+    /* eslint-disable no-cond-assign */
+    while (child = node.firstChild) {
+      /* eslint-enable no-cond-assign */
+      frag.appendChild(child);
+    }
+  }
+
+  templateCache.put(templateString, frag);
+  return frag;
+}
+
+/**
+ * Convert a template node to a DocumentFragment.
+ *
+ * @param {Node} node
+ * @return {DocumentFragment}
+ */
+
+function nodeToFragment(node) {
+  // if its a template tag and the browser supports it,
+  // its content is already a document fragment.
+  if (isRealTemplate(node)) {
+    trimNode(node.content);
+    return node.content;
+  }
+  // script template
+  if (node.tagName === 'SCRIPT') {
+    return stringToFragment(node.textContent);
+  }
+  // normal node, clone it to avoid mutating the original
+  var clonedNode = cloneNode(node);
+  var frag = document.createDocumentFragment();
+  var child;
+  /* eslint-disable no-cond-assign */
+  while (child = clonedNode.firstChild) {
+    /* eslint-enable no-cond-assign */
+    frag.appendChild(child);
+  }
+  trimNode(frag);
+  return frag;
+}
+
+// Test for the presence of the Safari template cloning bug
+// https://bugs.webkit.org/showug.cgi?id=137755
+var hasBrokenTemplate = (function () {
+  /* istanbul ignore else */
+  if (inBrowser) {
+    var a = document.createElement('div');
+    a.innerHTML = '<template>1</template>';
+    return !a.cloneNode(true).firstChild.innerHTML;
+  } else {
+    return false;
+  }
+})();
+
+// Test for IE10/11 textarea placeholder clone bug
+var hasTextareaCloneBug = (function () {
+  /* istanbul ignore else */
+  if (inBrowser) {
+    var t = document.createElement('textarea');
+    t.placeholder = 't';
+    return t.cloneNode(true).value === 't';
+  } else {
+    return false;
+  }
+})();
+
+/**
+ * 1. Deal with Safari cloning nested <template> bug by
+ *    manually cloning all template instances.
+ * 2. Deal with IE10/11 textarea placeholder bug by setting
+ *    the correct value after cloning.
+ *
+ * @param {Element|DocumentFragment} node
+ * @return {Element|DocumentFragment}
+ */
+
+function cloneNode(node) {
+  if (!node.querySelectorAll) {
+    return node.cloneNode();
+  }
+  var res = node.cloneNode(true);
+  var i, original, cloned;
+  /* istanbul ignore if */
+  if (hasBrokenTemplate) {
+    var tempClone = res;
+    if (isRealTemplate(node)) {
+      node = node.content;
+      tempClone = res.content;
+    }
+    original = node.querySelectorAll('template');
+    if (original.length) {
+      cloned = tempClone.querySelectorAll('template');
+      i = cloned.length;
+      while (i--) {
+        cloned[i].parentNode.replaceChild(cloneNode(original[i]), cloned[i]);
+      }
+    }
+  }
+  /* istanbul ignore if */
+  if (hasTextareaCloneBug) {
+    if (node.tagName === 'TEXTAREA') {
+      res.value = node.value;
+    } else {
+      original = node.querySelectorAll('textarea');
+      if (original.length) {
+        cloned = res.querySelectorAll('textarea');
+        i = cloned.length;
+        while (i--) {
+          cloned[i].value = original[i].value;
+        }
+      }
+    }
+  }
+  return res;
+}
+
+/**
+ * Process the template option and normalizes it into a
+ * a DocumentFragment that can be used as a partial or a
+ * instance template.
+ *
+ * @param {*} template
+ *        Possible values include:
+ *        - DocumentFragment object
+ *        - Node object of type Template
+ *        - id selector: '#some-template-id'
+ *        - template string: '<div><span>{{msg}}</span></div>'
+ * @param {Boolean} shouldClone
+ * @param {Boolean} raw
+ *        inline HTML interpolation. Do not check for id
+ *        selector and keep whitespace in the string.
+ * @return {DocumentFragment|undefined}
+ */
+
+function parseTemplate(template, shouldClone, raw) {
+  var node, frag;
+
+  // if the template is already a document fragment,
+  // do nothing
+  if (template instanceof DocumentFragment) {
+    trimNode(template);
+    return shouldClone ? cloneNode(template) : template;
+  }
+
+  if (typeof template === 'string') {
+    // id selector
+    if (!raw && template.charAt(0) === '#') {
+      // id selector can be cached too
+      frag = idSelectorCache.get(template);
+      if (!frag) {
+        node = document.getElementById(template.slice(1));
+        if (node) {
+          frag = nodeToFragment(node);
+          // save selector to cache
+          idSelectorCache.put(template, frag);
+        }
+      }
+    } else {
+      // normal string template
+      frag = stringToFragment(template, raw);
+    }
+  } else if (template.nodeType) {
+    // a direct node
+    frag = nodeToFragment(template);
+  }
+
+  return frag && shouldClone ? cloneNode(frag) : frag;
+}
+
+var template = Object.freeze({
+  cloneNode: cloneNode,
+  parseTemplate: parseTemplate
+});
+
+/**
+ * Abstraction for a partially-compiled fragment.
+ * Can optionally compile content with a child scope.
+ *
+ * @param {Function} linker
+ * @param {Vue} vm
+ * @param {DocumentFragment} frag
+ * @param {Vue} [host]
+ * @param {Object} [scope]
+ */
+function Fragment(linker, vm, frag, host, scope, parentFrag) {
+  this.children = [];
+  this.childFrags = [];
+  this.vm = vm;
+  this.scope = scope;
+  this.inserted = false;
+  this.parentFrag = parentFrag;
+  if (parentFrag) {
+    parentFrag.childFrags.push(this);
+  }
+  this.unlink = linker(vm, frag, host, scope, this);
+  var single = this.single = frag.childNodes.length === 1 &&
+  // do not go single mode if the only node is an anchor
+  !frag.childNodes[0].__vue_anchor;
+  if (single) {
+    this.node = frag.childNodes[0];
+    this.before = singleBefore;
+    this.remove = singleRemove;
+  } else {
+    this.node = createAnchor('fragment-start');
+    this.end = createAnchor('fragment-end');
+    this.frag = frag;
+    prepend(this.node, frag);
+    frag.appendChild(this.end);
+    this.before = multiBefore;
+    this.remove = multiRemove;
+  }
+  this.node.__vfrag__ = this;
+}
+
+/**
+ * Call attach/detach for all components contained within
+ * this fragment. Also do so recursively for all child
+ * fragments.
+ *
+ * @param {Function} hook
+ */
+
+Fragment.prototype.callHook = function (hook) {
+  var i, l;
+  for (i = 0, l = this.children.length; i < l; i++) {
+    hook(this.children[i]);
+  }
+  for (i = 0, l = this.childFrags.length; i < l; i++) {
+    this.childFrags[i].callHook(hook);
+  }
+};
+
+/**
+ * Destroy the fragment.
+ */
+
+Fragment.prototype.destroy = function () {
+  if (this.parentFrag) {
+    this.parentFrag.childFrags.$remove(this);
+  }
+  this.unlink();
+};
+
+/**
+ * Insert fragment before target, single node version
+ *
+ * @param {Node} target
+ * @param {Boolean} withTransition
+ */
+
+function singleBefore(target, withTransition) {
+  this.inserted = true;
+  var method = withTransition !== false ? beforeWithTransition : before;
+  method(this.node, target, this.vm);
+  if (inDoc(this.node)) {
+    this.callHook(attach);
+  }
+}
+
+/**
+ * Remove fragment, single node version
+ */
+
+function singleRemove() {
+  this.inserted = false;
+  var shouldCallRemove = inDoc(this.node);
+  var self = this;
+  self.callHook(destroyChild);
+  removeWithTransition(this.node, this.vm, function () {
+    if (shouldCallRemove) {
+      self.callHook(detach);
+    }
+    self.destroy();
+  });
+}
+
+/**
+ * Insert fragment before target, multi-nodes version
+ *
+ * @param {Node} target
+ * @param {Boolean} withTransition
+ */
+
+function multiBefore(target, withTransition) {
+  this.inserted = true;
+  var vm = this.vm;
+  var method = withTransition !== false ? beforeWithTransition : before;
+  mapNodeRange(this.node, this.end, function (node) {
+    method(node, target, vm);
+  });
+  if (inDoc(this.node)) {
+    this.callHook(attach);
+  }
+}
+
+/**
+ * Remove fragment, multi-nodes version
+ */
+
+function multiRemove() {
+  this.inserted = false;
+  var self = this;
+  var shouldCallRemove = inDoc(this.node);
+  self.callHook(destroyChild);
+  removeNodeRange(this.node, this.end, this.vm, this.frag, function () {
+    if (shouldCallRemove) {
+      self.callHook(detach);
+    }
+    self.destroy();
+  });
+}
+
+/**
+ * Call attach hook for a Vue instance.
+ *
+ * @param {Vue} child
+ */
+
+function attach(child) {
+  if (!child._isAttached) {
+    child._callHook('attached');
+  }
+}
+
+/**
+ * Call destroy for all contained instances,
+ * with remove:false and defer:true.
+ * Defer is necessary because we need to
+ * keep the children to call detach hooks
+ * on them.
+ *
+ * @param {Vue} child
+ */
+
+function destroyChild(child) {
+  child.$destroy(false, true);
+}
+
+/**
+ * Call detach hook for a Vue instance.
+ *
+ * @param {Vue} child
+ */
+
+function detach(child) {
+  if (child._isAttached) {
+    child._callHook('detached');
+  }
+}
+
+var linkerCache = new Cache(5000);
+
+/**
+ * A factory that can be used to create instances of a
+ * fragment. Caches the compiled linker if possible.
+ *
+ * @param {Vue} vm
+ * @param {Element|String} el
+ */
+function FragmentFactory(vm, el) {
+  this.vm = vm;
+  var template;
+  var isString = typeof el === 'string';
+  if (isString || isTemplate(el)) {
+    template = parseTemplate(el, true);
+  } else {
+    template = document.createDocumentFragment();
+    template.appendChild(el);
+  }
+  this.template = template;
+  // linker can be cached, but only for components
+  var linker;
+  var cid = vm.constructor.cid;
+  if (cid > 0) {
+    var cacheId = cid + (isString ? el : el.outerHTML);
+    linker = linkerCache.get(cacheId);
+    if (!linker) {
+      linker = compile(template, vm.$options, true);
+      linkerCache.put(cacheId, linker);
+    }
+  } else {
+    linker = compile(template, vm.$options, true);
+  }
+  this.linker = linker;
+}
+
+/**
+ * Create a fragment instance with given host and scope.
+ *
+ * @param {Vue} host
+ * @param {Object} scope
+ * @param {Fragment} parentFrag
+ */
+
+FragmentFactory.prototype.create = function (host, scope, parentFrag) {
+  var frag = cloneNode(this.template);
+  return new Fragment(this.linker, this.vm, frag, host, scope, parentFrag);
+};
+
+var vIf = {
+
+  priority: IF,
+
+  bind: function bind() {
+    var el = this.el;
+    if (!el.__vue__) {
+      // check else block
+      var next = el.nextElementSibling;
+      if (next && getAttr(next, 'v-else') !== null) {
+        remove(next);
+        this.elseFactory = new FragmentFactory(this.vm, next);
+      }
+      // check main block
+      this.anchor = createAnchor('v-if');
+      replace(el, this.anchor);
+      this.factory = new FragmentFactory(this.vm, el);
+    } else {
+      process.env.NODE_ENV !== 'production' && warn('v-if="' + this.expression + '" cannot be ' + 'used on an instance root element.');
+      this.invalid = true;
+    }
+  },
+
+  update: function update(value) {
+    if (this.invalid) return;
+    if (value) {
+      if (!this.frag) {
+        this.insert();
+      }
+    } else {
+      this.remove();
+    }
+  },
+
+  insert: function insert() {
+    if (this.elseFrag) {
+      this.elseFrag.remove();
+      this.elseFrag = null;
+    }
+    this.frag = this.factory.create(this._host, this._scope, this._frag);
+    this.frag.before(this.anchor);
+  },
+
+  remove: function remove() {
+    if (this.frag) {
+      this.frag.remove();
+      this.frag = null;
+    }
+    if (this.elseFactory && !this.elseFrag) {
+      this.elseFrag = this.elseFactory.create(this._host, this._scope, this._frag);
+      this.elseFrag.before(this.anchor);
+    }
+  },
+
+  unbind: function unbind() {
+    if (this.frag) {
+      this.frag.destroy();
+    }
+  }
+};
+
+var uid$1 = 0;
+
+var vFor = {
+
+  priority: FOR,
+
+  params: ['track-by', 'stagger', 'enter-stagger', 'leave-stagger'],
+
+  bind: function bind() {
+    // support "item in items" syntax
+    var inMatch = this.expression.match(/(.*) in (.*)/);
+    if (inMatch) {
+      var itMatch = inMatch[1].match(/\((.*),(.*)\)/);
+      if (itMatch) {
+        this.iterator = itMatch[1].trim();
+        this.alias = itMatch[2].trim();
+      } else {
+        this.alias = inMatch[1].trim();
+      }
+      this.expression = inMatch[2];
+    }
+
+    if (!this.alias) {
+      process.env.NODE_ENV !== 'production' && warn('Alias is required in v-for.');
+      return;
+    }
+
+    // uid as a cache identifier
+    this.id = '__v-for__' + ++uid$1;
+
+    // check if this is an option list,
+    // so that we know if we need to update the <select>'s
+    // v-model when the option list has changed.
+    // because v-model has a lower priority than v-for,
+    // the v-model is not bound here yet, so we have to
+    // retrive it in the actual updateModel() function.
+    var tag = this.el.tagName;
+    this.isOption = (tag === 'OPTION' || tag === 'OPTGROUP') && this.el.parentNode.tagName === 'SELECT';
+
+    // setup anchor nodes
+    this.start = createAnchor('v-for-start');
+    this.end = createAnchor('v-for-end');
+    replace(this.el, this.end);
+    before(this.start, this.end);
+
+    // cache
+    this.cache = Object.create(null);
+
+    // fragment factory
+    this.factory = new FragmentFactory(this.vm, this.el);
+  },
+
+  update: function update(data) {
+    this.diff(data);
+    this.updateRef();
+    this.updateModel();
+  },
+
+  /**
+   * Diff, based on new data and old data, determine the
+   * minimum amount of DOM manipulations needed to make the
+   * DOM reflect the new data Array.
+   *
+   * The algorithm diffs the new data Array by storing a
+   * hidden reference to an owner vm instance on previously
+   * seen data. This allows us to achieve O(n) which is
+   * better than a levenshtein distance based algorithm,
+   * which is O(m * n).
+   *
+   * @param {Array} data
+   */
+
+  diff: function diff(data) {
+    // check if the Array was converted from an Object
+    var item = data[0];
+    var convertedFromObject = this.fromObject = isObject(item) && hasOwn(item, '$key') && hasOwn(item, '$value');
+
+    var trackByKey = this.params.trackBy;
+    var oldFrags = this.frags;
+    var frags = this.frags = new Array(data.length);
+    var alias = this.alias;
+    var iterator = this.iterator;
+    var start = this.start;
+    var end = this.end;
+    var inDocument = inDoc(start);
+    var init = !oldFrags;
+    var i, l, frag, key, value, primitive;
+
+    // First pass, go through the new Array and fill up
+    // the new frags array. If a piece of data has a cached
+    // instance for it, we reuse it. Otherwise build a new
+    // instance.
+    for (i = 0, l = data.length; i < l; i++) {
+      item = data[i];
+      key = convertedFromObject ? item.$key : null;
+      value = convertedFromObject ? item.$value : item;
+      primitive = !isObject(value);
+      frag = !init && this.getCachedFrag(value, i, key);
+      if (frag) {
+        // reusable fragment
+        frag.reused = true;
+        // update $index
+        frag.scope.$index = i;
+        // update $key
+        if (key) {
+          frag.scope.$key = key;
+        }
+        // update iterator
+        if (iterator) {
+          frag.scope[iterator] = key !== null ? key : i;
+        }
+        // update data for track-by, object repeat &
+        // primitive values.
+        if (trackByKey || convertedFromObject || primitive) {
+          frag.scope[alias] = value;
+        }
+      } else {
+        // new isntance
+        frag = this.create(value, alias, i, key);
+        frag.fresh = !init;
+      }
+      frags[i] = frag;
+      if (init) {
+        frag.before(end);
+      }
+    }
+
+    // we're done for the initial render.
+    if (init) {
+      return;
+    }
+
+    // Second pass, go through the old fragments and
+    // destroy those who are not reused (and remove them
+    // from cache)
+    var removalIndex = 0;
+    var totalRemoved = oldFrags.length - frags.length;
+    for (i = 0, l = oldFrags.length; i < l; i++) {
+      frag = oldFrags[i];
+      if (!frag.reused) {
+        this.deleteCachedFrag(frag);
+        this.remove(frag, removalIndex++, totalRemoved, inDocument);
+      }
+    }
+
+    // Final pass, move/insert new fragments into the
+    // right place.
+    var targetPrev, prevEl, currentPrev;
+    var insertionIndex = 0;
+    for (i = 0, l = frags.length; i < l; i++) {
+      frag = frags[i];
+      // this is the frag that we should be after
+      targetPrev = frags[i - 1];
+      prevEl = targetPrev ? targetPrev.staggerCb ? targetPrev.staggerAnchor : targetPrev.end || targetPrev.node : start;
+      if (frag.reused && !frag.staggerCb) {
+        currentPrev = findPrevFrag(frag, start, this.id);
+        if (currentPrev !== targetPrev && (!currentPrev ||
+        // optimization for moving a single item.
+        // thanks to suggestions by @livoras in #1807
+        findPrevFrag(currentPrev, start, this.id) !== targetPrev)) {
+          this.move(frag, prevEl);
+        }
+      } else {
+        // new instance, or still in stagger.
+        // insert with updated stagger index.
+        this.insert(frag, insertionIndex++, prevEl, inDocument);
+      }
+      frag.reused = frag.fresh = false;
+    }
+  },
+
+  /**
+   * Create a new fragment instance.
+   *
+   * @param {*} value
+   * @param {String} alias
+   * @param {Number} index
+   * @param {String} [key]
+   * @return {Fragment}
+   */
+
+  create: function create(value, alias, index, key) {
+    var host = this._host;
+    // create iteration scope
+    var parentScope = this._scope || this.vm;
+    var scope = Object.create(parentScope);
+    // ref holder for the scope
+    scope.$refs = Object.create(parentScope.$refs);
+    scope.$els = Object.create(parentScope.$els);
+    // make sure point $parent to parent scope
+    scope.$parent = parentScope;
+    // for two-way binding on alias
+    scope.$forContext = this;
+    // define scope properties
+    defineReactive(scope, alias, value);
+    defineReactive(scope, '$index', index);
+    if (key) {
+      defineReactive(scope, '$key', key);
+    } else if (scope.$key) {
+      // avoid accidental fallback
+      def(scope, '$key', null);
+    }
+    if (this.iterator) {
+      defineReactive(scope, this.iterator, key !== null ? key : index);
+    }
+    var frag = this.factory.create(host, scope, this._frag);
+    frag.forId = this.id;
+    this.cacheFrag(value, frag, index, key);
+    return frag;
+  },
+
+  /**
+   * Update the v-ref on owner vm.
+   */
+
+  updateRef: function updateRef() {
+    var ref = this.descriptor.ref;
+    if (!ref) return;
+    var hash = (this._scope || this.vm).$refs;
+    var refs;
+    if (!this.fromObject) {
+      refs = this.frags.map(findVmFromFrag);
+    } else {
+      refs = {};
+      this.frags.forEach(function (frag) {
+        refs[frag.scope.$key] = findVmFromFrag(frag);
+      });
+    }
+    hash[ref] = refs;
+  },
+
+  /**
+   * For option lists, update the containing v-model on
+   * parent <select>.
+   */
+
+  updateModel: function updateModel() {
+    if (this.isOption) {
+      var parent = this.start.parentNode;
+      var model = parent && parent.__v_model;
+      if (model) {
+        model.forceUpdate();
+      }
+    }
+  },
+
+  /**
+   * Insert a fragment. Handles staggering.
+   *
+   * @param {Fragment} frag
+   * @param {Number} index
+   * @param {Node} prevEl
+   * @param {Boolean} inDocument
+   */
+
+  insert: function insert(frag, index, prevEl, inDocument) {
+    if (frag.staggerCb) {
+      frag.staggerCb.cancel();
+      frag.staggerCb = null;
+    }
+    var staggerAmount = this.getStagger(frag, index, null, 'enter');
+    if (inDocument && staggerAmount) {
+      // create an anchor and insert it synchronously,
+      // so that we can resolve the correct order without
+      // worrying about some elements not inserted yet
+      var anchor = frag.staggerAnchor;
+      if (!anchor) {
+        anchor = frag.staggerAnchor = createAnchor('stagger-anchor');
+        anchor.__vfrag__ = frag;
+      }
+      after(anchor, prevEl);
+      var op = frag.staggerCb = cancellable(function () {
+        frag.staggerCb = null;
+        frag.before(anchor);
+        remove(anchor);
+      });
+      setTimeout(op, staggerAmount);
+    } else {
+      frag.before(prevEl.nextSibling);
+    }
+  },
+
+  /**
+   * Remove a fragment. Handles staggering.
+   *
+   * @param {Fragment} frag
+   * @param {Number} index
+   * @param {Number} total
+   * @param {Boolean} inDocument
+   */
+
+  remove: function remove(frag, index, total, inDocument) {
+    if (frag.staggerCb) {
+      frag.staggerCb.cancel();
+      frag.staggerCb = null;
+      // it's not possible for the same frag to be removed
+      // twice, so if we have a pending stagger callback,
+      // it means this frag is queued for enter but removed
+      // before its transition started. Since it is already
+      // destroyed, we can just leave it in detached state.
+      return;
+    }
+    var staggerAmount = this.getStagger(frag, index, total, 'leave');
+    if (inDocument && staggerAmount) {
+      var op = frag.staggerCb = cancellable(function () {
+        frag.staggerCb = null;
+        frag.remove();
+      });
+      setTimeout(op, staggerAmount);
+    } else {
+      frag.remove();
+    }
+  },
+
+  /**
+   * Move a fragment to a new position.
+   * Force no transition.
+   *
+   * @param {Fragment} frag
+   * @param {Node} prevEl
+   */
+
+  move: function move(frag, prevEl) {
+    frag.before(prevEl.nextSibling, false);
+  },
+
+  /**
+   * Cache a fragment using track-by or the object key.
+   *
+   * @param {*} value
+   * @param {Fragment} frag
+   * @param {Number} index
+   * @param {String} [key]
+   */
+
+  cacheFrag: function cacheFrag(value, frag, index, key) {
+    var trackByKey = this.params.trackBy;
+    var cache = this.cache;
+    var primitive = !isObject(value);
+    var id;
+    if (key || trackByKey || primitive) {
+      id = trackByKey ? trackByKey === '$index' ? index : value[trackByKey] : key || value;
+      if (!cache[id]) {
+        cache[id] = frag;
+      } else if (trackByKey !== '$index') {
+        process.env.NODE_ENV !== 'production' && this.warnDuplicate(value);
+      }
+    } else {
+      id = this.id;
+      if (hasOwn(value, id)) {
+        if (value[id] === null) {
+          value[id] = frag;
+        } else {
+          process.env.NODE_ENV !== 'production' && this.warnDuplicate(value);
+        }
+      } else {
+        def(value, id, frag);
+      }
+    }
+    frag.raw = value;
+  },
+
+  /**
+   * Get a cached fragment from the value/index/key
+   *
+   * @param {*} value
+   * @param {Number} index
+   * @param {String} key
+   * @return {Fragment}
+   */
+
+  getCachedFrag: function getCachedFrag(value, index, key) {
+    var trackByKey = this.params.trackBy;
+    var primitive = !isObject(value);
+    var frag;
+    if (key || trackByKey || primitive) {
+      var id = trackByKey ? trackByKey === '$index' ? index : value[trackByKey] : key || value;
+      frag = this.cache[id];
+    } else {
+      frag = value[this.id];
+    }
+    if (frag && (frag.reused || frag.fresh)) {
+      process.env.NODE_ENV !== 'production' && this.warnDuplicate(value);
+    }
+    return frag;
+  },
+
+  /**
+   * Delete a fragment from cache.
+   *
+   * @param {Fragment} frag
+   */
+
+  deleteCachedFrag: function deleteCachedFrag(frag) {
+    var value = frag.raw;
+    var trackByKey = this.params.trackBy;
+    var scope = frag.scope;
+    var index = scope.$index;
+    // fix #948: avoid accidentally fall through to
+    // a parent repeater which happens to have $key.
+    var key = hasOwn(scope, '$key') && scope.$key;
+    var primitive = !isObject(value);
+    if (trackByKey || key || primitive) {
+      var id = trackByKey ? trackByKey === '$index' ? index : value[trackByKey] : key || value;
+      this.cache[id] = null;
+    } else {
+      value[this.id] = null;
+      frag.raw = null;
+    }
+  },
+
+  /**
+   * Get the stagger amount for an insertion/removal.
+   *
+   * @param {Fragment} frag
+   * @param {Number} index
+   * @param {Number} total
+   * @param {String} type
+   */
+
+  getStagger: function getStagger(frag, index, total, type) {
+    type = type + 'Stagger';
+    var trans = frag.node.__v_trans;
+    var hooks = trans && trans.hooks;
+    var hook = hooks && (hooks[type] || hooks.stagger);
+    return hook ? hook.call(frag, index, total) : index * parseInt(this.params[type] || this.params.stagger, 10);
+  },
+
+  /**
+   * Pre-process the value before piping it through the
+   * filters. This is passed to and called by the watcher.
+   */
+
+  _preProcess: function _preProcess(value) {
+    // regardless of type, store the un-filtered raw value.
+    this.rawValue = value;
+    return value;
+  },
+
+  /**
+   * Post-process the value after it has been piped through
+   * the filters. This is passed to and called by the watcher.
+   *
+   * It is necessary for this to be called during the
+   * wathcer's dependency collection phase because we want
+   * the v-for to update when the source Object is mutated.
+   */
+
+  _postProcess: function _postProcess(value) {
+    if (isArray(value)) {
+      return value;
+    } else if (isPlainObject(value)) {
+      // convert plain object to array.
+      var keys = Object.keys(value);
+      var i = keys.length;
+      var res = new Array(i);
+      var key;
+      while (i--) {
+        key = keys[i];
+        res[i] = {
+          $key: key,
+          $value: value[key]
+        };
+      }
+      return res;
+    } else {
+      if (typeof value === 'number') {
+        value = range(value);
+      }
+      return value || [];
+    }
+  },
+
+  unbind: function unbind() {
+    if (this.descriptor.ref) {
+      (this._scope || this.vm).$refs[this.descriptor.ref] = null;
+    }
+    if (this.frags) {
+      var i = this.frags.length;
+      var frag;
+      while (i--) {
+        frag = this.frags[i];
+        this.deleteCachedFrag(frag);
+        frag.destroy();
+      }
+    }
+  }
+};
+
+/**
+ * Helper to find the previous element that is a fragment
+ * anchor. This is necessary because a destroyed frag's
+ * element could still be lingering in the DOM before its
+ * leaving transition finishes, but its inserted flag
+ * should have been set to false so we can skip them.
+ *
+ * If this is a block repeat, we want to make sure we only
+ * return frag that is bound to this v-for. (see #929)
+ *
+ * @param {Fragment} frag
+ * @param {Comment|Text} anchor
+ * @param {String} id
+ * @return {Fragment}
+ */
+
+function findPrevFrag(frag, anchor, id) {
+  var el = frag.node.previousSibling;
+  /* istanbul ignore if */
+  if (!el) return;
+  frag = el.__vfrag__;
+  while ((!frag || frag.forId !== id || !frag.inserted) && el !== anchor) {
+    el = el.previousSibling;
+    /* istanbul ignore if */
+    if (!el) return;
+    frag = el.__vfrag__;
+  }
+  return frag;
+}
+
+/**
+ * Find a vm from a fragment.
+ *
+ * @param {Fragment} frag
+ * @return {Vue|undefined}
+ */
+
+function findVmFromFrag(frag) {
+  var node = frag.node;
+  // handle multi-node frag
+  if (frag.end) {
+    while (!node.__vue__ && node !== frag.end && node.nextSibling) {
+      node = node.nextSibling;
+    }
+  }
+  return node.__vue__;
+}
+
+/**
+ * Create a range array from given number.
+ *
+ * @param {Number} n
+ * @return {Array}
+ */
+
+function range(n) {
+  var i = -1;
+  var ret = new Array(n);
+  while (++i < n) {
+    ret[i] = i;
+  }
+  return ret;
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  vFor.warnDuplicate = function (value) {
+    warn('Duplicate value found in v-for="' + this.descriptor.raw + '": ' + JSON.stringify(value) + '. Use track-by="$index" if ' + 'you are expecting duplicate values.');
+  };
+}
+
+var html = {
+
+  bind: function bind() {
+    // a comment node means this is a binding for
+    // {{{ inline unescaped html }}}
+    if (this.el.nodeType === 8) {
+      // hold nodes
+      this.nodes = [];
+      // replace the placeholder with proper anchor
+      this.anchor = createAnchor('v-html');
+      replace(this.el, this.anchor);
+    }
+  },
+
+  update: function update(value) {
+    value = _toString(value);
+    if (this.nodes) {
+      this.swap(value);
+    } else {
+      this.el.innerHTML = value;
+    }
+  },
+
+  swap: function swap(value) {
+    // remove old nodes
+    var i = this.nodes.length;
+    while (i--) {
+      remove(this.nodes[i]);
+    }
+    // convert new value to a fragment
+    // do not attempt to retrieve from id selector
+    var frag = parseTemplate(value, true, true);
+    // save a reference to these nodes so we can remove later
+    this.nodes = toArray(frag.childNodes);
+    before(frag, this.anchor);
+  }
+};
+
+var text = {
+
+  bind: function bind() {
+    this.attr = this.el.nodeType === 3 ? 'data' : 'textContent';
+  },
+
+  update: function update(value) {
+    this.el[this.attr] = _toString(value);
+  }
+};
+
+// must export plain object
+var publicDirectives = {
+  text: text,
+  html: html,
+  'for': vFor,
+  'if': vIf,
+  show: show,
+  model: model,
+  on: on,
+  bind: bind,
+  el: el,
+  ref: ref,
+  cloak: cloak
+};
+
+var queue$1 = [];
+var queued = false;
+
+/**
+ * Push a job into the queue.
+ *
+ * @param {Function} job
+ */
+
+function pushJob(job) {
+  queue$1.push(job);
+  if (!queued) {
+    queued = true;
+    nextTick(flush);
+  }
+}
+
+/**
+ * Flush the queue, and do one forced reflow before
+ * triggering transitions.
+ */
+
+function flush() {
+  // Force layout
+  var f = document.documentElement.offsetHeight;
+  for (var i = 0; i < queue$1.length; i++) {
+    queue$1[i]();
+  }
+  queue$1 = [];
+  queued = false;
+  // dummy return, so js linters don't complain about
+  // unused variable f
+  return f;
+}
+
+var TYPE_TRANSITION = 1;
+var TYPE_ANIMATION = 2;
+var transDurationProp = transitionProp + 'Duration';
+var animDurationProp = animationProp + 'Duration';
+
+/**
+ * A Transition object that encapsulates the state and logic
+ * of the transition.
+ *
+ * @param {Element} el
+ * @param {String} id
+ * @param {Object} hooks
+ * @param {Vue} vm
+ */
+function Transition(el, id, hooks, vm) {
+  this.id = id;
+  this.el = el;
+  this.enterClass = id + '-enter';
+  this.leaveClass = id + '-leave';
+  this.hooks = hooks;
+  this.vm = vm;
+  // async state
+  this.pendingCssEvent = this.pendingCssCb = this.cancel = this.pendingJsCb = this.op = this.cb = null;
+  this.justEntered = false;
+  this.entered = this.left = false;
+  this.typeCache = {};
+  // bind
+  var self = this;['enterNextTick', 'enterDone', 'leaveNextTick', 'leaveDone'].forEach(function (m) {
+    self[m] = bind$1(self[m], self);
+  });
+}
+
+var p$1 = Transition.prototype;
+
+/**
+ * Start an entering transition.
+ *
+ * 1. enter transition triggered
+ * 2. call beforeEnter hook
+ * 3. add enter class
+ * 4. insert/show element
+ * 5. call enter hook (with possible explicit js callback)
+ * 6. reflow
+ * 7. based on transition type:
+ *    - transition:
+ *        remove class now, wait for transitionend,
+ *        then done if there's no explicit js callback.
+ *    - animation:
+ *        wait for animationend, remove class,
+ *        then done if there's no explicit js callback.
+ *    - no css transition:
+ *        done now if there's no explicit js callback.
+ * 8. wait for either done or js callback, then call
+ *    afterEnter hook.
+ *
+ * @param {Function} op - insert/show the element
+ * @param {Function} [cb]
+ */
+
+p$1.enter = function (op, cb) {
+  this.cancelPending();
+  this.callHook('beforeEnter');
+  this.cb = cb;
+  addClass(this.el, this.enterClass);
+  op();
+  this.entered = false;
+  this.callHookWithCb('enter');
+  if (this.entered) {
+    return; // user called done synchronously.
+  }
+  this.cancel = this.hooks && this.hooks.enterCancelled;
+  pushJob(this.enterNextTick);
+};
+
+/**
+ * The "nextTick" phase of an entering transition, which is
+ * to be pushed into a queue and executed after a reflow so
+ * that removing the class can trigger a CSS transition.
+ */
+
+p$1.enterNextTick = function () {
+
+  // Important hack:
+  // in Chrome, if a just-entered element is applied the
+  // leave class while its interpolated property still has
+  // a very small value (within one frame), Chrome will
+  // skip the leave transition entirely and not firing the
+  // transtionend event. Therefore we need to protected
+  // against such cases using a one-frame timeout.
+  this.justEntered = true;
+  var self = this;
+  setTimeout(function () {
+    self.justEntered = false;
+  }, 17);
+
+  var enterDone = this.enterDone;
+  var type = this.getCssTransitionType(this.enterClass);
+  if (!this.pendingJsCb) {
+    if (type === TYPE_TRANSITION) {
+      // trigger transition by removing enter class now
+      removeClass(this.el, this.enterClass);
+      this.setupCssCb(transitionEndEvent, enterDone);
+    } else if (type === TYPE_ANIMATION) {
+      this.setupCssCb(animationEndEvent, enterDone);
+    } else {
+      enterDone();
+    }
+  } else if (type === TYPE_TRANSITION) {
+    removeClass(this.el, this.enterClass);
+  }
+};
+
+/**
+ * The "cleanup" phase of an entering transition.
+ */
+
+p$1.enterDone = function () {
+  this.entered = true;
+  this.cancel = this.pendingJsCb = null;
+  removeClass(this.el, this.enterClass);
+  this.callHook('afterEnter');
+  if (this.cb) this.cb();
+};
+
+/**
+ * Start a leaving transition.
+ *
+ * 1. leave transition triggered.
+ * 2. call beforeLeave hook
+ * 3. add leave class (trigger css transition)
+ * 4. call leave hook (with possible explicit js callback)
+ * 5. reflow if no explicit js callback is provided
+ * 6. based on transition type:
+ *    - transition or animation:
+ *        wait for end event, remove class, then done if
+ *        there's no explicit js callback.
+ *    - no css transition:
+ *        done if there's no explicit js callback.
+ * 7. wait for either done or js callback, then call
+ *    afterLeave hook.
+ *
+ * @param {Function} op - remove/hide the element
+ * @param {Function} [cb]
+ */
+
+p$1.leave = function (op, cb) {
+  this.cancelPending();
+  this.callHook('beforeLeave');
+  this.op = op;
+  this.cb = cb;
+  addClass(this.el, this.leaveClass);
+  this.left = false;
+  this.callHookWithCb('leave');
+  if (this.left) {
+    return; // user called done synchronously.
+  }
+  this.cancel = this.hooks && this.hooks.leaveCancelled;
+  // only need to handle leaveDone if
+  // 1. the transition is already done (synchronously called
+  //    by the user, which causes this.op set to null)
+  // 2. there's no explicit js callback
+  if (this.op && !this.pendingJsCb) {
+    // if a CSS transition leaves immediately after enter,
+    // the transitionend event never fires. therefore we
+    // detect such cases and end the leave immediately.
+    if (this.justEntered) {
+      this.leaveDone();
+    } else {
+      pushJob(this.leaveNextTick);
+    }
+  }
+};
+
+/**
+ * The "nextTick" phase of a leaving transition.
+ */
+
+p$1.leaveNextTick = function () {
+  var type = this.getCssTransitionType(this.leaveClass);
+  if (type) {
+    var event = type === TYPE_TRANSITION ? transitionEndEvent : animationEndEvent;
+    this.setupCssCb(event, this.leaveDone);
+  } else {
+    this.leaveDone();
+  }
+};
+
+/**
+ * The "cleanup" phase of a leaving transition.
+ */
+
+p$1.leaveDone = function () {
+  this.left = true;
+  this.cancel = this.pendingJsCb = null;
+  this.op();
+  removeClass(this.el, this.leaveClass);
+  this.callHook('afterLeave');
+  if (this.cb) this.cb();
+  this.op = null;
+};
+
+/**
+ * Cancel any pending callbacks from a previously running
+ * but not finished transition.
+ */
+
+p$1.cancelPending = function () {
+  this.op = this.cb = null;
+  var hasPending = false;
+  if (this.pendingCssCb) {
+    hasPending = true;
+    off(this.el, this.pendingCssEvent, this.pendingCssCb);
+    this.pendingCssEvent = this.pendingCssCb = null;
+  }
+  if (this.pendingJsCb) {
+    hasPending = true;
+    this.pendingJsCb.cancel();
+    this.pendingJsCb = null;
+  }
+  if (hasPending) {
+    removeClass(this.el, this.enterClass);
+    removeClass(this.el, this.leaveClass);
+  }
+  if (this.cancel) {
+    this.cancel.call(this.vm, this.el);
+    this.cancel = null;
+  }
+};
+
+/**
+ * Call a user-provided synchronous hook function.
+ *
+ * @param {String} type
+ */
+
+p$1.callHook = function (type) {
+  if (this.hooks && this.hooks[type]) {
+    this.hooks[type].call(this.vm, this.el);
+  }
+};
+
+/**
+ * Call a user-provided, potentially-async hook function.
+ * We check for the length of arguments to see if the hook
+ * expects a `done` callback. If true, the transition's end
+ * will be determined by when the user calls that callback;
+ * otherwise, the end is determined by the CSS transition or
+ * animation.
+ *
+ * @param {String} type
+ */
+
+p$1.callHookWithCb = function (type) {
+  var hook = this.hooks && this.hooks[type];
+  if (hook) {
+    if (hook.length > 1) {
+      this.pendingJsCb = cancellable(this[type + 'Done']);
+    }
+    hook.call(this.vm, this.el, this.pendingJsCb);
+  }
+};
+
+/**
+ * Get an element's transition type based on the
+ * calculated styles.
+ *
+ * @param {String} className
+ * @return {Number}
+ */
+
+p$1.getCssTransitionType = function (className) {
+  /* istanbul ignore if */
+  if (!transitionEndEvent ||
+  // skip CSS transitions if page is not visible -
+  // this solves the issue of transitionend events not
+  // firing until the page is visible again.
+  // pageVisibility API is supported in IE10+, same as
+  // CSS transitions.
+  document.hidden ||
+  // explicit js-only transition
+  this.hooks && this.hooks.css === false ||
+  // element is hidden
+  isHidden(this.el)) {
+    return;
+  }
+  var type = this.typeCache[className];
+  if (type) return type;
+  var inlineStyles = this.el.style;
+  var computedStyles = window.getComputedStyle(this.el);
+  var transDuration = inlineStyles[transDurationProp] || computedStyles[transDurationProp];
+  if (transDuration && transDuration !== '0s') {
+    type = TYPE_TRANSITION;
+  } else {
+    var animDuration = inlineStyles[animDurationProp] || computedStyles[animDurationProp];
+    if (animDuration && animDuration !== '0s') {
+      type = TYPE_ANIMATION;
+    }
+  }
+  if (type) {
+    this.typeCache[className] = type;
+  }
+  return type;
+};
+
+/**
+ * Setup a CSS transitionend/animationend callback.
+ *
+ * @param {String} event
+ * @param {Function} cb
+ */
+
+p$1.setupCssCb = function (event, cb) {
+  this.pendingCssEvent = event;
+  var self = this;
+  var el = this.el;
+  var onEnd = this.pendingCssCb = function (e) {
+    if (e.target === el) {
+      off(el, event, onEnd);
+      self.pendingCssEvent = self.pendingCssCb = null;
+      if (!self.pendingJsCb && cb) {
+        cb();
+      }
+    }
+  };
+  on$1(el, event, onEnd);
+};
+
+/**
+ * Check if an element is hidden - in that case we can just
+ * skip the transition alltogether.
+ *
+ * @param {Element} el
+ * @return {Boolean}
+ */
+
+function isHidden(el) {
+  return !(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+}
+
+var transition = {
+
+  priority: TRANSITION,
+
+  update: function update(id, oldId) {
+    var el = this.el;
+    // resolve on owner vm
+    var hooks = resolveAsset(this.vm.$options, 'transitions', id);
+    id = id || 'v';
+    // apply on closest vm
+    el.__v_trans = new Transition(el, id, hooks, this.el.__vue__ || this.vm);
+    if (oldId) {
+      removeClass(el, oldId + '-transition');
+    }
+    addClass(el, id + '-transition');
+  }
+};
+
+var bindingModes = config._propBindingModes;
+
+var propDef = {
+
+  bind: function bind() {
+
+    var child = this.vm;
+    var parent = child._context;
+    // passed in from compiler directly
+    var prop = this.descriptor.prop;
+    var childKey = prop.path;
+    var parentKey = prop.parentPath;
+    var twoWay = prop.mode === bindingModes.TWO_WAY;
+
+    var parentWatcher = this.parentWatcher = new Watcher(parent, parentKey, function (val) {
+      val = coerceProp(prop, val);
+      if (assertProp(prop, val)) {
+        child[childKey] = val;
+      }
+    }, {
+      twoWay: twoWay,
+      filters: prop.filters,
+      // important: props need to be observed on the
+      // v-for scope if present
+      scope: this._scope
+    });
+
+    // set the child initial value.
+    initProp(child, prop, parentWatcher.value);
+
+    // setup two-way binding
+    if (twoWay) {
+      // important: defer the child watcher creation until
+      // the created hook (after data observation)
+      var self = this;
+      child.$once('pre-hook:created', function () {
+        self.childWatcher = new Watcher(child, childKey, function (val) {
+          parentWatcher.set(val);
+        }, {
+          // ensure sync upward before parent sync down.
+          // this is necessary in cases e.g. the child
+          // mutates a prop array, then replaces it. (#1683)
+          sync: true
+        });
+      });
+    }
+  },
+
+  unbind: function unbind() {
+    this.parentWatcher.teardown();
+    if (this.childWatcher) {
+      this.childWatcher.teardown();
+    }
+  }
+};
+
+var component = {
+
+  priority: COMPONENT,
+
+  params: ['keep-alive', 'transition-mode', 'inline-template'],
+
+  /**
+   * Setup. Two possible usages:
+   *
+   * - static:
+   *   <comp> or <div v-component="comp">
+   *
+   * - dynamic:
+   *   <component :is="view">
+   */
+
+  bind: function bind() {
+    if (!this.el.__vue__) {
+      // keep-alive cache
+      this.keepAlive = this.params.keepAlive;
+      if (this.keepAlive) {
+        this.cache = {};
+      }
+      // check inline-template
+      if (this.params.inlineTemplate) {
+        // extract inline template as a DocumentFragment
+        this.inlineTemplate = extractContent(this.el, true);
+      }
+      // component resolution related state
+      this.pendingComponentCb = this.Component = null;
+      // transition related state
+      this.pendingRemovals = 0;
+      this.pendingRemovalCb = null;
+      // create a ref anchor
+      this.anchor = createAnchor('v-component');
+      replace(this.el, this.anchor);
+      // remove is attribute.
+      // this is removed during compilation, but because compilation is
+      // cached, when the component is used elsewhere this attribute
+      // will remain at link time.
+      this.el.removeAttribute('is');
+      // remove ref, same as above
+      if (this.descriptor.ref) {
+        this.el.removeAttribute('v-ref:' + hyphenate(this.descriptor.ref));
+      }
+      // if static, build right now.
+      if (this.literal) {
+        this.setComponent(this.expression);
+      }
+    } else {
+      process.env.NODE_ENV !== 'production' && warn('cannot mount component "' + this.expression + '" ' + 'on already mounted element: ' + this.el);
+    }
+  },
+
+  /**
+   * Public update, called by the watcher in the dynamic
+   * literal scenario, e.g. <component :is="view">
+   */
+
+  update: function update(value) {
+    if (!this.literal) {
+      this.setComponent(value);
+    }
+  },
+
+  /**
+   * Switch dynamic components. May resolve the component
+   * asynchronously, and perform transition based on
+   * specified transition mode. Accepts a few additional
+   * arguments specifically for vue-router.
+   *
+   * The callback is called when the full transition is
+   * finished.
+   *
+   * @param {String} value
+   * @param {Function} [cb]
+   */
+
+  setComponent: function setComponent(value, cb) {
+    this.invalidatePending();
+    if (!value) {
+      // just remove current
+      this.unbuild(true);
+      this.remove(this.childVM, cb);
+      this.childVM = null;
+    } else {
+      var self = this;
+      this.resolveComponent(value, function () {
+        self.mountComponent(cb);
+      });
+    }
+  },
+
+  /**
+   * Resolve the component constructor to use when creating
+   * the child vm.
+   */
+
+  resolveComponent: function resolveComponent(id, cb) {
+    var self = this;
+    this.pendingComponentCb = cancellable(function (Component) {
+      self.ComponentName = Component.options.name || id;
+      self.Component = Component;
+      cb();
+    });
+    this.vm._resolveComponent(id, this.pendingComponentCb);
+  },
+
+  /**
+   * Create a new instance using the current constructor and
+   * replace the existing instance. This method doesn't care
+   * whether the new component and the old one are actually
+   * the same.
+   *
+   * @param {Function} [cb]
+   */
+
+  mountComponent: function mountComponent(cb) {
+    // actual mount
+    this.unbuild(true);
+    var self = this;
+    var activateHook = this.Component.options.activate;
+    var cached = this.getCached();
+    var newComponent = this.build();
+    if (activateHook && !cached) {
+      this.waitingFor = newComponent;
+      activateHook.call(newComponent, function () {
+        if (self.waitingFor !== newComponent) {
+          return;
+        }
+        self.waitingFor = null;
+        self.transition(newComponent, cb);
+      });
+    } else {
+      // update ref for kept-alive component
+      if (cached) {
+        newComponent._updateRef();
+      }
+      this.transition(newComponent, cb);
+    }
+  },
+
+  /**
+   * When the component changes or unbinds before an async
+   * constructor is resolved, we need to invalidate its
+   * pending callback.
+   */
+
+  invalidatePending: function invalidatePending() {
+    if (this.pendingComponentCb) {
+      this.pendingComponentCb.cancel();
+      this.pendingComponentCb = null;
+    }
+  },
+
+  /**
+   * Instantiate/insert a new child vm.
+   * If keep alive and has cached instance, insert that
+   * instance; otherwise build a new one and cache it.
+   *
+   * @param {Object} [extraOptions]
+   * @return {Vue} - the created instance
+   */
+
+  build: function build(extraOptions) {
+    var cached = this.getCached();
+    if (cached) {
+      return cached;
+    }
+    if (this.Component) {
+      // default options
+      var options = {
+        name: this.ComponentName,
+        el: cloneNode(this.el),
+        template: this.inlineTemplate,
+        // make sure to add the child with correct parent
+        // if this is a transcluded component, its parent
+        // should be the transclusion host.
+        parent: this._host || this.vm,
+        // if no inline-template, then the compiled
+        // linker can be cached for better performance.
+        _linkerCachable: !this.inlineTemplate,
+        _ref: this.descriptor.ref,
+        _asComponent: true,
+        _isRouterView: this._isRouterView,
+        // if this is a transcluded component, context
+        // will be the common parent vm of this instance
+        // and its host.
+        _context: this.vm,
+        // if this is inside an inline v-for, the scope
+        // will be the intermediate scope created for this
+        // repeat fragment. this is used for linking props
+        // and container directives.
+        _scope: this._scope,
+        // pass in the owner fragment of this component.
+        // this is necessary so that the fragment can keep
+        // track of its contained components in order to
+        // call attach/detach hooks for them.
+        _frag: this._frag
+      };
+      // extra options
+      // in 1.0.0 this is used by vue-router only
+      /* istanbul ignore if */
+      if (extraOptions) {
+        extend(options, extraOptions);
+      }
+      var child = new this.Component(options);
+      if (this.keepAlive) {
+        this.cache[this.Component.cid] = child;
+      }
+      /* istanbul ignore if */
+      if (process.env.NODE_ENV !== 'production' && this.el.hasAttribute('transition') && child._isFragment) {
+        warn('Transitions will not work on a fragment instance. ' + 'Template: ' + child.$options.template);
+      }
+      return child;
+    }
+  },
+
+  /**
+   * Try to get a cached instance of the current component.
+   *
+   * @return {Vue|undefined}
+   */
+
+  getCached: function getCached() {
+    return this.keepAlive && this.cache[this.Component.cid];
+  },
+
+  /**
+   * Teardown the current child, but defers cleanup so
+   * that we can separate the destroy and removal steps.
+   *
+   * @param {Boolean} defer
+   */
+
+  unbuild: function unbuild(defer) {
+    if (this.waitingFor) {
+      this.waitingFor.$destroy();
+      this.waitingFor = null;
+    }
+    var child = this.childVM;
+    if (!child || this.keepAlive) {
+      if (child) {
+        // remove ref
+        child._updateRef(true);
+      }
+      return;
+    }
+    // the sole purpose of `deferCleanup` is so that we can
+    // "deactivate" the vm right now and perform DOM removal
+    // later.
+    child.$destroy(false, defer);
+  },
+
+  /**
+   * Remove current destroyed child and manually do
+   * the cleanup after removal.
+   *
+   * @param {Function} cb
+   */
+
+  remove: function remove(child, cb) {
+    var keepAlive = this.keepAlive;
+    if (child) {
+      // we may have a component switch when a previous
+      // component is still being transitioned out.
+      // we want to trigger only one lastest insertion cb
+      // when the existing transition finishes. (#1119)
+      this.pendingRemovals++;
+      this.pendingRemovalCb = cb;
+      var self = this;
+      child.$remove(function () {
+        self.pendingRemovals--;
+        if (!keepAlive) child._cleanup();
+        if (!self.pendingRemovals && self.pendingRemovalCb) {
+          self.pendingRemovalCb();
+          self.pendingRemovalCb = null;
+        }
+      });
+    } else if (cb) {
+      cb();
+    }
+  },
+
+  /**
+   * Actually swap the components, depending on the
+   * transition mode. Defaults to simultaneous.
+   *
+   * @param {Vue} target
+   * @param {Function} [cb]
+   */
+
+  transition: function transition(target, cb) {
+    var self = this;
+    var current = this.childVM;
+    // for devtool inspection
+    if (process.env.NODE_ENV !== 'production') {
+      if (current) current._inactive = true;
+      target._inactive = false;
+    }
+    this.childVM = target;
+    switch (self.params.transitionMode) {
+      case 'in-out':
+        target.$before(self.anchor, function () {
+          self.remove(current, cb);
+        });
+        break;
+      case 'out-in':
+        self.remove(current, function () {
+          target.$before(self.anchor, cb);
+        });
+        break;
+      default:
+        self.remove(current);
+        target.$before(self.anchor, cb);
+    }
+  },
+
+  /**
+   * Unbind.
+   */
+
+  unbind: function unbind() {
+    this.invalidatePending();
+    // Do not defer cleanup when unbinding
+    this.unbuild();
+    // destroy all keep-alive cached instances
+    if (this.cache) {
+      for (var key in this.cache) {
+        this.cache[key].$destroy();
+      }
+      this.cache = null;
+    }
+  }
+};
+
+var vClass = {
+
+  deep: true,
+
+  update: function update(value) {
+    if (value && typeof value === 'string') {
+      this.handleObject(stringToObject(value));
+    } else if (isPlainObject(value)) {
+      this.handleObject(value);
+    } else if (isArray(value)) {
+      this.handleArray(value);
+    } else {
+      this.cleanup();
+    }
+  },
+
+  handleObject: function handleObject(value) {
+    this.cleanup(value);
+    var keys = this.prevKeys = Object.keys(value);
+    for (var i = 0, l = keys.length; i < l; i++) {
+      var key = keys[i];
+      if (value[key]) {
+        addClass(this.el, key);
+      } else {
+        removeClass(this.el, key);
+      }
+    }
+  },
+
+  handleArray: function handleArray(value) {
+    this.cleanup(value);
+    for (var i = 0, l = value.length; i < l; i++) {
+      if (value[i]) {
+        addClass(this.el, value[i]);
+      }
+    }
+    this.prevKeys = value.slice();
+  },
+
+  cleanup: function cleanup(value) {
+    if (this.prevKeys) {
+      var i = this.prevKeys.length;
+      while (i--) {
+        var key = this.prevKeys[i];
+        if (key && (!value || !contains$1(value, key))) {
+          removeClass(this.el, key);
+        }
+      }
+    }
+  }
+};
+
+function stringToObject(value) {
+  var res = {};
+  var keys = value.trim().split(/\s+/);
+  var i = keys.length;
+  while (i--) {
+    res[keys[i]] = true;
+  }
+  return res;
+}
+
+function contains$1(value, key) {
+  return isArray(value) ? value.indexOf(key) > -1 : hasOwn(value, key);
+}
+
+var internalDirectives = {
+  style: style,
+  'class': vClass,
+  component: component,
+  prop: propDef,
+  transition: transition
+};
+
+var propBindingModes = config._propBindingModes;
+var empty = {};
+
+// regexes
+var identRE$1 = /^[$_a-zA-Z]+[\w$]*$/;
+var settablePathRE = /^[A-Za-z_$][\w$]*(\.[A-Za-z_$][\w$]*|\[[^\[\]]+\])*$/;
+
+/**
+ * Compile props on a root element and return
+ * a props link function.
+ *
+ * @param {Element|DocumentFragment} el
+ * @param {Array} propOptions
+ * @return {Function} propsLinkFn
+ */
+
+function compileProps(el, propOptions) {
+  var props = [];
+  var names = Object.keys(propOptions);
+  var i = names.length;
+  var options, name, attr, value, path, parsed, prop;
+  while (i--) {
+    name = names[i];
+    options = propOptions[name] || empty;
+
+    if (process.env.NODE_ENV !== 'production' && name === '$data') {
+      warn('Do not use $data as prop.');
+      continue;
+    }
+
+    // props could contain dashes, which will be
+    // interpreted as minus calculations by the parser
+    // so we need to camelize the path here
+    path = camelize(name);
+    if (!identRE$1.test(path)) {
+      process.env.NODE_ENV !== 'production' && warn('Invalid prop key: "' + name + '". Prop keys ' + 'must be valid identifiers.');
+      continue;
+    }
+
+    prop = {
+      name: name,
+      path: path,
+      options: options,
+      mode: propBindingModes.ONE_WAY,
+      raw: null
+    };
+
+    attr = hyphenate(name);
+    // first check dynamic version
+    if ((value = getBindAttr(el, attr)) === null) {
+      if ((value = getBindAttr(el, attr + '.sync')) !== null) {
+        prop.mode = propBindingModes.TWO_WAY;
+      } else if ((value = getBindAttr(el, attr + '.once')) !== null) {
+        prop.mode = propBindingModes.ONE_TIME;
+      }
+    }
+    if (value !== null) {
+      // has dynamic binding!
+      prop.raw = value;
+      parsed = parseDirective(value);
+      value = parsed.expression;
+      prop.filters = parsed.filters;
+      // check binding type
+      if (isLiteral(value)) {
+        // for expressions containing literal numbers and
+        // booleans, there's no need to setup a prop binding,
+        // so we can optimize them as a one-time set.
+        prop.optimizedLiteral = true;
+      } else {
+        prop.dynamic = true;
+        // check non-settable path for two-way bindings
+        if (process.env.NODE_ENV !== 'production' && prop.mode === propBindingModes.TWO_WAY && !settablePathRE.test(value)) {
+          prop.mode = propBindingModes.ONE_WAY;
+          warn('Cannot bind two-way prop with non-settable ' + 'parent path: ' + value);
+        }
+      }
+      prop.parentPath = value;
+
+      // warn required two-way
+      if (process.env.NODE_ENV !== 'production' && options.twoWay && prop.mode !== propBindingModes.TWO_WAY) {
+        warn('Prop "' + name + '" expects a two-way binding type.');
+      }
+    } else if ((value = getAttr(el, attr)) !== null) {
+      // has literal binding!
+      prop.raw = value;
+    } else if (options.required) {
+      // warn missing required
+      process.env.NODE_ENV !== 'production' && warn('Missing required prop: ' + name);
+    }
+    // push prop
+    props.push(prop);
+  }
+  return makePropsLinkFn(props);
+}
+
+/**
+ * Build a function that applies props to a vm.
+ *
+ * @param {Array} props
+ * @return {Function} propsLinkFn
+ */
+
+function makePropsLinkFn(props) {
+  return function propsLinkFn(vm, scope) {
+    // store resolved props info
+    vm._props = {};
+    var i = props.length;
+    var prop, path, options, value, raw;
+    while (i--) {
+      prop = props[i];
+      raw = prop.raw;
+      path = prop.path;
+      options = prop.options;
+      vm._props[path] = prop;
+      if (raw === null) {
+        // initialize absent prop
+        initProp(vm, prop, getDefault(vm, options));
+      } else if (prop.dynamic) {
+        // dynamic prop
+        if (vm._context) {
+          if (prop.mode === propBindingModes.ONE_TIME) {
+            // one time binding
+            value = (scope || vm._context).$get(prop.parentPath);
+            initProp(vm, prop, value);
+          } else {
+            // dynamic binding
+            vm._bindDir({
+              name: 'prop',
+              def: propDef,
+              prop: prop
+            }, null, null, scope); // el, host, scope
+          }
+        } else {
+            process.env.NODE_ENV !== 'production' && warn('Cannot bind dynamic prop on a root instance' + ' with no parent: ' + prop.name + '="' + raw + '"');
+          }
+      } else if (prop.optimizedLiteral) {
+        // optimized literal, cast it and just set once
+        var stripped = stripQuotes(raw);
+        value = stripped === raw ? toBoolean(toNumber(raw)) : stripped;
+        initProp(vm, prop, value);
+      } else {
+        // string literal, but we need to cater for
+        // Boolean props with no value
+        value = options.type === Boolean && raw === '' ? true : raw;
+        initProp(vm, prop, value);
+      }
+    }
+  };
+}
+
+/**
+ * Get the default value of a prop.
+ *
+ * @param {Vue} vm
+ * @param {Object} options
+ * @return {*}
+ */
+
+function getDefault(vm, options) {
+  // no default, return undefined
+  if (!hasOwn(options, 'default')) {
+    // absent boolean value defaults to false
+    return options.type === Boolean ? false : undefined;
+  }
+  var def = options['default'];
+  // warn against non-factory defaults for Object & Array
+  if (isObject(def)) {
+    process.env.NODE_ENV !== 'production' && warn('Object/Array as default prop values will be shared ' + 'across multiple instances. Use a factory function ' + 'to return the default value instead.');
+  }
+  // call factory function for non-Function types
+  return typeof def === 'function' && options.type !== Function ? def.call(vm) : def;
+}
+
+// special binding prefixes
+var bindRE = /^v-bind:|^:/;
+var onRE = /^v-on:|^@/;
+var argRE = /:(.*)$/;
+var modifierRE = /\.[^\.]+/g;
+var transitionRE = /^(v-bind:|:)?transition$/;
+
+// terminal directives
+var terminalDirectives = ['for', 'if'];
+
+// default directive priority
+var DEFAULT_PRIORITY = 1000;
+
+/**
+ * Compile a template and return a reusable composite link
+ * function, which recursively contains more link functions
+ * inside. This top level compile function would normally
+ * be called on instance root nodes, but can also be used
+ * for partial compilation if the partial argument is true.
+ *
+ * The returned composite link function, when called, will
+ * return an unlink function that tearsdown all directives
+ * created during the linking phase.
+ *
+ * @param {Element|DocumentFragment} el
+ * @param {Object} options
+ * @param {Boolean} partial
+ * @return {Function}
+ */
+
+function compile(el, options, partial) {
+  // link function for the node itself.
+  var nodeLinkFn = partial || !options._asComponent ? compileNode(el, options) : null;
+  // link function for the childNodes
+  var childLinkFn = !(nodeLinkFn && nodeLinkFn.terminal) && el.tagName !== 'SCRIPT' && el.hasChildNodes() ? compileNodeList(el.childNodes, options) : null;
+
+  /**
+   * A composite linker function to be called on a already
+   * compiled piece of DOM, which instantiates all directive
+   * instances.
+   *
+   * @param {Vue} vm
+   * @param {Element|DocumentFragment} el
+   * @param {Vue} [host] - host vm of transcluded content
+   * @param {Object} [scope] - v-for scope
+   * @param {Fragment} [frag] - link context fragment
+   * @return {Function|undefined}
+   */
+
+  return function compositeLinkFn(vm, el, host, scope, frag) {
+    // cache childNodes before linking parent, fix #657
+    var childNodes = toArray(el.childNodes);
+    // link
+    var dirs = linkAndCapture(function compositeLinkCapturer() {
+      if (nodeLinkFn) nodeLinkFn(vm, el, host, scope, frag);
+      if (childLinkFn) childLinkFn(vm, childNodes, host, scope, frag);
+    }, vm);
+    return makeUnlinkFn(vm, dirs);
+  };
+}
+
+/**
+ * Apply a linker to a vm/element pair and capture the
+ * directives created during the process.
+ *
+ * @param {Function} linker
+ * @param {Vue} vm
+ */
+
+function linkAndCapture(linker, vm) {
+  var originalDirCount = vm._directives.length;
+  linker();
+  var dirs = vm._directives.slice(originalDirCount);
+  dirs.sort(directiveComparator);
+  for (var i = 0, l = dirs.length; i < l; i++) {
+    dirs[i]._bind();
+  }
+  return dirs;
+}
+
+/**
+ * Directive priority sort comparator
+ *
+ * @param {Object} a
+ * @param {Object} b
+ */
+
+function directiveComparator(a, b) {
+  a = a.descriptor.def.priority || DEFAULT_PRIORITY;
+  b = b.descriptor.def.priority || DEFAULT_PRIORITY;
+  return a > b ? -1 : a === b ? 0 : 1;
+}
+
+/**
+ * Linker functions return an unlink function that
+ * tearsdown all directives instances generated during
+ * the process.
+ *
+ * We create unlink functions with only the necessary
+ * information to avoid retaining additional closures.
+ *
+ * @param {Vue} vm
+ * @param {Array} dirs
+ * @param {Vue} [context]
+ * @param {Array} [contextDirs]
+ * @return {Function}
+ */
+
+function makeUnlinkFn(vm, dirs, context, contextDirs) {
+  return function unlink(destroying) {
+    teardownDirs(vm, dirs, destroying);
+    if (context && contextDirs) {
+      teardownDirs(context, contextDirs);
+    }
+  };
+}
+
+/**
+ * Teardown partial linked directives.
+ *
+ * @param {Vue} vm
+ * @param {Array} dirs
+ * @param {Boolean} destroying
+ */
+
+function teardownDirs(vm, dirs, destroying) {
+  var i = dirs.length;
+  while (i--) {
+    dirs[i]._teardown();
+    if (!destroying) {
+      vm._directives.$remove(dirs[i]);
+    }
+  }
+}
+
+/**
+ * Compile link props on an instance.
+ *
+ * @param {Vue} vm
+ * @param {Element} el
+ * @param {Object} props
+ * @param {Object} [scope]
+ * @return {Function}
+ */
+
+function compileAndLinkProps(vm, el, props, scope) {
+  var propsLinkFn = compileProps(el, props);
+  var propDirs = linkAndCapture(function () {
+    propsLinkFn(vm, scope);
+  }, vm);
+  return makeUnlinkFn(vm, propDirs);
+}
+
+/**
+ * Compile the root element of an instance.
+ *
+ * 1. attrs on context container (context scope)
+ * 2. attrs on the component template root node, if
+ *    replace:true (child scope)
+ *
+ * If this is a fragment instance, we only need to compile 1.
+ *
+ * @param {Vue} vm
+ * @param {Element} el
+ * @param {Object} options
+ * @param {Object} contextOptions
+ * @return {Function}
+ */
+
+function compileRoot(el, options, contextOptions) {
+  var containerAttrs = options._containerAttrs;
+  var replacerAttrs = options._replacerAttrs;
+  var contextLinkFn, replacerLinkFn;
+
+  // only need to compile other attributes for
+  // non-fragment instances
+  if (el.nodeType !== 11) {
+    // for components, container and replacer need to be
+    // compiled separately and linked in different scopes.
+    if (options._asComponent) {
+      // 2. container attributes
+      if (containerAttrs && contextOptions) {
+        contextLinkFn = compileDirectives(containerAttrs, contextOptions);
+      }
+      if (replacerAttrs) {
+        // 3. replacer attributes
+        replacerLinkFn = compileDirectives(replacerAttrs, options);
+      }
+    } else {
+      // non-component, just compile as a normal element.
+      replacerLinkFn = compileDirectives(el.attributes, options);
+    }
+  } else if (process.env.NODE_ENV !== 'production' && containerAttrs) {
+    // warn container directives for fragment instances
+    var names = containerAttrs.filter(function (attr) {
+      // allow vue-loader/vueify scoped css attributes
+      return attr.name.indexOf('_v-') < 0 &&
+      // allow event listeners
+      !onRE.test(attr.name) &&
+      // allow slots
+      attr.name !== 'slot';
+    }).map(function (attr) {
+      return '"' + attr.name + '"';
+    });
+    if (names.length) {
+      var plural = names.length > 1;
+      warn('Attribute' + (plural ? 's ' : ' ') + names.join(', ') + (plural ? ' are' : ' is') + ' ignored on component ' + '<' + options.el.tagName.toLowerCase() + '> because ' + 'the component is a fragment instance: ' + 'http://vuejs.org/guide/components.html#Fragment_Instance');
+    }
+  }
+
+  return function rootLinkFn(vm, el, scope) {
+    // link context scope dirs
+    var context = vm._context;
+    var contextDirs;
+    if (context && contextLinkFn) {
+      contextDirs = linkAndCapture(function () {
+        contextLinkFn(context, el, null, scope);
+      }, context);
+    }
+
+    // link self
+    var selfDirs = linkAndCapture(function () {
+      if (replacerLinkFn) replacerLinkFn(vm, el);
+    }, vm);
+
+    // return the unlink function that tearsdown context
+    // container directives.
+    return makeUnlinkFn(vm, selfDirs, context, contextDirs);
+  };
+}
+
+/**
+ * Compile a node and return a nodeLinkFn based on the
+ * node type.
+ *
+ * @param {Node} node
+ * @param {Object} options
+ * @return {Function|null}
+ */
+
+function compileNode(node, options) {
+  var type = node.nodeType;
+  if (type === 1 && node.tagName !== 'SCRIPT') {
+    return compileElement(node, options);
+  } else if (type === 3 && node.data.trim()) {
+    return compileTextNode(node, options);
+  } else {
+    return null;
+  }
+}
+
+/**
+ * Compile an element and return a nodeLinkFn.
+ *
+ * @param {Element} el
+ * @param {Object} options
+ * @return {Function|null}
+ */
+
+function compileElement(el, options) {
+  // preprocess textareas.
+  // textarea treats its text content as the initial value.
+  // just bind it as an attr directive for value.
+  if (el.tagName === 'TEXTAREA') {
+    var tokens = parseText(el.value);
+    if (tokens) {
+      el.setAttribute(':value', tokensToExp(tokens));
+      el.value = '';
+    }
+  }
+  var linkFn;
+  var hasAttrs = el.hasAttributes();
+  // check terminal directives (for & if)
+  if (hasAttrs) {
+    linkFn = checkTerminalDirectives(el, options);
+  }
+  // check element directives
+  if (!linkFn) {
+    linkFn = checkElementDirectives(el, options);
+  }
+  // check component
+  if (!linkFn) {
+    linkFn = checkComponent(el, options);
+  }
+  // normal directives
+  if (!linkFn && hasAttrs) {
+    linkFn = compileDirectives(el.attributes, options);
+  }
+  return linkFn;
+}
+
+/**
+ * Compile a textNode and return a nodeLinkFn.
+ *
+ * @param {TextNode} node
+ * @param {Object} options
+ * @return {Function|null} textNodeLinkFn
+ */
+
+function compileTextNode(node, options) {
+  // skip marked text nodes
+  if (node._skip) {
+    return removeText;
+  }
+
+  var tokens = parseText(node.wholeText);
+  if (!tokens) {
+    return null;
+  }
+
+  // mark adjacent text nodes as skipped,
+  // because we are using node.wholeText to compile
+  // all adjacent text nodes together. This fixes
+  // issues in IE where sometimes it splits up a single
+  // text node into multiple ones.
+  var next = node.nextSibling;
+  while (next && next.nodeType === 3) {
+    next._skip = true;
+    next = next.nextSibling;
+  }
+
+  var frag = document.createDocumentFragment();
+  var el, token;
+  for (var i = 0, l = tokens.length; i < l; i++) {
+    token = tokens[i];
+    el = token.tag ? processTextToken(token, options) : document.createTextNode(token.value);
+    frag.appendChild(el);
+  }
+  return makeTextNodeLinkFn(tokens, frag, options);
+}
+
+/**
+ * Linker for an skipped text node.
+ *
+ * @param {Vue} vm
+ * @param {Text} node
+ */
+
+function removeText(vm, node) {
+  remove(node);
+}
+
+/**
+ * Process a single text token.
+ *
+ * @param {Object} token
+ * @param {Object} options
+ * @return {Node}
+ */
+
+function processTextToken(token, options) {
+  var el;
+  if (token.oneTime) {
+    el = document.createTextNode(token.value);
+  } else {
+    if (token.html) {
+      el = document.createComment('v-html');
+      setTokenType('html');
+    } else {
+      // IE will clean up empty textNodes during
+      // frag.cloneNode(true), so we have to give it
+      // something here...
+      el = document.createTextNode(' ');
+      setTokenType('text');
+    }
+  }
+  function setTokenType(type) {
+    if (token.descriptor) return;
+    var parsed = parseDirective(token.value);
+    token.descriptor = {
+      name: type,
+      def: publicDirectives[type],
+      expression: parsed.expression,
+      filters: parsed.filters
+    };
+  }
+  return el;
+}
+
+/**
+ * Build a function that processes a textNode.
+ *
+ * @param {Array<Object>} tokens
+ * @param {DocumentFragment} frag
+ */
+
+function makeTextNodeLinkFn(tokens, frag) {
+  return function textNodeLinkFn(vm, el, host, scope) {
+    var fragClone = frag.cloneNode(true);
+    var childNodes = toArray(fragClone.childNodes);
+    var token, value, node;
+    for (var i = 0, l = tokens.length; i < l; i++) {
+      token = tokens[i];
+      value = token.value;
+      if (token.tag) {
+        node = childNodes[i];
+        if (token.oneTime) {
+          value = (scope || vm).$eval(value);
+          if (token.html) {
+            replace(node, parseTemplate(value, true));
+          } else {
+            node.data = value;
+          }
+        } else {
+          vm._bindDir(token.descriptor, node, host, scope);
+        }
+      }
+    }
+    replace(el, fragClone);
+  };
+}
+
+/**
+ * Compile a node list and return a childLinkFn.
+ *
+ * @param {NodeList} nodeList
+ * @param {Object} options
+ * @return {Function|undefined}
+ */
+
+function compileNodeList(nodeList, options) {
+  var linkFns = [];
+  var nodeLinkFn, childLinkFn, node;
+  for (var i = 0, l = nodeList.length; i < l; i++) {
+    node = nodeList[i];
+    nodeLinkFn = compileNode(node, options);
+    childLinkFn = !(nodeLinkFn && nodeLinkFn.terminal) && node.tagName !== 'SCRIPT' && node.hasChildNodes() ? compileNodeList(node.childNodes, options) : null;
+    linkFns.push(nodeLinkFn, childLinkFn);
+  }
+  return linkFns.length ? makeChildLinkFn(linkFns) : null;
+}
+
+/**
+ * Make a child link function for a node's childNodes.
+ *
+ * @param {Array<Function>} linkFns
+ * @return {Function} childLinkFn
+ */
+
+function makeChildLinkFn(linkFns) {
+  return function childLinkFn(vm, nodes, host, scope, frag) {
+    var node, nodeLinkFn, childrenLinkFn;
+    for (var i = 0, n = 0, l = linkFns.length; i < l; n++) {
+      node = nodes[n];
+      nodeLinkFn = linkFns[i++];
+      childrenLinkFn = linkFns[i++];
+      // cache childNodes before linking parent, fix #657
+      var childNodes = toArray(node.childNodes);
+      if (nodeLinkFn) {
+        nodeLinkFn(vm, node, host, scope, frag);
+      }
+      if (childrenLinkFn) {
+        childrenLinkFn(vm, childNodes, host, scope, frag);
+      }
+    }
+  };
+}
+
+/**
+ * Check for element directives (custom elements that should
+ * be resovled as terminal directives).
+ *
+ * @param {Element} el
+ * @param {Object} options
+ */
+
+function checkElementDirectives(el, options) {
+  var tag = el.tagName.toLowerCase();
+  if (commonTagRE.test(tag)) return;
+  // special case: give named slot a higher priority
+  // than unnamed slots
+  if (tag === 'slot' && hasBindAttr(el, 'name')) {
+    tag = '_namedSlot';
+  }
+  var def = resolveAsset(options, 'elementDirectives', tag);
+  if (def) {
+    return makeTerminalNodeLinkFn(el, tag, '', options, def);
+  }
+}
+
+/**
+ * Check if an element is a component. If yes, return
+ * a component link function.
+ *
+ * @param {Element} el
+ * @param {Object} options
+ * @return {Function|undefined}
+ */
+
+function checkComponent(el, options) {
+  var component = checkComponentAttr(el, options);
+  if (component) {
+    var ref = findRef(el);
+    var descriptor = {
+      name: 'component',
+      ref: ref,
+      expression: component.id,
+      def: internalDirectives.component,
+      modifiers: {
+        literal: !component.dynamic
+      }
+    };
+    var componentLinkFn = function componentLinkFn(vm, el, host, scope, frag) {
+      if (ref) {
+        defineReactive((scope || vm).$refs, ref, null);
+      }
+      vm._bindDir(descriptor, el, host, scope, frag);
+    };
+    componentLinkFn.terminal = true;
+    return componentLinkFn;
+  }
+}
+
+/**
+ * Check an element for terminal directives in fixed order.
+ * If it finds one, return a terminal link function.
+ *
+ * @param {Element} el
+ * @param {Object} options
+ * @return {Function} terminalLinkFn
+ */
+
+function checkTerminalDirectives(el, options) {
+  // skip v-pre
+  if (getAttr(el, 'v-pre') !== null) {
+    return skip;
+  }
+  // skip v-else block, but only if following v-if
+  if (el.hasAttribute('v-else')) {
+    var prev = el.previousElementSibling;
+    if (prev && prev.hasAttribute('v-if')) {
+      return skip;
+    }
+  }
+  var value, dirName;
+  for (var i = 0, l = terminalDirectives.length; i < l; i++) {
+    dirName = terminalDirectives[i];
+    /* eslint-disable no-cond-assign */
+    if (value = el.getAttribute('v-' + dirName)) {
+      return makeTerminalNodeLinkFn(el, dirName, value, options);
+    }
+    /* eslint-enable no-cond-assign */
+  }
+}
+
+function skip() {}
+skip.terminal = true;
+
+/**
+ * Build a node link function for a terminal directive.
+ * A terminal link function terminates the current
+ * compilation recursion and handles compilation of the
+ * subtree in the directive.
+ *
+ * @param {Element} el
+ * @param {String} dirName
+ * @param {String} value
+ * @param {Object} options
+ * @param {Object} [def]
+ * @return {Function} terminalLinkFn
+ */
+
+function makeTerminalNodeLinkFn(el, dirName, value, options, def) {
+  var parsed = parseDirective(value);
+  var descriptor = {
+    name: dirName,
+    expression: parsed.expression,
+    filters: parsed.filters,
+    raw: value,
+    // either an element directive, or if/for
+    def: def || publicDirectives[dirName]
+  };
+  // check ref for v-for and router-view
+  if (dirName === 'for' || dirName === 'router-view') {
+    descriptor.ref = findRef(el);
+  }
+  var fn = function terminalNodeLinkFn(vm, el, host, scope, frag) {
+    if (descriptor.ref) {
+      defineReactive((scope || vm).$refs, descriptor.ref, null);
+    }
+    vm._bindDir(descriptor, el, host, scope, frag);
+  };
+  fn.terminal = true;
+  return fn;
+}
+
+/**
+ * Compile the directives on an element and return a linker.
+ *
+ * @param {Array|NamedNodeMap} attrs
+ * @param {Object} options
+ * @return {Function}
+ */
+
+function compileDirectives(attrs, options) {
+  var i = attrs.length;
+  var dirs = [];
+  var attr, name, value, rawName, rawValue, dirName, arg, modifiers, dirDef, tokens;
+  while (i--) {
+    attr = attrs[i];
+    name = rawName = attr.name;
+    value = rawValue = attr.value;
+    tokens = parseText(value);
+    // reset arg
+    arg = null;
+    // check modifiers
+    modifiers = parseModifiers(name);
+    name = name.replace(modifierRE, '');
+
+    // attribute interpolations
+    if (tokens) {
+      value = tokensToExp(tokens);
+      arg = name;
+      pushDir('bind', publicDirectives.bind, true);
+      // warn against mixing mustaches with v-bind
+      if (process.env.NODE_ENV !== 'production') {
+        if (name === 'class' && Array.prototype.some.call(attrs, function (attr) {
+          return attr.name === ':class' || attr.name === 'v-bind:class';
+        })) {
+          warn('class="' + rawValue + '": Do not mix mustache interpolation ' + 'and v-bind for "class" on the same element. Use one or the other.');
+        }
+      }
+    } else
+
+      // special attribute: transition
+      if (transitionRE.test(name)) {
+        modifiers.literal = !bindRE.test(name);
+        pushDir('transition', internalDirectives.transition);
+      } else
+
+        // event handlers
+        if (onRE.test(name)) {
+          arg = name.replace(onRE, '');
+          pushDir('on', publicDirectives.on);
+        } else
+
+          // attribute bindings
+          if (bindRE.test(name)) {
+            dirName = name.replace(bindRE, '');
+            if (dirName === 'style' || dirName === 'class') {
+              pushDir(dirName, internalDirectives[dirName]);
+            } else {
+              arg = dirName;
+              pushDir('bind', publicDirectives.bind);
+            }
+          } else
+
+            // normal directives
+            if (name.indexOf('v-') === 0) {
+              // check arg
+              arg = (arg = name.match(argRE)) && arg[1];
+              if (arg) {
+                name = name.replace(argRE, '');
+              }
+              // extract directive name
+              dirName = name.slice(2);
+
+              // skip v-else (when used with v-show)
+              if (dirName === 'else') {
+                continue;
+              }
+
+              dirDef = resolveAsset(options, 'directives', dirName);
+
+              if (process.env.NODE_ENV !== 'production') {
+                assertAsset(dirDef, 'directive', dirName);
+              }
+
+              if (dirDef) {
+                pushDir(dirName, dirDef);
+              }
+            }
+  }
+
+  /**
+   * Push a directive.
+   *
+   * @param {String} dirName
+   * @param {Object|Function} def
+   * @param {Boolean} [interp]
+   */
+
+  function pushDir(dirName, def, interp) {
+    var parsed = parseDirective(value);
+    dirs.push({
+      name: dirName,
+      attr: rawName,
+      raw: rawValue,
+      def: def,
+      arg: arg,
+      modifiers: modifiers,
+      expression: parsed.expression,
+      filters: parsed.filters,
+      interp: interp
+    });
+  }
+
+  if (dirs.length) {
+    return makeNodeLinkFn(dirs);
+  }
+}
+
+/**
+ * Parse modifiers from directive attribute name.
+ *
+ * @param {String} name
+ * @return {Object}
+ */
+
+function parseModifiers(name) {
+  var res = Object.create(null);
+  var match = name.match(modifierRE);
+  if (match) {
+    var i = match.length;
+    while (i--) {
+      res[match[i].slice(1)] = true;
+    }
+  }
+  return res;
+}
+
+/**
+ * Build a link function for all directives on a single node.
+ *
+ * @param {Array} directives
+ * @return {Function} directivesLinkFn
+ */
+
+function makeNodeLinkFn(directives) {
+  return function nodeLinkFn(vm, el, host, scope, frag) {
+    // reverse apply because it's sorted low to high
+    var i = directives.length;
+    while (i--) {
+      vm._bindDir(directives[i], el, host, scope, frag);
+    }
+  };
+}
+
+var specialCharRE = /[^\w\-:\.]/;
+
+/**
+ * Process an element or a DocumentFragment based on a
+ * instance option object. This allows us to transclude
+ * a template node/fragment before the instance is created,
+ * so the processed fragment can then be cloned and reused
+ * in v-for.
+ *
+ * @param {Element} el
+ * @param {Object} options
+ * @return {Element|DocumentFragment}
+ */
+
+function transclude(el, options) {
+  // extract container attributes to pass them down
+  // to compiler, because they need to be compiled in
+  // parent scope. we are mutating the options object here
+  // assuming the same object will be used for compile
+  // right after this.
+  if (options) {
+    options._containerAttrs = extractAttrs(el);
+  }
+  // for template tags, what we want is its content as
+  // a documentFragment (for fragment instances)
+  if (isTemplate(el)) {
+    el = parseTemplate(el);
+  }
+  if (options) {
+    if (options._asComponent && !options.template) {
+      options.template = '<slot></slot>';
+    }
+    if (options.template) {
+      options._content = extractContent(el);
+      el = transcludeTemplate(el, options);
+    }
+  }
+  if (el instanceof DocumentFragment) {
+    // anchors for fragment instance
+    // passing in `persist: true` to avoid them being
+    // discarded by IE during template cloning
+    prepend(createAnchor('v-start', true), el);
+    el.appendChild(createAnchor('v-end', true));
+  }
+  return el;
+}
+
+/**
+ * Process the template option.
+ * If the replace option is true this will swap the $el.
+ *
+ * @param {Element} el
+ * @param {Object} options
+ * @return {Element|DocumentFragment}
+ */
+
+function transcludeTemplate(el, options) {
+  var template = options.template;
+  var frag = parseTemplate(template, true);
+  if (frag) {
+    var replacer = frag.firstChild;
+    var tag = replacer.tagName && replacer.tagName.toLowerCase();
+    if (options.replace) {
+      /* istanbul ignore if */
+      if (el === document.body) {
+        process.env.NODE_ENV !== 'production' && warn('You are mounting an instance with a template to ' + '<body>. This will replace <body> entirely. You ' + 'should probably use `replace: false` here.');
+      }
+      // there are many cases where the instance must
+      // become a fragment instance: basically anything that
+      // can create more than 1 root nodes.
+      if (
+      // multi-children template
+      frag.childNodes.length > 1 ||
+      // non-element template
+      replacer.nodeType !== 1 ||
+      // single nested component
+      tag === 'component' || resolveAsset(options, 'components', tag) || hasBindAttr(replacer, 'is') ||
+      // element directive
+      resolveAsset(options, 'elementDirectives', tag) ||
+      // for block
+      replacer.hasAttribute('v-for') ||
+      // if block
+      replacer.hasAttribute('v-if')) {
+        return frag;
+      } else {
+        options._replacerAttrs = extractAttrs(replacer);
+        mergeAttrs(el, replacer);
+        return replacer;
+      }
+    } else {
+      el.appendChild(frag);
+      return el;
+    }
+  } else {
+    process.env.NODE_ENV !== 'production' && warn('Invalid template option: ' + template);
+  }
+}
+
+/**
+ * Helper to extract a component container's attributes
+ * into a plain object array.
+ *
+ * @param {Element} el
+ * @return {Array}
+ */
+
+function extractAttrs(el) {
+  if (el.nodeType === 1 && el.hasAttributes()) {
+    return toArray(el.attributes);
+  }
+}
+
+/**
+ * Merge the attributes of two elements, and make sure
+ * the class names are merged properly.
+ *
+ * @param {Element} from
+ * @param {Element} to
+ */
+
+function mergeAttrs(from, to) {
+  var attrs = from.attributes;
+  var i = attrs.length;
+  var name, value;
+  while (i--) {
+    name = attrs[i].name;
+    value = attrs[i].value;
+    if (!to.hasAttribute(name) && !specialCharRE.test(name)) {
+      to.setAttribute(name, value);
+    } else if (name === 'class') {
+      value.split(/\s+/).forEach(function (cls) {
+        addClass(to, cls);
+      });
+    }
+  }
+}
+
+var compiler = Object.freeze({
+	compile: compile,
+	compileAndLinkProps: compileAndLinkProps,
+	compileRoot: compileRoot,
+	transclude: transclude
+});
+
+function stateMixin (Vue) {
+
+  /**
+   * Accessor for `$data` property, since setting $data
+   * requires observing the new object and updating
+   * proxied properties.
+   */
+
+  Object.defineProperty(Vue.prototype, '$data', {
+    get: function get() {
+      return this._data;
+    },
+    set: function set(newData) {
+      if (newData !== this._data) {
+        this._setData(newData);
+      }
+    }
+  });
+
+  /**
+   * Setup the scope of an instance, which contains:
+   * - observed data
+   * - computed properties
+   * - user methods
+   * - meta properties
+   */
+
+  Vue.prototype._initState = function () {
+    this._initProps();
+    this._initMeta();
+    this._initMethods();
+    this._initData();
+    this._initComputed();
+  };
+
+  /**
+   * Initialize props.
+   */
+
+  Vue.prototype._initProps = function () {
+    var options = this.$options;
+    var el = options.el;
+    var props = options.props;
+    if (props && !el) {
+      process.env.NODE_ENV !== 'production' && warn('Props will not be compiled if no `el` option is ' + 'provided at instantiation.');
+    }
+    // make sure to convert string selectors into element now
+    el = options.el = query(el);
+    this._propsUnlinkFn = el && el.nodeType === 1 && props
+    // props must be linked in proper scope if inside v-for
+    ? compileAndLinkProps(this, el, props, this._scope) : null;
+  };
+
+  /**
+   * Initialize the data.
+   */
+
+  Vue.prototype._initData = function () {
+    var propsData = this._data;
+    var optionsDataFn = this.$options.data;
+    var optionsData = optionsDataFn && optionsDataFn();
+    if (optionsData) {
+      this._data = optionsData;
+      for (var prop in propsData) {
+        if (process.env.NODE_ENV !== 'production' && hasOwn(optionsData, prop)) {
+          warn('Data field "' + prop + '" is already defined ' + 'as a prop. Use prop default value instead.');
+        }
+        if (this._props[prop].raw !== null || !hasOwn(optionsData, prop)) {
+          set(optionsData, prop, propsData[prop]);
+        }
+      }
+    }
+    var data = this._data;
+    // proxy data on instance
+    var keys = Object.keys(data);
+    var i, key;
+    i = keys.length;
+    while (i--) {
+      key = keys[i];
+      this._proxy(key);
+    }
+    // observe data
+    observe(data, this);
+  };
+
+  /**
+   * Swap the instance's $data. Called in $data's setter.
+   *
+   * @param {Object} newData
+   */
+
+  Vue.prototype._setData = function (newData) {
+    newData = newData || {};
+    var oldData = this._data;
+    this._data = newData;
+    var keys, key, i;
+    // unproxy keys not present in new data
+    keys = Object.keys(oldData);
+    i = keys.length;
+    while (i--) {
+      key = keys[i];
+      if (!(key in newData)) {
+        this._unproxy(key);
+      }
+    }
+    // proxy keys not already proxied,
+    // and trigger change for changed values
+    keys = Object.keys(newData);
+    i = keys.length;
+    while (i--) {
+      key = keys[i];
+      if (!hasOwn(this, key)) {
+        // new property
+        this._proxy(key);
+      }
+    }
+    oldData.__ob__.removeVm(this);
+    observe(newData, this);
+    this._digest();
+  };
+
+  /**
+   * Proxy a property, so that
+   * vm.prop === vm._data.prop
+   *
+   * @param {String} key
+   */
+
+  Vue.prototype._proxy = function (key) {
+    if (!isReserved(key)) {
+      // need to store ref to self here
+      // because these getter/setters might
+      // be called by child scopes via
+      // prototype inheritance.
+      var self = this;
+      Object.defineProperty(self, key, {
+        configurable: true,
+        enumerable: true,
+        get: function proxyGetter() {
+          return self._data[key];
+        },
+        set: function proxySetter(val) {
+          self._data[key] = val;
+        }
+      });
+    }
+  };
+
+  /**
+   * Unproxy a property.
+   *
+   * @param {String} key
+   */
+
+  Vue.prototype._unproxy = function (key) {
+    if (!isReserved(key)) {
+      delete this[key];
+    }
+  };
+
+  /**
+   * Force update on every watcher in scope.
+   */
+
+  Vue.prototype._digest = function () {
+    for (var i = 0, l = this._watchers.length; i < l; i++) {
+      this._watchers[i].update(true); // shallow updates
+    }
+  };
+
+  /**
+   * Setup computed properties. They are essentially
+   * special getter/setters
+   */
+
+  function noop() {}
+  Vue.prototype._initComputed = function () {
+    var computed = this.$options.computed;
+    if (computed) {
+      for (var key in computed) {
+        var userDef = computed[key];
+        var def = {
+          enumerable: true,
+          configurable: true
+        };
+        if (typeof userDef === 'function') {
+          def.get = makeComputedGetter(userDef, this);
+          def.set = noop;
+        } else {
+          def.get = userDef.get ? userDef.cache !== false ? makeComputedGetter(userDef.get, this) : bind$1(userDef.get, this) : noop;
+          def.set = userDef.set ? bind$1(userDef.set, this) : noop;
+        }
+        Object.defineProperty(this, key, def);
+      }
+    }
+  };
+
+  function makeComputedGetter(getter, owner) {
+    var watcher = new Watcher(owner, getter, null, {
+      lazy: true
+    });
+    return function computedGetter() {
+      if (watcher.dirty) {
+        watcher.evaluate();
+      }
+      if (Dep.target) {
+        watcher.depend();
+      }
+      return watcher.value;
+    };
+  }
+
+  /**
+   * Setup instance methods. Methods must be bound to the
+   * instance since they might be passed down as a prop to
+   * child components.
+   */
+
+  Vue.prototype._initMethods = function () {
+    var methods = this.$options.methods;
+    if (methods) {
+      for (var key in methods) {
+        this[key] = bind$1(methods[key], this);
+      }
+    }
+  };
+
+  /**
+   * Initialize meta information like $index, $key & $value.
+   */
+
+  Vue.prototype._initMeta = function () {
+    var metas = this.$options._meta;
+    if (metas) {
+      for (var key in metas) {
+        defineReactive(this, key, metas[key]);
+      }
+    }
+  };
+}
+
+var eventRE = /^v-on:|^@/;
+
+function eventsMixin (Vue) {
+
+  /**
+   * Setup the instance's option events & watchers.
+   * If the value is a string, we pull it from the
+   * instance's methods by name.
+   */
+
+  Vue.prototype._initEvents = function () {
+    var options = this.$options;
+    if (options._asComponent) {
+      registerComponentEvents(this, options.el);
+    }
+    registerCallbacks(this, '$on', options.events);
+    registerCallbacks(this, '$watch', options.watch);
+  };
+
+  /**
+   * Register v-on events on a child component
+   *
+   * @param {Vue} vm
+   * @param {Element} el
+   */
+
+  function registerComponentEvents(vm, el) {
+    var attrs = el.attributes;
+    var name, handler;
+    for (var i = 0, l = attrs.length; i < l; i++) {
+      name = attrs[i].name;
+      if (eventRE.test(name)) {
+        name = name.replace(eventRE, '');
+        handler = (vm._scope || vm._context).$eval(attrs[i].value, true);
+        vm.$on(name.replace(eventRE), handler);
+      }
+    }
+  }
+
+  /**
+   * Register callbacks for option events and watchers.
+   *
+   * @param {Vue} vm
+   * @param {String} action
+   * @param {Object} hash
+   */
+
+  function registerCallbacks(vm, action, hash) {
+    if (!hash) return;
+    var handlers, key, i, j;
+    for (key in hash) {
+      handlers = hash[key];
+      if (isArray(handlers)) {
+        for (i = 0, j = handlers.length; i < j; i++) {
+          register(vm, action, key, handlers[i]);
+        }
+      } else {
+        register(vm, action, key, handlers);
+      }
+    }
+  }
+
+  /**
+   * Helper to register an event/watch callback.
+   *
+   * @param {Vue} vm
+   * @param {String} action
+   * @param {String} key
+   * @param {Function|String|Object} handler
+   * @param {Object} [options]
+   */
+
+  function register(vm, action, key, handler, options) {
+    var type = typeof handler;
+    if (type === 'function') {
+      vm[action](key, handler, options);
+    } else if (type === 'string') {
+      var methods = vm.$options.methods;
+      var method = methods && methods[handler];
+      if (method) {
+        vm[action](key, method, options);
+      } else {
+        process.env.NODE_ENV !== 'production' && warn('Unknown method: "' + handler + '" when ' + 'registering callback for ' + action + ': "' + key + '".');
+      }
+    } else if (handler && type === 'object') {
+      register(vm, action, key, handler.handler, handler);
+    }
+  }
+
+  /**
+   * Setup recursive attached/detached calls
+   */
+
+  Vue.prototype._initDOMHooks = function () {
+    this.$on('hook:attached', onAttached);
+    this.$on('hook:detached', onDetached);
+  };
+
+  /**
+   * Callback to recursively call attached hook on children
+   */
+
+  function onAttached() {
+    if (!this._isAttached) {
+      this._isAttached = true;
+      this.$children.forEach(callAttach);
+    }
+  }
+
+  /**
+   * Iterator to call attached hook
+   *
+   * @param {Vue} child
+   */
+
+  function callAttach(child) {
+    if (!child._isAttached && inDoc(child.$el)) {
+      child._callHook('attached');
+    }
+  }
+
+  /**
+   * Callback to recursively call detached hook on children
+   */
+
+  function onDetached() {
+    if (this._isAttached) {
+      this._isAttached = false;
+      this.$children.forEach(callDetach);
+    }
+  }
+
+  /**
+   * Iterator to call detached hook
+   *
+   * @param {Vue} child
+   */
+
+  function callDetach(child) {
+    if (child._isAttached && !inDoc(child.$el)) {
+      child._callHook('detached');
+    }
+  }
+
+  /**
+   * Trigger all handlers for a hook
+   *
+   * @param {String} hook
+   */
+
+  Vue.prototype._callHook = function (hook) {
+    this.$emit('pre-hook:' + hook);
+    var handlers = this.$options[hook];
+    if (handlers) {
+      for (var i = 0, j = handlers.length; i < j; i++) {
+        handlers[i].call(this);
+      }
+    }
+    this.$emit('hook:' + hook);
+  };
+}
+
+function noop() {}
+
+/**
+ * A directive links a DOM element with a piece of data,
+ * which is the result of evaluating an expression.
+ * It registers a watcher with the expression and calls
+ * the DOM update function when a change is triggered.
+ *
+ * @param {String} name
+ * @param {Node} el
+ * @param {Vue} vm
+ * @param {Object} descriptor
+ *                 - {String} name
+ *                 - {Object} def
+ *                 - {String} expression
+ *                 - {Array<Object>} [filters]
+ *                 - {Boolean} literal
+ *                 - {String} attr
+ *                 - {String} raw
+ * @param {Object} def - directive definition object
+ * @param {Vue} [host] - transclusion host component
+ * @param {Object} [scope] - v-for scope
+ * @param {Fragment} [frag] - owner fragment
+ * @constructor
+ */
+function Directive(descriptor, vm, el, host, scope, frag) {
+  this.vm = vm;
+  this.el = el;
+  // copy descriptor properties
+  this.descriptor = descriptor;
+  this.name = descriptor.name;
+  this.expression = descriptor.expression;
+  this.arg = descriptor.arg;
+  this.modifiers = descriptor.modifiers;
+  this.filters = descriptor.filters;
+  this.literal = this.modifiers && this.modifiers.literal;
+  // private
+  this._locked = false;
+  this._bound = false;
+  this._listeners = null;
+  // link context
+  this._host = host;
+  this._scope = scope;
+  this._frag = frag;
+  // store directives on node in dev mode
+  if (process.env.NODE_ENV !== 'production' && this.el) {
+    this.el._vue_directives = this.el._vue_directives || [];
+    this.el._vue_directives.push(this);
+  }
+}
+
+/**
+ * Initialize the directive, mixin definition properties,
+ * setup the watcher, call definition bind() and update()
+ * if present.
+ *
+ * @param {Object} def
+ */
+
+Directive.prototype._bind = function () {
+  var name = this.name;
+  var descriptor = this.descriptor;
+
+  // remove attribute
+  if ((name !== 'cloak' || this.vm._isCompiled) && this.el && this.el.removeAttribute) {
+    var attr = descriptor.attr || 'v-' + name;
+    this.el.removeAttribute(attr);
+  }
+
+  // copy def properties
+  var def = descriptor.def;
+  if (typeof def === 'function') {
+    this.update = def;
+  } else {
+    extend(this, def);
+  }
+
+  // setup directive params
+  this._setupParams();
+
+  // initial bind
+  if (this.bind) {
+    this.bind();
+  }
+  this._bound = true;
+
+  if (this.literal) {
+    this.update && this.update(descriptor.raw);
+  } else if ((this.expression || this.modifiers) && (this.update || this.twoWay) && !this._checkStatement()) {
+    // wrapped updater for context
+    var dir = this;
+    if (this.update) {
+      this._update = function (val, oldVal) {
+        if (!dir._locked) {
+          dir.update(val, oldVal);
+        }
+      };
+    } else {
+      this._update = noop;
+    }
+    var preProcess = this._preProcess ? bind$1(this._preProcess, this) : null;
+    var postProcess = this._postProcess ? bind$1(this._postProcess, this) : null;
+    var watcher = this._watcher = new Watcher(this.vm, this.expression, this._update, // callback
+    {
+      filters: this.filters,
+      twoWay: this.twoWay,
+      deep: this.deep,
+      preProcess: preProcess,
+      postProcess: postProcess,
+      scope: this._scope
+    });
+    // v-model with inital inline value need to sync back to
+    // model instead of update to DOM on init. They would
+    // set the afterBind hook to indicate that.
+    if (this.afterBind) {
+      this.afterBind();
+    } else if (this.update) {
+      this.update(watcher.value);
+    }
+  }
+};
+
+/**
+ * Setup all param attributes, e.g. track-by,
+ * transition-mode, etc...
+ */
+
+Directive.prototype._setupParams = function () {
+  if (!this.params) {
+    return;
+  }
+  var params = this.params;
+  // swap the params array with a fresh object.
+  this.params = Object.create(null);
+  var i = params.length;
+  var key, val, mappedKey;
+  while (i--) {
+    key = params[i];
+    mappedKey = camelize(key);
+    val = getBindAttr(this.el, key);
+    if (val != null) {
+      // dynamic
+      this._setupParamWatcher(mappedKey, val);
+    } else {
+      // static
+      val = getAttr(this.el, key);
+      if (val != null) {
+        this.params[mappedKey] = val === '' ? true : val;
+      }
+    }
+  }
+};
+
+/**
+ * Setup a watcher for a dynamic param.
+ *
+ * @param {String} key
+ * @param {String} expression
+ */
+
+Directive.prototype._setupParamWatcher = function (key, expression) {
+  var self = this;
+  var called = false;
+  var unwatch = (this._scope || this.vm).$watch(expression, function (val, oldVal) {
+    self.params[key] = val;
+    // since we are in immediate mode,
+    // only call the param change callbacks if this is not the first update.
+    if (called) {
+      var cb = self.paramWatchers && self.paramWatchers[key];
+      if (cb) {
+        cb.call(self, val, oldVal);
+      }
+    } else {
+      called = true;
+    }
+  }, {
+    immediate: true,
+    user: false
+  });(this._paramUnwatchFns || (this._paramUnwatchFns = [])).push(unwatch);
+};
+
+/**
+ * Check if the directive is a function caller
+ * and if the expression is a callable one. If both true,
+ * we wrap up the expression and use it as the event
+ * handler.
+ *
+ * e.g. on-click="a++"
+ *
+ * @return {Boolean}
+ */
+
+Directive.prototype._checkStatement = function () {
+  var expression = this.expression;
+  if (expression && this.acceptStatement && !isSimplePath(expression)) {
+    var fn = parseExpression(expression).get;
+    var scope = this._scope || this.vm;
+    var handler = function handler(e) {
+      scope.$event = e;
+      fn.call(scope, scope);
+      scope.$event = null;
+    };
+    if (this.filters) {
+      handler = scope._applyFilters(handler, null, this.filters);
+    }
+    this.update(handler);
+    return true;
+  }
+};
+
+/**
+ * Set the corresponding value with the setter.
+ * This should only be used in two-way directives
+ * e.g. v-model.
+ *
+ * @param {*} value
+ * @public
+ */
+
+Directive.prototype.set = function (value) {
+  /* istanbul ignore else */
+  if (this.twoWay) {
+    this._withLock(function () {
+      this._watcher.set(value);
+    });
+  } else if (process.env.NODE_ENV !== 'production') {
+    warn('Directive.set() can only be used inside twoWay' + 'directives.');
+  }
+};
+
+/**
+ * Execute a function while preventing that function from
+ * triggering updates on this directive instance.
+ *
+ * @param {Function} fn
+ */
+
+Directive.prototype._withLock = function (fn) {
+  var self = this;
+  self._locked = true;
+  fn.call(self);
+  nextTick(function () {
+    self._locked = false;
+  });
+};
+
+/**
+ * Convenience method that attaches a DOM event listener
+ * to the directive element and autometically tears it down
+ * during unbind.
+ *
+ * @param {String} event
+ * @param {Function} handler
+ */
+
+Directive.prototype.on = function (event, handler) {
+  on$1(this.el, event, handler);(this._listeners || (this._listeners = [])).push([event, handler]);
+};
+
+/**
+ * Teardown the watcher and call unbind.
+ */
+
+Directive.prototype._teardown = function () {
+  if (this._bound) {
+    this._bound = false;
+    if (this.unbind) {
+      this.unbind();
+    }
+    if (this._watcher) {
+      this._watcher.teardown();
+    }
+    var listeners = this._listeners;
+    var i;
+    if (listeners) {
+      i = listeners.length;
+      while (i--) {
+        off(this.el, listeners[i][0], listeners[i][1]);
+      }
+    }
+    var unwatchFns = this._paramUnwatchFns;
+    if (unwatchFns) {
+      i = unwatchFns.length;
+      while (i--) {
+        unwatchFns[i]();
+      }
+    }
+    if (process.env.NODE_ENV !== 'production' && this.el) {
+      this.el._vue_directives.$remove(this);
+    }
+    this.vm = this.el = this._watcher = this._listeners = null;
+  }
+};
+
+function lifecycleMixin (Vue) {
+
+  /**
+   * Update v-ref for component.
+   *
+   * @param {Boolean} remove
+   */
+
+  Vue.prototype._updateRef = function (remove) {
+    var ref = this.$options._ref;
+    if (ref) {
+      var refs = (this._scope || this._context).$refs;
+      if (remove) {
+        if (refs[ref] === this) {
+          refs[ref] = null;
+        }
+      } else {
+        refs[ref] = this;
+      }
+    }
+  };
+
+  /**
+   * Transclude, compile and link element.
+   *
+   * If a pre-compiled linker is available, that means the
+   * passed in element will be pre-transcluded and compiled
+   * as well - all we need to do is to call the linker.
+   *
+   * Otherwise we need to call transclude/compile/link here.
+   *
+   * @param {Element} el
+   * @return {Element}
+   */
+
+  Vue.prototype._compile = function (el) {
+    var options = this.$options;
+
+    // transclude and init element
+    // transclude can potentially replace original
+    // so we need to keep reference; this step also injects
+    // the template and caches the original attributes
+    // on the container node and replacer node.
+    var original = el;
+    el = transclude(el, options);
+    this._initElement(el);
+
+    // handle v-pre on root node (#2026)
+    if (el.nodeType === 1 && getAttr(el, 'v-pre') !== null) {
+      return;
+    }
+
+    // root is always compiled per-instance, because
+    // container attrs and props can be different every time.
+    var contextOptions = this._context && this._context.$options;
+    var rootLinker = compileRoot(el, options, contextOptions);
+
+    // compile and link the rest
+    var contentLinkFn;
+    var ctor = this.constructor;
+    // component compilation can be cached
+    // as long as it's not using inline-template
+    if (options._linkerCachable) {
+      contentLinkFn = ctor.linker;
+      if (!contentLinkFn) {
+        contentLinkFn = ctor.linker = compile(el, options);
+      }
+    }
+
+    // link phase
+    // make sure to link root with prop scope!
+    var rootUnlinkFn = rootLinker(this, el, this._scope);
+    var contentUnlinkFn = contentLinkFn ? contentLinkFn(this, el) : compile(el, options)(this, el);
+
+    // register composite unlink function
+    // to be called during instance destruction
+    this._unlinkFn = function () {
+      rootUnlinkFn();
+      // passing destroying: true to avoid searching and
+      // splicing the directives
+      contentUnlinkFn(true);
+    };
+
+    // finally replace original
+    if (options.replace) {
+      replace(original, el);
+    }
+
+    this._isCompiled = true;
+    this._callHook('compiled');
+    return el;
+  };
+
+  /**
+   * Initialize instance element. Called in the public
+   * $mount() method.
+   *
+   * @param {Element} el
+   */
+
+  Vue.prototype._initElement = function (el) {
+    if (el instanceof DocumentFragment) {
+      this._isFragment = true;
+      this.$el = this._fragmentStart = el.firstChild;
+      this._fragmentEnd = el.lastChild;
+      // set persisted text anchors to empty
+      if (this._fragmentStart.nodeType === 3) {
+        this._fragmentStart.data = this._fragmentEnd.data = '';
+      }
+      this._fragment = el;
+    } else {
+      this.$el = el;
+    }
+    this.$el.__vue__ = this;
+    this._callHook('beforeCompile');
+  };
+
+  /**
+   * Create and bind a directive to an element.
+   *
+   * @param {String} name - directive name
+   * @param {Node} node   - target node
+   * @param {Object} desc - parsed directive descriptor
+   * @param {Object} def  - directive definition object
+   * @param {Vue} [host] - transclusion host component
+   * @param {Object} [scope] - v-for scope
+   * @param {Fragment} [frag] - owner fragment
+   */
+
+  Vue.prototype._bindDir = function (descriptor, node, host, scope, frag) {
+    this._directives.push(new Directive(descriptor, this, node, host, scope, frag));
+  };
+
+  /**
+   * Teardown an instance, unobserves the data, unbind all the
+   * directives, turn off all the event listeners, etc.
+   *
+   * @param {Boolean} remove - whether to remove the DOM node.
+   * @param {Boolean} deferCleanup - if true, defer cleanup to
+   *                                 be called later
+   */
+
+  Vue.prototype._destroy = function (remove, deferCleanup) {
+    if (this._isBeingDestroyed) {
+      if (!deferCleanup) {
+        this._cleanup();
+      }
+      return;
+    }
+
+    var destroyReady;
+    var pendingRemoval;
+
+    var self = this;
+    // Cleanup should be called either synchronously or asynchronoysly as
+    // callback of this.$remove(), or if remove and deferCleanup are false.
+    // In any case it should be called after all other removing, unbinding and
+    // turning of is done
+    var cleanupIfPossible = function cleanupIfPossible() {
+      if (destroyReady && !pendingRemoval && !deferCleanup) {
+        self._cleanup();
+      }
+    };
+
+    // remove DOM element
+    if (remove && this.$el) {
+      pendingRemoval = true;
+      this.$remove(function () {
+        pendingRemoval = false;
+        cleanupIfPossible();
+      });
+    }
+
+    this._callHook('beforeDestroy');
+    this._isBeingDestroyed = true;
+    var i;
+    // remove self from parent. only necessary
+    // if parent is not being destroyed as well.
+    var parent = this.$parent;
+    if (parent && !parent._isBeingDestroyed) {
+      parent.$children.$remove(this);
+      // unregister ref (remove: true)
+      this._updateRef(true);
+    }
+    // destroy all children.
+    i = this.$children.length;
+    while (i--) {
+      this.$children[i].$destroy();
+    }
+    // teardown props
+    if (this._propsUnlinkFn) {
+      this._propsUnlinkFn();
+    }
+    // teardown all directives. this also tearsdown all
+    // directive-owned watchers.
+    if (this._unlinkFn) {
+      this._unlinkFn();
+    }
+    i = this._watchers.length;
+    while (i--) {
+      this._watchers[i].teardown();
+    }
+    // remove reference to self on $el
+    if (this.$el) {
+      this.$el.__vue__ = null;
+    }
+
+    destroyReady = true;
+    cleanupIfPossible();
+  };
+
+  /**
+   * Clean up to ensure garbage collection.
+   * This is called after the leave transition if there
+   * is any.
+   */
+
+  Vue.prototype._cleanup = function () {
+    if (this._isDestroyed) {
+      return;
+    }
+    // remove self from owner fragment
+    // do it in cleanup so that we can call $destroy with
+    // defer right when a fragment is about to be removed.
+    if (this._frag) {
+      this._frag.children.$remove(this);
+    }
+    // remove reference from data ob
+    // frozen object may not have observer.
+    if (this._data.__ob__) {
+      this._data.__ob__.removeVm(this);
+    }
+    // Clean up references to private properties and other
+    // instances. preserve reference to _data so that proxy
+    // accessors still work. The only potential side effect
+    // here is that mutating the instance after it's destroyed
+    // may affect the state of other components that are still
+    // observing the same object, but that seems to be a
+    // reasonable responsibility for the user rather than
+    // always throwing an error on them.
+    this.$el = this.$parent = this.$root = this.$children = this._watchers = this._context = this._scope = this._directives = null;
+    // call the last hook...
+    this._isDestroyed = true;
+    this._callHook('destroyed');
+    // turn off all instance listeners.
+    this.$off();
+  };
+}
+
+function miscMixin (Vue) {
+
+  /**
+   * Apply a list of filter (descriptors) to a value.
+   * Using plain for loops here because this will be called in
+   * the getter of any watcher with filters so it is very
+   * performance sensitive.
+   *
+   * @param {*} value
+   * @param {*} [oldValue]
+   * @param {Array} filters
+   * @param {Boolean} write
+   * @return {*}
+   */
+
+  Vue.prototype._applyFilters = function (value, oldValue, filters, write) {
+    var filter, fn, args, arg, offset, i, l, j, k;
+    for (i = 0, l = filters.length; i < l; i++) {
+      filter = filters[i];
+      fn = resolveAsset(this.$options, 'filters', filter.name);
+      if (process.env.NODE_ENV !== 'production') {
+        assertAsset(fn, 'filter', filter.name);
+      }
+      if (!fn) continue;
+      fn = write ? fn.write : fn.read || fn;
+      if (typeof fn !== 'function') continue;
+      args = write ? [value, oldValue] : [value];
+      offset = write ? 2 : 1;
+      if (filter.args) {
+        for (j = 0, k = filter.args.length; j < k; j++) {
+          arg = filter.args[j];
+          args[j + offset] = arg.dynamic ? this.$get(arg.value) : arg.value;
+        }
+      }
+      value = fn.apply(this, args);
+    }
+    return value;
+  };
+
+  /**
+   * Resolve a component, depending on whether the component
+   * is defined normally or using an async factory function.
+   * Resolves synchronously if already resolved, otherwise
+   * resolves asynchronously and caches the resolved
+   * constructor on the factory.
+   *
+   * @param {String} id
+   * @param {Function} cb
+   */
+
+  Vue.prototype._resolveComponent = function (id, cb) {
+    var factory = resolveAsset(this.$options, 'components', id);
+    if (process.env.NODE_ENV !== 'production') {
+      assertAsset(factory, 'component', id);
+    }
+    if (!factory) {
+      return;
+    }
+    // async component factory
+    if (!factory.options) {
+      if (factory.resolved) {
+        // cached
+        cb(factory.resolved);
+      } else if (factory.requested) {
+        // pool callbacks
+        factory.pendingCallbacks.push(cb);
+      } else {
+        factory.requested = true;
+        var cbs = factory.pendingCallbacks = [cb];
+        factory(function resolve(res) {
+          if (isPlainObject(res)) {
+            res = Vue.extend(res);
+          }
+          // cache resolved
+          factory.resolved = res;
+          // invoke callbacks
+          for (var i = 0, l = cbs.length; i < l; i++) {
+            cbs[i](res);
+          }
+        }, function reject(reason) {
+          process.env.NODE_ENV !== 'production' && warn('Failed to resolve async component: ' + id + '. ' + (reason ? '\nReason: ' + reason : ''));
+        });
+      }
+    } else {
+      // normal component
+      cb(factory);
+    }
+  };
+}
+
+function globalAPI (Vue) {
+
+  /**
+   * Expose useful internals
+   */
+
+  Vue.util = util;
+  Vue.config = config;
+  Vue.set = set;
+  Vue['delete'] = del;
+  Vue.nextTick = nextTick;
+
+  /**
+   * The following are exposed for advanced usage / plugins
+   */
+
+  Vue.compiler = compiler;
+  Vue.FragmentFactory = FragmentFactory;
+  Vue.internalDirectives = internalDirectives;
+  Vue.parsers = {
+    path: path,
+    text: text$1,
+    template: template,
+    directive: directive,
+    expression: expression
+  };
+
+  /**
+   * Each instance constructor, including Vue, has a unique
+   * cid. This enables us to create wrapped "child
+   * constructors" for prototypal inheritance and cache them.
+   */
+
+  Vue.cid = 0;
+  var cid = 1;
+
+  /**
+   * Class inheritance
+   *
+   * @param {Object} extendOptions
+   */
+
+  Vue.extend = function (extendOptions) {
+    extendOptions = extendOptions || {};
+    var Super = this;
+    var isFirstExtend = Super.cid === 0;
+    if (isFirstExtend && extendOptions._Ctor) {
+      return extendOptions._Ctor;
+    }
+    var name = extendOptions.name || Super.options.name;
+    if (process.env.NODE_ENV !== 'production') {
+      if (!/^[a-zA-Z][\w-]+$/.test(name)) {
+        warn('Invalid component name: ' + name);
+        name = null;
+      }
+    }
+    var Sub = createClass(name || 'VueComponent');
+    Sub.prototype = Object.create(Super.prototype);
+    Sub.prototype.constructor = Sub;
+    Sub.cid = cid++;
+    Sub.options = mergeOptions(Super.options, extendOptions);
+    Sub['super'] = Super;
+    // allow further extension
+    Sub.extend = Super.extend;
+    // create asset registers, so extended classes
+    // can have their private assets too.
+    config._assetTypes.forEach(function (type) {
+      Sub[type] = Super[type];
+    });
+    // enable recursive self-lookup
+    if (name) {
+      Sub.options.components[name] = Sub;
+    }
+    // cache constructor
+    if (isFirstExtend) {
+      extendOptions._Ctor = Sub;
+    }
+    return Sub;
+  };
+
+  /**
+   * A function that returns a sub-class constructor with the
+   * given name. This gives us much nicer output when
+   * logging instances in the console.
+   *
+   * @param {String} name
+   * @return {Function}
+   */
+
+  function createClass(name) {
+    return new Function('return function ' + classify(name) + ' (options) { this._init(options) }')();
+  }
+
+  /**
+   * Plugin system
+   *
+   * @param {Object} plugin
+   */
+
+  Vue.use = function (plugin) {
+    /* istanbul ignore if */
+    if (plugin.installed) {
+      return;
+    }
+    // additional parameters
+    var args = toArray(arguments, 1);
+    args.unshift(this);
+    if (typeof plugin.install === 'function') {
+      plugin.install.apply(plugin, args);
+    } else {
+      plugin.apply(null, args);
+    }
+    plugin.installed = true;
+    return this;
+  };
+
+  /**
+   * Apply a global mixin by merging it into the default
+   * options.
+   */
+
+  Vue.mixin = function (mixin) {
+    Vue.options = mergeOptions(Vue.options, mixin);
+  };
+
+  /**
+   * Create asset registration methods with the following
+   * signature:
+   *
+   * @param {String} id
+   * @param {*} definition
+   */
+
+  config._assetTypes.forEach(function (type) {
+    Vue[type] = function (id, definition) {
+      if (!definition) {
+        return this.options[type + 's'][id];
+      } else {
+        /* istanbul ignore if */
+        if (process.env.NODE_ENV !== 'production') {
+          if (type === 'component' && (commonTagRE.test(id) || reservedTagRE.test(id))) {
+            warn('Do not use built-in or reserved HTML elements as component ' + 'id: ' + id);
+          }
+        }
+        if (type === 'component' && isPlainObject(definition)) {
+          definition.name = id;
+          definition = Vue.extend(definition);
+        }
+        this.options[type + 's'][id] = definition;
+        return definition;
+      }
+    };
+  });
+}
+
+var filterRE = /[^|]\|[^|]/;
+
+function dataAPI (Vue) {
+
+  /**
+   * Get the value from an expression on this vm.
+   *
+   * @param {String} exp
+   * @param {Boolean} [asStatement]
+   * @return {*}
+   */
+
+  Vue.prototype.$get = function (exp, asStatement) {
+    var res = parseExpression(exp);
+    if (res) {
+      if (asStatement && !isSimplePath(exp)) {
+        var self = this;
+        return function statementHandler() {
+          self.$arguments = toArray(arguments);
+          res.get.call(self, self);
+          self.$arguments = null;
+        };
+      } else {
+        try {
+          return res.get.call(this, this);
+        } catch (e) {}
+      }
+    }
+  };
+
+  /**
+   * Set the value from an expression on this vm.
+   * The expression must be a valid left-hand
+   * expression in an assignment.
+   *
+   * @param {String} exp
+   * @param {*} val
+   */
+
+  Vue.prototype.$set = function (exp, val) {
+    var res = parseExpression(exp, true);
+    if (res && res.set) {
+      res.set.call(this, this, val);
+    }
+  };
+
+  /**
+   * Delete a property on the VM
+   *
+   * @param {String} key
+   */
+
+  Vue.prototype.$delete = function (key) {
+    del(this._data, key);
+  };
+
+  /**
+   * Watch an expression, trigger callback when its
+   * value changes.
+   *
+   * @param {String|Function} expOrFn
+   * @param {Function} cb
+   * @param {Object} [options]
+   *                 - {Boolean} deep
+   *                 - {Boolean} immediate
+   * @return {Function} - unwatchFn
+   */
+
+  Vue.prototype.$watch = function (expOrFn, cb, options) {
+    var vm = this;
+    var parsed;
+    if (typeof expOrFn === 'string') {
+      parsed = parseDirective(expOrFn);
+      expOrFn = parsed.expression;
+    }
+    var watcher = new Watcher(vm, expOrFn, cb, {
+      deep: options && options.deep,
+      sync: options && options.sync,
+      filters: parsed && parsed.filters,
+      user: !options || options.user !== false
+    });
+    if (options && options.immediate) {
+      cb.call(vm, watcher.value);
+    }
+    return function unwatchFn() {
+      watcher.teardown();
+    };
+  };
+
+  /**
+   * Evaluate a text directive, including filters.
+   *
+   * @param {String} text
+   * @param {Boolean} [asStatement]
+   * @return {String}
+   */
+
+  Vue.prototype.$eval = function (text, asStatement) {
+    // check for filters.
+    if (filterRE.test(text)) {
+      var dir = parseDirective(text);
+      // the filter regex check might give false positive
+      // for pipes inside strings, so it's possible that
+      // we don't get any filters here
+      var val = this.$get(dir.expression, asStatement);
+      return dir.filters ? this._applyFilters(val, null, dir.filters) : val;
+    } else {
+      // no filter
+      return this.$get(text, asStatement);
+    }
+  };
+
+  /**
+   * Interpolate a piece of template text.
+   *
+   * @param {String} text
+   * @return {String}
+   */
+
+  Vue.prototype.$interpolate = function (text) {
+    var tokens = parseText(text);
+    var vm = this;
+    if (tokens) {
+      if (tokens.length === 1) {
+        return vm.$eval(tokens[0].value) + '';
+      } else {
+        return tokens.map(function (token) {
+          return token.tag ? vm.$eval(token.value) : token.value;
+        }).join('');
+      }
+    } else {
+      return text;
+    }
+  };
+
+  /**
+   * Log instance data as a plain JS object
+   * so that it is easier to inspect in console.
+   * This method assumes console is available.
+   *
+   * @param {String} [path]
+   */
+
+  Vue.prototype.$log = function (path) {
+    var data = path ? getPath(this._data, path) : this._data;
+    if (data) {
+      data = clean(data);
+    }
+    // include computed fields
+    if (!path) {
+      for (var key in this.$options.computed) {
+        data[key] = clean(this[key]);
+      }
+    }
+    console.log(data);
+  };
+
+  /**
+   * "clean" a getter/setter converted object into a plain
+   * object copy.
+   *
+   * @param {Object} - obj
+   * @return {Object}
+   */
+
+  function clean(obj) {
+    return JSON.parse(JSON.stringify(obj));
+  }
+}
+
+function domAPI (Vue) {
+
+  /**
+   * Convenience on-instance nextTick. The callback is
+   * auto-bound to the instance, and this avoids component
+   * modules having to rely on the global Vue.
+   *
+   * @param {Function} fn
+   */
+
+  Vue.prototype.$nextTick = function (fn) {
+    nextTick(fn, this);
+  };
+
+  /**
+   * Append instance to target
+   *
+   * @param {Node} target
+   * @param {Function} [cb]
+   * @param {Boolean} [withTransition] - defaults to true
+   */
+
+  Vue.prototype.$appendTo = function (target, cb, withTransition) {
+    return insert(this, target, cb, withTransition, append, appendWithTransition);
+  };
+
+  /**
+   * Prepend instance to target
+   *
+   * @param {Node} target
+   * @param {Function} [cb]
+   * @param {Boolean} [withTransition] - defaults to true
+   */
+
+  Vue.prototype.$prependTo = function (target, cb, withTransition) {
+    target = query(target);
+    if (target.hasChildNodes()) {
+      this.$before(target.firstChild, cb, withTransition);
+    } else {
+      this.$appendTo(target, cb, withTransition);
+    }
+    return this;
+  };
+
+  /**
+   * Insert instance before target
+   *
+   * @param {Node} target
+   * @param {Function} [cb]
+   * @param {Boolean} [withTransition] - defaults to true
+   */
+
+  Vue.prototype.$before = function (target, cb, withTransition) {
+    return insert(this, target, cb, withTransition, beforeWithCb, beforeWithTransition);
+  };
+
+  /**
+   * Insert instance after target
+   *
+   * @param {Node} target
+   * @param {Function} [cb]
+   * @param {Boolean} [withTransition] - defaults to true
+   */
+
+  Vue.prototype.$after = function (target, cb, withTransition) {
+    target = query(target);
+    if (target.nextSibling) {
+      this.$before(target.nextSibling, cb, withTransition);
+    } else {
+      this.$appendTo(target.parentNode, cb, withTransition);
+    }
+    return this;
+  };
+
+  /**
+   * Remove instance from DOM
+   *
+   * @param {Function} [cb]
+   * @param {Boolean} [withTransition] - defaults to true
+   */
+
+  Vue.prototype.$remove = function (cb, withTransition) {
+    if (!this.$el.parentNode) {
+      return cb && cb();
+    }
+    var inDocument = this._isAttached && inDoc(this.$el);
+    // if we are not in document, no need to check
+    // for transitions
+    if (!inDocument) withTransition = false;
+    var self = this;
+    var realCb = function realCb() {
+      if (inDocument) self._callHook('detached');
+      if (cb) cb();
+    };
+    if (this._isFragment) {
+      removeNodeRange(this._fragmentStart, this._fragmentEnd, this, this._fragment, realCb);
+    } else {
+      var op = withTransition === false ? removeWithCb : removeWithTransition;
+      op(this.$el, this, realCb);
+    }
+    return this;
+  };
+
+  /**
+   * Shared DOM insertion function.
+   *
+   * @param {Vue} vm
+   * @param {Element} target
+   * @param {Function} [cb]
+   * @param {Boolean} [withTransition]
+   * @param {Function} op1 - op for non-transition insert
+   * @param {Function} op2 - op for transition insert
+   * @return vm
+   */
+
+  function insert(vm, target, cb, withTransition, op1, op2) {
+    target = query(target);
+    var targetIsDetached = !inDoc(target);
+    var op = withTransition === false || targetIsDetached ? op1 : op2;
+    var shouldCallHook = !targetIsDetached && !vm._isAttached && !inDoc(vm.$el);
+    if (vm._isFragment) {
+      mapNodeRange(vm._fragmentStart, vm._fragmentEnd, function (node) {
+        op(node, target, vm);
+      });
+      cb && cb();
+    } else {
+      op(vm.$el, target, vm, cb);
+    }
+    if (shouldCallHook) {
+      vm._callHook('attached');
+    }
+    return vm;
+  }
+
+  /**
+   * Check for selectors
+   *
+   * @param {String|Element} el
+   */
+
+  function query(el) {
+    return typeof el === 'string' ? document.querySelector(el) : el;
+  }
+
+  /**
+   * Append operation that takes a callback.
+   *
+   * @param {Node} el
+   * @param {Node} target
+   * @param {Vue} vm - unused
+   * @param {Function} [cb]
+   */
+
+  function append(el, target, vm, cb) {
+    target.appendChild(el);
+    if (cb) cb();
+  }
+
+  /**
+   * InsertBefore operation that takes a callback.
+   *
+   * @param {Node} el
+   * @param {Node} target
+   * @param {Vue} vm - unused
+   * @param {Function} [cb]
+   */
+
+  function beforeWithCb(el, target, vm, cb) {
+    before(el, target);
+    if (cb) cb();
+  }
+
+  /**
+   * Remove operation that takes a callback.
+   *
+   * @param {Node} el
+   * @param {Vue} vm - unused
+   * @param {Function} [cb]
+   */
+
+  function removeWithCb(el, vm, cb) {
+    remove(el);
+    if (cb) cb();
+  }
+}
+
+function eventsAPI (Vue) {
+
+  /**
+   * Listen on the given `event` with `fn`.
+   *
+   * @param {String} event
+   * @param {Function} fn
+   */
+
+  Vue.prototype.$on = function (event, fn) {
+    (this._events[event] || (this._events[event] = [])).push(fn);
+    modifyListenerCount(this, event, 1);
+    return this;
+  };
+
+  /**
+   * Adds an `event` listener that will be invoked a single
+   * time then automatically removed.
+   *
+   * @param {String} event
+   * @param {Function} fn
+   */
+
+  Vue.prototype.$once = function (event, fn) {
+    var self = this;
+    function on() {
+      self.$off(event, on);
+      fn.apply(this, arguments);
+    }
+    on.fn = fn;
+    this.$on(event, on);
+    return this;
+  };
+
+  /**
+   * Remove the given callback for `event` or all
+   * registered callbacks.
+   *
+   * @param {String} event
+   * @param {Function} fn
+   */
+
+  Vue.prototype.$off = function (event, fn) {
+    var cbs;
+    // all
+    if (!arguments.length) {
+      if (this.$parent) {
+        for (event in this._events) {
+          cbs = this._events[event];
+          if (cbs) {
+            modifyListenerCount(this, event, -cbs.length);
+          }
+        }
+      }
+      this._events = {};
+      return this;
+    }
+    // specific event
+    cbs = this._events[event];
+    if (!cbs) {
+      return this;
+    }
+    if (arguments.length === 1) {
+      modifyListenerCount(this, event, -cbs.length);
+      this._events[event] = null;
+      return this;
+    }
+    // specific handler
+    var cb;
+    var i = cbs.length;
+    while (i--) {
+      cb = cbs[i];
+      if (cb === fn || cb.fn === fn) {
+        modifyListenerCount(this, event, -1);
+        cbs.splice(i, 1);
+        break;
+      }
+    }
+    return this;
+  };
+
+  /**
+   * Trigger an event on self.
+   *
+   * @param {String} event
+   * @return {Boolean} shouldPropagate
+   */
+
+  Vue.prototype.$emit = function (event) {
+    var cbs = this._events[event];
+    var shouldPropagate = !cbs;
+    if (cbs) {
+      cbs = cbs.length > 1 ? toArray(cbs) : cbs;
+      var args = toArray(arguments, 1);
+      for (var i = 0, l = cbs.length; i < l; i++) {
+        var res = cbs[i].apply(this, args);
+        if (res === true) {
+          shouldPropagate = true;
+        }
+      }
+    }
+    return shouldPropagate;
+  };
+
+  /**
+   * Recursively broadcast an event to all children instances.
+   *
+   * @param {String} event
+   * @param {...*} additional arguments
+   */
+
+  Vue.prototype.$broadcast = function (event) {
+    // if no child has registered for this event,
+    // then there's no need to broadcast.
+    if (!this._eventsCount[event]) return;
+    var children = this.$children;
+    for (var i = 0, l = children.length; i < l; i++) {
+      var child = children[i];
+      var shouldPropagate = child.$emit.apply(child, arguments);
+      if (shouldPropagate) {
+        child.$broadcast.apply(child, arguments);
+      }
+    }
+    return this;
+  };
+
+  /**
+   * Recursively propagate an event up the parent chain.
+   *
+   * @param {String} event
+   * @param {...*} additional arguments
+   */
+
+  Vue.prototype.$dispatch = function () {
+    this.$emit.apply(this, arguments);
+    var parent = this.$parent;
+    while (parent) {
+      var shouldPropagate = parent.$emit.apply(parent, arguments);
+      parent = shouldPropagate ? parent.$parent : null;
+    }
+    return this;
+  };
+
+  /**
+   * Modify the listener counts on all parents.
+   * This bookkeeping allows $broadcast to return early when
+   * no child has listened to a certain event.
+   *
+   * @param {Vue} vm
+   * @param {String} event
+   * @param {Number} count
+   */
+
+  var hookRE = /^hook:/;
+  function modifyListenerCount(vm, event, count) {
+    var parent = vm.$parent;
+    // hooks do not get broadcasted so no need
+    // to do bookkeeping for them
+    if (!parent || !count || hookRE.test(event)) return;
+    while (parent) {
+      parent._eventsCount[event] = (parent._eventsCount[event] || 0) + count;
+      parent = parent.$parent;
+    }
+  }
+}
+
+function lifecycleAPI (Vue) {
+
+  /**
+   * Set instance target element and kick off the compilation
+   * process. The passed in `el` can be a selector string, an
+   * existing Element, or a DocumentFragment (for block
+   * instances).
+   *
+   * @param {Element|DocumentFragment|string} el
+   * @public
+   */
+
+  Vue.prototype.$mount = function (el) {
+    if (this._isCompiled) {
+      process.env.NODE_ENV !== 'production' && warn('$mount() should be called only once.');
+      return;
+    }
+    el = query(el);
+    if (!el) {
+      el = document.createElement('div');
+    }
+    this._compile(el);
+    this._initDOMHooks();
+    if (inDoc(this.$el)) {
+      this._callHook('attached');
+      ready.call(this);
+    } else {
+      this.$once('hook:attached', ready);
+    }
+    return this;
+  };
+
+  /**
+   * Mark an instance as ready.
+   */
+
+  function ready() {
+    this._isAttached = true;
+    this._isReady = true;
+    this._callHook('ready');
+  }
+
+  /**
+   * Teardown the instance, simply delegate to the internal
+   * _destroy.
+   */
+
+  Vue.prototype.$destroy = function (remove, deferCleanup) {
+    this._destroy(remove, deferCleanup);
+  };
+
+  /**
+   * Partially compile a piece of DOM and return a
+   * decompile function.
+   *
+   * @param {Element|DocumentFragment} el
+   * @param {Vue} [host]
+   * @return {Function}
+   */
+
+  Vue.prototype.$compile = function (el, host, scope, frag) {
+    return compile(el, this.$options, true)(this, el, host, scope, frag);
+  };
+}
+
+/**
+ * The exposed Vue constructor.
+ *
+ * API conventions:
+ * - public API methods/properties are prefixed with `$`
+ * - internal methods/properties are prefixed with `_`
+ * - non-prefixed properties are assumed to be proxied user
+ *   data.
+ *
+ * @constructor
+ * @param {Object} [options]
+ * @public
+ */
+
+function Vue(options) {
+  this._init(options);
+}
+
+// install internals
+initMixin(Vue);
+stateMixin(Vue);
+eventsMixin(Vue);
+lifecycleMixin(Vue);
+miscMixin(Vue);
+
+// install APIs
+globalAPI(Vue);
+dataAPI(Vue);
+domAPI(Vue);
+eventsAPI(Vue);
+lifecycleAPI(Vue);
+
+var convertArray = vFor._postProcess;
+
+/**
+ * Limit filter for arrays
+ *
+ * @param {Number} n
+ * @param {Number} offset (Decimal expected)
+ */
+
+function limitBy(arr, n, offset) {
+  offset = offset ? parseInt(offset, 10) : 0;
+  return typeof n === 'number' ? arr.slice(offset, offset + n) : arr;
+}
+
+/**
+ * Filter filter for arrays
+ *
+ * @param {String} search
+ * @param {String} [delimiter]
+ * @param {String} ...dataKeys
+ */
+
+function filterBy(arr, search, delimiter) {
+  arr = convertArray(arr);
+  if (search == null) {
+    return arr;
+  }
+  if (typeof search === 'function') {
+    return arr.filter(search);
+  }
+  // cast to lowercase string
+  search = ('' + search).toLowerCase();
+  // allow optional `in` delimiter
+  // because why not
+  var n = delimiter === 'in' ? 3 : 2;
+  // extract and flatten keys
+  var keys = toArray(arguments, n).reduce(function (prev, cur) {
+    return prev.concat(cur);
+  }, []);
+  var res = [];
+  var item, key, val, j;
+  for (var i = 0, l = arr.length; i < l; i++) {
+    item = arr[i];
+    val = item && item.$value || item;
+    j = keys.length;
+    if (j) {
+      while (j--) {
+        key = keys[j];
+        if (key === '$key' && contains(item.$key, search) || contains(getPath(val, key), search)) {
+          res.push(item);
+          break;
+        }
+      }
+    } else if (contains(item, search)) {
+      res.push(item);
+    }
+  }
+  return res;
+}
+
+/**
+ * Filter filter for arrays
+ *
+ * @param {String} sortKey
+ * @param {String} reverse
+ */
+
+function orderBy(arr, sortKey, reverse) {
+  arr = convertArray(arr);
+  if (!sortKey) {
+    return arr;
+  }
+  var order = reverse && reverse < 0 ? -1 : 1;
+  // sort on a copy to avoid mutating original array
+  return arr.slice().sort(function (a, b) {
+    if (sortKey !== '$key') {
+      if (isObject(a) && '$value' in a) a = a.$value;
+      if (isObject(b) && '$value' in b) b = b.$value;
+    }
+    a = isObject(a) ? getPath(a, sortKey) : a;
+    b = isObject(b) ? getPath(b, sortKey) : b;
+    return a === b ? 0 : a > b ? order : -order;
+  });
+}
+
+/**
+ * String contain helper
+ *
+ * @param {*} val
+ * @param {String} search
+ */
+
+function contains(val, search) {
+  var i;
+  if (isPlainObject(val)) {
+    var keys = Object.keys(val);
+    i = keys.length;
+    while (i--) {
+      if (contains(val[keys[i]], search)) {
+        return true;
+      }
+    }
+  } else if (isArray(val)) {
+    i = val.length;
+    while (i--) {
+      if (contains(val[i], search)) {
+        return true;
+      }
+    }
+  } else if (val != null) {
+    return val.toString().toLowerCase().indexOf(search) > -1;
+  }
+}
+
+var digitsRE = /(\d{3})(?=\d)/g;
+
+// asset collections must be a plain object.
+var filters = {
+
+  orderBy: orderBy,
+  filterBy: filterBy,
+  limitBy: limitBy,
+
+  /**
+   * Stringify value.
+   *
+   * @param {Number} indent
+   */
+
+  json: {
+    read: function read(value, indent) {
+      return typeof value === 'string' ? value : JSON.stringify(value, null, Number(indent) || 2);
+    },
+    write: function write(value) {
+      try {
+        return JSON.parse(value);
+      } catch (e) {
+        return value;
+      }
+    }
+  },
+
+  /**
+   * 'abc' => 'Abc'
+   */
+
+  capitalize: function capitalize(value) {
+    if (!value && value !== 0) return '';
+    value = value.toString();
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  },
+
+  /**
+   * 'abc' => 'ABC'
+   */
+
+  uppercase: function uppercase(value) {
+    return value || value === 0 ? value.toString().toUpperCase() : '';
+  },
+
+  /**
+   * 'AbC' => 'abc'
+   */
+
+  lowercase: function lowercase(value) {
+    return value || value === 0 ? value.toString().toLowerCase() : '';
+  },
+
+  /**
+   * 12345 => $12,345.00
+   *
+   * @param {String} sign
+   */
+
+  currency: function currency(value, _currency) {
+    value = parseFloat(value);
+    if (!isFinite(value) || !value && value !== 0) return '';
+    _currency = _currency != null ? _currency : '$';
+    var stringified = Math.abs(value).toFixed(2);
+    var _int = stringified.slice(0, -3);
+    var i = _int.length % 3;
+    var head = i > 0 ? _int.slice(0, i) + (_int.length > 3 ? ',' : '') : '';
+    var _float = stringified.slice(-3);
+    var sign = value < 0 ? '-' : '';
+    return _currency + sign + head + _int.slice(i).replace(digitsRE, '$1,') + _float;
+  },
+
+  /**
+   * 'item' => 'items'
+   *
+   * @params
+   *  an array of strings corresponding to
+   *  the single, double, triple ... forms of the word to
+   *  be pluralized. When the number to be pluralized
+   *  exceeds the length of the args, it will use the last
+   *  entry in the array.
+   *
+   *  e.g. ['single', 'double', 'triple', 'multiple']
+   */
+
+  pluralize: function pluralize(value) {
+    var args = toArray(arguments, 1);
+    return args.length > 1 ? args[value % 10 - 1] || args[args.length - 1] : args[0] + (value === 1 ? '' : 's');
+  },
+
+  /**
+   * Debounce a handler function.
+   *
+   * @param {Function} handler
+   * @param {Number} delay = 300
+   * @return {Function}
+   */
+
+  debounce: function debounce(handler, delay) {
+    if (!handler) return;
+    if (!delay) {
+      delay = 300;
+    }
+    return _debounce(handler, delay);
+  }
+};
+
+var partial = {
+
+  priority: PARTIAL,
+
+  params: ['name'],
+
+  // watch changes to name for dynamic partials
+  paramWatchers: {
+    name: function name(value) {
+      vIf.remove.call(this);
+      if (value) {
+        this.insert(value);
+      }
+    }
+  },
+
+  bind: function bind() {
+    this.anchor = createAnchor('v-partial');
+    replace(this.el, this.anchor);
+    this.insert(this.params.name);
+  },
+
+  insert: function insert(id) {
+    var partial = resolveAsset(this.vm.$options, 'partials', id);
+    if (process.env.NODE_ENV !== 'production') {
+      assertAsset(partial, 'partial', id);
+    }
+    if (partial) {
+      this.factory = new FragmentFactory(this.vm, partial);
+      vIf.insert.call(this);
+    }
+  },
+
+  unbind: function unbind() {
+    if (this.frag) {
+      this.frag.destroy();
+    }
+  }
+};
+
+// This is the elementDirective that handles <content>
+// transclusions. It relies on the raw content of an
+// instance being stored as `$options._content` during
+// the transclude phase.
+
+// We are exporting two versions, one for named and one
+// for unnamed, because the unnamed slots must be compiled
+// AFTER all named slots have selected their content. So
+// we need to give them different priorities in the compilation
+// process. (See #1965)
+
+var slot = {
+
+  priority: SLOT,
+
+  bind: function bind() {
+    var host = this.vm;
+    var raw = host.$options._content;
+    if (!raw) {
+      this.fallback();
+      return;
+    }
+    var context = host._context;
+    var slotName = this.params && this.params.name;
+    if (!slotName) {
+      // Default slot
+      this.tryCompile(extractFragment(raw.childNodes, raw, true), context, host);
+    } else {
+      // Named slot
+      var selector = '[slot="' + slotName + '"]';
+      var nodes = raw.querySelectorAll(selector);
+      if (nodes.length) {
+        this.tryCompile(extractFragment(nodes, raw), context, host);
+      } else {
+        this.fallback();
+      }
+    }
+  },
+
+  tryCompile: function tryCompile(content, context, host) {
+    if (content.hasChildNodes()) {
+      this.compile(content, context, host);
+    } else {
+      this.fallback();
+    }
+  },
+
+  compile: function compile(content, context, host) {
+    if (content && context) {
+      var scope = host ? host._scope : this._scope;
+      this.unlink = context.$compile(content, host, scope, this._frag);
+    }
+    if (content) {
+      replace(this.el, content);
+    } else {
+      remove(this.el);
+    }
+  },
+
+  fallback: function fallback() {
+    this.compile(extractContent(this.el, true), this.vm);
+  },
+
+  unbind: function unbind() {
+    if (this.unlink) {
+      this.unlink();
+    }
+  }
+};
+
+var namedSlot = extend(extend({}, slot), {
+  priority: slot.priority + 1,
+  params: ['name']
+});
+
+/**
+ * Extract qualified content nodes from a node list.
+ *
+ * @param {NodeList} nodes
+ * @param {Element} parent
+ * @param {Boolean} main
+ * @return {DocumentFragment}
+ */
+
+function extractFragment(nodes, parent, main) {
+  var frag = document.createDocumentFragment();
+  for (var i = 0, l = nodes.length; i < l; i++) {
+    var node = nodes[i];
+    // if this is the main outlet, we want to skip all
+    // previously selected nodes;
+    // otherwise, we want to mark the node as selected.
+    // clone the node so the original raw content remains
+    // intact. this ensures proper re-compilation in cases
+    // where the outlet is inside a conditional block
+    if (main && !node.__v_selected) {
+      append(node);
+    } else if (!main && node.parentNode === parent) {
+      node.__v_selected = true;
+      append(node);
+    }
+  }
+  return frag;
+
+  function append(node) {
+    if (isTemplate(node) && !node.hasAttribute('v-if') && !node.hasAttribute('v-for')) {
+      node = parseTemplate(node);
+    }
+    node = cloneNode(node);
+    frag.appendChild(node);
+  }
+}
+
+var elementDirectives = {
+  slot: slot,
+  _namedSlot: namedSlot, // same as slot but with higher priority
+  partial: partial
+};
+
+Vue.version = '1.0.13';
+
+/**
+ * Vue and every constructor that extends Vue has an
+ * associated options object, which can be accessed during
+ * compilation steps as `this.constructor.options`.
+ *
+ * These can be seen as the default options of every
+ * Vue instance.
+ */
+
+Vue.options = {
+  directives: publicDirectives,
+  elementDirectives: elementDirectives,
+  filters: filters,
+  transitions: {},
+  components: {},
+  partials: {},
+  replace: true
+};
+
+// devtools global hook
+/* istanbul ignore if */
+if (process.env.NODE_ENV !== 'production' && inBrowser) {
+  if (window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
+    window.__VUE_DEVTOOLS_GLOBAL_HOOK__.emit('init', Vue);
+  } else if (/Chrome\/\d+/.test(navigator.userAgent)) {
+    console.log('Download the Vue Devtools for a better development experience:\n' + 'https://github.com/vuejs/vue-devtools');
+  }
+}
+
+module.exports = Vue;
+}).call(this,require('_process'))
+},{"_process":1}],7:[function(require,module,exports){
+'use strict';
+
+var Vue = require('vue');
+var specialization = require('./specialization');
+var favored = require('./attributes/favored');
+var major = require('./skills/major');
+var minor = require('./skills/minor');
+var stats = require('./stats');
+var uri = require('urijs');
+
+Vue.config.debug = true;
+
+new Vue({
+	el: '#app',
+
+	data: {
+		saved: false,
+
+		sex: '',
+		specialization: '',
+
+		majorSkills: ['', '', '', '', ''],
+		minorSkills: ['', '', '', '', ''],
+		skills: require('./skills/all'),
+
+		favoredAttributes: ['', ''],
+		attributes: require('./attributes/all'),
+
+		birthsign: require('./birthsigns/default'),
+		birthsigns: require('./birthsigns/all'),
+
+		race: require('./races/default'),
+		races: require('./races/all')
+	},
+
+	ready: function ready() {
+		var self = this,
+		    url = uri(window.location.href),
+		    state = url.query(true);
+
+		function setArray(current, loaded, maxSize) {
+			var result = [];
+			if (Array.isArray(loaded)) {
+				result = loaded;
+			} else if (loaded !== undefined) {
+				result = [loaded];
+			}
+
+			while (result.length < maxSize) {
+				result.push('');
+			}
+			return result;
+		}
+
+		this.sex = state.sex;
+		this.specialization = state.specialization;
+
+		this.majorSkills = setArray(this.majorSkills, state.major, 5);
+		this.minorSkills = setArray(this.minorSkills, state.minor, 5);
+		this.favoredAttributes = setArray(this.favoredAttributes, state.favored, 2);
+		if (state.race === undefined) {
+			this.race = require('./races/default');
+		} else {
+			this.race = this.races.filter(function (value) {
+				return value.key == state.race;
+			})[0];
+		}
+
+		if (state.birthsign === undefined) {
+			this.birthsign = require('./birthsigns/default');
+		} else {
+			this.birthsign = this.birthsigns.filter(function (value) {
+				return value.name == state.birthsign;
+			})[0];
+		}
+	},
+
+	computed: {
+		build: function build() {
+			var build = require('./default-build')();
+			build.sex = this.sex;
+
+			this.race.apply(build);
+			this.majorSkills.forEach(function (skill) {
+				major(build, skill);
+			});
+			this.minorSkills.forEach(function (skill) {
+				minor(build, skill);
+			});
+			this.birthsign.apply(build);
+			specialization(build, this.specialization);
+			this.favoredAttributes.forEach(function (attr) {
+				favored(build, attr);
+			});
+			stats(build);
+
+			return build;
+		},
+		state: function state() {
+			function notBlank(value) {
+				return value !== '';
+			}
+			return {
+				sex: this.sex,
+				race: this.race.key,
+				birthsign: this.birthsign.name,
+				specialization: this.specialization,
+				favored: this.favoredAttributes.filter(notBlank),
+				major: this.majorSkills.filter(notBlank),
+				minor: this.minorSkills.filter(notBlank)
+			};
+		},
+		url: function url() {
+			var url = uri(window.location.href);
+			url.search(this.state);
+			return url.toString();
+		}
+	},
+
+	methods: {
+		reset: function reset() {
+			this.sex = '';
+			this.specialization = '';
+			this.majorSkills = ['', '', '', '', ''];
+			this.minorSkills = ['', '', '', '', ''];
+			this.favoredAttributes = ['', ''];
+			this.race = require('./races/default');
+			this.birthsign = require('./birthsigns/default');
+		},
+		save: function save() {
+			window.history.pushState('character', document.title, this.url);
+			this.saved = true;
+		}
+	}
+});
+
+},{"./attributes/all":8,"./attributes/favored":9,"./birthsigns/all":10,"./birthsigns/default":13,"./default-build":25,"./races/all":26,"./races/default":30,"./skills/all":38,"./skills/major":39,"./skills/minor":40,"./specialization":41,"./stats":42,"urijs":4,"vue":6}],8:[function(require,module,exports){
+'use strict';
+
+module.exports = ['', 'strength', 'intelligence', 'willpower', 'agility', 'speed', 'endurance', 'personality', 'luck'];
+
+},{}],9:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build, attribute) {
+	build.attributes[attribute] += 10;
+};
+
+},{}],10:[function(require,module,exports){
+'use strict';
+
+module.exports = [require('./default'), require('./warrior'), require('./mage'), require('./thief'), require('./serpent'), require('./lady'), require('./steed'), require('./lord'), require('./apprentice'), require('./atronach'), require('./ritual'), require('./lover'), require('./shadow'), require('./tower')];
+
+},{"./apprentice":11,"./atronach":12,"./default":13,"./lady":14,"./lord":15,"./lover":16,"./mage":17,"./ritual":18,"./serpent":19,"./shadow":20,"./steed":21,"./thief":22,"./tower":23,"./warrior":24}],11:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.magickaMultiplier += 1.5;
+		build.resistances.magicka -= 50;
+		build.abilities.push('Elfborn - Fortify Maximum Magicka 1.5x INT, Weakness to Magicka 50%');
+	},
+	name: 'Apprentice'
+};
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.magickaMultiplier += 2;
+		build.abilities.push('Wombburn - Spell Absorption 50%, Fortify Maximum Magicka 2.0x INT, Stunted Magicka');
+	},
+	name: 'Atronach'
+};
+
+},{}],13:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: ''
+};
+
+},{}],14:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.personality += 25;
+		build.attributes.endurance += 25;
+		build.abilities.push('Lady\'s Favor - Fortify Personality 25 pts');
+		build.abilities.push('Lady\'s Grace - Fortify Endurance 25 pts');
+	},
+	name: 'Lady'
+};
+
+},{}],15:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.resistances.fire -= 100;
+		build.abilities.push('Blood of the North - Restore Health 2 pts for 30 secs on Self');
+		build.abilities.push('Trollkin - Weakness to Fire 100%');
+	},
+	name: 'Lord'
+};
+
+},{}],16:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.agility += 25;
+		build.abilities.push('Mooncalf - Fortify Agility 25 pts');
+		build.abilities.push('Lover\'s Kiss - Paralyze 60 secs on Target, Damage Fatigue 200 pts on Self');
+	},
+	name: 'Lover'
+};
+
+},{}],17:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.magickaMultiplier += 0.5;
+		build.abilities.push('Fay - Fortify Maximum Magicka 0.5x INT');
+	},
+	name: 'Mage'
+};
+
+},{}],18:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.abilities.push('Blessed Word - Turn Undead 100 pts for 30 secs on Target');
+		build.abilities.push('Blessed Touch - Turn Undead 100 pts for 30 secs on Touch');
+		build.abilities.push('Mara\'s Gift - Restore Health 100 pts on Self');
+	},
+	name: 'Ritual'
+};
+
+},{}],19:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.abilities.push('Star Curse - Poison 3 pts for 30 secs on Touch, Damage Health 1 pt for 30 secs on Self');
+	},
+	name: 'Serpent'
+};
+
+},{}],20:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.abilities.push('Moonshadow - Invisibility for 60 secs');
+	},
+	name: 'Shadow'
+};
+
+},{}],21:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.attributes.speed += 25;
+		build.abilities.push('Charioteer - Fortify Speed 25 pts');
+	},
+	name: 'Steed'
+};
+
+},{}],22:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.abilities.push('Akaviri Danger-sense - Sanctuary 10 pts');
+	},
+	name: 'Thief'
+};
+
+},{}],23:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.abilities.push('Beggar\'s Nose - Detect Animal / Key / Enchantment for 60 secs in 200 ft');
+		build.abilities.push('Tower Key - Open 50 pts on Touch');
+	},
+	name: 'Tower'
+};
+
+},{}],24:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {
+		build.abilities.push('Warwyrd - Fortify Attack 10 pts');
+	},
+	name: 'Warrior'
+};
+
+},{}],25:[function(require,module,exports){
+'use strict';
+
+module.exports = function () {
+	return {
+		attributes: {
+			strength: 0,
+			intelligence: 0,
+			willpower: 0,
+			agility: 0,
+			speed: 0,
+			endurance: 0,
+			personality: 0,
+			luck: 0
+		},
+		attributeCount: {
+			strength: 0,
+			intelligence: 0,
+			willpower: 0,
+			agility: 0,
+			speed: 0,
+			endurance: 0,
+			personality: 0,
+			luck: 0
+		},
+		stats: {
+			health: 0,
+			magicka: 0,
+			fatigue: 0,
+			encumbrance: 0
+		},
+		abilities: [],
+		magickaMultiplier: 1,
+		resistances: {
+			fire: 0,
+			frost: 0,
+			poison: 0,
+			shock: 0,
+			magicka: 0,
+			commonDisease: 0,
+			blightDisease: 0
+		},
+		skills: [{
+			name: 'Block',
+			key: 'block',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'agility'
+		}, {
+			name: 'Armorer',
+			key: 'armorer',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Medium Armor',
+			key: 'medium-armor',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'endurance'
+		}, {
+			name: 'Heavy Armor',
+			key: 'heavy-armor',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'endurance'
+		}, {
+			name: 'Blunt Weapon',
+			key: 'blunt-weapon',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Long Blade',
+			key: 'long-blade',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Axe',
+			key: 'axe',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'strength'
+		}, {
+			name: 'Spear',
+			key: 'spear',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'endurance'
+		}, {
+			name: 'Athletics',
+			key: 'athletics',
+			value: 5,
+			specialization: 'combat',
+			attribute: 'speed'
+		}, {
+			name: 'Enchant',
+			key: 'enchant',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'intelligence'
+		}, {
+			name: 'Destruction',
+			key: 'destruction',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Alteration',
+			key: 'alteration',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Illusion',
+			key: 'illusion',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'personality'
+		}, {
+			name: 'Conjuration',
+			key: 'conjuration',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'intelligence'
+		}, {
+			name: 'Mysticism',
+			key: 'mysticism',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Restoration',
+			key: 'restoration',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'willpower'
+		}, {
+			name: 'Alchemy',
+			key: 'alchemy',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'intelligence'
+		}, {
+			name: 'Unarmored',
+			key: 'unarmored',
+			value: 5,
+			specialization: 'magic',
+			attribute: 'speed'
+		}, {
+			name: 'Security',
+			key: 'security',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'intelligence'
+		}, {
+			name: 'Sneak',
+			key: 'sneak',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'agility'
+		}, {
+			name: 'Acrobatics',
+			key: 'acrobatics',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'strength'
+		}, {
+			name: 'Light Armor',
+			key: 'light-armor',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'agility'
+		}, {
+			name: 'Short Blade',
+			key: 'shortblade',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'speed'
+		}, {
+			name: 'Marksman',
+			key: 'marksman',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'agility'
+		}, {
+			name: 'Mercantile',
+			key: 'mercantile',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'personality'
+		}, {
+			name: 'Speechcraft',
+			key: 'speechcraft',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'personality'
+		}, {
+			name: 'Hand To Hand',
+			key: 'hand-to-hand',
+			value: 5,
+			specialization: 'stealth',
+			attribute: 'speed'
+		}]
+	};
+};
+
+},{}],26:[function(require,module,exports){
+'use strict';
+
+var races = [require('./default.js'), require('./argonian.js'), require('./breton.js'), require('./dark-elf.js'), require('./high-elf.js'), require('./imperial.js'), require('./khajiit.js'), require('./nord.js'), require('./orc.js'), require('./redguard.js'), require('./wood-elf.js')];
+
+module.exports = races;
+
+},{"./argonian.js":27,"./breton.js":28,"./dark-elf.js":29,"./default.js":30,"./high-elf.js":31,"./imperial.js":32,"./khajiit.js":33,"./nord.js":34,"./orc.js":35,"./redguard.js":36,"./wood-elf.js":37}],27:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Water Breathing for 120sec on Self, Cost: 5pts');
+		build.abilities.push('Resist Poison 100%');
+		build.abilities.push('Resist Common Disease 75%');
+		build.resistances.poison += 100;
+		build.resistances.commonDisease += 75;
+		build.skills.filter(function (skill) {
+			return skill.key === 'athletics';
+		})[0].value += 15;
+		build.skills.filter(function (skill) {
+			return skill.key === 'illusion';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'mysticism';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'spear';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'unarmored';
+		})[0].value += 5;
+	},
+	name: 'Argonian',
+	key: 'argonian'
+};
+
+},{}],28:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 30;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Dragon Skin - Shield Shield 50pts for 60sec on Self');
+		build.abilities.push('Resist Magicka 50%');
+		build.abilities.push('Fortify Maximum Magicka 0.5x INT');
+		build.magickaMultiplier += 0.5;
+		build.resistances.magicka += 50;
+		build.skills.filter(function (skill) {
+			return skill.key === 'conjuration';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'mysticism';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'restoration';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'alteration';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'illusion';
+		})[0].value += 5;
+	},
+	name: 'Breton',
+	key: 'breton'
+};
+
+},{}],29:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Ancestor Guardian - Sanctuary Sanctuary 50pts for 60sec on self');
+		build.abilities.push('Resist Fire 75%');
+		build.resistances.fire += 75;
+		build.skills.filter(function (skill) {
+			return skill.key === 'long-blade';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'destruction';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'shortblade';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'light-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'athletics';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'mysticism';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'marksman';
+		})[0].value += 5;
+	},
+	name: 'Dark Elf',
+	key: 'dark-elf'
+};
+
+},{}],30:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	apply: function apply(build) {},
+	name: '',
+	key: ''
+};
+
+},{}],31:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Resist Common Disease: 75%');
+		build.abilities.push('Weakness to Shock: 25%');
+		build.abilities.push('Weakness to Frost: 25%');
+		build.abilities.push('Weakness to Fire: 50%');
+		build.abilities.push('Weakness to Magicka: 50%');
+		build.abilities.push('Fortify Maximum Magicka 1.5x INT');
+		build.resistances.commonDisease += 75;
+		build.resistances.shock += 25;
+		build.resistances.frost += 25;
+		build.resistances.fire += 50;
+		build.resistances.magicka += 50;
+		build.magickaMultiplier += 1.5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'destruction';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'enchant';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'alteration';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'conjuration';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'illusion';
+		})[0].value += 5;
+	},
+	name: 'High Elf',
+	key: 'high-elf'
+};
+
+},{}],32:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 50;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 30;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 50;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Star of the West - Absorb Fatigue Absorb Fatigue 200 pts on target');
+		build.abilities.push('Voice of the Emperor - Charm Charm 25 to 50 pts for 15 seconds on target');
+		build.skills.filter(function (skill) {
+			return skill.key === 'speechcraft';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'mercantile';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'long-blade';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'blunt-weapon';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'light-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'hand-to-hand';
+		})[0].value += 5;
+	},
+	name: 'Imperial',
+	key: 'imperial'
+};
+
+},{}],33:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 50;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Eye of Night - Night Eye Night Eye 50pts for 30sec on Self');
+		build.abilities.push('Eye of Fear - Demoralize Humanoid Demoralize Humanoid 100pts for 30sec on Target');
+		build.skills.filter(function (skill) {
+			return skill.key === 'acrobatics';
+		})[0].value += 15;
+		build.skills.filter(function (skill) {
+			return skill.key === 'athletics';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'hand-to-hand';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'light-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'security';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'shortblade';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'sneak';
+		})[0].value += 5;
+	},
+	name: 'Khajiit',
+	key: 'khajiit'
+};
+
+},{}],34:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 50;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 40;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 50;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 30;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 40;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Thunder Fist - Frost Damage Frost Damage 25pts on Touch');
+		build.abilities.push('Woad - Shield Shield 30pts for 60sec on Self');
+		build.abilities.push('Resist Shock 50%');
+		build.abilities.push('Resist Frost 100%');
+		build.resistances.shock += 50;
+		build.resistances.frost += 100;
+		build.skills.filter(function (skill) {
+			return skill.key === 'axe';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'blunt-weapon';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'heavy-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'long-blade';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'spear';
+		})[0].value += 5;
+	},
+	name: 'Nord',
+	key: 'nord'
+};
+
+},{}],35:[function(require,module,exports){
+"use strict";
+
+function maleAttributes(build) {
+	build.attributes.strength += 45;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 50;
+	build.attributes.agility += 35;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 45;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 45;
+	build.attributes.agility += 35;
+	build.attributes.speed += 30;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 25;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Resist Magicka 25%');
+		build.abilities.push("Berserk -\
+			Fortify Health 20pts for 60sec on Self,\
+			Fortify Fatigue 200pts for 60sec on Self,\
+			Fortify Attack 100pts for 60sec on Self,\
+			Drain Agility 100pts for 60sec on Self");
+		build.resistances.magicka += 25;
+		build.skills.filter(function (skill) {
+			return skill.key === 'armorer';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'block';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'heavy-armor';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'axe';
+		})[0].value += 5;
+	},
+	name: 'Orc',
+	key: 'orc'
+};
+
+},{}],36:[function(require,module,exports){
+"use strict";
+
+function maleAttributes(build) {
+	build.attributes.strength += 50;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 30;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 40;
+	build.attributes.intelligence += 30;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 40;
+	build.attributes.speed += 40;
+	build.attributes.endurance += 50;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push("Adrenaline Rush -\
+			Fortify Agility 50pts for 60sec on Self,\
+			Fortify Endurance 50pts for 60sec on Self,\
+			Fortify Speed 50pts for 60sec on Self,\
+			Fortify Strength 50pts for 60sec on Self,\
+			Fortify Health 25pts for 60sec on Self");
+		build.abilities.push('Resist Poison 75%');
+		build.abilities.push('Resist Common Disease 75%');
+		build.resistances.poison += 75;
+		build.resistances.commonDisease += 75;
+		build.skills.filter(function (skill) {
+			return skill.key === 'long-blade';
+		})[0].value += 15;
+		build.skills.filter(function (skill) {
+			return skill.key === 'athletics';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'heavy-armor';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'axe';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'blunt-weapon';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'shortblade';
+		})[0].value += 5;
+	},
+	name: 'Redguard',
+	key: 'redguard'
+};
+
+},{}],37:[function(require,module,exports){
+'use strict';
+
+function maleAttributes(build) {
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+function femaleAttributes(build) {
+	build.attributes.strength += 30;
+	build.attributes.intelligence += 40;
+	build.attributes.willpower += 30;
+	build.attributes.agility += 50;
+	build.attributes.speed += 50;
+	build.attributes.endurance += 30;
+	build.attributes.personality += 40;
+	build.attributes.luck += 40;
+}
+
+module.exports = {
+	apply: function apply(build) {
+		if (build.sex == "male") {
+			maleAttributes(build);
+		} else {
+			femaleAttributes(build);
+		}
+		build.abilities.push('Beast Tongue - Command Creature Command Creature 5pts for 600sec');
+		build.abilities.push('Resist Common Disease: 75%');
+		build.resistances.commonDisease += 75;
+		build.skills.filter(function (skill) {
+			return skill.key === 'marksman';
+		})[0].value += 15;
+		build.skills.filter(function (skill) {
+			return skill.key === 'sneak';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'light-armor';
+		})[0].value += 10;
+		build.skills.filter(function (skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 5;
+		build.skills.filter(function (skill) {
+			return skill.key === 'acrobatics';
+		})[0].value += 5;
+	},
+	name: 'Wood Elf',
+	key: 'wood-elf'
+};
+
+},{}],38:[function(require,module,exports){
+'use strict';
+
+module.exports = {
+	combat: {
+		'block': 'Block',
+		'armorer': 'Armorer',
+		'medium-armor': 'Medium Armor',
+		'heavy-armor': 'Heavy Armor',
+		'blunt-weapon': 'Blunt Weapon',
+		'long-blade': 'Long Blade',
+		'axe': 'Axe',
+		'spear': 'Spear',
+		'athletics': 'Athletics'
+	},
+	magic: {
+		'enchant': 'Enchant',
+		'destruction': 'Destruction',
+		'alteration': 'Alteration',
+		'illusion': 'Illusion',
+		'conjuration': 'Conjuration',
+		'mysticism': 'Mysticism',
+		'restoration': 'Restoration',
+		'alchemy': 'Alchemy',
+		'unarmored': 'Unarmored'
+	},
+	stealth: {
+		'security': 'Security',
+		'sneak': 'Sneak',
+		'acrobatics': 'Acrobatics',
+		'light-armor': 'Light Armor',
+		'shortblade': 'Short Blade',
+		'marksman': 'Marksman',
+		'mercantile': 'Mercantile',
+		'speechcraft': 'Speechcraft',
+		'hand-to-hand': 'Hand to Hand'
+	}
+};
+
+},{}],39:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build, skill) {
+	var skills = build.skills.filter(function (item) {
+		return item.key == skill;
+	});
+	skills.forEach(function (item) {
+		item.value += 25;
+		build.attributeCount[item.attribute] += 1;
+	});
+};
+
+},{}],40:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build, skill) {
+	var skills = build.skills.filter(function (item) {
+		return item.key == skill;
+	});
+	skills.forEach(function (item) {
+		item.value += 10;
+		build.attributeCount[item.attribute] += 1;
+	});
+};
+
+},{}],41:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build, specialization) {
+	var skills = build.skills.filter(function (skill) {
+		return skill.specialization == specialization;
+	});
+	skills.forEach(function (skill) {
+		skill.value += 5;
+	});
+};
+
+},{}],42:[function(require,module,exports){
+"use strict";
+
+module.exports = function (build) {
+	var attrs = build.attributes;
+	build.stats.health = (attrs.endurance + attrs.strength) / 2;
+	build.stats.magicka = attrs.intelligence * build.magickaMultiplier;
+	build.stats.fatigue = attrs.strength + attrs.willpower + attrs.agility + attrs.endurance;
+	build.stats.encumbrance = attrs.strength * 5;
+};
+
+},{}]},{},[7]);
+
+//# sourceMappingURL=app.js.map

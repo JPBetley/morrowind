@@ -33,6 +33,24 @@ module.exports = {
 		build.abilities.push('Fortify Maximum Magicka 0.5x INT');
 		build.magickaMultiplier += 0.5;
 		build.resistances.magicka += 50;
+		build.skills.filter(function(skill) {
+			return skill.key === 'conjuration';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'mysticism';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'restoration';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'alteration';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'illusion';
+		})[0].value += 5;
 	},
 	name: 'Breton',
 	key: 'breton'

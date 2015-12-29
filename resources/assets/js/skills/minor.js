@@ -3,7 +3,7 @@ module.exports = function(build, skill) {
 		return item.key == skill;
 	});
 	skills.forEach(function(item) {
-		item.value = 15;
+		item.value += 10;
 		build.attributeCount[item.attribute] += 1;
 	});
 }

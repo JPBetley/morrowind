@@ -26,7 +26,7 @@ module.exports = {
 		'sneak': 'Sneak',
 		'acrobatics': 'Acrobatics',
 		'light-armor': 'Light Armor',
-		'shortblade': 'Shortblade',
+		'shortblade': 'Short Blade',
 		'marksman': 'Marksman',
 		'mercantile': 'Mercantile',
 		'speechcraft': 'Speechcraft',

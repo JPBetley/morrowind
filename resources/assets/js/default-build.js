@@ -171,7 +171,7 @@ module.exports = function() {
 				specialization: 'stealth',
 				attribute: 'agility' 
 			}, {
-				name: 'Shortblade',
+				name: 'Short Blade',
 				key: 'shortblade',
 				value: 5,
 				specialization: 'stealth',

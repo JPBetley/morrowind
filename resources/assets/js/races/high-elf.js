@@ -40,6 +40,24 @@ module.exports = {
 		build.resistances.fire += 50;
 		build.resistances.magicka += 50;
 		build.magickaMultiplier += 1.5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'destruction';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'enchant';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 10;
+		build.skills.filter(function(skill) {
+			return skill.key === 'alteration';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'conjuration';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'illusion';
+		})[0].value += 5;
 	},
 	name: 'High Elf',
 	key: 'high-elf'

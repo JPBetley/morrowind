@@ -33,6 +33,27 @@ module.exports = {
 		build.abilities.push('Resist Common Disease 75%');
 		build.resistances.poison += 100;
 		build.resistances.commonDisease += 75;
+		build.skills.filter(function(skill) {
+			return skill.key === 'athletics';
+		})[0].value += 15;
+		build.skills.filter(function(skill) {
+			return skill.key === 'illusion';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'alchemy';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'medium-armor';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'mysticism';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'spear';
+		})[0].value += 5;
+		build.skills.filter(function(skill) {
+			return skill.key === 'unarmored';
+		})[0].value += 5;
 	},
 	name: 'Argonian',
 	key: 'argonian'
