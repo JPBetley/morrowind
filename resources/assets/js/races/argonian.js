@@ -28,6 +28,11 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Water Breathing for 120sec on Self, Cost: 5pts');
+		build.abilities.push('Resist Poison 100%');
+		build.abilities.push('Resist Common Disease 75%');
+		build.resistances.poison += 100;
+		build.resistances.commonDisease += 75;
 	},
 	name: 'Argonian'
 }

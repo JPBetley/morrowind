@@ -28,6 +28,16 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push("Adrenaline Rush -\
+			Fortify Agility 50pts for 60sec on Self,\
+			Fortify Endurance 50pts for 60sec on Self,\
+			Fortify Speed 50pts for 60sec on Self,\
+			Fortify Strength 50pts for 60sec on Self,\
+			Fortify Health 25pts for 60sec on Self");
+		build.abilities.push('Resist Poison 75%');
+		build.abilities.push('Resist Common Disease 75%');
+		build.resistances.poison += 75;
+		build.resistances.commonDisease += 75;
 	},
 	name: 'Redguard'
 }

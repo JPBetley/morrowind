@@ -28,6 +28,9 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Ancestor Guardian - Sanctuary Sanctuary 50pts for 60sec on self');
+		build.abilities.push('Resist Fire 75%');
+		build.resistances.fire += 75;
 	},
 	name: 'Dark Elf'
 }

@@ -28,6 +28,8 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Eye of Night - Night Eye Night Eye 50pts for 30sec on Self');
+		build.abilities.push('Eye of Fear - Demoralize Humanoid Demoralize Humanoid 100pts for 30sec on Target');
 	},
 	name: 'Khajiit'
 }

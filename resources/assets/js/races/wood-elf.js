@@ -28,6 +28,9 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Beast Tongue - Command Creature Command Creature 5pts for 600sec');
+		build.abilities.push('Resist Common Disease: 75%');
+		build.resistances.commonDisease += 75;
 	},
 	name: 'Wood Elf'
 }

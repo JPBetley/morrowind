@@ -28,6 +28,13 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Resist Magicka 25%');
+		build.abilities.push("Berserk -\
+			Fortify Health 20pts for 60sec on Self,\
+			Fortify Fatigue 200pts for 60sec on Self,\
+			Fortify Attack 100pts for 60sec on Self,\
+			Drain Agility 100pts for 60sec on Self");
+		build.resistances.magicka += 25;
 	},
 	name: 'Orc'
 }

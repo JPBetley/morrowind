@@ -28,6 +28,8 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Star of the West - Absorb Fatigue Absorb Fatigue 200 pts on target');
+		build.abilities.push('Voice of the Emperor - Charm Charm 25 to 50 pts for 15 seconds on target');
 	},
 	name: 'Imperial'
 }

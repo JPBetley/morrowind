@@ -28,6 +28,12 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Thunder Fist - Frost Damage Frost Damage 25pts on Touch');
+		build.abilities.push('Woad - Shield Shield 30pts for 60sec on Self');
+		build.abilities.push('Resist Shock 50%');
+		build.abilities.push('Resist Frost 100%');
+		build.resistances.shock += 50;
+		build.resistances.frost += 100;
 	},
 	name: 'Nord'
 }
