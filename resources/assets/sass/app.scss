@@ -1,42 +1,39 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  margin: 50px 0;
-}
-
-a {
-  color: #00B7FF;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 50px 0;
 }
 
 .skills {
 	&__skill {
 		display: block;
-		width: auto;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
+	}
+}
+
+@media (min-width: 340px) { 
+	.skills {
+		width: 50%;
+		float: left;
+		position: relative;
+		min-height: 1px;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 
 .character-planner {
-	display: flex;
-	flex-wrap: wrap;
 
 	section {
-		display: flex;
-		justify-content: space-between;
 		.form-group {
-			flex: 1;
 		}
 	}
 
 	.attributes {
-		display: flex;
-		justify-content: space-between;
 		.form-group {
-			flex: 1;
 		}
 		.form-control {
-			width: auto;
 		}
 	}
 }
@@ -46,7 +43,6 @@ a {
 
 fieldset {
 	padding: 20px;
-	flex: 1 1 auto;
 }
 
 legend {
@@ -54,14 +50,10 @@ legend {
 }
 
 .output {
-	display: flex;
-	flex-wrap: wrap;
 
 	.attributes-tables {
-		flex: 1 0 auto;
 	}
 	.skills-table {
-		flex: 1 0 auto;
 	}
 }
 

@@ -44,11 +44,11 @@
     <div id="app" class="container">
 
         <h1>Character Planner</h1>
-        <div class="character-planner">
-            <fieldset class="character">
+        <div class="character-planner row">
+            <fieldset class="character col-md-4">
                 <legend>Character</legend>
-                <section>
-                    <div class="form-group">
+                <section class="row">
+                    <div class="form-group col-xs-6">
                         <label>
                             Sex
                             <select v-model="sex" class="form-control">
@@ -58,7 +58,7 @@
                             </select>
                         </label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-xs-6">
                         <label>
                             Race
                             <select v-model="race" class="form-control">
@@ -69,8 +69,8 @@
                         </label>
                     </div>
                 </section>
-                <section>
-                    <div class="form-group">
+                <section class="row">
+                    <div class="form-group col-xs-6">
                         <label>
                             Birthsign
                             <select v-model="birthsign" class="form-control">
@@ -80,7 +80,7 @@
                             </select>
                         </label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-xs-6">
                         <label>
                             Specialization
                             <select v-model="specialization" class="form-control">
@@ -96,8 +96,8 @@
                     <label>Favored Attributes:</label>
                     <br />
 
-                    <div class="attributes">
-                        <div v-for="attribute in favoredAttributes" track-by="$index" class="form-group">
+                    <div class="attributes row">
+                        <div v-for="attribute in favoredAttributes" track-by="$index" class="form-group col-xs-6">
                             <select v-model="attribute" class="form-control">
                                 <option v-for="option in attributes" :value="option">
                                     {{ option | capitalize }}
@@ -107,56 +107,58 @@
                     </div>
                 </div>
             </fieldset>
-            <fieldset class="skills">
-                <legend>Major Skills</legend>
-                <div class="form-group">
-                    <select v-for="skill in majorSkills" track-by="$index" v-model="skill" class="skills__skill form-control">
-                        <option value=""></option>
-                        <optgroup label="Combat">
-                            <option v-for="(key, name) in skills.combat" :value="key">
-                                {{ name }}
-                            </option>
-                        </optgroup>
-                        <optgroup label="Magic">
-                            <option v-for="(key, name) in skills.magic" :value="key">
-                                {{ name }}
-                            </option>
-                        </optgroup>
-                        <optgroup label="Stealth">
-                            <option v-for="(key, name) in skills.stealth" :value="key">
-                                {{ name }}
-                            </option>
-                        </optgroup>
-                    </select>
-                </div>
-            </fieldset>
-            <fieldset class="skills">
-                <legend>Minor Skills</legend>
-                <div class="form-group">
-                    <select v-for="skill in minorSkills" track-by="$index" v-model="skill" class="skills__skill form-control">
-                        <option value=""></option>
-                        <optgroup label="Combat">
-                            <option v-for="(key, name) in skills.combat" :value="key">
-                                {{ name }}
-                            </option>
-                        </optgroup>
-                        <optgroup label="Magic">
-                            <option v-for="(key, name) in skills.magic" :value="key">
-                                {{ name }}
-                            </option>
-                        </optgroup>
-                        <optgroup label="Stealth">
-                            <option v-for="(key, name) in skills.stealth" :value="key">
-                                {{ name }}
-                            </option>
-                        </optgroup>
-                    </select>
-                </div>
-            </fieldset>
+            <div class="col-md-4 row">
+                <fieldset class="skills">
+                    <legend>Major Skills</legend>
+                    <div class="form-group">
+                        <select v-for="skill in majorSkills" track-by="$index" v-model="skill" class="skills__skill form-control">
+                            <option value=""></option>
+                            <optgroup label="Combat">
+                                <option v-for="(key, name) in skills.combat" :value="key">
+                                    {{ name }}
+                                </option>
+                            </optgroup>
+                            <optgroup label="Magic">
+                                <option v-for="(key, name) in skills.magic" :value="key">
+                                    {{ name }}
+                                </option>
+                            </optgroup>
+                            <optgroup label="Stealth">
+                                <option v-for="(key, name) in skills.stealth" :value="key">
+                                    {{ name }}
+                                </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset class="skills">
+                    <legend>Minor Skills</legend>
+                    <div class="form-group">
+                        <select v-for="skill in minorSkills" track-by="$index" v-model="skill" class="skills__skill form-control">
+                            <option value=""></option>
+                            <optgroup label="Combat">
+                                <option v-for="(key, name) in skills.combat" :value="key">
+                                    {{ name }}
+                                </option>
+                            </optgroup>
+                            <optgroup label="Magic">
+                                <option v-for="(key, name) in skills.magic" :value="key">
+                                    {{ name }}
+                                </option>
+                            </optgroup>
+                            <optgroup label="Stealth">
+                                <option v-for="(key, name) in skills.stealth" :value="key">
+                                    {{ name }}
+                                </option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
         </div>
 
-        <div class="output">
-            <div class="attributes-tables">
+        <div class="row">
+            <div class="attributes-tables col-md-6">
                 <table class="table">
                     <thead>
                         <tr><th colspan="3">Primary Attributes</th></tr>
@@ -230,7 +232,7 @@
                 </table>
             </div>
 
-            <div class="skills-table">
+            <div class="skills-table col-md-6">
                 <table class="table">
                     <thead>
                         <tr>
