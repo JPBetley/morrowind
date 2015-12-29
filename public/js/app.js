@@ -9788,7 +9788,8 @@ module.exports = function () {
 			poison: 0,
 			shock: 0,
 			magicka: 0,
-			disease: 0
+			commonDisease: 0,
+			blightDisease: 0
 		},
 		skills: [{
 			name: 'Block',
@@ -9867,7 +9868,7 @@ module.exports = function () {
 			key: 'illusion',
 			value: 5,
 			specialization: 'magic',
-			attribute: 'perception'
+			attribute: 'personality'
 		}, {
 			name: 'Conjuration',
 			key: 'conjuration',
@@ -9939,13 +9940,13 @@ module.exports = function () {
 			key: 'mercantile',
 			value: 5,
 			specialization: 'stealth',
-			attribute: 'perception'
+			attribute: 'personality'
 		}, {
 			name: 'Speechcraft',
 			key: 'speechcraft',
 			value: 5,
 			specialization: 'stealth',
-			attribute: 'perception'
+			attribute: 'personality'
 		}, {
 			name: 'Hand To Hand',
 			key: 'hand-to-hand',
@@ -9964,7 +9965,7 @@ var races = [require('./default.js'), require('./argonian.js'), require('./breto
 module.exports = races;
 
 },{"./argonian.js":23,"./breton.js":24,"./dark-elf.js":25,"./default.js":26,"./high-elf.js":27,"./imperial.js":28,"./khajiit.js":29,"./nord.js":30,"./orc.js":31,"./redguard.js":32,"./wood-elf.js":33}],23:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 40;
@@ -9995,12 +9996,17 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Water Breathing for 120sec on Self, Cost: 5pts');
+		build.abilities.push('Resist Poison 100%');
+		build.abilities.push('Resist Common Disease 75%');
+		build.resistances.poison += 100;
+		build.resistances.commonDisease += 75;
 	},
 	name: 'Argonian'
 };
 
 },{}],24:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 40;
@@ -10031,12 +10037,17 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Dragon Skin - Shield Shield 50pts for 60sec on Self');
+		build.abilities.push('Resist Magicka 50%');
+		build.abilities.push('Fortify Maximum Magicka 0.5x INT');
+		build.magickaMultiplier += 0.5;
+		build.resistances.magicka += 50;
 	},
 	name: 'Breton'
 };
 
 },{}],25:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 40;
@@ -10067,6 +10078,9 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Ancestor Guardian - Sanctuary Sanctuary 50pts for 60sec on self');
+		build.abilities.push('Resist Fire 75%');
+		build.resistances.fire += 75;
 	},
 	name: 'Dark Elf'
 };
@@ -10080,7 +10094,7 @@ module.exports = {
 };
 
 },{}],27:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 30;
@@ -10111,12 +10125,24 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Resist Common Disease: 75%');
+		build.abilities.push('Weakness to Shock: 25%');
+		build.abilities.push('Weakness to Frost: 25%');
+		build.abilities.push('Weakness to Fire: 50%');
+		build.abilities.push('Weakness to Magicka: 50%');
+		build.abilities.push('Fortify Maximum Magicka 1.5x INT');
+		build.resistances.commonDisease += 75;
+		build.resistances.shock += 25;
+		build.resistances.frost += 25;
+		build.resistances.fire += 50;
+		build.resistances.magicka += 50;
+		build.magickaMultiplier += 1.5;
 	},
 	name: 'High Elf'
 };
 
 },{}],28:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 40;
@@ -10147,12 +10173,14 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Star of the West - Absorb Fatigue Absorb Fatigue 200 pts on target');
+		build.abilities.push('Voice of the Emperor - Charm Charm 25 to 50 pts for 15 seconds on target');
 	},
 	name: 'Imperial'
 };
 
 },{}],29:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 40;
@@ -10183,12 +10211,14 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Eye of Night - Night Eye Night Eye 50pts for 30sec on Self');
+		build.abilities.push('Eye of Fear - Demoralize Humanoid Demoralize Humanoid 100pts for 30sec on Target');
 	},
 	name: 'Khajiit'
 };
 
 },{}],30:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 50;
@@ -10219,6 +10249,12 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Thunder Fist - Frost Damage Frost Damage 25pts on Touch');
+		build.abilities.push('Woad - Shield Shield 30pts for 60sec on Self');
+		build.abilities.push('Resist Shock 50%');
+		build.abilities.push('Resist Frost 100%');
+		build.resistances.shock += 50;
+		build.resistances.frost += 100;
 	},
 	name: 'Nord'
 };
@@ -10255,6 +10291,13 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Resist Magicka 25%');
+		build.abilities.push("Berserk -\
+			Fortify Health 20pts for 60sec on Self,\
+			Fortify Fatigue 200pts for 60sec on Self,\
+			Fortify Attack 100pts for 60sec on Self,\
+			Drain Agility 100pts for 60sec on Self");
+		build.resistances.magicka += 25;
 	},
 	name: 'Orc'
 };
@@ -10291,12 +10334,22 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push("Adrenaline Rush -\
+			Fortify Agility 50pts for 60sec on Self,\
+			Fortify Endurance 50pts for 60sec on Self,\
+			Fortify Speed 50pts for 60sec on Self,\
+			Fortify Strength 50pts for 60sec on Self,\
+			Fortify Health 25pts for 60sec on Self");
+		build.abilities.push('Resist Poison 75%');
+		build.abilities.push('Resist Common Disease 75%');
+		build.resistances.poison += 75;
+		build.resistances.commonDisease += 75;
 	},
 	name: 'Redguard'
 };
 
 },{}],33:[function(require,module,exports){
-"use strict";
+'use strict';
 
 function maleAttributes(build) {
 	build.attributes.strength += 30;
@@ -10327,6 +10380,9 @@ module.exports = {
 		} else {
 			femaleAttributes(build);
 		}
+		build.abilities.push('Beast Tongue - Command Creature Command Creature 5pts for 600sec');
+		build.abilities.push('Resist Common Disease: 75%');
+		build.resistances.commonDisease += 75;
 	},
 	name: 'Wood Elf'
 };

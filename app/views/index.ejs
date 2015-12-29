@@ -49,47 +49,47 @@
                 <legend>Character</legend>
                 <section class="row">
                     <div class="form-group col-xs-6">
-                        <label>
+                        <label for="sex">
                             Sex
-                            <select v-model="sex" class="form-control">
-                                <option value=""></option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
                         </label>
+                        <select id="sex" v-model="sex" class="form-control">
+                            <option value=""></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     </div>
                     <div class="form-group col-xs-6">
-                        <label>
+                        <label for="race">
                             Race
-                            <select v-model="race" class="form-control">
-                                <option v-for="option in races" :value="option">
-                                    {{ option.name }}
-                                </option>
-                            </select>
                         </label>
+                        <select id="race" v-model="race" class="form-control">
+                            <option v-for="option in races" :value="option">
+                                {{ option.name }}
+                            </option>
+                        </select>
                     </div>
                 </section>
                 <section class="row">
                     <div class="form-group col-xs-6">
-                        <label>
+                        <label for="birthsign">
                             Birthsign
-                            <select v-model="birthsign" class="form-control">
-                                <option v-for="option in birthsigns" :value="option">
-                                    {{ option.name }}
-                                </option>
-                            </select>
                         </label>
+                        <select id="birthsign" v-model="birthsign" class="form-control">
+                            <option v-for="option in birthsigns" :value="option">
+                                {{ option.name }}
+                            </option>
+                        </select>
                     </div>
                     <div class="form-group col-xs-6">
-                        <label>
+                        <label for="specialization">
                             Specialization
-                            <select v-model="specialization" class="form-control">
-                                <option value=""></option>
-                                <option value="combat">Combat</option>
-                                <option value="magic">Magic</option>
-                                <option value="stealth">Stealth</option>
-                            </select>
                         </label>
+                        <select id="specialization" v-model="specialization" class="form-control">
+                            <option value=""></option>
+                            <option value="combat">Combat</option>
+                            <option value="magic">Magic</option>
+                            <option value="stealth">Stealth</option>
+                        </select>
                     </div>
                 </section>
                 <div>
@@ -217,7 +217,7 @@
                             <td>{{ build.stats.health }}</td>
                         </tr>
                         <tr>
-                            <td>Magic</td> 
+                            <td>Magicka</td> 
                             <td>{{ build.stats.magicka }}</td>
                         </tr>
                         <tr>
@@ -227,6 +227,56 @@
                         <tr>
                             <td>Encumbrance</td> 
                             <td>{{ build.stats.encumbrance }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <thead>
+                        <tr><th colspan="2">Resistances</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fire</td> 
+                            <td :class="{ 'text-danger': build.resistances.fire < 0 }">
+                                {{ build.resistances.fire }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Frost</td> 
+                            <td :class="{ 'text-danger': build.resistances.frost < 0 }">
+                                {{ build.resistances.frost }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Shock</td> 
+                            <td :class="{ 'text-danger': build.resistances.shock < 0 }">
+                                {{ build.resistances.shock }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Magicka</td> 
+                            <td :class="{ 'text-danger': build.resistances.magicka < 0 }">
+                                {{ build.resistances.magicka }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Poison</td> 
+                            <td :class="{ 'text-danger': build.resistances.poison < 0 }">
+                                {{ build.resistances.poison }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Common Disease</td> 
+                            <td :class="{ 'text-danger': build.resistances.commonDisease < 0 }">
+                                {{ build.resistances.commonDisease }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Blight Disease</td> 
+                            <td :class="{ 'text-danger': build.resistances.blightDisease < 0 }">
+                                {{ build.resistances.blightDisease }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>

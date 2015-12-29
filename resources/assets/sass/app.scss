@@ -1,4 +1,4 @@
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap";
 
 body {
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -23,38 +23,12 @@ body {
 	}
 }
 
-.character-planner {
-
-	section {
-		.form-group {
-		}
-	}
-
-	.attributes {
-		.form-group {
-		}
-		.form-control {
-		}
-	}
-}
-
-.character {
-}
-
 fieldset {
 	padding: 20px;
 }
 
 legend {
 	margin-bottom: 0;
-}
-
-.output {
-
-	.attributes-tables {
-	}
-	.skills-table {
-	}
 }
 
 .skill { 
@@ -69,5 +43,9 @@ legend {
 	&.stealth {
 		background-color: #fcf8e3;
 	}
+}
+
+#sex, #race, #birthsign, #specialization {
+	width: auto;
 }
 
