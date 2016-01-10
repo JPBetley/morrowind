@@ -35,10 +35,10 @@ module.exports = {
 		build.abilities.push('Weakness to Magicka: 50%');
 		build.abilities.push('Fortify Maximum Magicka 1.5x INT');
 		build.resistances.commonDisease += 75;
-		build.resistances.shock += 25;
-		build.resistances.frost += 25;
-		build.resistances.fire += 50;
-		build.resistances.magicka += 50;
+		build.resistances.shock -= 25;
+		build.resistances.frost -= 25;
+		build.resistances.fire -= 50;
+		build.resistances.magicka -= 50;
 		build.magickaMultiplier += 1.5;
 		build.skills.filter(function(skill) {
 			return skill.key === 'destruction';
