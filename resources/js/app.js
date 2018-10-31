@@ -8,7 +8,11 @@ var uri = require('urijs');
 
 Vue.config.debug = true
 
-
+Vue.filter('capitalize', function (value) {
+	if (!value) return ''
+	value = value.toString()
+	return value.charAt(0).toUpperCase() + value.slice(1)
+})
 
 new Vue({
 	el: '#app',
@@ -19,8 +23,8 @@ new Vue({
 		sex: '',
 		specialization: '',
 
-		majorSkills: ['', '', '', '', ''],
-		minorSkills: ['', '', '', '', ''],
+		majorSkills: [{name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}],
+		minorSkills: [{name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}],
 		skills: require('./skills/all'),
 
 		favoredAttributes: ['', ''],
@@ -33,7 +37,7 @@ new Vue({
 		races: require('./races/all'),
 	},
 
-	ready: function () {
+	mounted: function () {
 		var self = this,
 			url = uri(window.location.href),
 			state = url.query(true);

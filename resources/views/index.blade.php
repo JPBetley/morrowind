@@ -56,8 +56,8 @@
                             Race
                         </label>
                         <select id="race" v-model="race" class="form-control">
-                            <option v-for="option in races" :value="option">
-                                {{ option.name }}
+                            <option v-for="(option, index) in races" :value="option">
+                                @{{ option.name }}
                             </option>
                         </select>
                     </div>
@@ -68,8 +68,8 @@
                             Birthsign
                         </label>
                         <select id="birthsign" v-model="birthsign" class="form-control">
-                            <option v-for="option in birthsigns" :value="option">
-                                {{ option.name }}
+                            <option v-for="(option, index) in birthsigns" :value="option">
+                                @{{ option.name }}
                             </option>
                         </select>
                     </div>
@@ -90,10 +90,10 @@
                     <br />
 
                     <div class="attributes row">
-                        <div v-for="attribute in favoredAttributes" track-by="$index" class="form-group col-xs-6">
+                        <div v-for="(attribute, index) in favoredAttributes" :key="index" class="form-group col-xs-6">
                             <select v-model="attribute" class="form-control">
-                                <option v-for="option in attributes" :value="option">
-                                    {{ option | capitalize }}
+                                <option v-for="(option, index) in attributes" :value="option">
+                                    @{{ option | capitalize }}
                                 </option>
                             </select>
                         </div>
@@ -104,21 +104,21 @@
                 <fieldset class="skills">
                     <legend>Major Skills</legend>
                     <div class="form-group">
-                        <select v-for="skill in majorSkills" track-by="$index" v-model="skill" class="skills__skill form-control">
+                        <select v-for="(skill, index) in majorSkills" :key="index" v-model="skill" class="skills__skill form-control">
                             <option value=""></option>
                             <optgroup label="Combat">
-                                <option v-for="(key, name) in skills.combat" :value="key">
-                                    {{ name }}
+                                <option v-for="(name, key) in skills.combat" :value="key">
+                                    @{{ name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Magic">
-                                <option v-for="(key, name) in skills.magic" :value="key">
-                                    {{ name }}
+                                <option v-for="(name, key) in skills.magic" :value="key">
+                                    @{{ name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Stealth">
-                                <option v-for="(key, name) in skills.stealth" :value="key">
-                                    {{ name }}
+                                <option v-for="(name, key) in skills.stealth" :value="key">
+                                    @{{ name }}
                                 </option>
                             </optgroup>
                         </select>
@@ -127,21 +127,21 @@
                 <fieldset class="skills">
                     <legend>Minor Skills</legend>
                     <div class="form-group">
-                        <select v-for="skill in minorSkills" track-by="$index" v-model="skill" class="skills__skill form-control">
+                        <select v-for="(skill, index) in majorSkills" :key="index" v-model="skill" class="skills__skill form-control">
                             <option value=""></option>
                             <optgroup label="Combat">
-                                <option v-for="(key, name) in skills.combat" :value="key">
-                                    {{ name }}
+                                <option v-for="(name, key) in skills.combat" :value="key">
+                                    @{{ name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Magic">
-                                <option v-for="(key, name) in skills.magic" :value="key">
-                                    {{ name }}
+                                <option v-for="(name, key) in skills.magic" :value="key">
+                                    @{{ name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Stealth">
-                                <option v-for="(key, name) in skills.stealth" :value="key">
-                                    {{ name }}
+                                <option v-for="(name, key) in skills.stealth" :value="key">
+                                    @{{ name }}
                                 </option>
                             </optgroup>
                         </select>
@@ -169,42 +169,42 @@
                     <tbody>
                         <tr>
                             <td>Strength</td> 
-                            <td>{{ build.attributes.strength }}</td>
-                            <td class="text-danger">{{ build.attributeCount.strength }} M/m skills</td>
+                            <td>@{{ build.attributes.strength }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.strength }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Intelligence</td> 
-                            <td>{{ build.attributes.intelligence }}</td>
-                            <td class="text-danger">{{ build.attributeCount.intelligence }} M/m skills</td>
+                            <td>@{{ build.attributes.intelligence }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.intelligence }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Willpower</td> 
-                            <td>{{ build.attributes.willpower }}</td>
-                            <td class="text-danger">{{ build.attributeCount.willpower }} M/m skills</td>
+                            <td>@{{ build.attributes.willpower }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.willpower }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Agility</td> 
-                            <td>{{ build.attributes.agility }}</td>
-                            <td class="text-danger">{{ build.attributeCount.agility }} M/m skills</td>
+                            <td>@{{ build.attributes.agility }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.agility }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Speed</td> 
-                            <td>{{ build.attributes.speed }}</td>
-                            <td class="text-danger">{{ build.attributeCount.speed }} M/m skills</td>
+                            <td>@{{ build.attributes.speed }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.speed }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Endurance</td> 
-                            <td>{{ build.attributes.endurance }}</td>
-                            <td class="text-danger">{{ build.attributeCount.endurance }} M/m skills</td>
+                            <td>@{{ build.attributes.endurance }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.endurance }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Personality</td> 
-                            <td>{{ build.attributes.personality }}</td>
-                            <td class="text-danger">{{ build.attributeCount.personality }} M/m skills</td>
+                            <td>@{{ build.attributes.personality }}</td>
+                            <td class="text-danger">@{{ build.attributeCount.personality }} M/m skills</td>
                         </tr>
                         <tr>
                             <td>Luck</td> 
-                            <td>{{ build.attributes.luck }}</td>
+                            <td>@{{ build.attributes.luck }}</td>
                             <td class="text-danger"></td>
                         </tr>
                     </tbody>
@@ -217,19 +217,19 @@
                     <tbody>
                         <tr>
                             <td>Health</td> 
-                            <td>{{ build.stats.health }}</td>
+                            <td>@{{ build.stats.health }}</td>
                         </tr>
                         <tr>
                             <td>Magicka</td> 
-                            <td>{{ build.stats.magicka }}</td>
+                            <td>@{{ build.stats.magicka }}</td>
                         </tr>
                         <tr>
                             <td>Fatigue</td> 
-                            <td>{{ build.stats.fatigue }}</td>
+                            <td>@{{ build.stats.fatigue }}</td>
                         </tr>
                         <tr>
                             <td>Encumbrance</td> 
-                            <td>{{ build.stats.encumbrance }}</td>
+                            <td>@{{ build.stats.encumbrance }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -242,43 +242,43 @@
                         <tr>
                             <td>Fire</td> 
                             <td :class="{ 'text-danger': build.resistances.fire < 0 }">
-                                {{ build.resistances.fire }}%
+                                @{{ build.resistances.fire }}%
                             </td>
                         </tr>
                         <tr>
                             <td>Frost</td> 
                             <td :class="{ 'text-danger': build.resistances.frost < 0 }">
-                                {{ build.resistances.frost }}%
+                                @{{ build.resistances.frost }}%
                             </td>
                         </tr>
                         <tr>
                             <td>Shock</td> 
                             <td :class="{ 'text-danger': build.resistances.shock < 0 }">
-                                {{ build.resistances.shock }}%
+                                @{{ build.resistances.shock }}%
                             </td>
                         </tr>
                         <tr>
                             <td>Magicka</td> 
                             <td :class="{ 'text-danger': build.resistances.magicka < 0 }">
-                                {{ build.resistances.magicka }}%
+                                @{{ build.resistances.magicka }}%
                             </td>
                         </tr>
                         <tr>
                             <td>Poison</td> 
                             <td :class="{ 'text-danger': build.resistances.poison < 0 }">
-                                {{ build.resistances.poison }}%
+                                @{{ build.resistances.poison }}%
                             </td>
                         </tr>
                         <tr>
                             <td>Common Disease</td> 
                             <td :class="{ 'text-danger': build.resistances.commonDisease < 0 }">
-                                {{ build.resistances.commonDisease }}%
+                                @{{ build.resistances.commonDisease }}%
                             </td>
                         </tr>
                         <tr>
                             <td>Blight Disease</td> 
                             <td :class="{ 'text-danger': build.resistances.blightDisease < 0 }">
-                                {{ build.resistances.blightDisease }}%
+                                @{{ build.resistances.blightDisease }}%
                             </td>
                         </tr>
                     </tbody>
@@ -294,10 +294,10 @@
                     </thead>
                     <tbody>
                         <tr v-for="skill in build.skills">
-                            <td>{{ skill.name }}</td>
-                            <td>{{ skill.value }}</td>
+                            <td>@{{ skill.name }}</td>
+                            <td>@{{ skill.value }}</td>
                             <td class="skill" :class="skill.specialization">
-                                {{ skill.attribute | capitalize }}
+                                @{{ skill.attribute | capitalize }}
                             </td>
                         </tr>
                     </tbody>
@@ -310,7 +310,7 @@
             This character has the following abilities, powers, and spells:
             <ul>
                 <li v-for="ability in build.abilities">
-                    {{ ability }}
+                    @{{ ability }}
                 </li>
             </ul>
         </div>
