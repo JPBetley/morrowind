@@ -23,11 +23,11 @@ new Vue({
 		sex: '',
 		specialization: '',
 
-		majorSkills: [{name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}],
-		minorSkills: [{name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}, {name: '', value: ''}],
+		majorSkills: [{value: ''}, {value: ''}, {value: ''}, {value: ''}, {value: ''}],
+		minorSkills: [{value: ''}, {value: ''}, {value: ''}, {value: ''}, {value: ''}],
 		skills: require('./skills/all'),
 
-		favoredAttributes: ['', ''],
+		favoredAttributes: [{value: ''}, {value: ''}],
 		attributes: require('./attributes/all'),
 
 		birthsign: require('./birthsigns/default'),
@@ -45,13 +45,13 @@ new Vue({
 		function setArray(current, loaded, maxSize) {
 			var result = [];
 			if (Array.isArray(loaded)) {
-				result = loaded;
+				result = loaded.map(x => { return { value: x } });
 			} else if (loaded !== undefined) {
-				result = [loaded];
+				result = [{value: loaded}];
 			}
 
 			while (result.length < maxSize) {
-				result.push('');
+				result.push({value: ''});
 			}
 			return result;
 		}
@@ -85,25 +85,25 @@ new Vue({
 			build.sex = this.sex;
 
 			this.race.apply(build);
-			this.majorSkills.forEach(function(skill) { major(build, skill) });
-			this.minorSkills.forEach(function(skill) { minor(build, skill) });
+			this.majorSkills.forEach(function(skill) { major(build, skill.value) });
+			this.minorSkills.forEach(function(skill) { minor(build, skill.value) });
 			this.birthsign.apply(build);
 			specialization(build, this.specialization);
-			this.favoredAttributes.forEach(function(attr) { favored(build, attr) });
+			this.favoredAttributes.forEach(function(attr) { favored(build, attr.value) });
 			stats(build);
 
 			return build;
 		},
 		state: function() {
-			function notBlank(value) { return value !== ''; }
+			function notBlank(value) { return value.value !== ''; }
 			return {
 				sex: this.sex,
 				race: this.race.key,
 				birthsign: this.birthsign.name,
 				specialization: this.specialization,
-				favored: this.favoredAttributes.filter(notBlank),
-				major: this.majorSkills.filter(notBlank),
-				minor: this.minorSkills.filter(notBlank),
+				favored: this.favoredAttributes.filter(notBlank).map(x => x.value),
+				major: this.majorSkills.filter(notBlank).map(x => x.value),
+				minor: this.minorSkills.filter(notBlank).map(x => x.value),
 			};
 		},
 		url: function() {

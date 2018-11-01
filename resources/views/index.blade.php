@@ -18,19 +18,8 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Morrowind Tools</a>
-            </div>
-        </div>
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Morrowind Tools</a>
     </nav>
 
     <!-- Page Content -->
@@ -41,7 +30,7 @@
             <fieldset class="character col-md-4 col-sm-6">
                 <legend>Character</legend>
                 <section class="row">
-                    <div class="form-group col-xs-6">
+                    <div class="form-group col-6">
                         <label for="sex">
                             Sex
                         </label>
@@ -51,7 +40,7 @@
                             <option value="female">Female</option>
                         </select>
                     </div>
-                    <div class="form-group col-xs-6">
+                    <div class="form-group col-6">
                         <label for="race">
                             Race
                         </label>
@@ -63,7 +52,7 @@
                     </div>
                 </section>
                 <section class="row">
-                    <div class="form-group col-xs-6">
+                    <div class="form-group col-6">
                         <label for="birthsign">
                             Birthsign
                         </label>
@@ -73,7 +62,7 @@
                             </option>
                         </select>
                     </div>
-                    <div class="form-group col-xs-6">
+                    <div class="form-group col-6">
                         <label for="specialization">
                             Specialization
                         </label>
@@ -90,8 +79,8 @@
                     <br />
 
                     <div class="attributes row">
-                        <div v-for="(attribute, index) in favoredAttributes" :key="index" class="form-group col-xs-6">
-                            <select v-model="attribute" class="form-control">
+                        <div v-for="(attribute, index) in favoredAttributes" :key="index" class="form-group col-6">
+                            <select v-model="attribute.value" class="form-control">
                                 <option v-for="(option, index) in attributes" :value="option">
                                     @{{ option | capitalize }}
                                 </option>
@@ -104,21 +93,21 @@
                 <fieldset class="skills">
                     <legend>Major Skills</legend>
                     <div class="form-group">
-                        <select v-for="(skill, index) in majorSkills" :key="index" v-model="skill" class="skills__skill form-control">
+                        <select v-for="(skill, index) in majorSkills" :key="index" v-model="skill.value" class="skills__skill form-control">
                             <option value=""></option>
                             <optgroup label="Combat">
-                                <option v-for="(name, key) in skills.combat" :value="key">
-                                    @{{ name }}
+                                <option v-for="(skill, key) in skills.combat" :value="skill.value">
+                                    @{{ skill.name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Magic">
-                                <option v-for="(name, key) in skills.magic" :value="key">
-                                    @{{ name }}
+                                <option v-for="(skill, key) in skills.magic" :value="skill.value">
+                                    @{{ skill.name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Stealth">
-                                <option v-for="(name, key) in skills.stealth" :value="key">
-                                    @{{ name }}
+                                <option v-for="(skill, key) in skills.stealth" :value="skill.value">
+                                    @{{ skill.name }}
                                 </option>
                             </optgroup>
                         </select>
@@ -127,21 +116,21 @@
                 <fieldset class="skills">
                     <legend>Minor Skills</legend>
                     <div class="form-group">
-                        <select v-for="(skill, index) in majorSkills" :key="index" v-model="skill" class="skills__skill form-control">
+                        <select v-for="(skill, index) in minorSkills" :key="index" v-model="skill.value" class="skills__skill form-control">
                             <option value=""></option>
                             <optgroup label="Combat">
-                                <option v-for="(name, key) in skills.combat" :value="key">
-                                    @{{ name }}
+                                <option v-for="(skill, key) in skills.combat" :value="skill.value">
+                                    @{{ skill.name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Magic">
-                                <option v-for="(name, key) in skills.magic" :value="key">
-                                    @{{ name }}
+                                <option v-for="(skill, key) in skills.magic" :value="skill.value">
+                                    @{{ skill.name }}
                                 </option>
                             </optgroup>
                             <optgroup label="Stealth">
-                                <option v-for="(name, key) in skills.stealth" :value="key">
-                                    @{{ name }}
+                                <option v-for="(skill, key) in skills.stealth" :value="skill.value">
+                                    @{{ skill.name }}
                                 </option>
                             </optgroup>
                         </select>
@@ -151,8 +140,8 @@
         </div>
 
         <div class="row command-row">
-            <div class="col-xs-6">
-                <button class="btn btn-default" @click="reset">Reset</button>
+            <div class="col-6">
+                <button class="btn btn-light" @click="reset">Reset</button>
                 <button class="btn btn-primary" @click="save">Save</button>
                 <p class="bg-success save-message" v-show="saved">
                     Saved! Copy URL to share
@@ -164,7 +153,7 @@
             <div class="attributes-tables col-sm-6">
                 <table class="table">
                     <thead>
-                        <tr><th colspan="3">Primary Attributes</th></tr>
+                        <tr><th class="border-top-0" colspan="3">Primary Attributes</th></tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -212,7 +201,7 @@
 
                 <table class="table">
                     <thead>
-                        <tr><th colspan="2">Derived Skills</th></tr>
+                        <tr><th class="border-top-0" colspan="2">Derived Skills</th></tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -236,7 +225,7 @@
 
                 <table class="table">
                     <thead>
-                        <tr><th colspan="2">Resistances</th></tr>
+                        <tr><th class="border-top-0" colspan="2">Resistances</th></tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -289,7 +278,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th colspan="3">Skills</th>
+                            <th class="border-top-0" colspan="3">Skills</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -306,7 +295,7 @@
         </div>
 
 
-        <div class="abilities" v-show="build.abilities.length > 0">
+        <div class="abilities" v-if="build.abilities.length > 0">
             This character has the following abilities, powers, and spells:
             <ul>
                 <li v-for="ability in build.abilities">
