@@ -75,12 +75,12 @@
                     </div>
                 </section>
                 <div>
-                    <label>Favored Attributes:</label>
+                    <label for="favored-attributes">Favored Attributes:</label>
                     <br />
 
                     <div class="attributes row">
                         <div v-for="(attribute, index) in favoredAttributes" :key="index" class="form-group col-6">
-                            <select v-model="attribute.value" class="form-control">
+                            <select v-model="attribute.value" class="form-control" id="favored-attributes">
                                 <option v-for="(option, index) in attributes" :value="option">
                                     @{{ option | capitalize }}
                                 </option>
@@ -93,47 +93,53 @@
                 <fieldset class="skills">
                     <legend>Major Skills</legend>
                     <div class="form-group">
-                        <select v-for="(skill, index) in majorSkills" :key="index" v-model="skill.value" class="skills__skill form-control">
-                            <option value=""></option>
-                            <optgroup label="Combat">
-                                <option v-for="(skill, key) in skills.combat" :value="skill.value">
-                                    @{{ skill.name }}
-                                </option>
-                            </optgroup>
-                            <optgroup label="Magic">
-                                <option v-for="(skill, key) in skills.magic" :value="skill.value">
-                                    @{{ skill.name }}
-                                </option>
-                            </optgroup>
-                            <optgroup label="Stealth">
-                                <option v-for="(skill, key) in skills.stealth" :value="skill.value">
-                                    @{{ skill.name }}
-                                </option>
-                            </optgroup>
-                        </select>
+                        <template v-for="(skill, index) in majorSkills" :key="index">
+                            <label :for="'major-skill-' + index" class="sr-only">Major Skill @{{ index + 1 }}</label>
+                            <select v-model="skill.value" class="skills__skill form-control" :id="'major-skill-' + index">
+                                <option value=""></option>
+                                <optgroup label="Combat">
+                                    <option v-for="(skill, key) in skills.combat" :value="skill.value">
+                                        @{{ skill.name }}
+                                    </option>
+                                </optgroup>
+                                <optgroup label="Magic">
+                                    <option v-for="(skill, key) in skills.magic" :value="skill.value">
+                                        @{{ skill.name }}
+                                    </option>
+                                </optgroup>
+                                <optgroup label="Stealth">
+                                    <option v-for="(skill, key) in skills.stealth" :value="skill.value">
+                                        @{{ skill.name }}
+                                    </option>
+                                </optgroup>
+                            </select>
+                        </template>
                     </div>
                 </fieldset>
                 <fieldset class="skills">
                     <legend>Minor Skills</legend>
                     <div class="form-group">
-                        <select v-for="(skill, index) in minorSkills" :key="index" v-model="skill.value" class="skills__skill form-control">
-                            <option value=""></option>
-                            <optgroup label="Combat">
-                                <option v-for="(skill, key) in skills.combat" :value="skill.value">
-                                    @{{ skill.name }}
-                                </option>
-                            </optgroup>
-                            <optgroup label="Magic">
-                                <option v-for="(skill, key) in skills.magic" :value="skill.value">
-                                    @{{ skill.name }}
-                                </option>
-                            </optgroup>
-                            <optgroup label="Stealth">
-                                <option v-for="(skill, key) in skills.stealth" :value="skill.value">
-                                    @{{ skill.name }}
-                                </option>
-                            </optgroup>
-                        </select>
+                        <template v-for="(skill, index) in minorSkills" :key="index">
+                            <label :for="'minor-skill-' + index" class="sr-only">Minor Skill @{{ index + 1 }}</label>
+                            <select v-model="skill.value" class="skills__skill form-control" :id="'minor-skill-' + index">
+                                <option value=""></option>
+                                <optgroup label="Combat">
+                                    <option v-for="(skill, key) in skills.combat" :value="skill.value">
+                                        @{{ skill.name }}
+                                    </option>
+                                </optgroup>
+                                <optgroup label="Magic">
+                                    <option v-for="(skill, key) in skills.magic" :value="skill.value">
+                                        @{{ skill.name }}
+                                    </option>
+                                </optgroup>
+                                <optgroup label="Stealth">
+                                    <option v-for="(skill, key) in skills.stealth" :value="skill.value">
+                                        @{{ skill.name }}
+                                    </option>
+                                </optgroup>
+                            </select>
+                        </template>
                     </div>
                 </fieldset>
             </div>
