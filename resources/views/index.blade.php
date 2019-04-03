@@ -11,7 +11,7 @@
 
     <title>Morrowind Tools</title>
 
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
 </head>
 
@@ -317,7 +317,9 @@ are registered trademarks of ZeniMax Media Inc. Copyright © 1993-2015. All Righ
         <p>Created by <a href="https://jpbetley.com">JPBetley</a></p>
     </footer>
 
-    <script src="/js/app.js"></script>
+    <script src="{{ mix('/js/manifest.js') }}"></script>
+    <script src="{{ mix('/js/vendor.js') }}"></script>
+    <script src="{{ mix('/js/app.js') }}"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
