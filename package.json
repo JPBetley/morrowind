@@ -20,7 +20,7 @@
         "sass": "^1.26.11",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
-        "urijs": "^1.19.1",
+        "urijs": "^1.19.8",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10",
         "webpack": "^4.29.6"
