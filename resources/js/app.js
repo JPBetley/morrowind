@@ -1,12 +1,10 @@
-var Vue = require('vue');
+import Vue from 'vue';
 var specialization = require('./specialization');
 var favored = require('./attributes/favored');
 var major = require('./skills/major');
 var minor = require('./skills/minor');
 var stats = require('./stats');
 var uri = require('urijs');
-
-Vue.config.debug = true
 
 Vue.filter('capitalize', function (value) {
 	if (!value) return ''
