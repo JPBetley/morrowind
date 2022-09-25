@@ -77,6 +77,7 @@ new Vue({
 		}
 	},
 
+	// Puts ${first name} + ${last name} together
 	computed: {
 		build: function () {
 			var build = require('./default-build')();

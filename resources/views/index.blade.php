@@ -282,11 +282,17 @@
 
             <div class="skills-table col-sm-6">
                 <table class="table">
+                
                     <thead>
                         <tr>
-                            <th class="border-top-0" colspan="3">Skills</th>
+                            <th class="border-top-0 skills-column" colspan="1">Skills</th>
+
+                            <th class="border-top-0 skills-column" colspan="1">Value</th>
+
+                            <th class="border-top-0 skills-column" colspan="1">Attribute</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr v-for="skill in build.skills">
                             <td>@{{ skill.name }}</td>
