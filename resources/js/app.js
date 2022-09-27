@@ -125,6 +125,6 @@ new Vue({
 		save: function() {
 			window.history.pushState('character', document.title, this.url);
 			this.saved = true;
-		}
+		},
 	}
 });
