@@ -286,11 +286,11 @@
                     <thead>
                         <tr>
                             <!-- Arrow going up or down to show how it's being sorted -->
-                            <th class="border-top-0 skills-column" colspan="1"><button @click="sortSkills">Skills</button></th>
+                            <th class="border-top-0 skills-column" colspan="1"><button class="sort-button" @click="sortSkills">Skills</button></th>
 
-                            <th class="border-top-0 skills-column" colspan="1"><button @click="sortValues">Value</button></th>
+                            <th class="border-top-0 skills-column" colspan="1"><button class="sort-button" @click="sortValues">Value</button></th>
 
-                            <th class="border-top-0 skills-column" colspan="1"><button @click="sortAttributes">Attribute</button></th>
+                            <th class="border-top-0 skills-column" colspan="1"><button class="sort-button" @click="sortAttributes">Attribute</button></th>
                         </tr>
                     </thead>
 

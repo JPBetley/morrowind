@@ -126,5 +126,14 @@ new Vue({
 			window.history.pushState('character', document.title, this.url);
 			this.saved = true;
 		},
+		sortSkills() {
+			this.skills = this.skills.sort((a,b) => a - b)
+		},
+		sortValues() {
+			this.values = this.values.sort((a,b) => a - b)
+		},
+		sortAttributes() {
+			this.attributes = this.attributes.sort((a,b) => a - b)
+		},
 	}
 });
