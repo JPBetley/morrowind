@@ -126,14 +126,72 @@ new Vue({
 			window.history.pushState('character', document.title, this.url);
 			this.saved = true;
 		},
-		sortSkills() {
-			this.skills = this.skills.sort((a,b) => a - b)
+
+		sortSkills: function() {
+			const table = document.querySelector('.sorting-table')
+			table.querySelectorAll('tr')
+			.forEach((element, columnNum) => {
+				element.addEventListener('click', event => {
+					sortTable(table, columnNum)
+				})
+			})
 		},
 		sortValues() {
-			this.values = this.values.sort((a,b) => a - b)
+			const table = document.querySelector('.sorting-table')
+			table.querySelectorAll('tr')
+			.forEach((element, columnNum) => {
+				element.addEventListener('click', event => {
+					sortTable(table, columnNum)
+				})
+			})
 		},
 		sortAttributes() {
-			this.attributes = this.attributes.sort((a,b) => a - b)
+			const table = document.querySelector('.sorting-table')
+			table.querySelectorAll('tr')
+			.forEach((element, columnNum) => {
+				element.addEventListener('click', event => {
+					sortTable(table, columnNum)
+				})
+			})
 		},
-	}
+
+	},
 });
+
+
+function sortTable(table, sortColumn) {
+	const tableBody = table.querySelector('tbody')
+	const tableData = table2data(tableBody);
+	tableData.sort((a, b) => {
+		if (a[sortColumn] > b[sortColumn]) {
+			return 1;
+		}
+		return -1;
+	})
+	data2table(tableBody, tableData)
+}
+
+function table2data(tableBody) {
+	const tableData = [];
+	tableBody.querySelectorAll('tr')
+		.forEach(row => {
+			const rowData = [];
+			row.querySelectorAll('td')
+				.forEach(cell => {
+					rowData.push(cell.innerText);
+				})
+			tableData.push(rowData)
+		})
+	return tableData
+}
+
+function data2table(tableBody, tableData) {
+	tableBody.querySelectorAll('tr')
+		.forEach((row, i) => {
+			const rowData = tableData[i];
+			row.querySelectorAll('td')
+				.forEach((cell, j) => {
+					cell.innerText = rowData[j];
+				})
+		})
+}

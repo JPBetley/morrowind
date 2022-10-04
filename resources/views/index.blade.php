@@ -93,7 +93,7 @@
                 <fieldset class="skills">
                     <legend>Major Skills</legend>
                     <div class="form-group">
-                        <template v-for="(skill, index) in majorSkills" :key="index">
+                        <template v-for="(skill, index) in majorSkills">
                             <label :for="'major-skill-' + index" class="sr-only">Major Skill @{{ index + 1 }}</label>
                             <select v-model="skill.value" class="skills__skill form-control" :id="'major-skill-' + index">
                                 <option value=""></option>
@@ -119,7 +119,7 @@
                 <fieldset class="skills">
                     <legend>Minor Skills</legend>
                     <div class="form-group">
-                        <template v-for="(skill, index) in minorSkills" :key="index">
+                        <template v-for="(skill, index) in minorSkills">
                             <label :for="'minor-skill-' + index" class="sr-only">Minor Skill @{{ index + 1 }}</label>
                             <select v-model="skill.value" class="skills__skill form-control" :id="'minor-skill-' + index">
                                 <option value=""></option>
@@ -281,7 +281,7 @@
             </div>
 
             <div class="skills-table col-sm-6">
-                <table class="table">
+                <table class="table sorting-table">
                 
                     <thead>
                         <tr>
@@ -294,7 +294,9 @@
                         </tr>
                     </thead>
 
-                    <tbody>
+
+                    
+                    <tbody class="sorted-table">
                         <tr v-for="skill in build.skills">
                             <td>@{{ skill.name }}</td>
                             <td>@{{ skill.value }}</td>
