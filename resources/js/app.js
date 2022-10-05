@@ -77,6 +77,7 @@ new Vue({
 		}
 	},
 
+	// Puts ${first name} + ${last name} together
 	computed: {
 		build: function () {
 			var build = require('./default-build')();
@@ -124,6 +125,73 @@ new Vue({
 		save: function() {
 			window.history.pushState('character', document.title, this.url);
 			this.saved = true;
-		}
-	}
+		},
+
+		sortSkills: function() {
+			const table = document.querySelector('.sorting-table')
+			table.querySelectorAll('tr')
+			.forEach((element, columnNum) => {
+				element.addEventListener('click', event => {
+					sortTable(table, columnNum)
+				})
+			})
+		},
+		sortValues() {
+			const table = document.querySelector('.sorting-table')
+			table.querySelectorAll('tr')
+			.forEach((element, columnNum) => {
+				element.addEventListener('click', event => {
+					sortTable(table, columnNum)
+				})
+			})
+		},
+		sortAttributes() {
+			const table = document.querySelector('.sorting-table')
+			table.querySelectorAll('tr')
+			.forEach((element, columnNum) => {
+				element.addEventListener('click', event => {
+					sortTable(table, columnNum)
+				})
+			})
+		},
+
+	},
 });
+
+
+function sortTable(table, sortColumn) {
+	const tableBody = table.querySelector('tbody')
+	const tableData = table2data(tableBody);
+	tableData.sort((a, b) => {
+		if (a[sortColumn] > b[sortColumn]) {
+			return 1;
+		}
+		return -1;
+	})
+	data2table(tableBody, tableData)
+}
+
+function table2data(tableBody) {
+	const tableData = [];
+	tableBody.querySelectorAll('tr')
+		.forEach(row => {
+			const rowData = [];
+			row.querySelectorAll('td')
+				.forEach(cell => {
+					rowData.push(cell.innerText);
+				})
+			tableData.push(rowData)
+		})
+	return tableData
+}
+
+function data2table(tableBody, tableData) {
+	tableBody.querySelectorAll('tr')
+		.forEach((row, i) => {
+			const rowData = tableData[i];
+			row.querySelectorAll('td')
+				.forEach((cell, j) => {
+					cell.innerText = rowData[j];
+				})
+		})
+}
