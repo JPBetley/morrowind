@@ -1,7 +1,6 @@
 <?php
-namespace App\Models;
 
-use Illuminate\Support\Collection;
+namespace App\Models;
 
 enum Sex: string
 {

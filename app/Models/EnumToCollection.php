@@ -1,11 +1,11 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Support\Collection;
 
 trait EnumToCollection
 {
-
     public static function names(): Collection
     {
         return collect(self::cases())->pluck('name');
@@ -20,5 +20,4 @@ trait EnumToCollection
     {
         return self::values()->combine(self::names());
     }
-
 }
