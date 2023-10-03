@@ -11,6 +11,10 @@ class CharacterController extends Controller
 {
     public function index()
     {
+        return Inertia::render('Characters/Index', [
+            'characters' => Character::paginate()
+                ->withQueryString(),
+        ]);
     }
 
     public function create()

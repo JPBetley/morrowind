@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Character;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class CharacterSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Character::factory(5)->create();
     }
 }
