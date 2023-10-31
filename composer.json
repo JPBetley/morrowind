@@ -24,7 +24,8 @@
         "pestphp/pest": "^2.20",
         "pestphp/pest-plugin-drift": "^2.5",
         "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
+        "spatie/laravel-ignition": "^2.0",
+        "spatie/laravel-stubs": "^2.5"
     },
     "autoload": {
         "psr-4": {
@@ -44,7 +45,8 @@
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan spatie-stub:publish --force"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
