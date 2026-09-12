@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	combat: [
 		{ value: 'block', name: 'Block' },
 		{ value: 'armorer', name: 'Armorer' },

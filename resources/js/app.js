@@ -1,10 +1,17 @@
 import Vue from 'vue';
-var specialization = require('./specialization');
-var favored = require('./attributes/favored');
-var major = require('./skills/major');
-var minor = require('./skills/minor');
-var stats = require('./stats');
-var uri = require('urijs');
+import specialization from './specialization';
+import favored from './attributes/favored';
+import major from './skills/major';
+import minor from './skills/minor';
+import stats from './stats';
+import uri from 'urijs';
+import allSkills from './skills/all';
+import allAttributes from './attributes/all';
+import defaultBirthsign from './birthsigns/default';
+import allBirthsigns from './birthsigns/all';
+import defaultRace from './races/default';
+import allRaces from './races/all';
+import defaultBuild from './default-build';
 
 Vue.filter('capitalize', function (value) {
 	if (!value) return ''
@@ -17,22 +24,22 @@ new Vue({
 
 	data: {
 		saved: false,
-		
+
 		sex: '',
 		specialization: '',
 
 		majorSkills: [{value: ''}, {value: ''}, {value: ''}, {value: ''}, {value: ''}],
 		minorSkills: [{value: ''}, {value: ''}, {value: ''}, {value: ''}, {value: ''}],
-		skills: require('./skills/all'),
+		skills: allSkills,
 
 		favoredAttributes: [{value: ''}, {value: ''}],
-		attributes: require('./attributes/all'),
+		attributes: allAttributes,
 
-		birthsign: require('./birthsigns/default'),
-		birthsigns: require('./birthsigns/all'),
+		birthsign: defaultBirthsign,
+		birthsigns: allBirthsigns,
 
-		race: require('./races/default'),
-		races: require('./races/all'),
+		race: defaultRace,
+		races: allRaces,
 	},
 
 	mounted: function () {
@@ -61,25 +68,25 @@ new Vue({
 		this.minorSkills = setArray(this.minorSkills, state.minor, 5);
 		this.favoredAttributes = setArray(this.favoredAttributes, state.favored, 2);
 		if (state.race === undefined) {
-			this.race = require('./races/default');
+			this.race = defaultRace;
 		} else {
 			this.race = this.races.filter(function(value) {
 				return value.key == state.race;
-			})[0]; 
+			})[0];
 		}
 
 		if (state.birthsign === undefined) {
-			this.birthsign = require('./birthsigns/default');
+			this.birthsign = defaultBirthsign;
 		} else {
 			this.birthsign = this.birthsigns.filter(function(value) {
 				return value.name == state.birthsign;
-			})[0]; 
+			})[0];
 		}
 	},
 
 	computed: {
 		build: function () {
-			var build = require('./default-build')();
+			var build = defaultBuild();
 			build.sex = this.sex;
 
 			this.race.apply(build);
@@ -111,15 +118,15 @@ new Vue({
 		}
 	},
 
-	methods: { 
+	methods: {
 		reset: function() {
 			this.sex = '';
 			this.specialization = '';
 			this.majorSkills = ['', '', '', '', ''];
 			this.minorSkills = ['', '', '', '', ''];
 			this.favoredAttributes = ['', ''];
-			this.race = require('./races/default');
-			this.birthsign = require('./birthsigns/default');
+			this.race = defaultRace;
+			this.birthsign = defaultBirthsign;
 		},
 		save: function() {
 			window.history.pushState('character', document.title, this.url);

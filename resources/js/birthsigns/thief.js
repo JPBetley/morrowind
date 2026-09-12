@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.abilities.push('Akaviri Danger-sense - Sanctuary 10 pts');
 	},

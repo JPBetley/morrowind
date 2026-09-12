@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.abilities.push('Blessed Word - Turn Undead 100 pts for 30 secs on Target');
 		build.abilities.push('Blessed Touch - Turn Undead 100 pts for 30 secs on Touch');

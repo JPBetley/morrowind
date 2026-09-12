@@ -11,7 +11,7 @@
 
     <title>Morrowind Tools</title>
 
-    <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 </head>
 
@@ -323,10 +323,6 @@ are registered trademarks of ZeniMax Media Inc. Copyright © 1993-2015. All Righ
         <p>Created by <a href="https://jpbetley.com">JPBetley</a></p>
     </footer>
 
-    <script src="{{ mix('/js/manifest.js') }}"></script>
-    <script src="{{ mix('/js/vendor.js') }}"></script>
-    <script src="{{ mix('/js/app.js') }}"></script>
-    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGEMRVZXC4"></script>
     <script>

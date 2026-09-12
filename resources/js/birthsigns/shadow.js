@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.abilities.push('Moonshadow - Invisibility for 60 secs');
 	},

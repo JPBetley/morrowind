@@ -1,3 +1,3 @@
-module.exports = function(build, attribute) {
+export default function(build, attribute) {
 	build.attributes[attribute] += 10;	
 }

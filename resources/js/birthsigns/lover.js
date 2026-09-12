@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.attributes.agility += 25;
 		build.abilities.push('Mooncalf - Fortify Agility 25 pts');

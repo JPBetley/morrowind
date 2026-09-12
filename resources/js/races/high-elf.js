@@ -21,7 +21,7 @@ function femaleAttributes(build) {
 	build.attributes.luck += 40;
 }
 
-module.exports = {
+export default {
 	apply: function(build) {
 		if (build.sex == "male") {
 			maleAttributes(build);

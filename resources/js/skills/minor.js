@@ -1,4 +1,4 @@
-module.exports = function(build, skill) {
+export default function(build, skill) {
 	var skills = build.skills.filter(function(item) {
 		return item.key == skill;
 	});

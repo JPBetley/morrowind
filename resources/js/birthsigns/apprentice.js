@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.magickaMultiplier += 1.5;
 		build.resistances.magicka -= 50;

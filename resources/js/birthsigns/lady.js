@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.attributes.personality += 25;
 		build.attributes.endurance += 25;

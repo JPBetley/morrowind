@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	apply: function(build) {
 		build.resistances.fire -= 100;
 		build.abilities.push('Blood of the North - Restore Health 2 pts for 30 secs on Self');

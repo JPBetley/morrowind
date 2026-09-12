@@ -1,4 +1,4 @@
-module.exports = function(build) {
+export default function(build) {
 	var attrs = build.attributes;
 	build.stats.health = (attrs.endurance + attrs.strength) / 2;
 	build.stats.magicka = attrs.intelligence * build.magickaMultiplier;
